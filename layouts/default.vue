@@ -1,14 +1,14 @@
 <template>
   <div class="text-slate-800">
     <!-- TODO: Remove the following element once you have read the documentation. -->
-    <div
+    <!-- <div
       v-if="$config.development"
       :style="{
         background: '#5163ba',
         padding: '1rem',
         textAlign: 'center',
         fontSize: '0.85rem',
-        color: '#fff'
+        color: '#fff',
       }"
     >
       <p>
@@ -18,12 +18,12 @@
           target="_blank"
           rel="noreferrer"
           :style="{
-            textDecoration: 'underline'
+            textDecoration: 'underline',
           }"
           >see the documentation</a
         >. Remove this bar in <code>layouts/default.vue</code>.
       </p>
-    </div>
+    </div> -->
     <Header
       v-if="navigation.data && settings.data"
       :alternate-languages="alternateLanguages"
@@ -38,17 +38,17 @@
 <script>
 export default {
   computed: {
-    alternateLanguages () {
-      return this.$store.state.prismic.alternateLanguages
+    alternateLanguages() {
+      return this.$store.state.prismic.alternateLanguages;
     },
-    navigation () {
-      return this.$store.state.prismic.navigation
+    navigation() {
+      return this.$store.state.prismic.navigation;
     },
-    settings () {
-      return this.$store.state.prismic.settings
-    }
-  }
-}
+    settings() {
+      return this.$store.state.prismic.settings;
+    },
+  },
+};
 </script>
 
 <style>

@@ -3,24 +3,28 @@
 </template>
 
 <script>
-import { components } from '~/slices'
+import { components } from "~/slices";
 
 export default {
-  async asyncData ({ $prismic, params, store, i18n }) {
-    const lang = i18n.locale
-    const page = await $prismic.api.getByUID('page', params.uid, { lang })
-    await store.dispatch('prismic/load', { lang, page })
+  async asyncData({ $prismic, params, store, i18n }) {
+    const lang = i18n.locale;
+    const page = await $prismic.api.getByUID("page", params.uid, { lang });
+    await store.dispatch("prismic/load", { lang, page });
     return {
-      page
-    }
+      page,
+    };
   },
-  data () {
-    return { components }
+  data() {
+    return { components };
   },
-  head () {
+  head() {
     return {
-      title: `${this.$prismic.asText(this.page.data.title)} | ${this.$prismic.asText(this.$store.state.prismic.settings.data.siteTitle)}`
-    }
-  }
-}
+      title: `${this.$prismic.asText(
+        this.page.data.title
+      )} - ${this.$prismic.asText(
+        this.$store.state.prismic.settings.data.siteTitle
+      )}`,
+    };
+  },
+};
 </script>

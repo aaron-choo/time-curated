@@ -63,6 +63,8 @@ export default async () => {
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
 
+    plugins: ["~/plugins/commerce.js"],
+
     publicRuntimeConfig: {
       development: process.env.NODE_ENV === 'development'
     },
@@ -85,7 +87,7 @@ export default async () => {
             return prefix || '/'
         }
       },
-      htmlSerializer (type, element, content, children) {
+      htmlSerializer(type, element, content, children) {
         switch (type) {
           case 'paragraph':
             return /* html */ `<p class="mb-7 last:mb-0">${children.join('')}</p>`
