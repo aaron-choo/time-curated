@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h1>{{ category.name }}</h1>
-    <product-list :products="products"></product-list>
-  </div>
+  <Bounded as="section" :collapsible="false">
+    <div>
+      <h1>{{ category.name }}</h1>
+      <product-list :products="products"></product-list>
+    </div>
+  </Bounded>
 </template>
   
   <script>

@@ -5,9 +5,7 @@
         <div v-for="asset in assets" :key="asset.id">
           <img
             v-if="asset.url"
-            format="webp"
             :src="asset.url"
-            sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
             :width="asset.image_dimensions.width"
             :height="asset.image_dimensions.height"
             class="w-full"
@@ -66,6 +64,7 @@
 </template>
 <script>
 import { components } from "~/slices";
+import { mapActions } from "vuex";
 export default {
   async asyncData({ $prismic, store, i18n, params, $commerce }) {
     const lang = i18n.locale;
@@ -81,6 +80,7 @@ export default {
       product,
       page: page,
       assets: product.assets,
+      variants: product.variant_groups,
     };
   },
   data() {
