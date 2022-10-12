@@ -64,7 +64,6 @@
 </template>
 <script>
 import { components } from "~/slices";
-import { mapActions } from "vuex";
 export default {
   async asyncData({ $prismic, store, i18n, params, $commerce }) {
     const lang = i18n.locale;
