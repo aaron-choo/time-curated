@@ -31,7 +31,7 @@ export default async () => {
     },
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-    buildModules: ['@nuxt/postcss8'],
+    buildModules: ['@nuxt/image', '@nuxt/postcss8'],
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
@@ -57,7 +57,8 @@ export default async () => {
       '@fontsource/libre-baskerville/400.css',
       '@fontsource/libre-baskerville/400-italic.css',
       '@fontsource/libre-baskerville/700.css',
-      'flag-icons/css/flag-icons.css'
+      'flag-icons/css/flag-icons.css',
+      '@/assets/css/main.css'
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
