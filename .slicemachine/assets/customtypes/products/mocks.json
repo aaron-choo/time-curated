@@ -1,0 +1,30 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "products",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "shipping_information": [
+      {
+        "type": "paragraph",
+        "text": "Duis irure eiusmod adipisicing fugiat ipsum in qui nisi eu deserunt ex esse velit. Ut laborum ea exercitation culpa do dolore adipisicing occaecat ex. Commodo eiusmod consequat ad labore commodo.",
+        "spans": []
+      }
+    ],
+    "return_policy": [
+      {
+        "type": "paragraph",
+        "text": "Lorem sunt tempor consequat minim quis irure fugiat ex et consequat aliquip qui.",
+        "spans": []
+      }
+    ],
+    "slices": []
+  }
+}

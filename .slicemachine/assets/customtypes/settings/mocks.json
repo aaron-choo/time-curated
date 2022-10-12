@@ -1,12 +1,20 @@
 {
-  "id": "6ee0b532-19e4-4aa0-9f64-cddefaabe355",
-  "uid": "similique-dignissimos-veritatis",
+  "id": "mock-doc-id",
+  "url": null,
   "type": "settings",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
   "data": {
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Expedite impactful ROI",
+        "text": "Courage",
         "spans": []
       }
     ],
@@ -15,21 +23,35 @@
         "width": 900,
         "height": 500
       },
-      "alt": "Placeholder image",
+      "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+      "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da"
     },
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Laborum aliqua commodo proident occaecat. Cupidatat sunt exercitation eu irure duis Lorem non non ex cupidatat. Exercitation veniam enim ut amet enim irure ullamco ut id occaecat proident officia.",
+        "text": "Aliqua occaecat in deserunt officia.",
         "spans": []
       }
     ],
     "newsletterDisclaimer": [
       {
         "type": "paragraph",
-        "text": "Enim deserunt consectetur deserunt nisi eiusmod nostrud fugiat occaecat velit est dolore. Cupidatat pariatur et amet commodo et.",
+        "text": "Pariatur ad laborum magna anim duis eu.",
+        "spans": []
+      }
+    ],
+    "shipping_information": [
+      {
+        "type": "paragraph",
+        "text": "Et cillum ut nostrud pariatur aliqua consectetur duis laboris nostrud nisi.",
+        "spans": []
+      }
+    ],
+    "return_policy": [
+      {
+        "type": "paragraph",
+        "text": "Cupidatat qui laborum reprehenderit ipsum aliquip velit. Irure irure ut ad. Sint aute officia labore proident incididunt proident exercitation sit nulla.",
         "spans": []
       }
     ]
