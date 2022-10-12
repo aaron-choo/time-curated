@@ -13,8 +13,6 @@
     "lint": "eslint --ext .js,.ts,.vue .",
     "slicemachine": "start-slicemachine",
     "format": "prettier --write .",
-    "export": "nuxt export",
-    "serve": "nuxt serve"
   },
   "dependencies": {
     "@chec/commerce.js": "^2.8.0",
