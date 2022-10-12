@@ -30,6 +30,7 @@
       :navigation="navigation"
       :settings="settings"
     />
+    <Cart />
     <main><nuxt /></main>
     <Footer v-if="settings.data" :settings="settings" />
   </div>
@@ -37,6 +38,20 @@
 
 <script>
 export default {
+  mounted() {
+    this.fetchCart();
+  },
+  methods: {
+    async fetchCart() {
+      try {
+        const cart = await this.$commerce.cart.retrieve();
+        this.$store.commit("setCart", cart);
+      } catch (error) {
+        // eslint-disable-next-line
+        console.log("Error (default.vue): ", error);
+      }
+    },
+  },
   computed: {
     alternateLanguages() {
       return this.$store.state.prismic.alternateLanguages;

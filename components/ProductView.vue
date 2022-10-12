@@ -9,12 +9,15 @@
     />
     <p>{{ product.name }}</p>
     <p>{{ product.price.formatted_with_code }}</p>
+    <AddToCartBtn :product="product" />
     <!-- <pre>{{ product }}</pre> -->
   </div>
 </template>
 
 <script>
 export default {
-  props: ["product"],
+  props: {
+    product: { type: Object, defaultValue: {}, required: true },
+  },
 };
 </script>
