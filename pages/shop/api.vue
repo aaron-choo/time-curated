@@ -1,15 +1,10 @@
 <template>
-  <Bounded as="section" :collapsible="false">
-    <div>
-      <h1>{{ title }}</h1>
-      <!-- <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
+  <div>
+    <h1>API</h1>
+    <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
     <pre>{{ JSON.stringify(categories, null, 2) }}</pre>
-    <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
-      <category-list :categories="categories"></category-list>
-      <product-list :products="products"></product-list>
-      <SliceZone :slices="page.data.slices" :components="components" />
-    </div>
-  </Bounded>
+    <pre>{{ JSON.stringify(products, null, 2) }}</pre>
+  </div>
 </template>
 
 <script>
