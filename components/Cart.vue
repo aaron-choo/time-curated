@@ -3,16 +3,8 @@
     :class="{
       container: true,
       cart: true,
-      opened: opened,
-      'has-background-white': true,
-      shadow: true,
-      'is-size-7-mobile': true,
     }"
   >
-    <div class="px-6 py-6 has-background-light">
-      <CartButton :slanted="true" />
-    </div>
-
     <table>
       <thead>
         <tr>
@@ -40,7 +32,7 @@
           <td class="is-hidden-mobile"></td>
           <td></td>
           <td></td>
-          <td class="has-text-grey is-italic py-5">Cart is empty</td>
+          <td class="has-text-grey is-italic py-5">Bag is empty</td>
           <td></td>
           <td></td>
         </tr>
@@ -49,8 +41,8 @@
     <div class="has-text-right px-4 py-6 my-6">
       <a :href="checkoutUrl">
         <button class="button is-success">
-          Go to checkout &nbsp;
-          <font-awesome-icon :icon="['fas', 'sign-in-alt']"></font-awesome-icon>
+          <font-awesome-icon :icon="['fas', 'lock']"></font-awesome-icon> &nbsp;
+          Secure Checkout
         </button>
       </a>
     </div>
@@ -77,20 +69,6 @@ export default {
 </script>
 
 <style scoped>
-.cart {
-  background: white;
-  width: 600px;
-  height: 100vh;
-  overflow-y: auto;
-  position: fixed;
-  top: 0;
-  right: -610px;
-  z-index: 100;
-  transition: all 1s ease;
-}
-.cart.opened {
-  right: 0;
-}
 .cart table {
   width: 100%;
   background: transparent;

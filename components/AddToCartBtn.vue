@@ -2,19 +2,14 @@
   <button
     :class="{
       button: true,
-      'is-small': true,
-      'gati-button': true,
-      'has-text-white': true,
-      slanted: false,
     }"
     @click="addToCart"
   >
-    <span class="text">Add to cart</span>
+    <span class="text">Add to Bag</span>
     <span></span>
   </button>
 </template>
-  
-  <script>
+<script>
 export default {
   props: {
     product: { type: Object, required: true, defaultValue: {} },

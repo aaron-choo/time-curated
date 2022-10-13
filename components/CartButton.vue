@@ -1,40 +1,23 @@
 <template>
-  <button
-    :class="{
-      columns: true,
-      button: true,
-      'gati-button': true,
-      'has-text-white': true,
-      slanted: slanted,
-    }"
-    @click="setCartView"
-  >
+  <nuxt-link aria-label="Shopping bag" to="/bag">
     <span class="text">
-      <font-awesome-icon
-        :icon="['fas', 'shopping-cart']"
-        class="has-text-white"
-      ></font-awesome-icon>
-      <span class="border mx-2"></span>
+      <font-awesome-icon :icon="['fas', 'shopping-bag']"></font-awesome-icon>
       <transition name="fade">
-        <span
+        <!-- <span
           >{{ cartCount }} Item<span v-if="parseInt(cartCount) != 1"
             >s</span
           ></span
-        >
+        > -->
+        <span>({{ cartCount }})</span>
       </transition>
-      <span class="border mx-2"></span>
-      <transition name="fade">
+      <!-- <transition name="fade">
         <span>{{ cartSubtotal }}</span>
-      </transition>
+      </transition> -->
     </span>
-  </button>
+  </nuxt-link>
 </template>
-  
-  <script>
+<script>
 export default {
-  props: {
-    slanted: { type: Boolean, required: true, defaultValue: true },
-  },
   computed: {
     cartCount() {
       return this.$store.getters.getCartItemCount;
@@ -53,31 +36,4 @@ export default {
 </script>
 
 <style scoped>
-.gati-button {
-  position: relative;
-  -webkit-transition: all 0.6s ease-out !important;
-  transition: all 0.6s ease-out !important;
-  border: none !important;
-  background: #7f00ff;
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#7f00ff),
-    to(#3f00fc)
-  ) !important;
-  background: linear-gradient(to top, #7f00ff, #3f00fc) !important;
-  opacity: 1;
-  z-index: 0;
-}
-.gati-button.slanted {
-  transform: skewX(-18deg);
-}
-.gati-button.slanted .text {
-  transform: skewX(18deg);
-  font-size: 0.8rem;
-}
-.gati-button.slanted .text .border {
-  border-right: 1px solid #ccc;
-}
 </style>

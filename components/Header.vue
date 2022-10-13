@@ -37,7 +37,7 @@
             </PrismicLink>
           </li>
           <li>
-            <CartButton :slanted="true" />
+            <MiniCartButton />
           </li>
         </ul>
       </nav>
