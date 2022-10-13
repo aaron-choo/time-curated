@@ -11,7 +11,7 @@ export const getters = {
         return state.cart === null ? [] : state.cart.line_items
     },
     getCartSubtotal(state) {
-        return state.cart === null ? 0 : state.cart.subtotal.formatted_with_symbol
+        return state.cart === null ? 0 : state.cart.subtotal.formatted_with_code
     },
     getCartItemCount(state) {
         return state.cart === null ? 0 : state.cart.total_items

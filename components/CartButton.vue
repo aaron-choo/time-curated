@@ -10,6 +10,10 @@
     @click="setCartView"
   >
     <span class="text">
+      <font-awesome-icon
+        :icon="['fas', 'shopping-cart']"
+        class="has-text-white"
+      ></font-awesome-icon>
       <span class="border mx-2"></span>
       <transition name="fade">
         <span
@@ -47,3 +51,33 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.gati-button {
+  position: relative;
+  -webkit-transition: all 0.6s ease-out !important;
+  transition: all 0.6s ease-out !important;
+  border: none !important;
+  background: #7f00ff;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#7f00ff),
+    to(#3f00fc)
+  ) !important;
+  background: linear-gradient(to top, #7f00ff, #3f00fc) !important;
+  opacity: 1;
+  z-index: 0;
+}
+.gati-button.slanted {
+  transform: skewX(-18deg);
+}
+.gati-button.slanted .text {
+  transform: skewX(18deg);
+  font-size: 0.8rem;
+}
+.gati-button.slanted .text .border {
+  border-right: 1px solid #ccc;
+}
+</style>

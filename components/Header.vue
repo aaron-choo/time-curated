@@ -1,10 +1,19 @@
 <template>
   <Bounded as="header" y-padding="sm">
-    <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
+    <div
+      class="
+        flex flex-wrap
+        items-center
+        justify-between
+        gap-x-6 gap-y-3
+        leading-none
+      "
+    >
       <NuxtLink :to="localePath('/')">
         <PrismicImage
           v-if="settings.data.logo.url"
           :field="settings.data.logo"
+          width="180"
         />
       </NuxtLink>
       <nav>
@@ -15,17 +24,20 @@
             class="font-semibold tracking-tight text-slate-800"
           >
             <PrismicLink :field="item.link">
-              {{ $prismic.asText(item.label ) }}
+              {{ $prismic.asText(item.label) }}
             </PrismicLink>
           </li>
-          <li
-            v-for="lang in alternateLanguages"
-            :key="lang.lang"
-          >
+          <li v-for="lang in alternateLanguages" :key="lang.lang">
             <PrismicLink :field="{ ...lang, link_type: 'Document' }">
               <span class="sr-only">{{ lang.lang }}</span>
-              <span class="fi" :class="`fi-${lang.lang.substring(3).toLowerCase()}`" />
+              <span
+                class="fi"
+                :class="`fi-${lang.lang.substring(3).toLowerCase()}`"
+              />
             </PrismicLink>
+          </li>
+          <li>
+            <CartButton :slanted="true" />
           </li>
         </ul>
       </nav>
@@ -38,16 +50,16 @@ export default {
   props: {
     navigation: {
       type: Object,
-      required: true
+      required: true,
     },
     settings: {
       type: Object,
-      required: true
+      required: true,
     },
     alternateLanguages: {
       type: Array,
-      default: () => []
-    }
-  }
-}
+      default: () => [],
+    },
+  },
+};
 </script>

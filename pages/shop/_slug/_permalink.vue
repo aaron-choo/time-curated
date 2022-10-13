@@ -16,6 +16,7 @@
         <div class="sticky top-8">
           <h1>{{ product.name }}</h1>
           <p>{{ product.price.formatted_with_code }}</p>
+          <AddToCartBtn :product="product" />
           <hr />
           <h2>Description</h2>
           <div v-html="product.description"></div>

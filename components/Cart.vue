@@ -48,7 +48,10 @@
     </table>
     <div class="has-text-right px-4 py-6 my-6">
       <a :href="checkoutUrl">
-        <button class="button is-success">Go to checkout</button>
+        <button class="button is-success">
+          Go to checkout &nbsp;
+          <font-awesome-icon :icon="['fas', 'sign-in-alt']"></font-awesome-icon>
+        </button>
       </a>
     </div>
   </div>
@@ -72,3 +75,32 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.cart {
+  background: white;
+  width: 600px;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  right: -610px;
+  z-index: 100;
+  transition: all 1s ease;
+}
+.cart.opened {
+  right: 0;
+}
+.cart table {
+  width: 100%;
+  background: transparent;
+}
+.cart table tr td,
+.cart table tr th {
+  font-weight: 400;
+  padding: 0.5rem;
+}
+.cart table tfoot {
+  border-top: 1px solid #f5f5f5;
+}
+</style>

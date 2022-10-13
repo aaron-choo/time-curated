@@ -23,7 +23,7 @@ export default {
     async addToCart() {
       try {
         const res = await this.$commerce.cart.add(this.product.id);
-        this.$store.commit("setCart", res.cart);
+        this.$store.commit("setCart", res);
       } catch (error) {
         // eslint-disable-next-line
         console.log(error);
