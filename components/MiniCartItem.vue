@@ -4,6 +4,7 @@
       <img :src="item.image.url" :alt="item.name" :title="item.name" />
     </td>
     <td>{{ item.name }}</td>
+    <td v-if="item.variation_groups">{{ item.variation_groups[0].name }}</td>
     <td>{{ item.price.formatted_with_code }}</td>
     <td class="quantity-cell">
       <input

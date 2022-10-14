@@ -1,7 +1,7 @@
 <template>
   <Bounded as="section" :collapsible="false">
     <div class="grid grid-cols-2 gap-8">
-      <div class="grid grid-cols-1 gap-4">
+      <div class="grid grid-cols-1 gap-4 self-start">
         <div v-for="asset in assets" :key="asset.id">
           <img
             v-if="asset.url"
@@ -15,8 +15,27 @@
       <div>
         <div class="sticky top-8">
           <h1>{{ product.name }}</h1>
-          <p>{{ product.price.formatted_with_code }}</p>
-          <AddToCartBtn :product="product" />
+          <!-- <p v-if="variants.length === 0">
+            {{ product.price.formatted_with_code }}
+          </p>
+          <p v-if="variants.length > 0">
+            variant {{ product.price.formatted_with_code }}
+          </p> -->
+          <p>
+            {{ product.price.formatted_with_code }}
+          </p>
+
+          <variant-options
+            v-for="variant_group in product.variant_groups"
+            :key="variant_group.id"
+            :item="variant_group"
+            :variantOption="variantOption"
+            @selectOption="variantOption = $event"
+          />
+
+          <!-- <pre>{{ variantOption }}</pre> -->
+
+          <AddToCartBtn :product="product" :variant="variantOption" />
           <hr />
           <h2>Description</h2>
           <div v-html="product.description"></div>
@@ -49,7 +68,7 @@
             </p>
           </div>
 
-          <!-- <pre>{{ JSON.stringify(product, null, 2) }}</pre> -->
+          <pre>{{ JSON.stringify(product, null, 2) }}</pre>
         </div>
       </div>
     </div>
@@ -70,17 +89,16 @@ export default {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("page", "product", { lang });
     await store.dispatch("prismic/load", { lang, page });
-
     const { permalink } = params;
     const product = await $commerce.products.retrieve(permalink, {
       type: "permalink",
     });
-
     return {
       product,
       page: page,
       assets: product.assets,
       variants: product.variant_groups,
+      variantOption: {},
     };
   },
   data() {

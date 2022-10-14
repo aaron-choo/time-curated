@@ -5,19 +5,25 @@
     }"
     @click="addToCart"
   >
-    <span class="text">Add to Bag</span>
-    <span></span>
+    <span class="w-full">Add to Bag</span>
   </button>
 </template>
 <script>
 export default {
   props: {
     product: { type: Object, required: true, defaultValue: {} },
+    variant: { type: Object, required: true, defaultValue: {} },
   },
   methods: {
     async addToCart() {
       try {
-        const res = await this.$commerce.cart.add(this.product.id);
+        console.log(this.variant);
+        const res = await this.$commerce.cart.add(
+          this.product.id,
+          1,
+          this.variant
+        );
+        console.log(res);
         this.$store.commit("setCart", res);
       } catch (error) {
         // eslint-disable-next-line

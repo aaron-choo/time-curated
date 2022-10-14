@@ -61,7 +61,6 @@ export default {
   transition: all 0.3s ease;
   opacity: 0;
   pointer-events: none;
-  font-size: 12px;
 }
 .cart.opened {
   opacity: 1;
