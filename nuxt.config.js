@@ -13,7 +13,7 @@ export default async () => {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-      title: 'Prismic + Nuxt i18n example',
+      title: 'Time Curated',
       htmlAttrs: {
         lang: 'en'
       },
@@ -23,7 +23,7 @@ export default async () => {
         {
           hid: 'description',
           name: 'description',
-          content: 'Prismic + Nuxt i18n example'
+          content: 'Time Curated'
         },
         { name: 'format-detection', content: 'telephone=no' }
       ],
