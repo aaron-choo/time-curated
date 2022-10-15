@@ -1,10 +1,21 @@
 <template>
-  <div :id="'variant-' + item.name.toLowerCase() + ' variant-' + item.id">
-    <p>{{ item.name }}</p>
-    <div v-for="option in item.options" :key="option.id" class="inline-block">
+  <div
+    :id="
+      'variant-' +
+      variantGroup.name.toLowerCase() +
+      ' variant-' +
+      variantGroup.id
+    "
+  >
+    <p>{{ variantGroup.name }}</p>
+    <div
+      v-for="option in variantGroup.options"
+      :key="option.id"
+      class="inline-block"
+    >
       <button
-        :id="item.id + ' ' + option.id"
-        @click="selectOption(item.id, option.id)"
+        :id="variantGroup.id + ' ' + option.id"
+        @click="selectOption(variantGroup.id, option.id)"
         class="p-2 border mr-2"
       >
         {{ option.name }}
@@ -16,7 +27,8 @@
 <script>
 export default {
   props: {
-    item: { type: Object, required: true, defaultValue: {} },
+    product: { type: Object, required: true, defaultValue: {} },
+    variantGroup: { type: Object, required: true, defaultValue: {} },
     variantOption: { type: Object, required: true, defaultValue: {} },
   },
   data() {

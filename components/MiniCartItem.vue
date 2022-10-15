@@ -4,7 +4,13 @@
       <img :src="item.image.url" :alt="item.name" :title="item.name" />
     </td>
     <td>{{ item.name }}</td>
-    <td v-if="item.variation_groups">{{ item.variation_groups[0].name }}</td>
+    <!-- <pre>{{ item.selected_options[0].group_name }}</pre> -->
+    <td v-if="item.selected_options">
+      <span v-for="option in item.selected_options">
+        {{ option.group_name }}:
+        {{ option.option_name }}
+      </span>
+    </td>
     <td>{{ item.price.formatted_with_code }}</td>
     <td class="quantity-cell">
       <input

@@ -15,20 +15,19 @@
       <div>
         <div class="sticky top-8">
           <h1>{{ product.name }}</h1>
-          <!-- <p v-if="variants.length === 0">
+          <p v-if="Object.keys(variantOption).length != 0">
+            {{ variantOption }}
             {{ product.price.formatted_with_code }}
           </p>
-          <p v-if="variants.length > 0">
-            variant {{ product.price.formatted_with_code }}
-          </p> -->
-          <p>
+          <p v-if="Object.keys(variantOption).length === 0">
             {{ product.price.formatted_with_code }}
           </p>
 
           <variant-options
             v-for="variant_group in product.variant_groups"
             :key="variant_group.id"
-            :item="variant_group"
+            :product="product"
+            :variantGroup="variant_group"
             :variantOption="variantOption"
             @selectOption="variantOption = $event"
           />
@@ -67,8 +66,7 @@
               wrist. Discolouration may occur upon exposure to sweat or rain.
             </p>
           </div>
-
-          <pre>{{ JSON.stringify(product, null, 2) }}</pre>
+          <pre>{{ product.variant_groups }}</pre>
         </div>
       </div>
     </div>
