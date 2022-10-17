@@ -18,6 +18,7 @@
           <p v-if="Object.keys(variantOption).length != 0">
             {{ variantOption }}
             {{ product.price.formatted_with_code }}
+            <pre>{{ variantPrice }}</pre>
           </p>
           <p v-if="Object.keys(variantOption).length === 0">
             {{ product.price.formatted_with_code }}
@@ -29,7 +30,7 @@
             :product="product"
             :variantGroup="variant_group"
             :variantOption="variantOption"
-            @selectOption="variantOption = $event"
+            @selectOption="selectOption($event)"
           />
 
           <!-- <pre>{{ variantOption }}</pre> -->
@@ -97,6 +98,7 @@ export default {
       assets: product.assets,
       variants: product.variant_groups,
       variantOption: {},
+      variantPrice: product.price.formatted_with_symbol,
     };
   },
   data() {
@@ -112,6 +114,28 @@ export default {
   computed: {
     settings() {
       return this.$store.state.prismic.settings;
+    },
+  },
+  methods: {
+    async selectOption(option) {
+      try {
+        this.variantOption = option;
+        console.log("variantOption", this.variantOption);
+        console.log("product", this.product);
+        console.log(
+          "product variant pair",
+          this.product.id,
+          Object.keys(this.variantOption)[0]
+        );
+        this.variantPrice = await this.$commerce.products.getVariant(
+          this.product.id,
+          Object.keys(this.variantOption)[0]
+        );
+        console.log(variantPrice);
+      } catch (error) {
+        // eslint-disable-next-line
+        console.log(error);
+      }
     },
   },
 };
