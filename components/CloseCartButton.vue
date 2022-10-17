@@ -1,13 +1,7 @@
 <template>
-  <button
-    aria-label="Close Shopping bag"
-    :class="{
-      button: true,
-    }"
-    @click="setCartView"
-  >
+  <button aria-label="Close Shopping bag" @click="setCartView">
     <span class="text">
-      <font-awesome-icon :icon="['fas', 'xmark']"></font-awesome-icon>
+      <font-awesome-icon :icon="['fas', 'xmark']" class="text-lg" />
     </span>
   </button>
 </template>
