@@ -16,9 +16,9 @@
         <div class="sticky top-8">
           <h1>{{ product.name }}</h1>
           <p v-if="Object.keys(variantOption).length != 0">
-            {{ variantOption }}
-            {{ product.price.formatted_with_code }}
-            <pre>{{ variantPrice }}</pre>
+            <!-- <pre>{{variantData}}</pre>
+            {{ variantOption }} -->
+            {{ variantPrice }}
           </p>
           <p v-if="Object.keys(variantOption).length === 0">
             {{ product.price.formatted_with_code }}
@@ -30,6 +30,7 @@
             :product="product"
             :variantGroup="variant_group"
             :variantOption="variantOption"
+            :variantName="variantName"
             @selectOption="selectOption($event)"
           />
 
@@ -98,7 +99,9 @@ export default {
       assets: product.assets,
       variants: product.variant_groups,
       variantOption: {},
-      variantPrice: product.price.formatted_with_symbol,
+      variantPrice: product.price.formatted_with_code,
+      variantData: {},
+      variantName: {},
     };
   },
   data() {
@@ -119,19 +122,46 @@ export default {
   methods: {
     async selectOption(option) {
       try {
-        this.variantOption = option;
+        console.log("option", option);
+        this.variantOption[String(option[0])] = option[1];
+        this.variantName = option[2].slice(0, -2);
         console.log("variantOption", this.variantOption);
-        console.log("product", this.product);
+        console.log("variantName", this.variantName);
         console.log(
           "product variant pair",
           this.product.id,
-          Object.keys(this.variantOption)[0]
+          Object.values(this.variantOption)[0]
         );
-        this.variantPrice = await this.$commerce.products.getVariant(
-          this.product.id,
-          Object.keys(this.variantOption)[0]
+        // this.variantPrice = await this.$commerce.products.getVariant(
+        //   this.product.id,
+        //   Object.values(this.variantOption)[0]
+        // );
+        // console.log(variantPrice);
+        const url = new URL(
+          "https://api.chec.io/v1/products/" + this.product.id + "/variants"
         );
-        console.log(variantPrice);
+        const headers = {
+          "X-Authorization": process.env.NUXT_ENV_CHEC_PUBLIC_API_KEY,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        };
+        fetch(url, {
+          method: "GET",
+          headers: headers,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("data", data.data);
+            const vrntopt = Object.values(this.variantOption)[0];
+            console.log("vrntopt", vrntopt);
+            console.log("data", this.variantOption);
+            this.variantData = data.data.filter(({ sku }) =>
+              sku.includes(this.variantName)
+            );
+            console.log("variantData", this.variantData);
+            console.log(this.variantData[0].price.formatted_with_code);
+            this.variantPrice = this.variantData[0].price.formatted_with_code;
+          });
       } catch (error) {
         // eslint-disable-next-line
         console.log(error);

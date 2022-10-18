@@ -15,7 +15,7 @@
     >
       <button
         :id="variantGroup.id + ' ' + option.id"
-        @click="selectOption(variantGroup.id, option.id)"
+        @click="selectOption(variantGroup.id, option.id, option.name)"
         class="p-2 border mr-2"
       >
         {{ option.name }}
@@ -30,18 +30,19 @@ export default {
     product: { type: Object, required: true, defaultValue: {} },
     variantGroup: { type: Object, required: true, defaultValue: {} },
     variantOption: { type: Object, required: true, defaultValue: {} },
+    variantName: { type: Object, required: true, defaultValue: {} },
   },
   data() {
     return {};
   },
   methods: {
-    selectOption(group, option) {
+    selectOption(group, option, name) {
       console.log(group);
       console.log(option);
-      let x = {};
-      x[String(group)] = option;
-      console.log(x);
-      this.$emit("selectOption", x);
+      console.log(name);
+      let arr = [group, option, name];
+      console.log(arr);
+      this.$emit("selectOption", arr);
     },
   },
 };
