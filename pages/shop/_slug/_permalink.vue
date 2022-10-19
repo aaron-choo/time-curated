@@ -326,7 +326,9 @@ export default {
     await this.$nextTick();
     var thumb = new Swiper(this.$refs.productThumbnails, {
       watchSlidesProgress: true,
-      mousewheel: true,
+      mousewheel: {
+        releaseOnEdges: true,
+      },
       slidesPerView: 5,
       slidesPerGroup: 3,
       spaceBetween: 8,
