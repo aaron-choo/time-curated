@@ -83,7 +83,9 @@
                 <p
                   v-for="attribute in product.attributes"
                   v-if="
-                    attribute.value && attribute.name != 'Leather Disclaimer'
+                    attribute.value &&
+                    attribute.name != 'Leather Disclaimer' &&
+                    attribute.name != 'Colour'
                   "
                   :key="attribute.id"
                   :class="attribute.name.replace(/\s+/g, '-').toLowerCase()"
