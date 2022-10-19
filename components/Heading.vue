@@ -1,11 +1,17 @@
 <template>
   <Component
     :is="as"
-    class="font-semibold tracking-tighter"
+    class="my-2"
     :class="{
       'text-5xl md:text-[5rem]': size === '8xl',
       'text-4xl md:text-6xl': size === '6xl',
+      'text-2xl md:text-4xl': size === '4xl',
+      'text-2xl md:text-3xl': size === '3xl',
       'text-2xl': size === '2xl',
+      'text-xl': size === 'xl',
+      'text-lg': size === 'lg',
+      'text-sm': size === 'sm',
+      'text-xs': size === 'xs',
     }"
   >
     <slot />

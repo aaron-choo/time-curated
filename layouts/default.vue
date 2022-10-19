@@ -1,5 +1,5 @@
 <template>
-  <div class="text-slate-800">
+  <div>
     <!-- TODO: Remove the following element once you have read the documentation. -->
     <!-- <div
       v-if="$config.development"

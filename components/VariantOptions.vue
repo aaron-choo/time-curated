@@ -1,5 +1,6 @@
 <template>
   <div
+    class="sans-serif text-xs"
     :id="
       'variant-' +
       variantGroup.name.toLowerCase() +
@@ -7,14 +8,14 @@
       variantGroup.id
     "
   >
-    <p>{{ variantGroup.name }}</p>
+    <p class="uppercase mb-2">{{ variantGroup.name }}</p>
     <div
       v-for="option in variantGroup.options"
       :key="option.id"
       class="inline-block"
     >
       <button
-        class="btn variant-button inactive"
+        class="btn variant-button inactive mr-2"
         :id="variantGroup.id + ' ' + option.id"
         :class="checkSoldOut(option.inventory)"
         @click="selectOption(variantGroup.id, option.id, option.sku)"
@@ -52,11 +53,13 @@ export default {
         el.classList.remove("selected");
       });
       document.getElementById(group + " " + option).classList.add("selected");
-      document.getElementById("add-to-cart").classList.remove("inactive");
+      document
+        .getElementById("add-to-bag")
+        .classList.remove("variant", "inactive");
     },
     checkSoldOut(option) {
       if (option < 1) {
-        return "sold out";
+        return "sold-out";
       } else {
         return "available";
       }
@@ -64,3 +67,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+button {
+  border: 1px solid currentColor;
+}
+</style>

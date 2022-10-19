@@ -7,22 +7,85 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 12px;
 }
 
+html {
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+:root {
+    --color: #333;
+    --color-primary: #e6e6e6;
+    --color-secondary: #0e2233;
+    --bg: #fff;
+    --bg-secondary: #fff;
+    --border-color: #e4e7eb;
+    --footer-bg: #000;
+    --footer-color: #fff;
+
+}
+
+.dark-mode {
+    --color: #DDD !important;
+    --color-primary: #DDD !important;
+    --color-secondary: #DDD !important;
+    --bg: #111 !important;
+    --bg-secondary: #111 !important;
+    --border-color: #DDD !important;
+    --nextcolor: #DDD !important;
+    --nextbg: #111 !important;
+    --prevcolor: #DDD !important;
+    --prevbg: #111 !important;
+}
+
+::selection {
+    background: var(--color);
+    color: var(--bg);
+}
+
+body {
+    font-family: 'EB Garamond', serif;
+    background-color: var(--bg);
+    color: var(--color);
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+/* Typography */
+
+.sans-serif {
+    font-family: 'BW Gradual', sans-serif;
+}
+
+/* Accessibility */
+
+.screen-reader-only {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+/* buttons */
+
 button.btn {
-    border: 1px solid currentColor;
-    padding: .25em .5em;
-    margin-bottom: .25em;
-    margin-right: .25em;
+    padding: .5em 1em;
+    transition: all .3s ease;
+    border-radius: 3px;
 }
 
 button.inactive {
-    opacity: .5;
+    opacity: .35;
     pointer-events: none;
 }
 
 button.btn.selected {
-    background: black;
-    color: white;
+    background: var(--color);
+    color: var(--bg);
+    border-color: var(--color);
 }

@@ -1,6 +1,6 @@
 <template>
   <Bounded as="section">
-    <heading :as="h3">Shopping Bag</heading>
+    <heading as="h3">Shopping Bag</heading>
     <Cart />
   </Bounded>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <Bounded as="section" :collapsible="false">
-    <div class="grid grid-cols-2 gap-8">
+    <div class="grid md:grid-cols-2 gap-8">
       <div class="grid grid-cols-1 gap-4 self-start">
         <div v-for="asset in assets" :key="asset.id">
           <img
@@ -14,16 +14,20 @@
       </div>
       <div>
         <div class="sticky top-8">
-          <h1>{{ product.name }}</h1>
-          <p v-if="Object.keys(variantOption).length != 0">
-            {{ variantPrice }}
-          </p>
-          <p v-if="Object.keys(variantOption).length === 0">
-            {{ product.price.formatted_with_code }}
-          </p>
-
+          <div class="mb-4">
+            <heading as="h1" size="2xl">{{ product.name }}</heading>
+            <heading as="p" size="lg">
+              <span v-if="Object.keys(variantOption).length != 0">
+                ${{ variantPrice }}
+              </span>
+              <span v-if="Object.keys(variantOption).length === 0">
+                ${{ product.price.formatted_with_code }}
+              </span>
+            </heading>
+          </div>
           <variant-options
             v-for="variant_group in product.variant_groups"
+            class="my-4"
             :key="variant_group.id"
             :product="product"
             :variantGroup="variant_group"
@@ -31,19 +35,30 @@
             :variantSku="variantSku"
             @selectOption="selectOption($event)"
           />
-
           <!-- <pre>{{ variantOption }}</pre> -->
-
-          <AddToCartBtn
+          <p class="opacity-80 sans-serif text-xs font-thin">
+            Free registered shipping on international orders over $250 SGD
+            (Domestic orders over $100 SGD)
+          </p>
+          <AddToBagBtn
+            class="my-4"
             :class="disableAddToBag()"
             :product="product"
             :variant="variantOption"
           />
-          <hr />
-          <h2>Description</h2>
+          <heading
+            as="h2"
+            size="xs"
+            class="tracking-wider sans-serif uppercase font-medium"
+            >Description</heading
+          >
           <div v-html="product.description"></div>
-          <hr />
-          <h2>Dimensions</h2>
+          <heading
+            as="h2"
+            size="xs"
+            class="tracking-wider sans-serif uppercase font-medium"
+            >Dimensions</heading
+          >
           <div class="flex flex-col">
             <p
               v-for="attribute in product.attributes"
@@ -60,9 +75,12 @@
                 .value === true
             "
           >
-            <hr />
-
-            <h2>Note</h2>
+            <heading
+              as="h2"
+              size="xs"
+              class="tracking-wider sans-serif uppercase font-medium"
+              >Note</heading
+            >
             <p>
               Due to its handcrafted nature, the leather's colour, texture and
               dimensions may vary slightly. The leather has been carefully
@@ -177,7 +195,7 @@ export default {
     },
     disableAddToBag() {
       if (this.product.variant_groups.length > 0) {
-        return "inactive";
+        return "variant inactive";
       }
     },
   },
