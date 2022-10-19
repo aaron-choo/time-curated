@@ -14,11 +14,16 @@
       class="inline-block"
     >
       <button
+        class="btn variant-button inactive"
         :id="variantGroup.id + ' ' + option.id"
-        @click="selectOption(variantGroup.id, option.id, option.name)"
-        class="p-2 border mr-2"
+        :class="checkSoldOut(option.inventory)"
+        @click="selectOption(variantGroup.id, option.id, option.sku)"
       >
         {{ option.name }}
+        <span style="display: none">
+          {{ option.price.formatted_with_code }} {{ option.inventory }}</span
+        >
+
         <!-- <span>{{ option.price.formatted_with_code }}</span> -->
       </button>
     </div>
@@ -30,22 +35,32 @@ export default {
     product: { type: Object, required: true, defaultValue: {} },
     variantGroup: { type: Object, required: true, defaultValue: {} },
     variantOption: { type: Object, required: true, defaultValue: {} },
-    variantName: { type: Object, required: true, defaultValue: {} },
+    variantSku: { type: Object, required: true, defaultValue: {} },
   },
   data() {
     return {};
   },
   methods: {
-    selectOption(group, option, name) {
-      console.log(group);
-      console.log(option);
-      console.log(name);
-      let arr = [group, option, name];
-      console.log(arr);
+    selectOption(group, option, sku) {
+      // console.log(group);
+      // console.log(option);
+      // console.log(sku);
+      let arr = [group, option, sku];
+      // console.log(arr);
       this.$emit("selectOption", arr);
+      document.querySelectorAll(".variant-button").forEach((el) => {
+        el.classList.remove("selected");
+      });
+      document.getElementById(group + " " + option).classList.add("selected");
+      document.getElementById("add-to-cart").classList.remove("inactive");
+    },
+    checkSoldOut(option) {
+      if (option < 1) {
+        return "sold out";
+      } else {
+        return "available";
+      }
     },
   },
 };
 </script>
-<style scoped>
-</style>

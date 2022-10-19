@@ -1,7 +1,8 @@
 <template>
   <button
+    id="add-to-cart"
     :class="{
-      button: true,
+      btn: true,
     }"
     @click="addToCart"
   >
@@ -17,13 +18,13 @@ export default {
   methods: {
     async addToCart() {
       try {
-        console.log(this.variant);
+        // console.log(this.variant);
         const res = await this.$commerce.cart.add(
           this.product.id,
           1,
           this.variant
         );
-        console.log(res);
+        // console.log(res);
         this.$store.commit("setCart", res);
       } catch (error) {
         // eslint-disable-next-line

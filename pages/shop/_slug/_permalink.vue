@@ -16,8 +16,6 @@
         <div class="sticky top-8">
           <h1>{{ product.name }}</h1>
           <p v-if="Object.keys(variantOption).length != 0">
-            <!-- <pre>{{variantData}}</pre>
-            {{ variantOption }} -->
             {{ variantPrice }}
           </p>
           <p v-if="Object.keys(variantOption).length === 0">
@@ -30,13 +28,17 @@
             :product="product"
             :variantGroup="variant_group"
             :variantOption="variantOption"
-            :variantName="variantName"
+            :variantSku="variantSku"
             @selectOption="selectOption($event)"
           />
 
           <!-- <pre>{{ variantOption }}</pre> -->
 
-          <AddToCartBtn :product="product" :variant="variantOption" />
+          <AddToCartBtn
+            :class="disableAddToBag()"
+            :product="product"
+            :variant="variantOption"
+          />
           <hr />
           <h2>Description</h2>
           <div v-html="product.description"></div>
@@ -68,7 +70,7 @@
               wrist. Discolouration may occur upon exposure to sweat or rain.
             </p>
           </div>
-          <pre>{{ product.variant_groups }}</pre>
+          <!-- <pre>{{ product }}</pre> -->
         </div>
       </div>
     </div>
@@ -100,8 +102,7 @@ export default {
       variants: product.variant_groups,
       variantOption: {},
       variantPrice: product.price.formatted_with_code,
-      variantData: {},
-      variantName: {},
+      variantSku: {},
     };
   },
   data() {
@@ -119,24 +120,12 @@ export default {
       return this.$store.state.prismic.settings;
     },
   },
+  beforeMount() {
+    this.loadVariants();
+  },
   methods: {
-    async selectOption(option) {
+    async loadVariants(product) {
       try {
-        console.log("option", option);
-        this.variantOption[String(option[0])] = option[1];
-        this.variantName = option[2].slice(0, -2);
-        console.log("variantOption", this.variantOption);
-        console.log("variantName", this.variantName);
-        console.log(
-          "product variant pair",
-          this.product.id,
-          Object.values(this.variantOption)[0]
-        );
-        // this.variantPrice = await this.$commerce.products.getVariant(
-        //   this.product.id,
-        //   Object.values(this.variantOption)[0]
-        // );
-        // console.log(variantPrice);
         const url = new URL(
           "https://api.chec.io/v1/products/" + this.product.id + "/variants"
         );
@@ -151,20 +140,44 @@ export default {
         })
           .then((response) => response.json())
           .then((data) => {
-            console.log("data", data.data);
-            const vrntopt = Object.values(this.variantOption)[0];
-            console.log("vrntopt", vrntopt);
-            console.log("data", this.variantOption);
-            this.variantData = data.data.filter(({ sku }) =>
-              sku.includes(this.variantName)
-            );
-            console.log("variantData", this.variantData);
-            console.log(this.variantData[0].price.formatted_with_code);
-            this.variantPrice = this.variantData[0].price.formatted_with_code;
+            // console.log("data", data.data);
+            let sourceInfo = data.data;
+            let siteInfo = this.product.variant_groups[0].options;
+            for (let i = 0; i < sourceInfo.length; i++) {
+              siteInfo[i].price = sourceInfo[i].price;
+              siteInfo[i].inventory = sourceInfo[i].inventory;
+              siteInfo[i].sku = sourceInfo[i].sku;
+            }
+            document
+              .querySelectorAll(".variant-button.available")
+              .forEach((el) => {
+                el.classList.remove("inactive");
+              });
           });
       } catch (error) {
         // eslint-disable-next-line
         console.log(error);
+      }
+    },
+    selectOption(option) {
+      // console.log("option", option);
+      this.variantOption[String(option[0])] = option[1];
+      this.variantSku = option[2];
+      // console.log("variantOption", this.variantOption);
+      // console.log("variantSku", this.variantSku);
+      // console.log(
+      //   "product variant pair",
+      //   this.product.id,
+      //   Object.values(this.variantOption)[0]
+      // );
+      this.variantPrice = this.product.variant_groups[0].options.filter(
+        ({ sku }) => sku.includes(this.variantSku)
+      )[0].price.formatted_with_code;
+      // console.log(this.variantPrice);
+    },
+    disableAddToBag() {
+      if (this.product.variant_groups.length > 0) {
+        return "inactive";
       }
     },
   },
