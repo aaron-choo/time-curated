@@ -434,6 +434,6 @@ export default {
 .swiper-rtl .swiper-button-prev:after,
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
-  content: none;
+  content: none !important;
 }
 </style>
