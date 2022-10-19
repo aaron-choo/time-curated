@@ -1,20 +1,23 @@
 <template>
   <div
     :class="{
-      container: true,
-      cart: true,
       opened: opened,
-      shadow: true,
-      'p-4': true,
     }"
+    class="mini-cart p-4 shadow"
   >
-    <div class="px-6 py-6 has-background-light">
+    <div class="flex justify-between">
+      <heading
+        as="h2"
+        size="sm"
+        class="my-0 tracking-wider sans-serif uppercase font-medium"
+        >My Bag</heading
+      >
       <CloseCartButton />
     </div>
     <div v-if="items.length === 0" class="empty">
-      <span class="py-5">Your shopping bag is empty</span>
+      <div class="my-5">Your shopping bag is empty</div>
     </div>
-    <div v-if="items.length > 0">
+    <div v-if="items.length > 0" class="my-2">
       <MiniCartItem v-for="item in items" :key="item.id" :item="item" />
       <div class="summary pt-4">
         <div class="order-summary flex justify-between">
@@ -50,10 +53,10 @@ export default {
 </script>
 
 <style scoped>
-.cart {
+.mini-cart {
   position: absolute;
-  background: white;
-  width: 30%;
+  background: var(--bg);
+  width: 80%;
   max-width: 400px;
   top: 20px;
   right: 20px;
@@ -62,20 +65,8 @@ export default {
   opacity: 0;
   pointer-events: none;
 }
-.cart.opened {
+.mini-cart.opened {
   opacity: 1;
   pointer-events: auto;
-}
-.cart table {
-  width: 100%;
-  background: transparent;
-}
-.cart table tr td,
-.cart table tr th {
-  font-weight: 400;
-  padding: 0.5rem;
-}
-.cart table tfoot {
-  border-top: 1px solid #f5f5f5;
 }
 </style>

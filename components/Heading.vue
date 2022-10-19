@@ -1,7 +1,7 @@
 <template>
   <Component
     :is="as"
-    class="my-2"
+    class="my-2 leading-tight"
     :class="{
       'text-5xl md:text-[5rem]': size === '8xl',
       'text-4xl md:text-6xl': size === '6xl',
@@ -10,6 +10,7 @@
       'text-2xl': size === '2xl',
       'text-xl': size === 'xl',
       'text-lg': size === 'lg',
+      'text-base': size === 'base',
       'text-sm': size === 'sm',
       'text-xs': size === 'xs',
     }"
