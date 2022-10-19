@@ -97,7 +97,7 @@ export default async () => {
       htmlSerializer(type, element, content, children) {
         switch (type) {
           case 'paragraph':
-            return /* html */ `<p class="mb-7 last:mb-0">${children.join('')}</p>`
+            return /* html */ `<p class="mb-2 last:mb-0">${children.join('')}</p>`
 
           case 'group-o-list-item':
             return /* html */ `<ol class="mb-7 pl-4 last:mb-0 md:pl-6">${children.join('')}</ol>`

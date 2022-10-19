@@ -1,7 +1,7 @@
 <template>
   <Bounded as="section" :collapsible="false">
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="grid grid-cols-1 gap-4 self-start">
+    <div class="grid md:grid-cols-12 gap-8">
+      <div class="grid grid-cols-1 gap-4 self-start md:col-span-7">
         <div v-for="asset in assets" :key="asset.id">
           <img
             v-if="asset.url"
@@ -12,11 +12,13 @@
           />
         </div>
       </div>
-      <div>
+      <div class="md:col-span-5">
         <div class="sticky top-8">
-          <div class="mb-4">
-            <heading as="h1" size="2xl">{{ product.name }}</heading>
-            <heading as="p" size="lg">
+          <div class="product-summary mb-4">
+            <heading as="h1" size="2xl" class="product-title">{{
+              product.name
+            }}</heading>
+            <heading as="p" size="lg" class="product-price">
               <span v-if="Object.keys(variantOption).length != 0">
                 ${{ variantPrice }}
               </span>
@@ -27,7 +29,7 @@
           </div>
           <variant-options
             v-for="variant_group in product.variant_groups"
-            class="my-4"
+            class="variant-buttons my-4"
             :key="variant_group.id"
             :product="product"
             :variantGroup="variant_group"
@@ -35,58 +37,99 @@
             :variantSku="variantSku"
             @selectOption="selectOption($event)"
           />
-          <!-- <pre>{{ variantOption }}</pre> -->
-          <p class="opacity-80 sans-serif text-xs font-thin">
-            Free registered shipping on international orders over $250 SGD
+          <!-- <pre>{{ product }}</pre> -->
+          <BodyText
+            class="
+              free-shipping-text
+              opacity-70
+              sans-serif
+              text-xs
+              tracking-wide
+            "
+          >
+            Free registered shipping on international orders over $250 SGD<br />
             (Domestic orders over $100 SGD)
-          </p>
+          </BodyText>
           <AddToBagBtn
-            class="my-4"
-            :class="disableAddToBag()"
+            class="add-to-bag my-4"
+            :class="{
+              'inactive has-variant': hasVariant,
+              'inactive sold-out': soldOut,
+            }"
             :product="product"
             :variant="variantOption"
           />
-          <heading
-            as="h2"
-            size="xs"
-            class="tracking-wider sans-serif uppercase font-medium"
-            >Description</heading
-          >
-          <div v-html="product.description"></div>
-          <heading
-            as="h2"
-            size="xs"
-            class="tracking-wider sans-serif uppercase font-medium"
-            >Dimensions</heading
-          >
-          <div class="flex flex-col">
-            <p
-              v-for="attribute in product.attributes"
-              v-if="attribute.value && attribute.name != 'Leather Disclaimer'"
-              :key="attribute.id"
-              :class="attribute.name.replace(/\s+/g, '-').toLowerCase()"
+          <div class="product-details grid grid-cols-1 gap-4">
+            <div>
+              <heading
+                as="h2"
+                size="xs"
+                class="tracking-wider sans-serif uppercase font-medium"
+                >Description</heading
+              >
+              <div
+                v-html="product.description"
+                class="product-description-text"
+              ></div>
+            </div>
+            <div>
+              <heading
+                as="h2"
+                size="xs"
+                class="tracking-wider sans-serif uppercase font-medium"
+                >Dimensions</heading
+              >
+              <div class="flex flex-col">
+                <p
+                  v-for="attribute in product.attributes"
+                  v-if="
+                    attribute.value && attribute.name != 'Leather Disclaimer'
+                  "
+                  :key="attribute.id"
+                  :class="attribute.name.replace(/\s+/g, '-').toLowerCase()"
+                >
+                  {{ attribute.name }}: {{ attribute.value }}
+                </p>
+              </div>
+            </div>
+            <div
+              v-if="
+                product.attributes.find((x) => x.name === 'Leather Disclaimer')
+                  .value === true
+              "
             >
-              {{ attribute.name }}: {{ attribute.value }}
-            </p>
-          </div>
-          <div
-            v-if="
-              product.attributes.find((x) => x.name === 'Leather Disclaimer')
-                .value === true
-            "
-          >
-            <heading
-              as="h2"
-              size="xs"
-              class="tracking-wider sans-serif uppercase font-medium"
-              >Note</heading
-            >
-            <p>
-              Due to its handcrafted nature, the leather's colour, texture and
-              dimensions may vary slightly. The leather has been carefully
-              treated to age with wear, developing a patina unique to every
-              wrist. Discolouration may occur upon exposure to sweat or rain.
-            </p>
+              <div>
+                <heading
+                  as="h2"
+                  size="xs"
+                  class="tracking-wider sans-serif uppercase font-medium"
+                  >Note</heading
+                >
+                <BodyText>
+                  Due to its handcrafted nature, the leather's colour, texture
+                  and dimensions may vary slightly. The leather has been
+                  carefully treated to age with wear, developing a patina unique
+                  to every wrist. Discolouration may occur upon exposure to
+                  sweat or rain.
+                </BodyText>
+              </div>
+            </div>
+            <div>
+              <div>
+                <heading
+                  as="h2"
+                  size="xs"
+                  class="tracking-wider sans-serif uppercase font-medium"
+                  >SKU</heading
+                >
+                <p v-if="variantSku.length > 0">
+                  {{ variantSku }}
+                </p>
+                <p v-else>
+                  {{ product.sku }}
+                </p>
+              </div>
+            </div>
           </div>
           <!-- <pre>{{ product }}</pre> -->
         </div>
@@ -121,6 +164,8 @@ export default {
       variantOption: {},
       variantPrice: product.price.formatted_with_code,
       variantSku: {},
+      soldOut: false,
+      hasVariant: false,
     };
   },
   data() {
@@ -139,10 +184,10 @@ export default {
     },
   },
   beforeMount() {
-    this.loadVariants();
+    this.updateProduct();
   },
   methods: {
-    async loadVariants(product) {
+    async updateProduct(product) {
       try {
         const url = new URL(
           "https://api.chec.io/v1/products/" + this.product.id + "/variants"
@@ -158,19 +203,37 @@ export default {
         })
           .then((response) => response.json())
           .then((data) => {
-            // console.log("data", data.data);
-            let sourceInfo = data.data;
-            let siteInfo = this.product.variant_groups[0].options;
-            for (let i = 0; i < sourceInfo.length; i++) {
-              siteInfo[i].price = sourceInfo[i].price;
-              siteInfo[i].inventory = sourceInfo[i].inventory;
-              siteInfo[i].sku = sourceInfo[i].sku;
+            if (this.product.variant_groups.length > 0) {
+              this.hasVariant = true;
+
+              // console.log("data", data.data);
+              let sourceInfo = data.data;
+              let siteInfo = this.product.variant_groups[0].options;
+              let totalInventory = 0;
+              for (let i = 0; i < sourceInfo.length; i++) {
+                siteInfo[i].price = sourceInfo[i].price;
+                siteInfo[i].inventory = sourceInfo[i].inventory;
+                siteInfo[i].sku = sourceInfo[i].sku;
+                totalInventory += sourceInfo[i].inventory;
+                console.log("inventory", totalInventory);
+              }
+              document
+                .querySelectorAll(".variant-button.available")
+                .forEach((el) => {
+                  el.classList.remove("inactive");
+                });
+              console.log(this.hasVariant, totalInventory);
+              if (totalInventory < 1) {
+                console.log("sold out");
+                console.log(this.soldOut);
+                this.soldOut = true;
+                console.log(this.soldOut);
+              }
+            } else if (this.product.inventory.available < 1) {
+              console.log("sold", this.product.inventory.available);
+              this.soldOut = true;
             }
-            document
-              .querySelectorAll(".variant-button.available")
-              .forEach((el) => {
-                el.classList.remove("inactive");
-              });
+            console.log(this.soldOut);
           });
       } catch (error) {
         // eslint-disable-next-line
@@ -193,11 +256,12 @@ export default {
       )[0].price.formatted_with_code;
       // console.log(this.variantPrice);
     },
-    disableAddToBag() {
-      if (this.product.variant_groups.length > 0) {
-        return "variant inactive";
-      }
-    },
   },
 };
 </script>
+
+<style>
+.product-description-text > p:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+</style>

@@ -10,6 +10,7 @@
     <span v-if="product.variant_groups.length > 0" class="select-variant-text"
       >Please select {{ product.variant_groups[0].name }}</span
     >
+    <span class="sold-out-text">Sold Out</span>
     <span class="add-to-bag-text">Add to Bag</span>
   </button>
 </template>
@@ -47,6 +48,12 @@ export default {
 
 #add-to-bag.inactive .add-to-bag-text,
 #add-to-bag:not(.inactive) .select-variant-text {
+  display: none;
+}
+
+#add-to-bag:not(.sold-out) .sold-out-text,
+#add-to-bag.sold-out .add-to-bag-text,
+#add-to-bag.sold-out .select-variant-text {
   display: none;
 }
 </style>
