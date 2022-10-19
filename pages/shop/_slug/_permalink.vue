@@ -1,8 +1,129 @@
 <template>
-  <Bounded as="section" :collapsible="false">
-    <div class="grid md:grid-cols-12 gap-8">
-      <div class="grid grid-cols-1 gap-4 self-start md:col-span-7">
-        <div v-for="asset in assets" :key="asset.id">
+  <div>
+    <Bounded as="section" :collapsible="false" yPadding="sm">
+      <div class="md:grid md:grid-cols-12 md:gap-8">
+        <div class="md:col-span-7">
+          <div class="slider-container prevent-select">
+            <div
+              class="swiper product-image rounded-[3px] mb-2"
+              ref="productImages"
+            >
+              <div class="swiper-wrapper">
+                <div
+                  v-for="asset in assets"
+                  :key="asset.id"
+                  class="swiper-slide"
+                  :data-hash="asset.id"
+                >
+                  <img
+                    v-if="asset.url"
+                    :src="asset.url"
+                    :width="asset.image_dimensions.width"
+                    :height="asset.image_dimensions.height"
+                    class="product-image w-full"
+                  />
+                </div>
+              </div>
+              <div slot="pagination" class="swiper-pagination"></div>
+              <div class="image swiper-button-prev">
+                <svg
+                  class="icon icon__angle-left h-8 w-8"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.703 7.41L10.123 12l4.58 4.59-.703.703L8.707 12 14 6.707l.703.703z"
+                    fill="#000"
+                  ></path>
+                </svg>
+              </div>
+              <div class="image swiper-button-next">
+                <svg
+                  class="icon icon__angle-right h-8 w-8"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M9.297 16.59l4.58-4.59-4.58-4.59.703-.703L15.293 12 10 17.293l-.703-.703z"
+                    fill="#000"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="swiper product-image-thumbnail mb-8"
+              ref="productThumbnails"
+            >
+              <ul class="swiper-wrapper">
+                <li
+                  v-for="asset in assets"
+                  :key="asset.id"
+                  class="swiper-slide"
+                >
+                  <img
+                    v-if="asset.url"
+                    :src="asset.url"
+                    :width="asset.image_dimensions.width"
+                    :height="asset.image_dimensions.height"
+                    class="
+                      product-image-thumbnail
+                      w-full
+                      h-auto
+                      cursor-pointer
+                      rounded-[3px]
+                    "
+                  />
+                </li>
+              </ul>
+              <div slot="pagination" class="swiper-pagination"></div>
+              <div class="thumbnail swiper-button-prev">
+                <svg
+                  class="icon icon__angle-left h-8 w-8"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.703 7.41L10.123 12l4.58 4.59-.703.703L8.707 12 14 6.707l.703.703z"
+                    fill="#000"
+                  ></path>
+                </svg>
+              </div>
+              <div class="thumbnail swiper-button-next">
+                <svg
+                  class="icon icon__angle-right h-8 w-8"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M9.297 16.59l4.58-4.59-4.58-4.59.703-.703L15.293 12 10 17.293l-.703-.703z"
+                    fill="#000"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div v-for="asset in assets" :key="asset.id">
           <img
             v-if="asset.url"
             :src="asset.url"
@@ -10,10 +131,9 @@
             :height="asset.image_dimensions.height"
             class="w-full"
           />
+        </div> -->
         </div>
-      </div>
-      <div class="md:col-span-5">
-        <div class="sticky top-8">
+        <div class="md:col-span-5">
           <div class="product-summary mb-4">
             <heading as="h1" size="2xl" class="product-title">{{
               product.name
@@ -136,18 +256,32 @@
           <!-- <pre>{{ product }}</pre> -->
         </div>
       </div>
-    </div>
-    <div>
-      <h2>Shipping Information</h2>
-      <prismic-rich-text :field="settings.data.shipping_information" />
-      <h2>Return Policy</h2>
-      <prismic-rich-text :field="settings.data.return_policy" />
-      <!-- <pre>{{ this.settings }}</pre> -->
-    </div>
+    </Bounded>
+    <bounded as="section">
+      <div>
+        <heading
+          as="h2"
+          size="xs"
+          class="tracking-wider sans-serif uppercase font-medium"
+          >Shipping Information</heading
+        >
+        <prismic-rich-text :field="settings.data.shipping_information" />
+        <heading
+          as="h2"
+          size="xs"
+          class="tracking-wider sans-serif uppercase font-medium"
+          >Return Policy</heading
+        >
+        <prismic-rich-text :field="settings.data.return_policy" />
+        <!-- <pre>{{ this.settings }}</pre> -->
+      </div>
+    </bounded>
     <SliceZone :slices="page.data.slices" :components="components" />
-  </Bounded>
+  </div>
 </template>
 <script>
+import Swiper from "swiper/swiper-bundle.min";
+import "swiper/swiper-bundle.min.css";
 import { components } from "~/slices";
 export default {
   async asyncData({ $prismic, store, i18n, params, $commerce }) {
@@ -187,6 +321,35 @@ export default {
   },
   beforeMount() {
     this.updateProduct();
+  },
+  async mounted() {
+    await this.$nextTick();
+    var thumb = new Swiper(this.$refs.productThumbnails, {
+      watchSlidesProgress: true,
+      mousewheel: true,
+      slidesPerView: 5,
+      slidesPerGroup: 3,
+      spaceBetween: 8,
+      navigation: {
+        nextEl: ".thumbnail.swiper-button-next",
+        prevEl: ".thumbnail.swiper-button-prev",
+      },
+    });
+    new Swiper(this.$refs.productImages, {
+      loop: true,
+      spaceBetween: 8,
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      navigation: {
+        nextEl: ".image.swiper-button-next",
+        prevEl: ".image.swiper-button-prev",
+      },
+      thumbs: {
+        swiper: thumb,
+      },
+    });
   },
   methods: {
     async updateProduct(product) {
@@ -265,5 +428,12 @@ export default {
 <style>
 .product-description-text > p:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after,
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: none;
 }
 </style>

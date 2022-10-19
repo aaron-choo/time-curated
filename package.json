@@ -19,7 +19,8 @@
     "@fontsource/inter": "^4.5.13",
     "@fontsource/libre-baskerville": "^4.5.10",
     "flag-icons": "^6.6.6",
-    "nuxt": "^2.15.8"
+    "nuxt": "^2.15.8",
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.2.0",

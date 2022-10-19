@@ -8,7 +8,7 @@
       'py-20 md:py-32': yPadding === 'base',
     }"
   >
-    <div class="mx-auto w-full max-w-6xl">
+    <div class="mx-auto w-full max-w-7xl">
       <slot />
     </div>
   </Component>
@@ -19,16 +19,16 @@ export default {
   props: {
     as: {
       type: [String, Object, Function],
-      default: 'div'
+      default: "div",
     },
     yPadding: {
       type: String,
-      default: 'base'
+      default: "sm",
     },
     collapsible: {
       type: Boolean,
-      default: true
-    }
-  }
-}
+      default: true,
+    },
+  },
+};
 </script>
