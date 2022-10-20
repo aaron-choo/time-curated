@@ -2,30 +2,26 @@
   <div>
     <Bounded as="section" :collapsible="false" yPadding="sm">
       <div class="md:grid md:grid-cols-12 md:gap-8">
-        <div class="md:col-span-7">
+        <div class="md:col-span-7 mb-8">
           <div class="slider-container prevent-select">
-            <div
-              class="swiper product-image rounded-[3px] mb-2"
-              ref="productImages"
-            >
+            <div class="swiper product-image mb-2" ref="productImages">
               <div class="swiper-wrapper">
                 <div
                   v-for="asset in assets"
                   :key="asset.id"
                   class="swiper-slide"
-                  :data-hash="asset.id"
                 >
                   <img
                     v-if="asset.url"
                     :src="asset.url"
                     :width="asset.image_dimensions.width"
                     :height="asset.image_dimensions.height"
-                    class="product-image w-full"
+                    class="product-image w-full rounded-[3px]"
                   />
                 </div>
               </div>
-              <div slot="pagination" class="swiper-pagination"></div>
-              <div class="image swiper-button-prev">
+              <div class="image swiper-pagination md:hidden"></div>
+              <!-- <div class="image swiper-button-prev">
                 <svg
                   class="icon icon__angle-left h-8 w-8"
                   viewBox="0 0 24 24"
@@ -58,10 +54,10 @@
                     fill="#000"
                   ></path>
                 </svg>
-              </div>
+              </div> -->
             </div>
             <div
-              class="swiper product-image-thumbnail mb-8"
+              class="swiper product-image-thumbnail hidden md:block"
               ref="productThumbnails"
             >
               <ul class="swiper-wrapper">
@@ -85,8 +81,7 @@
                   />
                 </li>
               </ul>
-              <div slot="pagination" class="swiper-pagination"></div>
-              <div class="thumbnail swiper-button-prev">
+              <!-- <div class="thumbnail swiper-button-prev">
                 <svg
                   class="icon icon__angle-left h-8 w-8"
                   viewBox="0 0 24 24"
@@ -119,7 +114,8 @@
                     fill="#000"
                   ></path>
                 </svg>
-              </div>
+              </div> -->
+              <div class="swiper-scrollbar"></div>
             </div>
           </div>
 
@@ -180,11 +176,35 @@
             :variant="variantOption"
           />
           <div class="product-details grid grid-cols-1 gap-4">
-            <div>
+            <content-tabs :tabList="productDescription">
+              <template v-slot:tabPanel-1>
+                <div
+                  v-html="product.description"
+                  class="product-description-text"
+                ></div>
+              </template>
+              <template v-slot:tabPanel-2>
+                <div class="flex flex-col">
+                  <p
+                    v-for="attribute in product.attributes"
+                    v-if="
+                      attribute.value &&
+                      attribute.name != 'Leather Disclaimer' &&
+                      attribute.name != 'Colour'
+                    "
+                    :key="attribute.id"
+                    :class="attribute.name.replace(/\s+/g, '-').toLowerCase()"
+                  >
+                    {{ attribute.name }}: {{ attribute.value }}
+                  </p>
+                </div>
+              </template>
+            </content-tabs>
+            <!-- <div>
               <heading
                 as="h2"
                 size="xs"
-                class="tracking-wider sans-serif uppercase font-medium"
+                class="tracking-wider sans-serif uppercase font-semibold"
                 >Description</heading
               >
               <div
@@ -196,8 +216,8 @@
               <heading
                 as="h2"
                 size="xs"
-                class="tracking-wider sans-serif uppercase font-medium"
-                >Dimensions</heading
+                class="tracking-wider sans-serif uppercase font-semibold"
+                >Specifications</heading
               >
               <div class="flex flex-col">
                 <p
@@ -213,7 +233,7 @@
                   {{ attribute.name }}: {{ attribute.value }}
                 </p>
               </div>
-            </div>
+            </div> -->
             <div
               v-if="
                 product.attributes.find((x) => x.name === 'Leather Disclaimer')
@@ -224,7 +244,7 @@
                 <heading
                   as="h2"
                   size="xs"
-                  class="tracking-wider sans-serif uppercase font-medium"
+                  class="tracking-wider sans-serif uppercase font-semibold"
                   >Note</heading
                 >
                 <BodyText>
@@ -241,7 +261,7 @@
                 <heading
                   as="h2"
                   size="xs"
-                  class="tracking-wider sans-serif uppercase font-medium"
+                  class="tracking-wider sans-serif uppercase font-semibold"
                   >SKU</heading
                 >
                 <p v-if="variantSku.length > 0">
@@ -258,23 +278,30 @@
       </div>
     </Bounded>
     <bounded as="section">
-      <div>
+      <content-tabs :tabList="shopInfo">
+        <template v-slot:tabPanel-1>
+          <prismic-rich-text :field="settings.data.shipping_information" />
+        </template>
+        <template v-slot:tabPanel-2>
+          <prismic-rich-text :field="settings.data.return_policy" />
+        </template>
+      </content-tabs>
+      <!-- <div>
         <heading
           as="h2"
           size="xs"
-          class="tracking-wider sans-serif uppercase font-medium"
+          class="tracking-wider sans-serif uppercase font-semibold"
           >Shipping Information</heading
         >
         <prismic-rich-text :field="settings.data.shipping_information" />
         <heading
           as="h2"
           size="xs"
-          class="tracking-wider sans-serif uppercase font-medium"
+          class="tracking-wider sans-serif uppercase font-semibold"
           >Return Policy</heading
         >
         <prismic-rich-text :field="settings.data.return_policy" />
-        <!-- <pre>{{ this.settings }}</pre> -->
-      </div>
+      </div> -->
     </bounded>
     <SliceZone :slices="page.data.slices" :components="components" />
   </div>
@@ -305,7 +332,11 @@ export default {
     };
   },
   data() {
-    return { components };
+    return {
+      components,
+      productDescription: ["Description", "Specifications"],
+      shopInfo: ["Shipping Information", "Return Policy"],
+    };
   },
   head() {
     return {
@@ -332,9 +363,10 @@ export default {
       slidesPerView: 5,
       slidesPerGroup: 3,
       spaceBetween: 8,
-      navigation: {
-        nextEl: ".thumbnail.swiper-button-next",
-        prevEl: ".thumbnail.swiper-button-prev",
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+        hide: true,
       },
     });
     new Swiper(this.$refs.productImages, {
@@ -344,12 +376,21 @@ export default {
         enabled: true,
         onlyInViewport: true,
       },
+      mousewheel: {
+        releaseOnEdges: true,
+        forceToAxis: true,
+      },
       navigation: {
         nextEl: ".image.swiper-button-next",
         prevEl: ".image.swiper-button-prev",
       },
       thumbs: {
         swiper: thumb,
+      },
+      pagination: {
+        el: ".image.swiper-pagination",
+        type: "bullets",
+        clickable: true,
       },
     });
   },
@@ -437,5 +478,16 @@ export default {
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
   content: none !important;
+}
+.image.swiper-pagination {
+  position: relative;
+  bottom: -5px;
+}
+.swiper-pagination-bullet {
+  background: var(--color);
+  width: 6px;
+  height: 6px;
+  margin: 0 4px;
+  transition: all 0.3s ease;
 }
 </style>
