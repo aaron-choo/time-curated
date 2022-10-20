@@ -1,7 +1,7 @@
 <template>
   <button
     id="add-to-bag"
-    class="w-full uppercase sans-serif"
+    class="w-full uppercase sans-serif hover:opacity-80 font-medium"
     :class="{
       btn: true,
     }"

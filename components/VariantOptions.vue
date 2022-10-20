@@ -8,14 +8,14 @@
       variantGroup.id
     "
   >
-    <p class="uppercase mb-2">{{ variantGroup.name }}</p>
+    <p class="uppercase mb-2 font-semibold">{{ variantGroup.name }}</p>
     <div
       v-for="option in variantGroup.options"
       :key="option.id"
       class="inline-block"
     >
       <button
-        class="btn variant-button inactive mr-2"
+        class="btn variant-button inactive mr-2 hover:opacity-80"
         :id="variantGroup.id + ' ' + option.id"
         :class="checkSoldOut(option.inventory)"
         @click="selectOption(variantGroup.id, option.id, option.sku)"

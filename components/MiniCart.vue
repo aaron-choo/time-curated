@@ -3,7 +3,7 @@
     :class="{
       opened: opened,
     }"
-    class="mini-cart p-4 shadow"
+    class="mini-cart p-6 shadow"
   >
     <div class="flex justify-between">
       <heading
@@ -15,19 +15,23 @@
       <CloseCartButton />
     </div>
     <div v-if="items.length === 0" class="empty">
-      <div class="my-5">Your shopping bag is empty</div>
+      <div class="my-4">Your shopping bag is empty</div>
     </div>
-    <div v-if="items.length > 0" class="my-2">
+    <div v-if="items.length > 0" class="mt-2">
       <MiniCartItem v-for="item in items" :key="item.id" :item="item" />
-      <div class="summary pt-4">
-        <div class="order-summary flex justify-between">
+      <div class="summary">
+        <div class="order-summary flex justify-between py-4">
           <span>Total</span>
           <span>${{ cartSubtotal }}</span>
         </div>
-        <nuxt-link to="/bag" class="block button">Go to shopping bag</nuxt-link>
-        <a :href="checkoutUrl">
+        <nuxt-link to="/bag">
+          <button id="go-to-bag" class="btn w-full uppercase sans-serif">
+            Go to Shopping Bag
+          </button>
+        </nuxt-link>
+        <!-- <a :href="checkoutUrl">
           <button class="button is-success">Check out</button>
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
@@ -68,5 +72,10 @@ export default {
 .mini-cart.opened {
   opacity: 1;
   pointer-events: auto;
+}
+
+#go-to-bag {
+  background: var(--color);
+  color: var(--bg);
 }
 </style>
