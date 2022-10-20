@@ -1031,10 +1031,20 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@fontsource/inter@^4.5.13":
-  version "4.5.13"
-  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.13.tgz#db4b0177992091816962c4a4a24b1e060cc750bf"
-  integrity sha512-nABtF6jNZZHrotLRiGBByhG7NKJGJHgMbX5W8v6C/7nSdyiWtMRfZX7AMIECDLYGUOEArZDeVO/SbkgwKLrLJw==
+"@fontsource/eb-garamond@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/eb-garamond/-/eb-garamond-4.5.10.tgz#4c75b2a0905ae9f2fdb572261a296af3a210833a"
+  integrity sha512-smk/GMWjIN6+v/d1o+2GAtUh2OceHe4R7xrPX7UD8EZ36ndOaJWJlh48mwh+Yh6MN6Mr3QIu/LYOspVcUw2Zsg==
+
+"@fontsource/im-fell-english@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@fontsource/im-fell-english/-/im-fell-english-4.5.8.tgz#96048a1a66b49fb2ff6e1b9c83c273057938a3ec"
+  integrity sha512-nmdgV6SBO6jDZtfgyTQi8/mfyom3dChCQl9QF1rZwTFWl8ryfraJ5uAwnudZOc4yFlj2H0PURfWWKL5WWpX3bw==
+
+"@fontsource/inter@^4.5.14":
+  version "4.5.14"
+  resolved "https://registry.yarnpkg.com/@fontsource/inter/-/inter-4.5.14.tgz#3944b809aa7bf27dacd20bdc04a49fb738959724"
+  integrity sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q==
 
 "@fontsource/libre-baskerville@^4.5.10":
   version "4.5.10"

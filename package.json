@@ -16,7 +16,9 @@
   },
   "dependencies": {
     "@chec/commerce.js": "^2.8.0",
-    "@fontsource/inter": "^4.5.13",
+    "@fontsource/eb-garamond": "^4.5.10",
+    "@fontsource/im-fell-english": "^4.5.8",
+    "@fontsource/inter": "^4.5.14",
     "@fontsource/libre-baskerville": "^4.5.10",
     "flag-icons": "^6.6.6",
     "nuxt": "^2.15.8",

@@ -59,10 +59,17 @@ export default async () => {
     css: [
       '@/styles/global.css',
       '@fontsource/inter/400.css',
+      '@fontsource/inter/500.css',
       '@fontsource/inter/600.css',
+      '@fontsource/inter/700.css',
       '@fontsource/libre-baskerville/400.css',
       '@fontsource/libre-baskerville/400-italic.css',
       '@fontsource/libre-baskerville/700.css',
+      '@fontsource/eb-garamond/400.css',
+      '@fontsource/eb-garamond/400-italic.css',
+      '@fontsource/eb-garamond/700.css',
+      '@fontsource/eb-garamond/700-italic.css',
+      '@fontsource/im-fell-english',
       'flag-icons/css/flag-icons.css',
       '@/assets/css/main.css'
     ],
