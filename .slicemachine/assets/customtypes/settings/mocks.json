@@ -14,7 +14,7 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Courage",
+        "text": "Count",
         "spans": []
       }
     ],
@@ -25,33 +25,44 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da"
+      "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
     },
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Aliqua occaecat in deserunt officia.",
+        "text": "Ullamco et duis et nulla officia proident sunt laboris culpa exercitation aliquip fugiat qui proident.",
         "spans": []
       }
     ],
     "newsletterDisclaimer": [
       {
         "type": "paragraph",
-        "text": "Pariatur ad laborum magna anim duis eu.",
+        "text": "Est nostrud qui laborum exercitation sint laborum sunt sint ipsum ex mollit anim sunt Lorem eiusmod. Culpa tempor ut minim laborum ullamco sit fugiat ad. Ipsum consequat nulla non quis.",
         "spans": []
       }
     ],
+    "description_label": "dollar",
+    "specifications_label": "easy",
+    "free_shipping_text": [
+      {
+        "type": "paragraph",
+        "text": "Minim enim culpa amet aliqua enim commodo enim amet ullamco laborum.",
+        "spans": []
+      }
+    ],
+    "shipping_information_label": "met",
     "shipping_information": [
       {
         "type": "paragraph",
-        "text": "Et cillum ut nostrud pariatur aliqua consectetur duis laboris nostrud nisi.",
+        "text": "Ut ex reprehenderit fugiat veniam qui dolor do reprehenderit fugiat cupidatat minim tempor reprehenderit velit. Adipisicing consectetur culpa minim esse. Veniam ex laborum voluptate id in in tempor voluptate ad culpa.",
         "spans": []
       }
     ],
+    "return_policy_label": "west",
     "return_policy": [
       {
         "type": "paragraph",
-        "text": "Cupidatat qui laborum reprehenderit ipsum aliquip velit. Irure irure ut ad. Sint aute officia labore proident incididunt proident exercitation sit nulla.",
+        "text": "Non officia laborum aute magna exercitation velit labore cillum minim sint elit amet aliqua. Aute duis ut enim minim amet amet. Ad pariatur eiusmod adipisicing adipisicing cupidatat nisi tempor ipsum laboris.",
         "spans": []
       }
     ]

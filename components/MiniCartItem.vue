@@ -150,13 +150,16 @@
       <div class="sans-serif text-xs uppercase my-2">
         <div v-if="item.selected_options">
           <div v-for="option in item.selected_options" class="grid grid-cols-2">
-            <span>{{ option.group_name }}</span>
+            <span v-if="option.group_name === 'Lug Width'">
+              {{ $t("lugWidth") }}
+            </span>
+            <span v-else>{{ option.group_name }}</span>
             <span>{{ option.option_name }}</span>
           </div>
         </div>
 
         <div class="item-quantity grid grid-cols-2">
-          <span>Quantity</span>
+          <span>{{ $t("quantity") }}</span>
           <span>{{ item.quantity }}</span>
           <!-- <input
             v-model.number="quantity"

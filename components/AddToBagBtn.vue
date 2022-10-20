@@ -1,17 +1,24 @@
 <template>
   <button
     id="add-to-bag"
-    class="w-full uppercase sans-serif hover:opacity-80 font-medium"
+    class="w-full uppercase sans-serif hover:opacity-80 font-medium inactive"
     :class="{
       btn: true,
     }"
     @click="addToBag"
   >
-    <span v-if="product.variant_groups.length > 0" class="select-variant-text"
-      >Please select {{ product.variant_groups[0].name }}</span
+    <span
+      v-if="product.variant_groups.length > 0"
+      v-for="variantGroup in product.variant_groups"
+      :key="variantGroup.id"
+      class="select-variant-text"
     >
-    <span class="sold-out-text">Sold Out</span>
-    <span class="add-to-bag-text">Add to Bag</span>
+      {{ $t("pleaseSelect") }}
+      <span v-if="variantGroup.name === 'Lug Width'">{{ $t("lugWidth") }}</span>
+      <span v-else>{{ variantGroup.name }}</span>
+    </span>
+    <span class="sold-out-text">{{ $t("soldOut") }}</span>
+    <span class="add-to-bag-text">{{ $t("addToBag") }}</span>
   </button>
 </template>
 <script>
@@ -46,11 +53,9 @@ export default {
   color: var(--bg);
 }
 
-#add-to-bag.inactive .add-to-bag-text,
-#add-to-bag:not(.inactive) .select-variant-text {
-  display: none;
-}
-
+#add-to-bag.inactive.has-variant .add-to-bag-text,
+#add-to-bag:not(.has-variant) .select-variant-text,
+#add-to-bag.has-variant:not(.inactive) .select-variant-text,
 #add-to-bag:not(.sold-out) .sold-out-text,
 #add-to-bag.sold-out .add-to-bag-text,
 #add-to-bag.sold-out .select-variant-text {

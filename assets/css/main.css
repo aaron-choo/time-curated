@@ -50,7 +50,7 @@ html {
 }
 
 body {
-    font-family: 'EB Garamond', serif;
+    font-family: 'EB Garamond', 'Noto Serif SC', serif;
     background-color: var(--bg);
     color: var(--color);
     transition: background-color 0.3s ease;
@@ -60,7 +60,7 @@ body {
 /* Typography */
 
 .sans-serif {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
 }
 
 h1,

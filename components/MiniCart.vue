@@ -21,12 +21,12 @@
       <MiniCartItem v-for="item in items" :key="item.id" :item="item" />
       <div class="summary">
         <div class="order-summary flex justify-between py-4">
-          <span>Total</span>
+          <span>{{ $t("total") }}</span>
           <span>${{ cartSubtotal }}</span>
         </div>
-        <nuxt-link to="/bag">
+        <nuxt-link :to="localePath('/bag')">
           <button id="go-to-bag" class="btn w-full uppercase sans-serif">
-            Go to Shopping Bag
+            {{ $t("goToBag") }}
           </button>
         </nuxt-link>
         <!-- <a :href="checkoutUrl">

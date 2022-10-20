@@ -8,7 +8,13 @@
         }"
       > -->
       <n-link
-        :to="'/shop/' + product.categories[0].slug + '/' + product.permalink"
+        :to="
+          localePath('/shop/') +
+          '/' +
+          product.categories[0].slug +
+          '/' +
+          product.permalink
+        "
       >
         <product-view :product="product"></product-view
       ></n-link>

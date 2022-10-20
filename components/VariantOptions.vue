@@ -8,7 +8,13 @@
       variantGroup.id
     "
   >
-    <p class="uppercase mb-2 font-semibold">{{ variantGroup.name }}</p>
+    <p
+      v-if="variantGroup.name === 'Lug Width'"
+      class="uppercase mb-2 font-semibold"
+    >
+      {{ $t("lugWidth") }}
+    </p>
+    <p v-else class="uppercase mb-2 font-semibold">{{ variantGroup.name }}</p>
     <div
       v-for="option in variantGroup.options"
       :key="option.id"

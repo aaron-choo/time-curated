@@ -154,7 +154,9 @@
             @selectOption="selectOption($event)"
           />
           <!-- <pre>{{ product }}</pre> -->
-          <BodyText
+
+          <prismic-rich-text
+            :field="settings.data.free_shipping_text"
             class="
               free-shipping-text
               opacity-70
@@ -162,10 +164,8 @@
               text-xs
               tracking-wide
             "
-          >
-            Free registered shipping on international orders over $250 SGD<br />
-            (Domestic orders over $100 SGD)
-          </BodyText>
+          />
+
           <AddToBagBtn
             class="add-to-bag my-4"
             :class="{
@@ -245,14 +245,10 @@
                   as="h2"
                   size="xs"
                   class="tracking-wider sans-serif uppercase font-semibold"
-                  >Note</heading
+                  >{{ $t("note") }}</heading
                 >
                 <BodyText>
-                  Due to its handcrafted nature, the leather's colour, texture
-                  and dimensions may vary slightly. The leather has been
-                  carefully treated to age with wear, developing a patina unique
-                  to every wrist. Discolouration may occur upon exposure to
-                  sweat or rain.
+                  {{ $t("leatherDisclaimer") }}
                 </BodyText>
               </div>
             </div>
@@ -314,13 +310,13 @@ export default {
   async asyncData({ $prismic, store, i18n, params, $commerce }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("page", "product", { lang });
-    await store.dispatch("prismic/load", { lang, page });
     const { permalink } = params;
     const product = await $commerce.products.retrieve(permalink, {
       type: "permalink",
     });
+    await store.dispatch("prismic/load", { params, lang, page });
     return {
-      product,
+      product: product,
       page: page,
       assets: product.assets,
       variants: product.variant_groups,
@@ -334,8 +330,14 @@ export default {
   data() {
     return {
       components,
-      productDescription: ["Description", "Specifications"],
-      shopInfo: ["Shipping Information", "Return Policy"],
+      productDescription: [
+        this.$store.state.prismic.settings.data.description_label,
+        this.$store.state.prismic.settings.data.specifications_label,
+      ],
+      shopInfo: [
+        this.$store.state.prismic.settings.data.shipping_information_label,
+        this.$store.state.prismic.settings.data.return_policy_label,
+      ],
     };
   },
   head() {
@@ -355,7 +357,7 @@ export default {
   },
   async mounted() {
     await this.$nextTick();
-    var thumb = new Swiper(this.$refs.productThumbnails, {
+    let thumb = new Swiper(this.$refs.productThumbnails, {
       watchSlidesProgress: true,
       mousewheel: {
         releaseOnEdges: true,
