@@ -20,7 +20,7 @@
       </NuxtLink>
     </div>
     <nav class="site-navigation">
-      <ul class="flex flex-wrap gap-6 md:gap-10">
+      <ul class="flex flex-wrap items-center gap-6 md:gap-10">
         <li
           v-for="item in navigation.data.links"
           :key="$prismic.asText(item.label)"
