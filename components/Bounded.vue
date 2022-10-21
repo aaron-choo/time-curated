@@ -6,6 +6,7 @@
     :class="{
       'py-8 md:py-10': yPadding === 'sm',
       'py-20 md:py-32': yPadding === 'base',
+      'secondary-background': secondaryBackground,
     }"
   >
     <div class="mx-auto w-full max-w-7xl">
@@ -29,6 +30,15 @@ export default {
       type: Boolean,
       default: true,
     },
+    secondaryBackground: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
+<style scoped>
+.secondary-background {
+  background: var(--bg-secondary);
+}
+</style>
