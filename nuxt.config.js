@@ -99,7 +99,7 @@ export default async () => {
             quantity: 'Quantity',
             total: 'Total',
             goToBag: 'Go to Shopping Bag',
-            note: "Note",
+            note: 'Note',
             leatherDisclaimer: "Due to its handcrafted nature, the leather's colour, texture and dimensions may vary slightly. The leather has been carefully treated to age with wear, developing a patina unique to every wrist. Discolouration may occur upon exposure to sweat or rain."
           },
           fr: {
@@ -121,13 +121,15 @@ export default async () => {
             quantity: '数量',
             total: '合计',
             goToBag: '购物袋',
-            note: "注意",
-            leatherDisclaimer: "由于其手工制作的性质，皮革的颜色、纹理和尺寸可能略有不同。皮革经过精心处理，随着磨损而老化，形成每个手腕特有的铜锈。暴露在汗水或雨水中，可能会出现变色。"
+            note: '注意',
+            leatherDisclaimer: '由于其手工制作的性质，皮革的颜色、纹理和尺寸可能略有不同。皮革经过精心处理，随着磨损而老化，形成每个手腕特有的铜锈。暴露在汗水或雨水中，可能会出现变色。'
           }
         }
       }
     },
-
+    loading: {
+      color: 'var(--color)'
+    },
     prismic: {
       endpoint: sm.apiEndpoint,
       modern: true,
