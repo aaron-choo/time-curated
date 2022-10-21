@@ -273,7 +273,7 @@
         </div>
       </div>
     </Bounded>
-    <bounded as="section">
+    <bounded as="section" yPadding="sm" :secondaryBackground="true">
       <content-tabs :tabList="shopInfo">
         <template v-slot:tabPanel-1>
           <prismic-rich-text :field="settings.data.shipping_information" />
