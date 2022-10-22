@@ -13,16 +13,17 @@ export default {
   async asyncData({ $prismic, store, i18n, $commerce }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("page", "shop", { lang });
-    const products = await $prismic.api.query(
-      $prismic.predicates.at("document.type", "product"),
-      { lang: lang, orderings: "[my.product.date desc]", pageSize: 24 }
-    );
-
     await store.dispatch("prismic/load", { lang, page });
+
+    const merchant = await $commerce.merchants.about();
+    const { data: categories } = await $commerce.categories.list();
+    const { data: products } = await $commerce.products.list();
 
     return {
       page,
-      products: products.results,
+      merchant,
+      categories,
+      products,
     };
   },
   data() {

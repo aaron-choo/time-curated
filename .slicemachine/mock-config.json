@@ -56,6 +56,12 @@
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
+      },
+      "free_shipping_text": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
       }
     },
     "products": {
@@ -71,6 +77,16 @@
           "blocks": 1
         }
       }
+    },
+    "product": {
+      "images": {},
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "lug_width": {}
     }
   },
   "slices": {

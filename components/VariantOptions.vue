@@ -1,37 +1,19 @@
 <template>
-  <div
-    class="sans-serif text-xs"
-    :id="
-      'variant-' +
-      variantGroup.name.toLowerCase() +
-      ' variant-' +
-      variantGroup.id
-    "
-  >
-    <p
-      v-if="variantGroup.name === 'Lug Width'"
-      class="uppercase mb-2 font-semibold"
-    >
-      {{ $t("lugWidth") }}
+  <div class="sans-serif text-xs">
+    <p class="uppercase mb-2 font-semibold">
+      {{ settings.data.lug_width_text }}
     </p>
-    <p v-else class="uppercase mb-2 font-semibold">{{ variantGroup.name }}</p>
     <div
-      v-for="option in variantGroup.options"
-      :key="option.id"
+      v-for="(variant, index) in variation"
+      :key="index"
       class="inline-block"
     >
       <button
         class="btn variant-button inactive mr-2 hover:opacity-80"
-        :id="variantGroup.id + ' ' + option.id"
-        :class="checkSoldOut(option.inventory)"
-        @click="selectOption(variantGroup.id, option.id, option.sku)"
+        :id="variant.name"
+        @click="selectOption(variant.name, variant.image)"
       >
-        {{ option.name }}
-        <span style="display: none">
-          {{ option.price.formatted_with_code }} {{ option.inventory }}</span
-        >
-
-        <!-- <span>{{ option.price.formatted_with_code }}</span> -->
+        {{ variant.name }}
       </button>
     </div>
   </div>
@@ -39,20 +21,19 @@
 <script>
 export default {
   props: {
+    settings: { type: Object, required: true, defaultValue: {} },
     product: { type: Object, required: true, defaultValue: {} },
-    variantGroup: { type: Object, required: true, defaultValue: {} },
-    variantOption: { type: Object, required: true, defaultValue: {} },
-    variantSku: { type: Object, required: true, defaultValue: {} },
+    variation: { type: Object, required: true, defaultValue: {} },
   },
   data() {
     return {};
   },
   methods: {
-    selectOption(group, option, sku) {
+    selectOption(group, option) {
       // console.log(group);
       // console.log(option);
       // console.log(sku);
-      let arr = [group, option, sku];
+      let arr = [group, option];
       // console.log(arr);
       this.$emit("selectOption", arr);
       document.querySelectorAll(".variant-button").forEach((el) => {
@@ -62,13 +43,6 @@ export default {
       document
         .getElementById("add-to-bag")
         .classList.remove("variant", "inactive");
-    },
-    checkSoldOut(option) {
-      if (option < 1) {
-        return "sold-out";
-      } else {
-        return "available";
-      }
     },
   },
 };

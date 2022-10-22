@@ -48,7 +48,7 @@
           </PrismicLink>
         </li>
         <li>
-          <MiniCartButton />
+          <CartButton />
         </li>
       </ul>
     </nav>
@@ -75,7 +75,7 @@ export default {
 </script>
 <style scoped>
 .language-switcher.en-us::before {
-  content: "English";
+  content: "En";
 }
 .language-switcher.zh-cn::before {
   content: "中文";

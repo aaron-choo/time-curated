@@ -1,23 +1,13 @@
 <template>
   <button
     id="add-to-bag"
-    class="
-      snipcart-add-item
-      btn
-      w-full
-      my-4
-      uppercase
-      sans-serif
-      hover:opacity-80
-      font-medium
-    "
-    :data-item-id="product.uid"
-    :data-item-price="product.data.price"
-    :data-item-description="product.data.description.text"
-    :data-item-image="product.data.images[0].image.url"
-    :data-item-name="product.data.title"
+    class="w-full uppercase sans-serif hover:opacity-80 font-medium inactive"
+    :class="{
+      btn: true,
+    }"
+    @click="addToBag"
   >
-    <!-- <span
+    <span
       v-if="product.variant_groups.length > 0"
       v-for="variantGroup in product.variant_groups"
       :key="variantGroup.id"
@@ -26,16 +16,33 @@
       {{ $t("pleaseSelect") }}
       <span v-if="variantGroup.name === 'Lug Width'">{{ $t("lugWidth") }}</span>
       <span v-else>{{ variantGroup.name }}</span>
-    </span> -->
-    <span class="sold-out-text">{{ settings.data.sold_out_text }}</span>
-    <span class="add-to-bag-text">{{ settings.data.add_to_bag_text }}</span>
+    </span>
+    <span class="sold-out-text">{{ $t("soldOut") }}</span>
+    <span class="add-to-bag-text">{{ $t("addToBag") }}</span>
   </button>
 </template>
 <script>
 export default {
   props: {
     product: { type: Object, required: true, defaultValue: {} },
-    settings: { type: Object, required: true, defaultValue: {} },
+    variant: { type: Object, required: true, defaultValue: {} },
+  },
+  methods: {
+    async addToBag() {
+      try {
+        // console.log(this.variant);
+        const res = await this.$commerce.cart.add(
+          this.product.id,
+          1,
+          this.variant
+        );
+        // console.log(res);
+        this.$store.commit("setCart", res);
+      } catch (error) {
+        // eslint-disable-next-line
+        console.log(error);
+      }
+    },
   },
 };
 </script>

@@ -31,12 +31,22 @@ export default async () => {
     },
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-    buildModules: ['@nuxt/image', '@nuxt/postcss8', '@nuxtjs/fontawesome'],
+    buildModules: ['@nuxt/image', '@nuxt/postcss8', '@nuxtjs/fontawesome', '@nuxtjs/snipcart', '@nuxt/image'],
     fontawesome: {
       icons: {
         solid: true,
         brands: true,
       },
+    },
+    snipcart: {
+      key: 'ZDI2MDYwZmEtYTE2YS00YWRkLWE4ZTgtMDcxYmIxYWRiYmRlNjM3NzQ2NTgxMDczNTkzNjkz',
+      attributes: [
+        ['data-config-modal-style', 'side'],
+      ]
+    },
+    image: {
+      provider: "prismic",
+      prismic: {}
     },
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -88,44 +98,7 @@ export default async () => {
     i18n: {
       locales,
       defaultLocale,
-      vueI18n: {
-        fallbackLocale: 'en',
-        messages: {
-          en: {
-            soldOut: 'Sold out',
-            addToBag: 'Add to bag',
-            pleaseSelect: 'Please select',
-            lugWidth: 'Lug Width',
-            quantity: 'Quantity',
-            total: 'Total',
-            goToBag: 'Go to Shopping Bag',
-            note: 'Note',
-            leatherDisclaimer: "Due to its handcrafted nature, the leather's colour, texture and dimensions may vary slightly. The leather has been carefully treated to age with wear, developing a patina unique to every wrist. Discolouration may occur upon exposure to sweat or rain."
-          },
-          fr: {
-            soldOut: 'Vendu',
-            addToBag: "Ajouter au panier d'achat",
-            pleaseSelect: 'Veuillez sélectionner',
-            lugWidth: 'Largeur de la patte de montre',
-            quantity: 'Quantité',
-            total: 'Total',
-            goToBag: "Aller au sac d'achats",
-            note: "Aller au sac d'achats",
-            leatherDisclaimer: "En raison de sa nature artisanale, la couleur, la texture et les dimensions du cuir peuvent varier légèrement. Le cuir a été soigneusement traité pour vieillir avec l'usure, développant une patine unique à chaque poignet. Une décoloration peut se produire en cas d'exposition à la sueur ou à la pluie."
-          },
-          zh: {
-            soldOut: '售完',
-            addToBag: '加入购物袋',
-            pleaseSelect: '请选择',
-            lugWidth: '凸耳宽度',
-            quantity: '数量',
-            total: '合计',
-            goToBag: '购物袋',
-            note: '注意',
-            leatherDisclaimer: '由于其手工制作的性质，皮革的颜色、纹理和尺寸可能略有不同。皮革经过精心处理，随着磨损而老化，形成每个手腕特有的铜锈。暴露在汗水或雨水中，可能会出现变色。'
-          }
-        }
-      }
+      vueI18nLoader: true
     },
     loading: {
       color: 'var(--color)'
@@ -139,6 +112,8 @@ export default async () => {
         switch (doc.type) {
           case 'page':
             return doc.uid === 'home' ? prefix || '/' : `${prefix}/${doc.uid}`
+          case 'product':
+            return `${prefix}/shop/${doc.category}/${doc.uid}`
           default:
             return prefix || '/'
         }

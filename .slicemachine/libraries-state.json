@@ -155,12 +155,12 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Hero/default/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Hero\\default\\preview.png",
             "width": 800,
             "height": 638
           },
           "withButton": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Hero/withButton/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Hero\\withButton\\preview.png",
             "width": 800,
             "height": 1122
           }
@@ -279,12 +279,12 @@
         },
         "screenshotPaths": {
           "white": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Image/white/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Image\\white\\preview.png",
             "width": 800,
             "height": 674
           },
           "lightSlate": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Image/lightSlate/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Image\\lightSlate\\preview.png",
             "width": 800,
             "height": 674
           }
@@ -410,7 +410,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/TextWithFeatures/default/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\TextWithFeatures\\default\\preview.png",
             "width": 800,
             "height": 766
           }
@@ -489,7 +489,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/TextWithImage/default/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\TextWithImage\\default\\preview.png",
             "width": 800,
             "height": 409
           }

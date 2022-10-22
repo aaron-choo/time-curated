@@ -62,7 +62,7 @@
           "label": "Free Shipping Text",
           "placeholder": "",
           "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "shipping_information_label": {
@@ -95,6 +95,64 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "leather_disclaimer": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Leather Disclaimer",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "add_to_bag_text": {
+        "type": "Text",
+        "config": {
+          "label": "Add To Bag Text",
+          "placeholder": ""
+        }
+      },
+      "sold_out_text": {
+        "type": "Text",
+        "config": {
+          "label": "Sold Out Text",
+          "placeholder": ""
+        }
+      },
+      "note_text": {
+        "type": "Text",
+        "config": {
+          "label": "Note Text",
+          "placeholder": ""
+        }
+      },
+      "length_text": {
+        "type": "Text",
+        "config": {
+          "label": "Length Text",
+          "placeholder": ""
+        }
+      },
+      "thickness_text": {
+        "type": "Text",
+        "config": {
+          "label": "Thickness Text",
+          "placeholder": ""
+        }
+      },
+      "clasp_width_text": {
+        "type": "Text",
+        "config": {
+          "label": "Clasp Width Text",
+          "placeholder": ""
+        }
+      },
+      "lug_width_text": {
+        "type": "Text",
+        "config": {
+          "label": "Lug Width Text",
+          "placeholder": ""
         }
       }
     }

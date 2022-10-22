@@ -69,7 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'IM Fell English', serif;
+    font-family: 'IM Fell English', 'Noto Serif SC', serif;
 }
 
 /* Accessibility */
@@ -102,4 +102,9 @@ button.btn.selected {
     background: var(--color);
     color: var(--bg);
     border-color: var(--color);
+}
+
+/* snipcart */
+.snipcart-sidecart--opened::-webkit-scrollbar {
+    width: initial;
 }

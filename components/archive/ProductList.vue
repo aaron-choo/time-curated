@@ -1,19 +1,23 @@
 <template>
   <div class="grid grid-cols-3 gap-4">
-    <div v-for="product in products" :key="product.id">
+    <div v-for="product in products" :key="product.permalink">
       <!-- <n-link
         :to="{
           name: 'products-permalink',
           params: { permalink: product.permalink },
         }"
       > -->
-      <nuxt-link
+      <n-link
         :to="
-          localePath('/shop/') + '/' + product.data.category + '/' + product.uid
+          localePath('/shop/') +
+          '/' +
+          product.categories[0].slug +
+          '/' +
+          product.permalink
         "
       >
         <product-view :product="product"></product-view
-      ></nuxt-link>
+      ></n-link>
     </div>
   </div>
 </template>
