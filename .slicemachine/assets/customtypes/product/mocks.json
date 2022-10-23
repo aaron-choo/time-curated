@@ -11,16 +11,16 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "cloth",
+    "title": "subject",
     "category": "bracelets",
     "description": [
       {
         "type": "paragraph",
-        "text": "Consequat ipsum culpa anim sint ex ea culpa laboris aliquip nisi est dolor eu in. Occaecat aliqua sit ut ut minim voluptate nostrud ex ut ullamco.",
+        "text": "Laboris excepteur velit officia reprehenderit duis qui et reprehenderit cupidatat deserunt qui duis et non. Ut ea quis deserunt officia fugiat nostrud ut Lorem quis anim.",
         "spans": []
       }
     ],
-    "price": 61,
+    "price": 80,
     "images": [
       {
         "image": {
@@ -30,18 +30,18 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a"
+          "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636"
         }
       }
     ],
     "slices": [],
-    "length": "needs",
-    "thickness": "blank",
-    "clasp_width": "zero",
+    "length": "leg",
+    "thickness": "settle",
+    "clasp_width": "hat",
     "leather_disclaimer": true,
     "lug_width": [
       {
-        "name": "medicine",
+        "name": "mysterious",
         "image": {
           "dimensions": {
             "width": 900,
@@ -49,8 +49,9 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1"
-        }
+          "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab"
+        },
+        "price": 11
       }
     ]
   }

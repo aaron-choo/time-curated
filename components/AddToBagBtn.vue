@@ -16,6 +16,8 @@
     :data-item-description="product.data.description.text"
     :data-item-image="product.data.images[0].image.url"
     :data-item-name="product.data.title"
+    :data-item-custom1-name="product.data.lug_width ? 'Lug Width' : null"
+    :data-item-custom1-options="getLugWidthVariants()"
   >
     <!-- <span
       v-if="product.variant_groups.length > 0"
@@ -29,6 +31,8 @@
     </span> -->
     <span class="sold-out-text">{{ settings.data.sold_out_text }}</span>
     <span class="add-to-bag-text">{{ settings.data.add_to_bag_text }}</span>
+    <!-- <br />
+    <pre>{{ getLugWidthVariants() }}</pre> -->
   </button>
 </template>
 <script>
@@ -36,6 +40,23 @@ export default {
   props: {
     product: { type: Object, required: true, defaultValue: {} },
     settings: { type: Object, required: true, defaultValue: {} },
+  },
+  methods: {
+    getLugWidthVariants() {
+      const variants = this.product.data.lug_width;
+      if (variants.length > 0) {
+        let output = "";
+        for (let i = 0; i < variants.length; i++) {
+          let price = 0;
+          if (variants[i].price) {
+            price = variants[i].price;
+          }
+          output += variants[i].name + "[+" + price + "]" + "|";
+        }
+        console.log(output);
+        return "Lug Width|" + output;
+      }
+    },
   },
 };
 </script>

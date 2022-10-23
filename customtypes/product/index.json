@@ -122,6 +122,13 @@
                 "constraint": {},
                 "thumbnails": []
               }
+            },
+            "price": {
+              "type": "Number",
+              "config": {
+                "label": "Additional Price",
+                "placeholder": ""
+              }
             }
           }
         }
