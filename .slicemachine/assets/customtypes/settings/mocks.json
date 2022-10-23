@@ -14,7 +14,7 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Figure",
+        "text": "Discovery",
         "spans": []
       }
     ],
@@ -25,60 +25,60 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764"
+      "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
     },
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Dolore est fugiat sint ut mollit proident adipisicing mollit adipisicing tempor.",
+        "text": "Sint ad do proident. Ex minim ea proident culpa enim fugiat nisi reprehenderit excepteur commodo aute et Lorem sint fugiat.",
         "spans": []
       }
     ],
     "newsletterDisclaimer": [
       {
         "type": "paragraph",
-        "text": "Adipisicing elit minim non nostrud.",
+        "text": "Veniam do duis aliquip ipsum laboris ea Lorem consectetur.",
         "spans": []
       }
     ],
-    "description_label": "given",
-    "specifications_label": "basic",
+    "description_label": "because",
+    "specifications_label": "clock",
     "free_shipping_text": [
       {
         "type": "paragraph",
-        "text": "Dolor tempor voluptate do esse cillum esse proident amet enim.",
+        "text": "Aute est tempor dolore nulla tempor minim. Proident ut cillum nostrud esse non exercitation fugiat elit officia reprehenderit reprehenderit elit enim proident. Labore cillum id velit aute incididunt in quis consectetur.",
         "spans": []
       }
     ],
-    "shipping_information_label": "already",
+    "shipping_information_label": "dollar",
     "shipping_information": [
       {
         "type": "paragraph",
-        "text": "Culpa anim laboris enim nulla sunt proident eiusmod.",
+        "text": "Nostrud excepteur adipisicing deserunt dolore in commodo sint. Duis et minim sint velit in officia. Aliquip veniam dolore in amet laboris quis.",
         "spans": []
       }
     ],
-    "return_policy_label": "liquid",
+    "return_policy_label": "famous",
     "return_policy": [
       {
         "type": "paragraph",
-        "text": "Esse velit reprehenderit ullamco nulla ex anim aute tempor et excepteur. In ut laborum nostrud excepteur occaecat reprehenderit. Aute duis fugiat dolore ad nulla magna veniam culpa minim consectetur occaecat reprehenderit.",
+        "text": "Reprehenderit et officia adipisicing aute cupidatat incididunt Lorem. Est dolor enim incididunt occaecat voluptate elit dolore aute ex qui.",
         "spans": []
       }
     ],
     "leather_disclaimer": [
       {
         "type": "paragraph",
-        "text": "Qui cupidatat est excepteur dolore.",
+        "text": "Sunt laborum magna est nostrud tempor.",
         "spans": []
       }
     ],
-    "add_to_bag_text": "consist",
-    "sold_out_text": "home",
-    "note_text": "specific",
-    "length_text": "accurate",
-    "thickness_text": "been",
-    "clasp_width_text": "size",
-    "lug_width_text": "chest"
+    "add_to_cart_text": "handsome",
+    "sold_out_text": "southern",
+    "note_text": "needed",
+    "length_text": "root",
+    "thickness_text": "separate",
+    "clasp_width_text": "dirt",
+    "lug_width_text": "effect"
   }
 }

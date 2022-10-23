@@ -1,6 +1,6 @@
 <template>
   <button
-    id="add-to-bag"
+    id="add-to-cart"
     class="
       snipcart-add-item
       btn
@@ -30,7 +30,7 @@
       <span v-else>{{ variantGroup.name }}</span>
     </span> -->
     <span class="sold-out-text">{{ settings.data.sold_out_text }}</span>
-    <span class="add-to-bag-text">{{ settings.data.add_to_bag_text }}</span>
+    <span class="add-to-cart-text">{{ settings.data.add_to_cart_text }}</span>
     <!-- <br />
     <pre>{{ getLugWidthVariants() }}</pre> -->
   </button>
@@ -51,10 +51,9 @@ export default {
           if (variants[i].price) {
             price = variants[i].price;
           }
-          output += variants[i].name + "[+" + price + "]" + "|";
+          output += "|" + variants[i].name + "[+" + price + "]";
         }
-        console.log(output);
-        return "Lug Width|" + output;
+        return this.settings.data.lug_width_text + output;
       }
     },
   },
@@ -62,17 +61,17 @@ export default {
 </script>
 
 <style scoped>
-#add-to-bag {
+#add-to-cart {
   background: var(--color);
   color: var(--bg);
 }
 
-#add-to-bag.inactive.has-variant .add-to-bag-text,
-#add-to-bag:not(.has-variant) .select-variant-text,
-#add-to-bag.has-variant:not(.inactive) .select-variant-text,
-#add-to-bag:not(.sold-out) .sold-out-text,
-#add-to-bag.sold-out .add-to-bag-text,
-#add-to-bag.sold-out .select-variant-text {
+#add-to-cart.inactive.has-variant .add-to-cart-text,
+#add-to-cart:not(.has-variant) .select-variant-text,
+#add-to-cart.has-variant:not(.inactive) .select-variant-text,
+#add-to-cart:not(.sold-out) .sold-out-text,
+#add-to-cart.sold-out .add-to-cart-text,
+#add-to-cart.sold-out .select-variant-text {
   display: none;
 }
 </style>

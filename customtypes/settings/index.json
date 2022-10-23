@@ -106,10 +106,10 @@
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "add_to_bag_text": {
+      "add_to_cart_text": {
         "type": "Text",
         "config": {
-          "label": "Add To Bag Text",
+          "label": "Add To Cart Text",
           "placeholder": ""
         }
       },

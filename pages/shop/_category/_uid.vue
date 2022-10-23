@@ -64,7 +64,7 @@
               <span> ${{ product.price }} SGD </span>
             </heading>
           </div>
-          <variant-options
+          <!-- <variant-options
             v-if="product.lug_width.length > 0"
             class="variant-buttons my-4"
             :key="index"
@@ -72,7 +72,7 @@
             :variation="product.lug_width"
             :settings="settings"
             @selectOption="selectOption($event)"
-          />
+          /> -->
           <prismic-rich-text
             :field="settings.data.free_shipping_text"
             class="
@@ -83,15 +83,7 @@
               tracking-wide
             "
           />
-          <AddToBagBtn :product="page" :settings="settings" />
-          <!-- <AddToBagBtn
-            :class="{
-              'inactive has-variant': hasVariant,
-              'inactive sold-out': soldOut,
-            }"
-            :product="page"
-            :variant="variantOption"
-          /> -->
+          <AddToCartBtn :product="page" :settings="settings" />
           <div class="product-details grid grid-cols-1 gap-4">
             <content-tabs :tabList="productDescription">
               <template v-slot:tabPanel-1>
@@ -248,80 +240,9 @@ export default {
       },
     });
   },
-  methods: {
-    // async updateProduct(product) {
-    //   try {
-    //     const url = new URL(
-    //       "https://api.chec.io/v1/products/" + this.product.id + "/variants"
-    //     );
-    //     const headers = {
-    //       "X-Authorization": process.env.NUXT_ENV_CHEC_PUBLIC_API_KEY,
-    //       Accept: "application/json",
-    //       "Content-Type": "application/json",
-    //     };
-    //     fetch(url, {
-    //       method: "GET",
-    //       headers: headers,
-    //     })
-    //       .then((response) => response.json())
-    //       .then((data) => {
-    //         if (this.product.variant_groups.length > 0) {
-    //           this.hasVariant = true;
-    //           // console.log("data", data.data);
-    //           let sourceInfo = data.data;
-    //           let siteInfo = this.product.variant_groups[0].options;
-    //           let totalInventory = 0;
-    //           for (let i = 0; i < sourceInfo.length; i++) {
-    //             siteInfo[i].price = sourceInfo[i].price;
-    //             siteInfo[i].inventory = sourceInfo[i].inventory;
-    //             siteInfo[i].sku = sourceInfo[i].sku;
-    //             totalInventory += sourceInfo[i].inventory;
-    //             console.log("inventory", totalInventory);
-    //           }
-    //           document
-    //             .querySelectorAll(".variant-button.available")
-    //             .forEach((el) => {
-    //               el.classList.remove("inactive");
-    //             });
-    //           console.log(this.hasVariant, totalInventory);
-    //           if (totalInventory < 1) {
-    //             console.log("sold out");
-    //             console.log(this.soldOut);
-    //             this.soldOut = true;
-    //             console.log(this.soldOut);
-    //           }
-    //         } else if (this.product.inventory.available < 1) {
-    //           console.log("sold", this.product.inventory.available);
-    //           this.soldOut = true;
-    //         }
-    //         console.log(this.soldOut);
-    //       });
-    //   } catch (error) {
-    //     // eslint-disable-next-line
-    //     console.log(error);
-    //   }
-    // },
-    // selectOption(option) {
-    //   // console.log("option", option);
-    //   this.variantOption[String(option[0])] = option[1];
-    //   this.variantSku = option[2];
-    //   // console.log("variantOption", this.variantOption);
-    //   // console.log("variantSku", this.variantSku);
-    //   // console.log(
-    //   //   "product variant pair",
-    //   //   this.product.id,
-    //   //   Object.values(this.variantOption)[0]
-    //   // );
-    //   this.variantPrice = this.product.variant_groups[0].options.filter(
-    //     ({ sku }) => sku.includes(this.variantSku)
-    //   )[0].price.formatted_with_code;
-    //   // console.log(this.variantPrice);
-    // },
-  },
 };
 </script>
-  
-  <style>
+<style>
 .product-description-text > p:not(:last-child) {
   margin-bottom: 0.5rem;
 }
@@ -342,5 +263,11 @@ export default {
   height: 6px !important;
   margin: 0 4px !important;
   transition: all 0.3s ease !important;
+}
+</style>
+<style scoped>
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
 }
 </style>

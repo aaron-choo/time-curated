@@ -30,7 +30,7 @@
       :navigation="navigation"
       :settings="settings"
     />
-    <MiniCart />
+    <!-- <MiniCart /> -->
     <main><nuxt /></main>
     <Footer v-if="settings.data" :settings="settings" />
   </div>
@@ -41,7 +41,9 @@ export default {
   head() {
     return {
       htmlAttrs: {
-        lang: this.$i18n.locale,
+        lang:
+          this.$i18n.locale.slice(0, -2) +
+          this.$i18n.locale.slice(-2).toUpperCase(),
       },
     };
   },
@@ -78,19 +80,8 @@ export default {
                                      ▀███████████████████▀▀
                                          ▀▀▀▀▀▀▀▀▀▀▀▀
     `);
-    this.fetchCart();
   },
-  methods: {
-    async fetchCart() {
-      try {
-        const cart = await this.$commerce.cart.retrieve();
-        this.$store.commit("setCart", cart);
-      } catch (error) {
-        // eslint-disable-next-line
-        console.log("Error (default.vue): ", error);
-      }
-    },
-  },
+
   computed: {
     alternateLanguages() {
       return this.$store.state.prismic.alternateLanguages;

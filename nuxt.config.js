@@ -41,7 +41,8 @@ export default async () => {
     snipcart: {
       key: 'ZDI2MDYwZmEtYTE2YS00YWRkLWE4ZTgtMDcxYmIxYWRiYmRlNjM3NzQ2NTgxMDczNTkzNjkz',
       attributes: [
-        ['data-config-modal-style', 'side'],
+        ['data-templates-url', '/snipcart-templates.html'],
+        ['data-config-modal-style', 'side']
       ]
     },
     image: {
