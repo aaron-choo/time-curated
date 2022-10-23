@@ -30,13 +30,19 @@
             {{ $prismic.asText(item.label) }}
           </PrismicLink>
         </li>
+        <li class="sans-serif uppercase text-xs underline">
+          <span class="switch-lang" :class="settings.lang">
+            <span class="sr-only">{{ settings.lang }}</span>
+          </span>
+        </li>
         <li
           v-for="lang in alternateLanguages"
           :key="lang.lang"
           class="sans-serif uppercase text-xs"
+          @mousedown="switchLang(lang.lang)"
         >
           <PrismicLink
-            class="language-switcher"
+            class="switch-lang"
             :field="{ ...lang, link_type: 'Document' }"
             :class="lang.lang"
           >
@@ -71,16 +77,19 @@ export default {
       default: () => [],
     },
   },
+  methods: {
+    switchLang(lang) {
+      console.log(lang);
+      this.$snipcart.setLanguage(lang);
+    },
+  },
 };
 </script>
 <style scoped>
-.language-switcher.en-us::before {
+.switch-lang.en-us::before {
   content: "En";
 }
-.language-switcher.zh-cn::before {
+.switch-lang.zh-cn::before {
   content: "中文";
-}
-.language-switcher.fr-fr::before {
-  content: "Français";
 }
 </style>
