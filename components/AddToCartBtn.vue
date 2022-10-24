@@ -16,7 +16,9 @@
     :data-item-description="product.data.description.text"
     :data-item-image="product.data.images[0].image.url"
     :data-item-name="product.data.title"
-    :data-item-custom1-name="product.data.lug_width ? 'Lug Width' : null"
+    :data-item-custom1-name="
+      product.data.lug_width.length > 0 ? 'Lug Width' : null
+    "
     :data-item-custom1-options="
       product.data.lug_width ? getLugWidthVariants() : null
     "
