@@ -1,5 +1,5 @@
 <template>
-  <div class="product-view m-2">
+  <div class="product-view">
     <nuxt-img
       v-if="product.data.images.length > 0"
       format="webp"
@@ -11,7 +11,7 @@
       loading="lazy"
     />
     <div class="product-meta text-center mt-4 flex flex-col gap-1">
-      <h3 class="product-title text-base leading-tight">
+      <h3 class="product-title leading-tight">
         {{ product.data.title }}
       </h3>
       <p class="product-price">SGD {{ product.data.price.toFixed(2) }}</p>
