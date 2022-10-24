@@ -78,7 +78,7 @@
             :field="settings.data.free_shipping_text"
             class="
               free-shipping-text
-              opacity-70
+              opacity-50
               sans-serif
               text-xs
               tracking-wide
@@ -121,22 +121,14 @@
                 />
               </div>
             </div>
-            <!-- <div>
-              <div>
-                <heading
-                  as="h2"
-                  size="xs"
-                  class="tracking-wider sans-serif uppercase font-semibold"
-                  >SKU</heading
-                >
-                <p v-if="variantSku.length > 0">
-                  {{ variantSku }}
-                </p>
-                <p v-else>
-                  {{ product.sku }}
-                </p>
-              </div>
-            </div> -->
+            <heading
+              as="h2"
+              size="xs"
+              class="product-sku tracking-wider sans-serif uppercase opacity-50"
+              v-if="product.sku"
+            >
+              {{ product.sku }}
+            </heading>
           </div>
         </div>
       </div>
@@ -151,6 +143,9 @@
         </template>
       </content-tabs>
     </bounded>
+
+    <SliceZone :slices="page.data.slices" :components="components" />
+
     <bounded as="section" yPadding="sm">
       <related-products
         :relatedProducts="relatedProducts"
@@ -158,6 +153,8 @@
         :settings="settings"
       />
     </bounded>
+
+    <SliceZone :slices="settings.data.slices1" :components="components" />
     <!-- <pre>{{ page }}</pre> -->
   </div>
 </template>
@@ -271,8 +268,20 @@ export default {
 .swiper-rtl .swiper-button-next:after {
   content: none !important;
 }
+/* .swiper.product-image-thumbnail .swiper-slide {
+  transition: opacity 0.3s ease;
+}
 .swiper.product-image-thumbnail .swiper-slide:not(.swiper-slide-thumb-active) {
   opacity: 0.5;
+} */
+.swiper.product-image-thumbnail .swiper-slide {
+  outline: 1px solid var(--color-fade-10);
+  outline-offset: -1px;
+  transition: outline 0.3s ease;
+  border-radius: 3px;
+}
+.swiper.product-image-thumbnail .swiper-slide.swiper-slide-thumb-active {
+  outline: 1px solid var(--color-fade-50);
 }
 </style>
 <style scoped>
