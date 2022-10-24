@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     <div v-for="product in products" :key="product.id">
       <!-- <n-link
         :to="{
