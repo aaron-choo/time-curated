@@ -61,18 +61,19 @@
               product.title
             }}</heading>
             <heading as="p" size="lg" class="product-price">
-              <span> ${{ product.price }} SGD </span>
+              <span> SGD {{ product.price.toFixed(2) }} </span>
             </heading>
           </div>
-          <!-- <variant-options
+          <variant-options
             v-if="product.lug_width.length > 0"
+            id="lug-width-variants"
             class="variant-buttons my-4"
-            :key="index"
             :product="product"
+            :label="settings.data.lug_width_text"
             :variation="product.lug_width"
             :settings="settings"
             @selectOption="selectOption($event)"
-          /> -->
+          />
           <prismic-rich-text
             :field="settings.data.free_shipping_text"
             class="
@@ -94,16 +95,22 @@
               </template>
               <template v-slot:tabPanel-2>
                 <div class="flex flex-col">
-                  <p v-if="product.length">
-                    {{ settings.data.length_text }} : {{ product.length }}
-                  </p>
-                  <p v-if="product.thickness">
-                    {{ settings.data.thickness_text }} : {{ product.thickness }}
-                  </p>
-                  <p v-if="product.clasp_width">
-                    {{ settings.data.clasp_width_text }} :
-                    {{ product.clasp_width }}
-                  </p>
+                  <div v-if="product.length" class="grid grid-cols-12">
+                    <p class="col-span-3">{{ settings.data.length_text }} :</p>
+                    <p class="col-span-9">{{ product.length }}</p>
+                  </div>
+                  <div v-if="product.thickness" class="grid grid-cols-12">
+                    <p class="col-span-3">
+                      {{ settings.data.thickness_text }} :
+                    </p>
+                    <p class="col-span-9">{{ product.thickness }}</p>
+                  </div>
+                  <div v-if="product.clasp_width" class="grid grid-cols-12">
+                    <p class="col-span-3">
+                      {{ settings.data.clasp_width_text }} :
+                    </p>
+                    <p class="col-span-9">{{ product.clasp_width }}</p>
+                  </div>
                 </div>
               </template>
             </content-tabs>
@@ -186,9 +193,9 @@ export default {
   },
   head() {
     return {
-      //   title: `${this.page.name} - ${this.$prismic.asText(
-      //     this.$store.state.prismic.settings.data.siteTitle
-      //   )}`,
+      title: `${this.product.title} - ${this.$prismic.asText(
+        this.$store.state.prismic.settings.data.siteTitle
+      )}`,
     };
   },
   computed: {
@@ -239,6 +246,14 @@ export default {
         clickable: true,
       },
     });
+  },
+  methods: {
+    selectOption(variant) {
+      console.log(variant[0]);
+      document
+        .querySelector("#add-to-cart")
+        .setAttribute("data-item-custom1-value", variant[0]);
+    },
   },
 };
 </script>

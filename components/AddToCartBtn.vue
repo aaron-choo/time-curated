@@ -17,7 +17,9 @@
     :data-item-image="product.data.images[0].image.url"
     :data-item-name="product.data.title"
     :data-item-custom1-name="product.data.lug_width ? 'Lug Width' : null"
-    :data-item-custom1-options="getLugWidthVariants()"
+    :data-item-custom1-options="
+      product.data.lug_width ? getLugWidthVariants() : null
+    "
   >
     <!-- <span
       v-if="product.variant_groups.length > 0"
@@ -51,9 +53,9 @@ export default {
           if (variants[i].price) {
             price = variants[i].price;
           }
-          output += "|" + variants[i].name + "[+" + price + "]";
+          output += variants[i].name + "[+" + price + "]" + "|";
         }
-        return this.settings.data.lug_width_text + output;
+        return output.slice(0, -1);
       }
     },
   },

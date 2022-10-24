@@ -1,7 +1,7 @@
 <template>
   <div class="sans-serif text-xs">
     <p class="uppercase mb-2 font-semibold">
-      {{ settings.data.lug_width_text }}
+      {{ label }}
     </p>
     <div
       v-for="(variant, index) in variation"
@@ -9,7 +9,8 @@
       class="inline-block"
     >
       <button
-        class="btn variant-button inactive mr-2 hover:opacity-80"
+        class="btn variant-button mr-2 hover:opacity-80"
+        :class="index === 0 ? 'selected' : ''"
         :id="variant.name"
         @click="selectOption(variant.name, variant.image)"
       >
@@ -23,26 +24,24 @@ export default {
   props: {
     settings: { type: Object, required: true, defaultValue: {} },
     product: { type: Object, required: true, defaultValue: {} },
+    label: { type: Object, required: true, defaultValue: {} },
     variation: { type: Object, required: true, defaultValue: {} },
   },
   data() {
     return {};
   },
   methods: {
-    selectOption(group, option) {
+    selectOption(variant, image) {
       // console.log(group);
       // console.log(option);
       // console.log(sku);
-      let arr = [group, option];
+      let arr = [variant, image];
       // console.log(arr);
       this.$emit("selectOption", arr);
       document.querySelectorAll(".variant-button").forEach((el) => {
         el.classList.remove("selected");
       });
-      document.getElementById(group + " " + option).classList.add("selected");
-      document
-        .getElementById("add-to-bag")
-        .classList.remove("variant", "inactive");
+      document.getElementById(variant).classList.add("selected");
     },
   },
 };
