@@ -19,6 +19,7 @@ html {
     --color-fade-80: #333333cc;
     --color-fade-50: #33333380;
     --color-fade-20: #33333333;
+    --color-fade-10: #3333331a;
     --color-fade-5: #3333330d;
     --color-error: #a64543;
     --bg-error: #f2dedf;
@@ -28,7 +29,7 @@ html {
     --bg-success: #def0d8;
     --color-warning: #926c39;
     --bg-warning: #fdf8e3;
-    --bg: #f7f7f7;
+    --bg: #fff;
     --bg-secondary: #eee;
     --border-color: #e4e7eb;
     --footer-bg: #000;
@@ -329,7 +330,7 @@ h2.snipcart-flash-message__title {
     margin: var(--page-padding) 0;
 }
 
-.snipcart-flash-message.snipcart-flash-message--error+.snipcart-item-line__container {
+.snipcart-flash-message.snipcart-flash-message--error+.snipcart-item-line__container .snipcart-item-line__product {
     opacity: .5;
 }
 
@@ -472,7 +473,9 @@ h1.snipcart__font--subtitle {
     left: -3px;
 }
 
-
+.snipcart-item-line__info:empty {
+    padding: 0;
+}
 
 @media (max-width: 1023px) {
     .snipcart__box--badge {
