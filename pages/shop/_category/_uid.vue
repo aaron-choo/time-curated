@@ -22,10 +22,9 @@
                   />
                 </div>
               </div>
-              <div class="image swiper-pagination md:hidden"></div>
             </div>
             <div
-              class="swiper product-image-thumbnail hidden md:block"
+              class="swiper product-image-thumbnail mx-4"
               ref="productThumbnails"
             >
               <ul class="swiper-wrapper">
@@ -67,13 +66,14 @@
           <variant-options
             v-if="product.lug_width.length > 0"
             id="lug-width-variants"
-            class="variant-buttons my-4"
+            class="variant-buttons mt-4"
             :product="product"
             :label="settings.data.lug_width_text"
             :variation="product.lug_width"
             :settings="settings"
             @selectOption="selectOption($event)"
           />
+          <AddToCartBtn :product="page" :settings="settings" />
           <prismic-rich-text
             :field="settings.data.free_shipping_text"
             class="
@@ -84,8 +84,7 @@
               tracking-wide
             "
           />
-          <AddToCartBtn :product="page" :settings="settings" />
-          <div class="product-details grid grid-cols-1 gap-4">
+          <div class="product-details grid grid-cols-1 gap-4 my-4">
             <content-tabs :tabList="productDescription">
               <template v-slot:tabPanel-1>
                 <prismic-rich-text
@@ -95,22 +94,16 @@
               </template>
               <template v-slot:tabPanel-2>
                 <div class="flex flex-col">
-                  <div v-if="product.length" class="grid grid-cols-12">
-                    <p class="col-span-3">{{ settings.data.length_text }} :</p>
-                    <p class="col-span-9">{{ product.length }}</p>
-                  </div>
-                  <div v-if="product.thickness" class="grid grid-cols-12">
-                    <p class="col-span-3">
-                      {{ settings.data.thickness_text }} :
-                    </p>
-                    <p class="col-span-9">{{ product.thickness }}</p>
-                  </div>
-                  <div v-if="product.clasp_width" class="grid grid-cols-12">
-                    <p class="col-span-3">
-                      {{ settings.data.clasp_width_text }} :
-                    </p>
-                    <p class="col-span-9">{{ product.clasp_width }}</p>
-                  </div>
+                  <p v-if="product.length">
+                    {{ settings.data.length_text }} : {{ product.length }}
+                  </p>
+                  <p v-if="product.thickness">
+                    {{ settings.data.thickness_text }} : {{ product.thickness }}
+                  </p>
+                  <p v-if="product.clasp_width">
+                    {{ settings.data.clasp_width_text }} :
+                    {{ product.clasp_width }}
+                  </p>
                 </div>
               </template>
             </content-tabs>
@@ -158,6 +151,13 @@
         </template>
       </content-tabs>
     </bounded>
+    <bounded as="section" yPadding="sm">
+      <related-products
+        :relatedProducts="relatedProducts"
+        :currentProduct="page"
+        :settings="settings"
+      />
+    </bounded>
     <!-- <pre>{{ page }}</pre> -->
   </div>
 </template>
@@ -172,10 +172,20 @@ export default {
     const page = await $prismic.api.getByUID("product", params.uid, {
       lang,
     });
+    const relatedProducts = await $prismic.api.query(
+      $prismic.predicates.at("document.type", "product"),
+      {
+        lang: lang,
+        orderings: "[document.last_publication_date desc]",
+        pageSize: 5,
+        page: Math.floor(Math.random() * 1),
+      }
+    );
     await store.dispatch("prismic/load", { lang, page });
     return {
       page: page,
       product: page.data,
+      relatedProducts: relatedProducts.results,
     };
   },
   data() {
@@ -203,9 +213,6 @@ export default {
       return this.$store.state.prismic.settings;
     },
   },
-  beforeMount() {
-    // this.updateProduct();
-  },
   async mounted() {
     await this.$nextTick();
     let thumb = new Swiper(this.$refs.productThumbnails, {
@@ -213,7 +220,7 @@ export default {
       mousewheel: {
         releaseOnEdges: true,
       },
-      slidesPerView: 5,
+      slidesPerView: 5.5,
       slidesPerGroup: 3,
       spaceBetween: 8,
       scrollbar: {
@@ -239,11 +246,7 @@ export default {
       },
       thumbs: {
         swiper: thumb,
-      },
-      pagination: {
-        el: ".image.swiper-pagination",
-        type: "bullets",
-        clickable: true,
+        autoScrollOffset: 1,
       },
     });
   },
@@ -268,16 +271,8 @@ export default {
 .swiper-rtl .swiper-button-next:after {
   content: none !important;
 }
-.image.swiper-pagination {
-  position: relative !important;
-  bottom: -5px !important;
-}
-.swiper-pagination-bullet {
-  background: var(--color) !important;
-  width: 6px !important;
-  height: 6px !important;
-  margin: 0 4px !important;
-  transition: all 0.3s ease !important;
+.swiper.product-image-thumbnail .swiper-slide:not(.swiper-slide-thumb-active) {
+  opacity: 0.5;
 }
 </style>
 <style scoped>

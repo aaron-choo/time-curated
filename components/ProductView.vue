@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center">
+  <div class="product-view m-2">
     <nuxt-img
       v-if="product.data.images.length > 0"
       format="webp"
@@ -7,11 +7,16 @@
       sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
       :width="product.data.images[0].image.width"
       :height="product.data.images[0].image.height"
-      class="product-thumbnail w-full"
+      class="product-thumbnail w-full rounded-[3px]"
       loading="lazy"
     />
-    <p>{{ product.data.title }}</p>
-    <p>${{ product.data.price }} SGD</p>
+    <div class="product-meta text-center mt-4 flex flex-col gap-1">
+      <h3 class="product-title text-base leading-tight">
+        {{ product.data.title }}
+      </h3>
+      <p class="product-price">SGD {{ product.data.price.toFixed(2) }}</p>
+    </div>
+
     <!-- <pre>{{ product }}</pre> -->
   </div>
 </template>
