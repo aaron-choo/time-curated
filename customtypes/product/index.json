@@ -26,7 +26,8 @@
           "placeholder": "",
           "options": [
             "bracelets",
-            "straps"
+            "straps",
+            "buckles"
           ]
         }
       },
@@ -43,6 +44,13 @@
         "type": "Number",
         "config": {
           "label": "Price (SGD)",
+          "placeholder": ""
+        }
+      },
+      "sku": {
+        "type": "Text",
+        "config": {
+          "label": "SKU",
           "placeholder": ""
         }
       },
@@ -89,6 +97,20 @@
         "type": "Text",
         "config": {
           "label": "Clasp Width",
+          "placeholder": ""
+        }
+      },
+      "inner_width": {
+        "type": "Text",
+        "config": {
+          "label": "Inner Width",
+          "placeholder": ""
+        }
+      },
+      "outer_width": {
+        "type": "Text",
+        "config": {
+          "label": "Outer Width",
           "placeholder": ""
         }
       },

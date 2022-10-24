@@ -154,6 +154,13 @@
           "label": "Lug Width Text",
           "placeholder": ""
         }
+      },
+      "you_may_like_text": {
+        "type": "Text",
+        "config": {
+          "label": "You May Like Text",
+          "placeholder": ""
+        }
       }
     }
   }

@@ -11,16 +11,17 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "subject",
-    "category": "bracelets",
+    "title": "live",
+    "category": "straps",
     "description": [
       {
         "type": "paragraph",
-        "text": "Laboris excepteur velit officia reprehenderit duis qui et reprehenderit cupidatat deserunt qui duis et non. Ut ea quis deserunt officia fugiat nostrud ut Lorem quis anim.",
+        "text": "Magna Lorem sint ipsum do laboris proident magna reprehenderit.",
         "spans": []
       }
     ],
-    "price": 80,
+    "price": 68,
+    "sku": "too",
     "images": [
       {
         "image": {
@@ -30,18 +31,20 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587905069134-008460d7a636"
+          "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51"
         }
       }
     ],
     "slices": [],
-    "length": "leg",
-    "thickness": "settle",
-    "clasp_width": "hat",
+    "length": "forgot",
+    "thickness": "instance",
+    "clasp_width": "eight",
+    "inner_width": "dropped",
+    "outer_width": "fastened",
     "leather_disclaimer": true,
     "lug_width": [
       {
-        "name": "mysterious",
+        "name": "outside",
         "image": {
           "dimensions": {
             "width": 900,
@@ -49,9 +52,9 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab"
+          "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
         },
-        "price": 11
+        "price": 52
       }
     ]
   }
