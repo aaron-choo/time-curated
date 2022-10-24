@@ -80,7 +80,9 @@ export default {
   methods: {
     switchLang(lang) {
       console.log(lang);
-      this.$snipcart.setLanguage(lang);
+      this.$snipcart.setLanguage(
+        lang.slice(0, -2) + lang.slice(-2).toUpperCase()
+      );
     },
   },
 };
