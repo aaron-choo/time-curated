@@ -41,7 +41,7 @@ export default {
     await this.$nextTick();
     new Swiper(this.$refs.relatedProductLinks, {
       slidesPerView: 2.5,
-      spaceBetween: 8,
+      spaceBetween: 16,
       breakpoints: {
         768: {
           slidesPerView: 3.5,
