@@ -24,8 +24,8 @@ export default {
   props: {
     settings: { type: Object, required: true, defaultValue: {} },
     product: { type: Object, required: true, defaultValue: {} },
-    label: { type: Object, required: true, defaultValue: {} },
-    variation: { type: Object, required: true, defaultValue: {} },
+    label: { type: String, required: true, defaultValue: {} },
+    variation: { type: Array, required: true, defaultValue: {} },
   },
   data() {
     return {};

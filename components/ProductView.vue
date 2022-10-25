@@ -11,7 +11,7 @@
       loading="lazy"
     />
     <div class="product-meta text-center mt-4 flex flex-col gap-1">
-      <h3 class="product-title leading-tight">
+      <h3 class="product-title leading-tight sm:text-base">
         {{ product.data.title }}
       </h3>
       <p class="product-price">SGD {{ product.data.price.toFixed(2) }}</p>

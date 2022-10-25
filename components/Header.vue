@@ -11,26 +11,36 @@
         leading-none
       "
     >
-      <NuxtLink :to="localePath('/')">
+      <n-link :to="localePath('/')">
         <PrismicImage
           v-if="settings.data.logo.url"
           :field="settings.data.logo"
           width="180"
         />
-      </NuxtLink>
+      </n-link>
     </div>
     <nav class="site-navigation">
-      <ul class="flex flex-wrap items-center gap-6 md:gap-10">
+      <ul
+        class="
+          flex flex-wrap
+          items-center
+          gap-6
+          md:gap-10
+          font-medium
+          sans-serif
+          uppercase
+          text-xs
+        "
+      >
         <li
           v-for="item in navigation.data.links"
           :key="$prismic.asText(item.label)"
-          class="sans-serif uppercase text-xs"
         >
           <PrismicLink :field="item.link">
             {{ $prismic.asText(item.label) }}
           </PrismicLink>
         </li>
-        <li class="sans-serif uppercase text-xs underline">
+        <li class="underline decoration-1 underline-offset-2">
           <span class="switch-lang" :class="settings.lang">
             <span class="sr-only">{{ settings.lang }}</span>
           </span>
@@ -38,7 +48,6 @@
         <li
           v-for="lang in alternateLanguages"
           :key="lang.lang"
-          class="sans-serif uppercase text-xs"
           @mousedown="switchLang(lang.lang)"
         >
           <PrismicLink
@@ -79,7 +88,7 @@ export default {
   },
   methods: {
     switchLang(lang) {
-      console.log(lang);
+      // console.log(lang);
       this.$snipcart.setLanguage(
         lang.slice(0, -2) + lang.slice(-2).toUpperCase()
       );

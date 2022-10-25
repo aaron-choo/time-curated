@@ -10,14 +10,7 @@
         }
       }
     },
-    "page": {
-      "title": {
-        "config": {
-          "patternType": "HEADING",
-          "blocks": 1
-        }
-      }
-    },
+    "page": {},
     "article": {
       "title": {
         "config": {
@@ -87,7 +80,8 @@
         }
       },
       "lug_width": {}
-    }
+    },
+    "product_category": {}
   },
   "slices": {
     "Text": {

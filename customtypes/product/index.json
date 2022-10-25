@@ -19,6 +19,16 @@
           "placeholder": ""
         }
       },
+      "product_category": {
+        "type": "Link",
+        "config": {
+          "label": "Product Category",
+          "select": "document",
+          "customtypes": [
+            "product_category"
+          ]
+        }
+      },
       "category": {
         "type": "Select",
         "config": {
