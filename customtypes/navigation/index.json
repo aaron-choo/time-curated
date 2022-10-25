@@ -29,6 +29,52 @@
             }
           }
         }
+      },
+      "shop_links": {
+        "type": "Group",
+        "config": {
+          "label": "Shop Links",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "Translations": {
+      "language_text": {
+        "type": "Text",
+        "config": {
+          "label": "Language Text",
+          "placeholder": ""
+        }
+      },
+      "shop_text": {
+        "type": "Text",
+        "config": {
+          "label": "Shop Text",
+          "placeholder": ""
+        }
+      },
+      "collection_text": {
+        "type": "Text",
+        "config": {
+          "label": "Collection Text",
+          "placeholder": ""
+        }
       }
     }
   }

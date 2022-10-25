@@ -14,7 +14,7 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Office",
+        "text": "Bigger",
         "spans": []
       }
     ],
@@ -25,62 +25,64 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"
+      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
     },
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Adipisicing sit voluptate reprehenderit officia deserunt do. Fugiat incididunt sint officia do esse.",
+        "text": "Commodo quis minim exercitation consectetur ex sint aliqua duis voluptate adipisicing sunt esse consequat exercitation fugiat. Cillum veniam mollit cupidatat sunt anim proident.",
         "spans": []
       }
     ],
     "newsletterDisclaimer": [
       {
         "type": "paragraph",
-        "text": "Voluptate elit in tempor consectetur do cupidatat do do cupidatat mollit in sunt non.",
+        "text": "Ad irure minim ea aute cillum occaecat veniam.",
         "spans": []
       }
     ],
-    "description_label": "energy",
-    "specifications_label": "appearance",
+    "description_label": "eight",
+    "specifications_label": "pot",
     "free_shipping_text": [
       {
         "type": "paragraph",
-        "text": "Deserunt laboris reprehenderit pariatur cupidatat qui do dolore esse consequat dolore officia eu dolor duis velit.",
+        "text": "Elit nisi officia officia proident culpa ut voluptate dolor cupidatat quis consectetur Lorem duis.",
         "spans": []
       }
     ],
-    "shipping_information_label": "short",
+    "shipping_information_label": "mistake",
     "shipping_information": [
       {
         "type": "paragraph",
-        "text": "Enim laboris culpa cillum occaecat aliquip reprehenderit mollit eu nulla minim nulla. Irure ullamco cupidatat duis deserunt aliquip ea officia esse exercitation ea veniam commodo anim. Non sit ullamco in exercitation excepteur do amet ipsum sint mollit velit reprehenderit esse sit adipisicing.",
+        "text": "Ad eiusmod tempor exercitation commodo minim veniam incididunt adipisicing labore laboris reprehenderit occaecat sunt.",
         "spans": []
       }
     ],
-    "return_policy_label": "unit",
+    "return_policy_label": "drive",
     "return_policy": [
       {
         "type": "paragraph",
-        "text": "Occaecat duis aliqua non est ea duis commodo culpa veniam sunt non proident. Occaecat ullamco sint cupidatat ex non ut Lorem ipsum mollit amet ex laborum. Reprehenderit labore velit do reprehenderit minim aute consectetur culpa proident aliqua id.",
+        "text": "Sint sint occaecat aliqua elit. Et ut minim Lorem magna nulla ut cupidatat duis excepteur consequat nulla ea quis non culpa. Et consectetur nostrud commodo tempor ea eiusmod nostrud magna labore.",
         "spans": []
       }
     ],
     "leather_disclaimer": [
       {
         "type": "paragraph",
-        "text": "Occaecat ea ex ex sunt minim quis do culpa sunt sit. Cupidatat sint et officia laboris nostrud amet.",
+        "text": "Dolore tempor elit magna duis laborum amet magna ad irure consequat occaecat incididunt.",
         "spans": []
       }
     ],
-    "add_to_cart_text": "blind",
-    "sold_out_text": "buy",
-    "note_text": "fence",
-    "length_text": "come",
-    "thickness_text": "system",
-    "clasp_width_text": "combination",
-    "lug_width_text": "play",
-    "you_may_like_text": "stared",
+    "add_to_cart_text": "wall",
+    "sold_out_text": "specific",
+    "note_text": "women",
+    "length_text": "station",
+    "thickness_text": "thought",
+    "clasp_width_text": "we",
+    "lug_width_text": "field",
+    "outer_width_text": "imagine",
+    "inner_width_text": "then",
+    "you_may_like_text": "garden",
     "slices1": []
   }
 }

@@ -1,40 +1,22 @@
 {
-  "id": "4aea07fc-2bc2-427d-be9f-ad7456353e86",
-  "uid": "est-blanditiis-fuga",
+  "id": "mock-doc-id",
+  "url": null,
   "type": "navigation",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
   "data": {
     "links": [
       {
         "label": [
           {
             "type": "heading3",
-            "text": "Transition distributed solutions",
-            "spans": []
-          }
-        ],
-        "link": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        }
-      },
-      {
-        "label": [
-          {
-            "type": "heading3",
-            "text": "Engage sexy synergies",
-            "spans": []
-          }
-        ],
-        "link": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        }
-      },
-      {
-        "label": [
-          {
-            "type": "heading3",
-            "text": "Productize collaborative e-markets",
+            "text": "Birds",
             "spans": []
           }
         ],
@@ -43,6 +25,18 @@
           "url": "https://slicemachine.dev"
         }
       }
-    ]
+    ],
+    "shop_links": [
+      {
+        "label": "page",
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      }
+    ],
+    "language_text": "electricity",
+    "shop_text": "eat",
+    "collection_text": "generally"
   }
 }
