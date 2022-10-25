@@ -1,16 +1,24 @@
 <template>
-  <Bounded as="section">
-    <div>
-      <h1>{{ title }}</h1>
-      <!-- <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
+  <div>
+    <Bounded as="section" yPadding="base" :secondaryBackground="true">
+      <div class="grid md:grid-cols-2">
+        <div>
+          <Heading as="h1">{{ page.data.title }}</Heading>
+        </div>
+      </div>
+    </Bounded>
+    <Bounded as="section">
+      <div>
+        <!-- <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
     <pre>{{ JSON.stringify(categories, null, 2) }}</pre>
     <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
-      <!-- <category-list :categories="categories"></category-list> -->
-      <product-list :products="products"></product-list>
-      <!-- <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
-      <SliceZone :slices="page.data.slices" :components="components" />
-    </div>
-  </Bounded>
+        <!-- <category-list :categories="categories"></category-list> -->
+        <product-list :products="products"></product-list>
+        <!-- <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
+        <SliceZone :slices="page.data.slices" :components="components" />
+      </div>
+    </Bounded>
+  </div>
 </template>
 
 <script>
@@ -47,9 +55,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.$prismic.asText(
-        this.page.data.title
-      )} - ${this.$prismic.asText(
+      title: `${this.page.data.title} - ${this.$prismic.asText(
         this.$store.state.prismic.settings.data.siteTitle
       )}`,
     };

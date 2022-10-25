@@ -1,20 +1,16 @@
 <template>
   <bounded as="div">
-    <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
-    <pre>{{ JSON.stringify(categories, null, 2) }}</pre>
     <pre>{{ JSON.stringify(products, null, 2) }}</pre>
   </bounded>
 </template>
 
 <script>
-import { components } from "~/slices";
-
 export default {
-  async asyncData({ $prismic, store, i18n, $commerce }) {
+  async asyncData({ $prismic, store, i18n }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("page", "shop", { lang });
     const products = await $prismic.api.query(
-      $prismic.predicates.at("document.type", "product"),
+      $prismic.predicates.at("document.type", "product_category"),
       { lang: lang, orderings: "[my.product.date desc]", pageSize: 24 }
     );
 
@@ -25,16 +21,9 @@ export default {
       products: products.results,
     };
   },
-  data() {
-    return { components };
-  },
   head() {
     return {
-      title: `${this.$prismic.asText(
-        this.page.data.title
-      )} - ${this.$prismic.asText(
-        this.$store.state.prismic.settings.data.siteTitle
-      )}`,
+      title: `API`,
     };
   },
 };

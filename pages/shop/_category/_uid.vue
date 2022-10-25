@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Bounded as="section" :collapsible="false" yPadding="sm">
+    <Bounded as="section" :collapsible="false" yPadding="xs">
       <div class="md:grid md:grid-cols-12 md:gap-8">
         <div class="md:col-span-7 mb-8">
           <div class="slider-container prevent-select">
@@ -56,14 +56,14 @@
         </div>
         <div class="md:col-span-5">
           <div class="product-summary mb-4">
-            <heading as="h1" size="2xl" class="product-title">{{
-              product.title
-            }}</heading>
-            <heading as="p" size="lg" class="product-price">
+            <Heading as="h1" size="2xl" class="product-title"
+              >{{ product.title }}
+            </Heading>
+            <Heading as="p" size="lg" class="product-price">
               <span> SGD {{ product.price.toFixed(2) }} </span>
-            </heading>
+            </Heading>
           </div>
-          <variant-options
+          <VariantOptions
             v-if="product.lug_width.length > 0"
             id="lug-width-variants"
             class="variant-buttons mt-4"
@@ -85,7 +85,7 @@
             "
           />
           <div class="product-details grid grid-cols-1 gap-4 my-4">
-            <content-tabs :tabList="productDescription">
+            <ContentTabs :tabList="productDescription">
               <template v-slot:tabPanel-1>
                 <prismic-rich-text
                   :field="product.description"
@@ -106,53 +106,54 @@
                   </p>
                 </div>
               </template>
-            </content-tabs>
+            </ContentTabs>
             <div v-if="product.leather_disclaimer">
               <div>
-                <heading
+                <Heading
                   as="h2"
                   size="xs"
                   class="tracking-wider sans-serif uppercase font-semibold"
-                  >{{ settings.data.note_text }}</heading
                 >
+                  {{ settings.data.note_text }}
+                </Heading>
                 <prismic-rich-text
                   :field="settings.data.leather_disclaimer"
                   class="product-description-text"
                 />
               </div>
             </div>
-            <heading
+            <Heading
               as="h2"
               size="xs"
               class="product-sku tracking-wider sans-serif uppercase opacity-50"
               v-if="product.sku"
             >
               {{ product.sku }}
-            </heading>
+            </Heading>
           </div>
         </div>
       </div>
     </Bounded>
-    <bounded as="section" yPadding="sm" :secondaryBackground="true">
-      <content-tabs :tabList="shopInfo">
+    <Bounded as="section" yPadding="sm" :secondaryBackground="true">
+      <ContentTabs :tabList="shopInfo">
         <template v-slot:tabPanel-1>
           <prismic-rich-text :field="settings.data.shipping_information" />
         </template>
         <template v-slot:tabPanel-2>
           <prismic-rich-text :field="settings.data.return_policy" />
         </template>
-      </content-tabs>
-    </bounded>
+      </ContentTabs>
+    </Bounded>
 
     <SliceZone :slices="page.data.slices" :components="components" />
 
-    <bounded as="section" yPadding="sm">
-      <related-products
+    <Bounded as="section" yPadding="sm">
+      <RelatedProducts
         :relatedProducts="relatedProducts"
         :currentProduct="page"
         :settings="settings"
       />
-    </bounded>
+    </Bounded>
 
     <SliceZone :slices="settings.data.slices1" :components="components" />
     <!-- <pre>{{ page }}</pre> -->
@@ -164,7 +165,7 @@ import Swiper from "swiper/swiper-bundle.min";
 import "swiper/swiper-bundle.min.css";
 import { components } from "~/slices";
 export default {
-  async asyncData({ $prismic, store, i18n, params }) {
+  async asyncData({ $prismic, store, i18n, params, error }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("product", params.uid, {
       lang,
@@ -179,11 +180,16 @@ export default {
       }
     );
     await store.dispatch("prismic/load", { lang, page });
-    return {
-      page: page,
-      product: page.data,
-      relatedProducts: relatedProducts.results,
-    };
+    if (page.data.product_category.uid === params.category) {
+      return {
+        page: page,
+        product: page.data,
+        relatedProducts: relatedProducts.results,
+        params: params,
+      };
+    } else {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   },
   data() {
     return {
@@ -249,7 +255,7 @@ export default {
   },
   methods: {
     selectOption(variant) {
-      console.log(variant[0]);
+      // console.log(variant[0]);
       document
         .querySelector("#add-to-cart")
         .setAttribute("data-item-custom1-value", variant[0]);
