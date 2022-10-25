@@ -8,7 +8,9 @@ import { components } from "~/slices";
 export default {
   async asyncData({ $prismic, params, store, i18n }) {
     const lang = i18n.locale;
-    const page = await $prismic.api.getByUID("page", params.uid, { lang });
+    const page = await $prismic.api.getByUID("page", params.uid, {
+      lang,
+    });
     await store.dispatch("prismic/load", { lang, page });
     return {
       page,
@@ -19,9 +21,7 @@ export default {
   },
   head() {
     return {
-      title: `${this.$prismic.asText(
-        this.page.data.title
-      )} - ${this.$prismic.asText(
+      title: `${this.page.data.title} - ${this.$prismic.asText(
         this.$store.state.prismic.settings.data.siteTitle
       )}`,
     };
