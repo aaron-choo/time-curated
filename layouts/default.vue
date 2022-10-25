@@ -30,7 +30,13 @@
       :navigation="navigation"
       :settings="settings"
     />
-    <Breadcrumbs class="border-t" v-if="alternateLanguages[0].uid != 'home'" />
+    <Navigation
+      v-if="navigation.data && settings.data"
+      :alternate-languages="alternateLanguages"
+      :navigation="navigation"
+      :settings="settings"
+    />
+    <Breadcrumbs v-if="page.uid != 'home'" />
     <!-- <MiniCart /> -->
     <main><nuxt /></main>
     <Footer v-if="settings.data" :settings="settings" />
@@ -92,6 +98,9 @@ export default {
     },
     settings() {
       return this.$store.state.prismic.settings;
+    },
+    page() {
+      return this.$store.state.prismic.page;
     },
   },
 };
