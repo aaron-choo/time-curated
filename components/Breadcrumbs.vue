@@ -1,5 +1,5 @@
 <template>
-  <Bounded as="section" yPadding="xs">
+  <Bounded as="section" yPadding="xs" class="breadcrumb-container">
     <ol
       vocab="http://schema.org/"
       typeof="BreadcrumbList"
@@ -20,7 +20,7 @@
         property="itemListElement"
         typeof="ListItem"
       >
-        <NLink property="item" typeof="WebPage" to="/">
+        <NLink property="item" typeof="WebPage" to="/zh-cn/">
           <span property="name">官网</span>
         </NLink>
         <meta property="position" content="1" />
@@ -58,13 +58,14 @@ export default {
       const params = fullPath.startsWith("/")
         ? fullPath.substring(1).split("/")
         : fullPath.split("/");
+      console.log(params);
       const crumbs = [];
       let path = "";
       params.forEach((param, index) => {
         path = `${path}/${param}`;
         const match = this.$router.match(path);
         const lang = this.$store.state.prismic.settings.lang;
-        if (match.name !== null) {
+        if (match.name !== null && param.length > 1) {
           if (index === params.length - 1) {
             crumbs.push({
               title: this.$store.state.prismic.page.data.title,

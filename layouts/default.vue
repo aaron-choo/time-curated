@@ -30,7 +30,7 @@
       :navigation="navigation"
       :settings="settings"
     />
-    <Breadcrumbs class="border-t" />
+    <Breadcrumbs class="border-t" v-if="alternateLanguages[0].uid != 'home'" />
     <!-- <MiniCart /> -->
     <main><nuxt /></main>
     <Footer v-if="settings.data" :settings="settings" />
