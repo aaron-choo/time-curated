@@ -13,6 +13,11 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
+html:lang(en-US) *:lang(zh-CN),
+html:lang(zh-CN) *:lang(en-US) {
+    display: none;
+}
+
 :root {
     --color: #333333;
     --color-secondary: #0e2233;
