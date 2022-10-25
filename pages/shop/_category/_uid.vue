@@ -97,6 +97,14 @@
                   <p v-if="product.length">
                     {{ settings.data.length_text }} : {{ product.length }}
                   </p>
+                  <p v-if="product.inner_width">
+                    {{ settings.data.inner_width_text }} :
+                    {{ product.inner_width }}
+                  </p>
+                  <p v-if="product.outer_width">
+                    {{ settings.data.outer_width_text }} :
+                    {{ product.outer_width }}
+                  </p>
                   <p v-if="product.thickness">
                     {{ settings.data.thickness_text }} : {{ product.thickness }}
                   </p>
