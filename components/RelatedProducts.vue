@@ -9,15 +9,7 @@
         <div class="swiper-wrapper">
           <template v-for="product in relatedProducts">
             <div class="swiper-slide" v-if="product.uid != currentProduct.uid">
-              <nuxt-link
-                :to="
-                  localePath('/shop/') +
-                  '/' +
-                  product.data.category +
-                  '/' +
-                  product.uid
-                "
-              >
+              <nuxt-link :to="LinkGetter(product)">
                 <product-view :product="product" />
               </nuxt-link>
             </div>
@@ -29,12 +21,13 @@
 </template>
 
 <script>
+import LinkResolver from "~/plugins/link-resolver.js";
 import Swiper from "swiper/swiper-bundle.min";
 import "swiper/swiper-bundle.min.css";
 export default {
   props: {
     settings: { type: Object, required: true, defaultValue: {} },
-    relatedProducts: { type: Object, required: true, defaultValue: {} },
+    relatedProducts: { type: Array, required: true, defaultValue: {} },
     currentProduct: { type: Object, required: true, defaultValue: {} },
   },
   async mounted() {
@@ -59,6 +52,11 @@ export default {
         forceToAxis: true,
       },
     });
+  },
+  methods: {
+    LinkGetter(product) {
+      return LinkResolver(product);
+    },
   },
 };
 </script>

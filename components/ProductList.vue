@@ -7,11 +7,7 @@
           params: { permalink: product.permalink },
         }"
       > -->
-      <nuxt-link
-        :to="
-          localePath('/shop/') + '/' + product.data.category + '/' + product.uid
-        "
-      >
+      <nuxt-link :to="LinkGetter(product)">
         <product-view :product="product"></product-view
       ></nuxt-link>
     </div>
@@ -19,7 +15,13 @@
 </template>
 
 <script>
+import LinkResolver from "~/plugins/link-resolver.js";
 export default {
   props: ["products"],
+  methods: {
+    LinkGetter(product) {
+      return LinkResolver(product);
+    },
+  },
 };
 </script>

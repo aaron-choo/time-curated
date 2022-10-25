@@ -90,7 +90,9 @@ export default async () => {
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
 
-    plugins: ["~/plugins/commerce.js"],
+    plugins: [
+      { src: '~/plugins/prismicLinks', ssr: false }
+    ],
 
     publicRuntimeConfig: {
       development: process.env.NODE_ENV === 'development'
@@ -107,18 +109,8 @@ export default async () => {
     prismic: {
       endpoint: sm.apiEndpoint,
       modern: true,
-      linkResolver: (doc) => {
-        const prefix = doc.lang === 'en-us' ? '' : `/${doc.lang}`
+      linkResolver: '@/plugins/link-resolver',
 
-        switch (doc.type) {
-          case 'page':
-            return doc.uid === 'home' ? prefix || '/' : `${prefix}/${doc.uid}`
-          case 'product':
-            return `${prefix}/shop/${doc.category}/${doc.uid}`
-          default:
-            return prefix || '/'
-        }
-      },
       htmlSerializer(type, element, content, children) {
         switch (type) {
           case 'paragraph':
@@ -145,7 +137,16 @@ export default async () => {
             return /* html */ `<strong class="font-semibold">${children.join('')}</strong>`
 
           case 'hyperlink':
-            return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-2">${children.join('')}</a>`
+            if (element.data.type === 'product') {
+              if (element.data.lang === 'en-us') {
+                return /* html */ `<a href="/shop/${element.data.tags[0]}/${element.data.uid}" class="underline decoration-1 underline-offset-2" data-nuxt-link>${children.join('')}</a>`
+              }
+              else {
+                return /* html */ `<a href="/${element.data.lang}/shop/${element.data.tags[0]}/${element.data.uid}" class="underline decoration-1 underline-offset-2">${children.join('')}</a>`
+              }
+            }
+            else { return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-2">${children.join('')}</a>` }
+
 
           default:
             return null
