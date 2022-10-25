@@ -30,6 +30,7 @@
       :navigation="navigation"
       :settings="settings"
     />
+    <Breadcrumbs class="border-t" />
     <!-- <MiniCart /> -->
     <main><nuxt /></main>
     <Footer v-if="settings.data" :settings="settings" />
