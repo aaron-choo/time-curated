@@ -19,7 +19,7 @@ export default {
   },
   head() {
     return {
-      title: this.$prismic.asText(this.page.data.title),
+      title: this.page.data.title,
     };
   },
 };
