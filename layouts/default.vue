@@ -1,29 +1,6 @@
 <template>
   <div>
-    <!-- TODO: Remove the following element once you have read the documentation. -->
-    <!-- <div
-      v-if="$config.development"
-      :style="{
-        background: '#5163ba',
-        padding: '1rem',
-        textAlign: 'center',
-        fontSize: '0.85rem',
-        color: '#fff',
-      }"
-    >
-      <p>
-        <strong>👋 Welcome to your new website!</strong> To customize the code
-        and content of this site,&nbsp;<a
-          href="https://github.com/prismicio-community/nuxt-starter-prismic-multi-language/tree/master/docs"
-          target="_blank"
-          rel="noreferrer"
-          :style="{
-            textDecoration: 'underline',
-          }"
-          >see the documentation</a
-        >. Remove this bar in <code>layouts/default.vue</code>.
-      </p>
-    </div> -->
+    <AnnouncementBar />
     <Header
       v-if="navigation.data && settings.data"
       :alternate-languages="alternateLanguages"
@@ -37,7 +14,6 @@
       :settings="settings"
     />
     <Breadcrumbs v-if="page.uid != 'home'" />
-    <!-- <MiniCart /> -->
     <main><nuxt /></main>
     <Footer v-if="settings.data" :settings="settings" />
   </div>
@@ -87,6 +63,21 @@ export default {
                                      ▀███████████████████▀▀
                                          ▀▀▀▀▀▀▀▀▀▀▀▀
     `);
+    if (this.$device.isDesktop === true) {
+      document.documentElement.classList.add("desktop");
+    }
+    if (this.$device.isTablet === true) {
+      document.documentElement.classList.add("tablet");
+    }
+    if (this.$device.isMobile === true) {
+      document.documentElement.classList.add("mobile");
+    }
+    if (this.$device.isMacOS === true) {
+      document.documentElement.classList.add("macos");
+    }
+    if (this.$device.isWindows === true) {
+      document.documentElement.classList.add("windows");
+    }
   },
 
   computed: {
