@@ -9,23 +9,32 @@
             class="swiper-slide"
           >
             <nuxt-img
+              format="webp"
+              :src="item.image.url"
+              sizes="sm:100vw md:50vw lg:50vw xl:50vw 2xl:50vw"
+              :width="item.image.dimensions.width"
+              :height="item.image.dimensions.height"
+              class="product-image w-full rounded-[3px] relative"
+              loading="lazy"
+            />
+            <nuxt-img
               v-if="index === 0 && variant && variant.image.url"
               format="webp"
               :src="variant.image.url"
               sizes="sm:100vw md:50vw lg:50vw xl:50vw 2xl:50vw"
               :width="variant.image.dimensions.width"
               :height="variant.image.dimensions.height"
-              class="product-image variant w-full rounded-[3px]"
-              loading="lazy"
-            />
-            <nuxt-img
-              v-else
-              format="webp"
-              :src="item.image.url"
-              sizes="sm:100vw md:50vw lg:50vw xl:50vw 2xl:50vw"
-              :width="item.image.dimensions.width"
-              :height="item.image.dimensions.height"
-              class="product-image w-full rounded-[3px]"
+              class="
+                product-image
+                variant
+                w-full
+                rounded-[3px]
+                absolute
+                top-0
+                left-0
+                right-0
+                bottom-0
+              "
               loading="lazy"
             />
           </div>
@@ -39,17 +48,6 @@
             class="swiper-slide"
           >
             <nuxt-img
-              v-if="index === 0 && variant && variant.image.url"
-              format="webp"
-              :src="variant.image.url"
-              sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
-              :width="variant.image.dimensions.width"
-              :height="variant.image.dimensions.height"
-              class="product-image-thumbnail variant w-full rounded-[3px]"
-              loading="lazy"
-            />
-            <nuxt-img
-              v-else
               format="webp"
               :src="item.image.url"
               sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
@@ -61,6 +59,27 @@
                 h-auto
                 cursor-pointer
                 rounded-[3px]
+                relative
+              "
+              loading="lazy"
+            />
+            <nuxt-img
+              v-if="index === 0 && variant && variant.image.url"
+              format="webp"
+              :src="variant.image.url"
+              sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+              :width="variant.image.dimensions.width"
+              :height="variant.image.dimensions.height"
+              class="
+                product-image-thumbnail
+                variant
+                w-full
+                rounded-[3px]
+                absolute
+                top-0
+                left-0
+                right-0
+                bottom-0
               "
               loading="lazy"
             />

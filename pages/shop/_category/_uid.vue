@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Bounded as="section" :collapsible="false" yPadding="xs">
+    <Bounded as="section" :collapsible="false" yPadding="none">
       <div class="md:grid md:grid-cols-12 md:gap-8">
         <div class="md:col-span-7 mb-8">
           <ProductDetailImage :product="product" :variant="variant" />
@@ -17,21 +17,24 @@
               <span v-else> SGD {{ product.price.toFixed(2) }} </span>
             </Heading>
           </div>
-          <VariantOptions
-            v-if="product.lug_width.length > 0"
-            id="lug-width-variants"
-            class="variant-buttons mt-4"
-            :product="product"
-            :label="settings.data.lug_width_text"
-            :variation="product.lug_width"
-            :settings="settings"
-            @selectOption="selectOption($event)"
-          />
-          <AddToCartBtn
-            :product="page"
-            :settings="settings"
-            :variantImage="variantImage"
-          />
+          <div class="add-to-cart-section">
+            <VariantDropdown
+              v-if="product.lug_width.length > 0"
+              id="lug-width-variants"
+              class="variant-buttons mt-4"
+              :product="product"
+              :label="settings.data.lug_width_text"
+              :variation="product.lug_width"
+              :settings="settings"
+              @selectOption="selectOption($event)"
+            />
+            <AddToCartBtn
+              :product="page"
+              :settings="settings"
+              :variantImage="variantImage"
+              :class="{ 'col-span-2': product.lug_width.length === 0 }"
+            />
+          </div>
           <prismic-rich-text
             :field="settings.data.free_shipping_text"
             class="
@@ -129,7 +132,6 @@
 <script>
 import { components } from "~/slices";
 export default {
-  props: ["variant", "inventory"],
   async asyncData({ $prismic, store, i18n, params, error }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("product", params.uid, {
@@ -151,6 +153,8 @@ export default {
         product: page.data,
         relatedProducts: relatedProducts.results,
         params: params,
+        variantImage: null,
+        variant: null,
       };
     } else {
       error({ statusCode: 404, message: "Page not found" });
@@ -188,6 +192,7 @@ export default {
         .querySelector("#add-to-cart")
         .setAttribute("data-item-custom1-value", variant.name);
       this.variant = variant;
+      this.variantImage = variant.image;
     },
   },
 };
@@ -200,5 +205,21 @@ export default {
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .add-to-cart-section {
+    background: var(--bg);
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding: 0.5em 1.5em;
+    border-top: 1px solid var(--border-color);
+  }
 }
 </style>

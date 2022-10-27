@@ -64,7 +64,7 @@ html:lang(zh-CN) *:lang(en-US) {
     --color-fade-10: #EEEEEE1a !important;
     --color-fade-5: #EEEEEE0d !important;
     --bg: #222 !important;
-    --bg-secondary: #222 !important;
+    --bg-secondary: #333 !important;
     --border-color: #444 !important;
     --nextcolor: #DDD !important;
     --nextbg: #111 !important;
@@ -213,10 +213,6 @@ button.btn.selected {
     position: relative;
     z-index: 50;
 }
-
-/* .snipcart-sidecart--opened::-webkit-scrollbar {
-    width: unset;
-} */
 
 .snipcart::before {
     content: '';
