@@ -98,8 +98,7 @@ export default async () => {
     components: true,
 
     plugins: [
-      { src: '~/plugins/prismicLinks', ssr: false },
-      '~/plugins/v-dropdown-menu.js'
+      { src: '~/plugins/prismicLinks', ssr: false }
     ],
 
     publicRuntimeConfig: {
