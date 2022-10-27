@@ -17,7 +17,6 @@
               <span v-else> SGD {{ product.price.toFixed(2) }} </span>
             </Heading>
           </div>
-          {{ inventory }}
           <VariantOptions
             v-if="product.lug_width.length > 0"
             id="lug-width-variants"
@@ -145,7 +144,6 @@ export default {
         page: Math.floor(Math.random() * 1),
       }
     );
-    const inventory = await $http.$get(`https://app.snipcart.com/api/products`)
     await store.dispatch("prismic/load", { lang, page });
     if (page.data.product_category.uid === params.category) {
       return {
@@ -153,7 +151,6 @@ export default {
         product: page.data,
         relatedProducts: relatedProducts.results,
         params: params,
-        inventory: inventory;
       };
     } else {
       error({ statusCode: 404, message: "Page not found" });
