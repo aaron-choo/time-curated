@@ -31,7 +31,17 @@ export default async () => {
     },
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-    buildModules: ['@nuxt/image', '@nuxt/postcss8', '@nuxtjs/fontawesome', '@nuxtjs/snipcart', '@nuxt/image'],
+    buildModules: [
+      '@nuxt/image',
+      '@nuxt/postcss8',
+      '@nuxtjs/fontawesome',
+      '@nuxtjs/snipcart',
+      '@nuxtjs/color-mode',
+      '@nuxtjs/device'
+    ],
+    colorMode: {
+      preference: 'light'
+    },
     fontawesome: {
       icons: {
         solid: true,
@@ -73,9 +83,6 @@ export default async () => {
       '@fontsource/inter/500.css',
       '@fontsource/inter/600.css',
       '@fontsource/inter/700.css',
-      '@fontsource/libre-baskerville/400.css',
-      '@fontsource/libre-baskerville/400-italic.css',
-      '@fontsource/libre-baskerville/700.css',
       '@fontsource/eb-garamond/400.css',
       '@fontsource/eb-garamond/400-italic.css',
       '@fontsource/eb-garamond/700.css',
@@ -147,7 +154,6 @@ export default async () => {
               }
             }
             else { return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-2">${children.join('')}</a>` }
-
 
           default:
             return null

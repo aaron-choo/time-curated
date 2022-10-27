@@ -951,7 +951,7 @@
     "pirates" "^4.0.5"
     "source-map-support" "^0.5.16"
 
-"@babel/runtime@^7.14.0", "@babel/runtime@^7.15.4", "@babel/runtime@^7.18.9", "@babel/runtime@^7.7.4", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.14.0", "@babel/runtime@^7.15.4", "@babel/runtime@^7.18.9", "@babel/runtime@^7.8.4":
   "integrity" "sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw=="
   "resolved" "https://registry.npmjs.org/@babel/runtime/-/runtime-7.18.9.tgz"
   "version" "7.18.9"
@@ -992,14 +992,6 @@
     "@babel/helper-validator-identifier" "^7.18.6"
     "to-fast-properties" "^2.0.0"
 
-"@chec/commerce.js@^2.8.0":
-  "integrity" "sha512-OPBphT/hU33iDp52zzYOqz/oSXLhEuhGVUg2UNvYtmBW4eCNmtsM0dqW0+wu+6K0d6fZojurCBdVQMKb2R7l3g=="
-  "resolved" "https://registry.npmjs.org/@chec/commerce.js/-/commerce.js-2.8.0.tgz"
-  "version" "2.8.0"
-  dependencies:
-    "@babel/runtime" "^7.7.4"
-    "axios" "^0.21.1"
-
 "@csstools/convert-colors@^1.4.0":
   "integrity" "sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw=="
   "resolved" "https://registry.npmjs.org/@csstools/convert-colors/-/convert-colors-1.4.0.tgz"
@@ -1034,11 +1026,6 @@
   "integrity" "sha512-JDC9AocdPLuGsASkvWw9hS5gtHE7K9dOwL98XLrk5yjYqxy4uVnScG58NUvFMJDVJRl/7c8Wnap6PEs+7Zvj1Q=="
   "resolved" "https://registry.npmjs.org/@fontsource/inter/-/inter-4.5.14.tgz"
   "version" "4.5.14"
-
-"@fontsource/libre-baskerville@^4.5.10":
-  "integrity" "sha512-7dp2TxBSVlINiYe7LEuV/VojQij5oBSRIeS+/mOlCRXRyEKiEvK1y7sH8GlORqGxXYDKCDWtQaiCu1XPNchIKg=="
-  "resolved" "https://registry.npmjs.org/@fontsource/libre-baskerville/-/libre-baskerville-4.5.10.tgz"
-  "version" "4.5.10"
 
 "@fontsource/noto-sans-sc@^4.5.12":
   "integrity" "sha512-KQ8Bn8KCGVS6RKrEw7fp65GJYpKyKEJ/TkePoKGxvNy7smSaHoKV7vrmpIiA46hkqQyYdENix/NKSprxs4Soyw=="
@@ -1593,6 +1580,21 @@
     "webpack-hot-middleware" "^2.25.0"
     "webpack-node-externals" "^3.0.0"
     "webpackbar" "^4.0.0"
+
+"@nuxtjs/color-mode@^2.1.1":
+  "integrity" "sha512-kGB/FoICF4RwZkfNBhL/yGrHfaUFpviYq6HGvSkZEm2dCpjRXIv9VsWoP0uzwxnoaRAQQOkkWjaGv/nSk0gUSQ=="
+  "resolved" "https://registry.npmjs.org/@nuxtjs/color-mode/-/color-mode-2.1.1.tgz"
+  "version" "2.1.1"
+  dependencies:
+    "defu" "^5.0.0"
+    "lodash.template" "^4.5.0"
+
+"@nuxtjs/device@^2.1.0":
+  "integrity" "sha512-TYBdt1w2bmCCWp+MhgcBATZtqyUBi3nSdNpcLGILw5USLwCsC/yZtIkq9YisuEzuRnod9w/RZpoE80MxLftEuA=="
+  "resolved" "https://registry.npmjs.org/@nuxtjs/device/-/device-2.1.0.tgz"
+  "version" "2.1.0"
+  dependencies:
+    "defu" "^3.2.2"
 
 "@nuxtjs/eslint-config@^11.0.0":
   "integrity" "sha512-o4zFOpU8gJgwrC/gLE7c2E0XEjkv2fEixCGG1y+dZYzBPyzTorkQmfxskSF3WRXcZkpkS9uUYlRkeOSdYB7z0w=="
@@ -2760,13 +2762,6 @@
   "version" "3.2.0"
   dependencies:
     "is-retry-allowed" "^1.1.0"
-
-"axios@^0.21.1":
-  "integrity" "sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg=="
-  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz"
-  "version" "0.21.4"
-  dependencies:
-    "follow-redirects" "^1.14.0"
 
 "axios@^0.26.0":
   "integrity" "sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA=="
@@ -5534,7 +5529,7 @@
     "inherits" "^2.0.3"
     "readable-stream" "^2.3.6"
 
-"follow-redirects@^1.14.0", "follow-redirects@^1.14.8", "follow-redirects@^1.14.9":
+"follow-redirects@^1.14.8", "follow-redirects@^1.14.9":
   "integrity" "sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.1.tgz"
   "version" "1.15.1"
