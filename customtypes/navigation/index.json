@@ -11,12 +11,10 @@
           "label": "Links",
           "fields": {
             "label": {
-              "type": "StructuredText",
+              "type": "Text",
               "config": {
                 "label": "Label",
-                "placeholder": "Optional - Label for the link",
-                "allowTargetBlank": false,
-                "single": "heading3"
+                "placeholder": ""
               }
             },
             "link": {

@@ -13,30 +13,24 @@
   "data": {
     "links": [
       {
-        "label": [
-          {
-            "type": "heading3",
-            "text": "Birds",
-            "spans": []
-          }
-        ],
-        "link": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
-      }
-    ],
-    "shop_links": [
-      {
-        "label": "page",
+        "label": "twice",
         "link": {
           "link_type": "Web",
           "url": "http://google.com"
         }
       }
     ],
-    "language_text": "electricity",
-    "shop_text": "eat",
-    "collection_text": "generally"
+    "shop_links": [
+      {
+        "label": "block",
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      }
+    ],
+    "language_text": "please",
+    "shop_text": "immediately",
+    "collection_text": "radio"
   }
 }

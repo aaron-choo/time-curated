@@ -1,14 +1,7 @@
 {
   "_cts": {
     "navigation": {
-      "links": {
-        "label": {
-          "config": {
-            "patternType": "HEADING",
-            "blocks": 1
-          }
-        }
-      }
+      "links": {}
     },
     "page": {},
     "article": {
