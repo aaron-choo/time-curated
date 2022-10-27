@@ -42,6 +42,8 @@ html:lang(zh-CN) *:lang(en-US) {
     --bg-warning: #fdf8e3;
     --bg: #fff;
     --bg-secondary: #eee;
+    --bg-accent: #34403e;
+    --color-accent: #fff;
     --border-color: #e4e7eb;
     --footer-bg: #000;
     --footer-color: #fff;
@@ -49,15 +51,21 @@ html:lang(zh-CN) *:lang(en-US) {
     --sans-serif-font-family: 'Inter', 'Noto Sans SC', sans-serif;
     --serif-font-family: 'EB Garamond', 'Noto Serif SC', serif;
     --page-padding: 1.5em;
+    --color-shadow: #0000001a;
 }
 
 .dark-mode {
-    --color: #DDD !important;
-    --color-primary: #DDD !important;
-    --color-secondary: #DDD !important;
-    --bg: #111 !important;
-    --bg-secondary: #111 !important;
-    --border-color: #DDD !important;
+    --color: #EEE !important;
+    --color-primary: #EEE !important;
+    --color-secondary: #EEE !important;
+    --color-fade-80: #EEEEEEcc !important;
+    --color-fade-50: #EEEEEE80 !important;
+    --color-fade-20: #EEEEEE33 !important;
+    --color-fade-10: #EEEEEE1a !important;
+    --color-fade-5: #EEEEEE0d !important;
+    --bg: #222 !important;
+    --bg-secondary: #222 !important;
+    --border-color: #444 !important;
     --nextcolor: #DDD !important;
     --nextbg: #111 !important;
     --prevcolor: #DDD !important;
@@ -135,6 +143,7 @@ button.btn.selected {
     --bgColor-modal: var(--bg);
     --bgColor-default: var(--bg);
     --bgColor-alt: var(--bg);
+    --color-default: var(--color);
     --bgColor-buttonPrimary: var(--color);
     --bgColor-buttonPrimary-active: var(--color-fade-80);
     --bgColor-buttonPrimary-hover: var(--color-fade-80);
@@ -186,12 +195,23 @@ button.btn.selected {
     --color-badge-active: var(--color-success);
     --borderColor-badge-active: var(--color-success);
     --bgColor-badge-active: var(--bg-success);
+    --color-inputLabel: var(--color);
+    --bgColor-input-checked: var(--color);
+    --bgColor-input: var(--bg);
+    --bgColor-input-hover: var(--bg);
+    --bgColor-input-active: var(--bg);
+    --bgColor-input-focus: var(--bg);
     --bgColor-input-checked: var(--color);
     --color-input-checked: var(--bg);
     --borderColor-input-checked: var(--color);
     --shadow-input-checked: transparent;
     --bgColor-buttonPrimary-focus: var(--color-fade-80);
     --shadow-buttonPrimary-focus: transparent;
+}
+
+#snipcart {
+    position: relative;
+    z-index: 50;
 }
 
 /* .snipcart-sidecart--opened::-webkit-scrollbar {
@@ -486,6 +506,10 @@ h1.snipcart__font--subtitle {
 
 .snipcart-item-line__info:empty {
     padding: 0;
+}
+
+.snipcart-payment-card-form.snipcart-payment-card-form--loaded {
+    filter: brightness(0.5) invert(1) hue-rotate(180deg);
 }
 
 @media (max-width: 1023px) {
