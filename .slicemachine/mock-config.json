@@ -74,7 +74,8 @@
       },
       "lug_width": {}
     },
-    "product_category": {}
+    "product_category": {},
+    "collection": {}
   },
   "slices": {
     "Text": {

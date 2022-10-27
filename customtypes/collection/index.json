@@ -1,0 +1,58 @@
+{
+  "id": "collection",
+  "label": "Collection",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      }
+    },
+    "Assets": {
+      "watch_base": {
+        "type": "Image",
+        "config": {
+          "label": "Watch Base",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "watch_hour": {
+        "type": "Image",
+        "config": {
+          "label": "Watch Hour",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "watch_minute": {
+        "type": "Image",
+        "config": {
+          "label": "Watch Minute",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "watch_second": {
+        "type": "Image",
+        "config": {
+          "label": "Watch Second",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

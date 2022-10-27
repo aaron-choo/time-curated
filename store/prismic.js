@@ -28,7 +28,7 @@ export const actions = {
     store.commit('setSettings', settings)
     const pageAltLang = page.alternate_languages
     // console.log(pageAltLang)
-    if (pageAltLang[0].type === 'product') {
+    if (pageAltLang.length > 0 && pageAltLang[0].type === 'product') {
       const pageCat = page.data.product_category.uid
       for (let i = 0; i < pageAltLang.length; i++) {
         pageAltLang[i].data = { 'product_category': { 'uid': pageCat } }
