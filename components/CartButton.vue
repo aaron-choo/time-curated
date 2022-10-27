@@ -1,28 +1,34 @@
 <template>
   <button aria-label="Check Out" class="snipcart-checkout button relative">
     <svg
-      class="h-6 w-6"
-      enable-background="new 0 0 64 64"
-      height="64"
-      viewBox="0 0 64 64"
-      width="64"
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 14 14"
+      height="14"
+      width="14"
+      class="h-5 w-5"
     >
-      <g
-        fill="none"
-        stroke="var(--color)"
-        stroke-miterlimit="10"
-        stroke-width="2"
-      >
-        <path d="m44 18h10v45h-44v-45h10z" />
-        <path d="m22 24v-13c0-5.523 4.477-10 10-10s10 4.477 10 10v13" />
+      <g>
+        <path
+          d="M12.88,12.39a1,1,0,0,1-.25.78,1,1,0,0,1-.75.33H2.12a1,1,0,0,1-.75-.33,1,1,0,0,1-.25-.78L2,4.5H12Z"
+          fill="none"
+          stroke="var(--color)"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+        <path
+          d="M4.5,4.5V3a2.5,2.5,0,0,1,5,0V4.5"
+          fill="none"
+          stroke="var(--color)"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
       </g>
     </svg>
     <span
       class="
         snipcart-items-count
         absolute
-        bottom-0
+        -bottom-[2px]
         left-0
         right-0
         sans-serif
@@ -32,22 +38,7 @@
   </button>
 </template>
 <script>
-export default {
-  computed: {
-    cartCount() {
-      return this.$store.getters.getCartItemCount;
-    },
-    cartSubtotal() {
-      return this.$store.getters.getCartSubtotal;
-    },
-  },
-  methods: {
-    setCartView() {
-      const isOpened = this.$store.state.isCartOpened;
-      this.$store.commit("setCartView", !isOpened);
-    },
-  },
-};
+export default {};
 </script>
 
 <style scoped>
