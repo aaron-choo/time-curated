@@ -14,7 +14,9 @@
     :data-item-id="product.uid"
     :data-item-price="product.data.price"
     :data-item-description="product.data.description.text"
-    :data-item-image="product.data.images[0].image.url"
+    :data-item-image="
+      variantImage ? variantImage.url : product.data.images[0].image.url
+    "
     :data-item-name="product.data.title"
     :data-item-custom1-name="
       product.data.lug_width.length > 0 ? 'Lug Width' : null
@@ -41,10 +43,7 @@
 </template>
 <script>
 export default {
-  props: {
-    product: { type: Object, required: true, defaultValue: {} },
-    settings: { type: Object, required: true, defaultValue: {} },
-  },
+  props: ["product", "settings", "variantImage"],
   methods: {
     getLugWidthVariants() {
       const variants = this.product.data.lug_width;

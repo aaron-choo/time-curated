@@ -10,9 +10,8 @@
     >
       <button
         class="btn variant-button mr-2 hover:opacity-80"
-        :class="index === 0 ? 'selected' : ''"
         :id="variant.name"
-        @click="selectOption(variant.name, variant.image)"
+        @click="selectOption(variant)"
       >
         {{ variant.name }}
       </button>
@@ -30,18 +29,21 @@ export default {
   data() {
     return {};
   },
+  mounted() {
+    this.selectOption(this.variation[0]);
+  },
   methods: {
-    selectOption(variant, image) {
+    selectOption(variant) {
       // console.log(group);
       // console.log(option);
       // console.log(sku);
-      let arr = [variant, image];
+      // let arr = [variant, image];
       // console.log(arr);
-      this.$emit("selectOption", arr);
+      this.$emit("selectOption", variant);
       document.querySelectorAll(".variant-button").forEach((el) => {
         el.classList.remove("selected");
       });
-      document.getElementById(variant).classList.add("selected");
+      document.getElementById(variant.name).classList.add("selected");
     },
   },
 };
@@ -49,6 +51,6 @@ export default {
 
 <style scoped>
 button {
-  border: 1px solid currentColor;
+  border: 1px solid var(--color);
 }
 </style>

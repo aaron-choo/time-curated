@@ -200,7 +200,7 @@ export default {
     async updateQuantity() {
       try {
         // eslint-disable-next-line
-        console.log(this.item.id, this.quantity);
+        // console.log(this.item.id, this.quantity);
         const res = await this.$commerce.cart.update(this.item.id, {
           quantity: this.quantity,
         });

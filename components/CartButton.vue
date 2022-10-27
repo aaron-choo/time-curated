@@ -8,7 +8,12 @@
       width="64"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2">
+      <g
+        fill="none"
+        stroke="var(--color)"
+        stroke-miterlimit="10"
+        stroke-width="2"
+      >
         <path d="m44 18h10v45h-44v-45h10z" />
         <path d="m22 24v-13c0-5.523 4.477-10 10-10s10 4.477 10 10v13" />
       </g>

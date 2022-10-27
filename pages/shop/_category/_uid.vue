@@ -3,66 +3,21 @@
     <Bounded as="section" :collapsible="false" yPadding="xs">
       <div class="md:grid md:grid-cols-12 md:gap-8">
         <div class="md:col-span-7 mb-8">
-          <div class="slider-container prevent-select">
-            <div class="swiper product-image mb-2" ref="productImages">
-              <div class="swiper-wrapper">
-                <div
-                  v-for="(item, index) in product.images"
-                  :key="index"
-                  class="swiper-slide"
-                >
-                  <nuxt-img
-                    format="webp"
-                    :src="item.image.url"
-                    sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
-                    :width="item.image.dimensions.width"
-                    :height="item.image.dimensions.height"
-                    class="product-image w-full rounded-[3px]"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="swiper product-image-thumbnail mx-4"
-              ref="productThumbnails"
-            >
-              <ul class="swiper-wrapper">
-                <li
-                  v-for="(item, index) in product.images"
-                  :key="index"
-                  class="swiper-slide"
-                >
-                  <nuxt-img
-                    format="webp"
-                    :src="item.image.url"
-                    sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
-                    :width="item.image.dimensions.width"
-                    :height="item.image.dimensions.height"
-                    class="
-                      product-image-thumbnail
-                      w-full
-                      h-auto
-                      cursor-pointer
-                      rounded-[3px]
-                    "
-                    loading="lazy"
-                  />
-                </li>
-              </ul>
-              <div class="swiper-scrollbar"></div>
-            </div>
-          </div>
+          <ProductDetailImage :product="product" :variant="variant" />
         </div>
         <div class="md:col-span-5">
           <div class="product-summary mb-4">
-            <Heading as="h1" size="2xl" class="product-title"
-              >{{ product.title }}
+            <Heading as="h1" size="2xl" class="product-title">
+              {{ product.title }}
             </Heading>
             <Heading as="p" size="lg" class="product-price">
-              <span> SGD {{ product.price.toFixed(2) }} </span>
+              <span v-if="variant">
+                SGD {{ (product.price + variant.price).toFixed(2) }}
+              </span>
+              <span v-else> SGD {{ product.price.toFixed(2) }} </span>
             </Heading>
           </div>
+          {{ inventory }}
           <VariantOptions
             v-if="product.lug_width.length > 0"
             id="lug-width-variants"
@@ -73,7 +28,11 @@
             :settings="settings"
             @selectOption="selectOption($event)"
           />
-          <AddToCartBtn :product="page" :settings="settings" />
+          <AddToCartBtn
+            :product="page"
+            :settings="settings"
+            :variantImage="variantImage"
+          />
           <prismic-rich-text
             :field="settings.data.free_shipping_text"
             class="
@@ -169,10 +128,9 @@
 </template>
 
 <script>
-import Swiper from "swiper/swiper-bundle.min";
-import "swiper/swiper-bundle.min.css";
 import { components } from "~/slices";
 export default {
+  props: ["variant", "inventory"],
   async asyncData({ $prismic, store, i18n, params, error }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("product", params.uid, {
@@ -187,6 +145,7 @@ export default {
         page: Math.floor(Math.random() * 1),
       }
     );
+    const inventory = await $http.$get(`https://app.snipcart.com/api/products`)
     await store.dispatch("prismic/load", { lang, page });
     if (page.data.product_category.uid === params.category) {
       return {
@@ -194,6 +153,7 @@ export default {
         product: page.data,
         relatedProducts: relatedProducts.results,
         params: params,
+        inventory: inventory;
       };
     } else {
       error({ statusCode: 404, message: "Page not found" });
@@ -224,81 +184,22 @@ export default {
       return this.$store.state.prismic.settings;
     },
   },
-  async mounted() {
-    await this.$nextTick();
-    let thumb = new Swiper(this.$refs.productThumbnails, {
-      watchSlidesProgress: true,
-      mousewheel: {
-        releaseOnEdges: true,
-      },
-      slidesPerView: 5.5,
-      slidesPerGroup: 3,
-      spaceBetween: 8,
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        draggable: true,
-        hide: true,
-      },
-    });
-    new Swiper(this.$refs.productImages, {
-      loop: true,
-      spaceBetween: 8,
-      keyboard: {
-        enabled: true,
-        onlyInViewport: true,
-      },
-      mousewheel: {
-        releaseOnEdges: true,
-        forceToAxis: true,
-      },
-      navigation: {
-        nextEl: ".image.swiper-button-next",
-        prevEl: ".image.swiper-button-prev",
-      },
-      thumbs: {
-        swiper: thumb,
-        autoScrollOffset: 1,
-      },
-    });
-  },
   methods: {
     selectOption(variant) {
-      // console.log(variant[0]);
+      // console.log(variant[1]);
       document
         .querySelector("#add-to-cart")
-        .setAttribute("data-item-custom1-value", variant[0]);
+        .setAttribute("data-item-custom1-value", variant.name);
+      this.variant = variant;
     },
   },
 };
 </script>
-<style>
+<style scoped>
 .product-description-text > p:not(:last-child) {
   margin-bottom: 0.5rem;
 }
 
-.swiper-button-next:after,
-.swiper-rtl .swiper-button-prev:after,
-.swiper-button-prev:after,
-.swiper-rtl .swiper-button-next:after {
-  content: none !important;
-}
-/* .swiper.product-image-thumbnail .swiper-slide {
-  transition: opacity 0.3s ease;
-}
-.swiper.product-image-thumbnail .swiper-slide:not(.swiper-slide-thumb-active) {
-  opacity: 0.5;
-} */
-.swiper.product-image-thumbnail .swiper-slide {
-  outline: 1px solid var(--color-fade-10);
-  outline-offset: -1px;
-  transition: outline 0.3s ease;
-  border-radius: 3px;
-}
-.swiper.product-image-thumbnail .swiper-slide.swiper-slide-thumb-active {
-  outline: 1px solid var(--color-fade-50);
-}
-</style>
-<style scoped>
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
