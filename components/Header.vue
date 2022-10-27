@@ -1,11 +1,10 @@
 <template>
   <header>
-    <Bounded as="div" y-padding="xs" class="">
+    <Bounded as="div" y-padding="sm" class="logo-container">
       <div
         class="
           flex flex-wrap
           w-full
-          py-8
           items-center
           justify-center
           gap-x-6 gap-y-3

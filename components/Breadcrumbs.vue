@@ -58,7 +58,7 @@ export default {
       const params = fullPath.startsWith("/")
         ? fullPath.substring(1).split("/")
         : fullPath.split("/");
-      console.log(params);
+      // console.log(params);
       const crumbs = [];
       let path = "";
       params.forEach((param, index) => {

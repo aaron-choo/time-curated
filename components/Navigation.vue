@@ -2,10 +2,12 @@
   <Bounded
     as="nav"
     y-padding="xs"
-    class="site-navigation sticky top-0 border-t border-b z-10"
-    style="background-color: var(--bg)"
+    class="site-navigation sticky top-0 border-t border-b"
+    style="background-color: var(--bg); z-index: 2"
   >
-    <div class="col-span-2"></div>
+    <div class="col-span-2 self-center">
+      <ModeSwitcher :scrollOver="scrollOver" />
+    </div>
     <ul
       class="
         col-span-8
@@ -21,11 +23,11 @@
     >
       <li
         v-for="item in navigation.data.links"
-        :key="$prismic.asText(item.label)"
+        :key="item.label"
         class="uppercase"
       >
         <PrismicLink :field="item.link">
-          {{ $prismic.asText(item.label) }}
+          {{ item.label }}
         </PrismicLink>
       </li>
 
@@ -65,7 +67,7 @@
         <Bounded
           as="div"
           y-padding="xs"
-          secondaryBackground="true"
+          :secondaryBackground="true"
           slot="header"
           >Dropdown Header</Bounded
         >
@@ -84,7 +86,7 @@
         </Bounded>
         <Bounded
           as="div"
-          secondaryBackground="true"
+          :secondaryBackground="true"
           y-padding="xs"
           slot="footer"
           >Free shipping with minimum spend | Authorized retailer with
@@ -168,6 +170,7 @@
                 class="switch-lang"
                 :field="{ ...lang, link_type: 'Document' }"
                 :class="lang.lang"
+                dropdown-closer
               >
                 <span class="sr-only">{{ lang.lang }}</span>
                 <!-- <span
@@ -203,12 +206,41 @@ export default {
       default: () => [],
     },
   },
+  data() {
+    return {
+      scrollOver: false,
+      colors: [
+        { name: "light", symbol: " " },
+        { name: "dark", symbol: " " },
+      ],
+    };
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
   methods: {
     switchLang(lang) {
       // console.log(lang);
       this.$snipcart.setLanguage(
         lang.slice(0, -2) + lang.slice(-2).toUpperCase()
       );
+    },
+    onScroll() {
+      // Get the current scroll position
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+      // Because of momentum scrolling on mobiles, we shouldn't continue if it is less than zero
+      if (currentScrollPosition < 0) {
+        return;
+      }
+      if (currentScrollPosition > 0) {
+        this.scrollOver = true;
+      } else {
+        this.scrollOver = false;
+      }
     },
   },
 };
@@ -225,8 +257,8 @@ export default {
   position: initial;
 }
 .v-dropdown-menu__container {
-  background: var(--bg);
-  border-color: var(--border-color);
+  background: var(--bg) !important;
+  border-color: var(--border-color) !important;
 }
 .full-dropdown .v-dropdown-menu__container {
   width: 100%;
@@ -234,7 +266,7 @@ export default {
   border-right: none;
   border-top: none;
   top: calc(100% + 1px);
-  box-shadow: 0 3px 3px var(--color-fade-10);
+  box-shadow: 0 3px 3px var(--color-shadow);
 }
 </style>
 
