@@ -196,6 +196,85 @@
           }
         }
       }
+    },
+    "Collection": {
+      "manufacture_text": {
+        "type": "Text",
+        "config": {
+          "label": "Manufacture Text",
+          "placeholder": ""
+        }
+      },
+      "year_text": {
+        "type": "Text",
+        "config": {
+          "label": "Year Text",
+          "placeholder": ""
+        }
+      },
+      "reference_text": {
+        "type": "Text",
+        "config": {
+          "label": "Reference Text",
+          "placeholder": ""
+        }
+      },
+      "model_text": {
+        "type": "Text",
+        "config": {
+          "label": "Model Text",
+          "placeholder": ""
+        }
+      },
+      "case_material_text": {
+        "type": "Text",
+        "config": {
+          "label": "Case Material Text",
+          "placeholder": ""
+        }
+      },
+      "case_dimensions_text": {
+        "type": "Text",
+        "config": {
+          "label": "Case Dimensions Text",
+          "placeholder": ""
+        }
+      },
+      "crystal_text": {
+        "type": "Text",
+        "config": {
+          "label": "Crystal Text",
+          "placeholder": ""
+        }
+      },
+      "dial_text": {
+        "type": "Text",
+        "config": {
+          "label": "Dial Text",
+          "placeholder": ""
+        }
+      },
+      "complications_text": {
+        "type": "Text",
+        "config": {
+          "label": "Complications Text",
+          "placeholder": ""
+        }
+      },
+      "movement_text": {
+        "type": "Text",
+        "config": {
+          "label": "Movement Text",
+          "placeholder": ""
+        }
+      },
+      "production_quantity_text": {
+        "type": "Text",
+        "config": {
+          "label": "Production Quantity Text",
+          "placeholder": ""
+        }
+      }
     }
   }
 }

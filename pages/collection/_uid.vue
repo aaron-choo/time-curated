@@ -1,6 +1,51 @@
 <template>
   <div>
-    <WatchModule :watch="page.data" />
+    <Bounded as="div" yPadding="xs" secondaryBackground="true">
+      <WatchModule
+        :watch="page.data"
+        class="watch-module my-8 mx-auto max-w-7xl md:w-[50vw]"
+      />
+      <div class="watch-meta mx-auto max-w-2xl">
+        <Heading as="h1" size="6xl" class="text-center">
+          {{ page.data.title }}
+        </Heading>
+        <Heading as="h3" size="4xl" class="text-center opacity-50">
+          {{ $prismic.asText(page.data.year) }}
+        </Heading>
+        <PrismicRichText
+          v-if="$prismic.asText(page.data.description)"
+          :field="page.data.description"
+          :html-serializer="htmlSerializer"
+          wrapper="div"
+          class="my-8 mb-20"
+        />
+      </div>
+    </Bounded>
+    <Bounded as="div" yPadding="xs">
+      <div
+        class="
+          watch-specifications
+          mx-auto
+          max-w-4xl
+          grid grid-cols-2
+          md:grid-cols-3
+          gap-4
+        "
+      >
+        <template v-for="specification in specifications">
+          <div v-if="page.data[specification].length > 0" class="text-center">
+            <p class="sans-serif text-xs font-semibold uppercase">
+              {{ settings.data[specification + "_text"] }}
+            </p>
+            <PrismicRichText
+              v-if="$prismic.asText(page.data[specification])"
+              :field="page.data[specification]"
+              :html-serializer="htmlSerializer"
+            />
+          </div>
+        </template>
+      </div>
+    </Bounded>
     <SliceZone :slices="settings.data.slices1" :components="components" />
     <!-- <pre>{{ page }}</pre> -->
   </div>
@@ -33,6 +78,20 @@ export default {
   data() {
     return {
       components,
+      specifications: [
+        "manufacture",
+        "year",
+        "reference",
+        "model",
+        "case_material",
+        "case_dimensions",
+        "lug_width",
+        "crystal",
+        "dial",
+        "complications",
+        "movement",
+        "production_quantity",
+      ],
     };
   },
   head() {

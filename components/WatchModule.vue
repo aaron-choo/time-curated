@@ -203,8 +203,9 @@ export default {
 <style scoped>
 .watch-wrapper {
   position: relative;
-  width: 50vh;
-  padding-top: 78.7vh;
+  width: 100%;
+  padding-top: 78.7%;
+  padding-top: 100%;
   overflow: visible;
   margin: auto;
 }

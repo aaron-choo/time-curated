@@ -75,7 +75,14 @@
       "lug_width": {}
     },
     "product_category": {},
-    "collection": {}
+    "collection": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "Text": {

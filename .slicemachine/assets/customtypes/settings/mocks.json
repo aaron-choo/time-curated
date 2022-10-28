@@ -14,7 +14,7 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Bigger",
+        "text": "Giving",
         "spans": []
       }
     ],
@@ -25,64 +25,75 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
+      "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
     },
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Commodo quis minim exercitation consectetur ex sint aliqua duis voluptate adipisicing sunt esse consequat exercitation fugiat. Cillum veniam mollit cupidatat sunt anim proident.",
+        "text": "Reprehenderit amet commodo nostrud cillum enim mollit. Sint id proident consequat irure consectetur esse adipisicing mollit sit ut qui ex. Consequat proident velit aute ad non voluptate veniam cupidatat laborum labore enim amet nulla.",
         "spans": []
       }
     ],
     "newsletterDisclaimer": [
       {
         "type": "paragraph",
-        "text": "Ad irure minim ea aute cillum occaecat veniam.",
+        "text": "Occaecat culpa laborum commodo velit laborum mollit excepteur deserunt nostrud consequat ea Lorem enim culpa. Qui ut Lorem ullamco commodo anim est irure.",
         "spans": []
       }
     ],
-    "description_label": "eight",
-    "specifications_label": "pot",
+    "description_label": "lucky",
+    "specifications_label": "job",
     "free_shipping_text": [
       {
         "type": "paragraph",
-        "text": "Elit nisi officia officia proident culpa ut voluptate dolor cupidatat quis consectetur Lorem duis.",
+        "text": "Proident veniam eiusmod anim officia proident.",
         "spans": []
       }
     ],
-    "shipping_information_label": "mistake",
+    "shipping_information_label": "wise",
     "shipping_information": [
       {
         "type": "paragraph",
-        "text": "Ad eiusmod tempor exercitation commodo minim veniam incididunt adipisicing labore laboris reprehenderit occaecat sunt.",
+        "text": "Quis cupidatat est irure enim dolor anim officia aliquip sint. Ad id qui sit enim ut laborum eiusmod. Excepteur occaecat veniam aute ea quis qui pariatur tempor excepteur ex fugiat aliquip velit irure minim.",
         "spans": []
       }
     ],
-    "return_policy_label": "drive",
+    "return_policy_label": "can",
     "return_policy": [
       {
         "type": "paragraph",
-        "text": "Sint sint occaecat aliqua elit. Et ut minim Lorem magna nulla ut cupidatat duis excepteur consequat nulla ea quis non culpa. Et consectetur nostrud commodo tempor ea eiusmod nostrud magna labore.",
+        "text": "Deserunt proident consequat commodo mollit laborum ipsum consequat consectetur minim. Ea consectetur cillum dolore in.",
         "spans": []
       }
     ],
     "leather_disclaimer": [
       {
         "type": "paragraph",
-        "text": "Dolore tempor elit magna duis laborum amet magna ad irure consequat occaecat incididunt.",
+        "text": "Consequat dolore aute veniam labore tempor. Lorem reprehenderit esse labore aliquip et officia minim ex veniam enim fugiat ullamco anim. Velit non ipsum ut elit minim anim aliquip aliquip fugiat.",
         "spans": []
       }
     ],
-    "add_to_cart_text": "wall",
-    "sold_out_text": "specific",
-    "note_text": "women",
-    "length_text": "station",
-    "thickness_text": "thought",
-    "clasp_width_text": "we",
-    "lug_width_text": "field",
-    "outer_width_text": "imagine",
-    "inner_width_text": "then",
-    "you_may_like_text": "garden",
-    "slices1": []
+    "add_to_cart_text": "waste",
+    "sold_out_text": "dawn",
+    "note_text": "orbit",
+    "length_text": "answer",
+    "thickness_text": "zipper",
+    "clasp_width_text": "saved",
+    "lug_width_text": "while",
+    "outer_width_text": "seldom",
+    "inner_width_text": "firm",
+    "you_may_like_text": "rays",
+    "slices1": [],
+    "manufacture_text": "mathematics",
+    "year_text": "physical",
+    "reference_text": "title",
+    "model_text": "silly",
+    "case_material_text": "cent",
+    "case_dimensions_text": "name",
+    "crystal_text": "column",
+    "dial_text": "porch",
+    "complications_text": "size",
+    "movement_text": "feel",
+    "production_quantity_text": "rod"
   }
 }
