@@ -13,6 +13,12 @@ module.exports = {
       serif:
         '"Libre Baskerville", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif'
     },
+    transitionDuration: {
+      DEFAULT: '300ms',
+    },
+    transitionTimingFunction: {
+      DEFAULT: 'ease',
+    },
     extend: {}
   },
   plugins: [require('@tailwindcss/aspect-ratio')]
