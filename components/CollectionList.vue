@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
     <div v-for="watch in collection" :key="watch.id">
       <nuxt-link :to="LinkGetter(watch)">
         <collection-view :watch="watch"></collection-view

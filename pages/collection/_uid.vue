@@ -3,9 +3,9 @@
     <Bounded as="div" yPadding="xs" secondaryBackground="true">
       <WatchModule
         :watch="page.data"
-        class="watch-module my-8 mx-auto max-w-7xl md:w-[50vw]"
+        class="watch-module my-4 mx-auto w-full md:max-w-[50vw] xl:max-w-2xl"
       />
-      <div class="watch-meta mx-auto max-w-2xl">
+      <div class="watch-meta mx-auto w-full">
         <Heading as="h1" size="6xl" class="text-center">
           {{ page.data.title }}
         </Heading>
@@ -21,7 +21,7 @@
         />
       </div>
     </Bounded>
-    <Bounded as="div" yPadding="xs">
+    <Bounded as="div" yPadding="base">
       <div
         class="
           watch-specifications

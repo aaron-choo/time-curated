@@ -1,23 +1,95 @@
 <template>
   <div>
-    <style id="watch-animate" type="text/css"></style>
-    <div class="watch-wrapper">
-      <div
-        class="watch-base"
-        :style="'background-image: url(' + watch.watch_base.url + ');'"
-      >
-        <div
+    <div class="watch-wrapper relative w-full m-auto overflow-visible">
+      <div class="watch-base w-full h-full absolute top-0 overflow-hidden">
+        <nuxt-img
+          v-if="watch.watch_strap.url"
+          format="webp"
+          :src="watch.watch_strap.url"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          :width="watch.watch_strap.dimensions.width"
+          :height="watch.watch_strap.dimensions.height"
+          :style="watch.watch_strap_position"
+          class="watch-strap"
+          loading="lazy"
+        />
+        <nuxt-img
+          v-if="watch.watch_case.url"
+          format="webp"
+          :src="watch.watch_case.url"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          :width="watch.watch_case.dimensions.width"
+          :height="watch.watch_case.dimensions.height"
+          :style="watch.watch_case_position"
+          class="watch-case"
+          loading="lazy"
+        />
+        <nuxt-img
+          v-if="watch.watch_chrono_hour.url"
+          format="webp"
+          :src="watch.watch_chrono_hour.url"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          :width="watch.watch_chrono_hour.dimensions.width"
+          :height="watch.watch_chrono_hour.dimensions.height"
+          :style="watch.watch_chrono_hour_position"
+          class="watch-chrono-hour"
+          loading="lazy"
+        />
+        <nuxt-img
+          v-if="watch.watch_chrono_minute.url"
+          format="webp"
+          :src="watch.watch_chrono_minute.url"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          :width="watch.watch_chrono_minute.dimensions.width"
+          :height="watch.watch_chrono_minute.dimensions.height"
+          :style="watch.watch_chrono_minute_position"
+          class="watch-chrono-minute"
+          loading="lazy"
+        />
+        <nuxt-img
+          v-if="watch.watch_hour.url"
+          format="webp"
+          :src="watch.watch_hour.url"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          :width="watch.watch_hour.dimensions.width"
+          :height="watch.watch_hour.dimensions.height"
+          :style="watch.watch_hour_position"
           class="watch-hour"
-          :style="'background-image: url(' + watch.watch_hour.url + ');'"
-        ></div>
-        <div
+          loading="lazy"
+        />
+        <nuxt-img
+          v-if="watch.watch_minute.url"
+          format="webp"
+          :src="watch.watch_minute.url"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          :width="watch.watch_minute.dimensions.width"
+          :height="watch.watch_minute.dimensions.height"
+          :style="watch.watch_minute_position"
           class="watch-minute"
-          :style="'background-image: url(' + watch.watch_minute.url + ');'"
-        ></div>
-        <div
+          loading="lazy"
+        />
+        <nuxt-img
+          v-if="watch.watch_second.url"
+          format="webp"
+          :src="watch.watch_second.url"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          :width="watch.watch_second.dimensions.width"
+          :height="watch.watch_second.dimensions.height"
+          :style="watch.watch_second_position"
           class="watch-second"
-          :style="'background-image: url(' + watch.watch_second.url + ');'"
-        ></div>
+          loading="lazy"
+        />
+        <nuxt-img
+          v-if="watch.watch_chrono_second.url"
+          format="webp"
+          :src="watch.watch_chrono_second.url"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          :width="watch.watch_chrono_second.dimensions.width"
+          :height="watch.watch_chrono_second.dimensions.height"
+          :style="watch.watch_chrono_second_position"
+          class="watch-chrono-second"
+          loading="lazy"
+        />
       </div>
     </div>
   </div>
@@ -202,47 +274,18 @@ export default {
 </script>
 <style scoped>
 .watch-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 78.7%;
-  padding-top: 100%;
-  overflow: visible;
-  margin: auto;
+  padding-top: 166.66%;
 }
-.watch-wrapper > .watch-base {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+.watch-base {
   z-index: 1;
-  position: absolute;
-  top: 0;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
   transition: 0.5s;
 }
-.watch-wrapper div,
-.watch-base div {
+.watch-wrapper * {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-size: contain;
-  background-position: center;
-  transform-origin: 50% 50%;
-  background-repeat: no-repeat;
   transition: 0.5s;
-}
-.watch-base div {
   pointer-events: none;
-}
-.watch-hour {
-  z-index: 3;
-  -webkit-animation: rotate-hour 43200s linear infinite;
-  -moz-animation: rotate-hour 43200s linear infinite;
-}
-.watch-second {
-  z-index: 4;
-  -webkit-animation: rotate-second 60s steps(240) infinite;
-  -moz-animation: rotate-second 60s steps(240) infinite;
 }
 </style>

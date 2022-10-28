@@ -15,6 +15,9 @@
       <h3 class="collection-watch-title leading-tight sm:text-base">
         {{ watch.data.title }}
       </h3>
+      <p class="collection-watch-year italic opacity-70">
+        {{ $prismic.asText(watch.data.year) }}
+      </p>
     </div>
 
     <!-- <pre>{{ watch }}</pre> -->
