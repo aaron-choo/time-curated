@@ -28,7 +28,7 @@
       class="
         snipcart-items-count
         absolute
-        -bottom-[2px]
+        -bottom-px
         left-0
         right-0
         sans-serif
