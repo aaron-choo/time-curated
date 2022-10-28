@@ -30,12 +30,34 @@
       }
     },
     "Assets": {
-      "watch_base": {
+      "watch_case": {
         "type": "Image",
         "config": {
-          "label": "Watch Base",
+          "label": "Watch Case",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "watch_case_position": {
+        "type": "Text",
+        "config": {
+          "label": "Watch Case Position",
+          "placeholder": ""
+        }
+      },
+      "watch_strap": {
+        "type": "Image",
+        "config": {
+          "label": "Watch Strap",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "watch_strap_position": {
+        "type": "Text",
+        "config": {
+          "label": "Watch Strap Position",
+          "placeholder": ""
         }
       },
       "watch_hour": {
@@ -46,6 +68,13 @@
           "thumbnails": []
         }
       },
+      "watch_hour_position": {
+        "type": "Text",
+        "config": {
+          "label": "Watch Hour Position",
+          "placeholder": ""
+        }
+      },
       "watch_minute": {
         "type": "Image",
         "config": {
@@ -54,12 +83,71 @@
           "thumbnails": []
         }
       },
+      "watch_minute_position": {
+        "type": "Text",
+        "config": {
+          "label": "Watch Minute Position",
+          "placeholder": ""
+        }
+      },
       "watch_second": {
         "type": "Image",
         "config": {
           "label": "Watch Second",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "watch_second_position": {
+        "type": "Text",
+        "config": {
+          "label": "Watch Second Position",
+          "placeholder": ""
+        }
+      },
+      "watch_chrono_hour": {
+        "type": "Image",
+        "config": {
+          "label": "Watch Chrono Hour",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "watch_chrono_hour_position": {
+        "type": "Text",
+        "config": {
+          "label": "Watch Chrono Hour Position",
+          "placeholder": ""
+        }
+      },
+      "watch_chrono_minute": {
+        "type": "Image",
+        "config": {
+          "label": "Watch Chrono Minute",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "watch_chrono_minute_position": {
+        "type": "Text",
+        "config": {
+          "label": "Watch Chrono Minute Position",
+          "placeholder": ""
+        }
+      },
+      "watch_chrono_second": {
+        "type": "Image",
+        "config": {
+          "label": "Watch Chrono Second",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "watch_chrono_second_position": {
+        "type": "Text",
+        "config": {
+          "label": "Watch Chrono Second Position",
+          "placeholder": ""
         }
       }
     },
