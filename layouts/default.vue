@@ -1,11 +1,13 @@
 <template>
   <div>
+    <style id="watch-animate" type="text/css"></style>
     <AnnouncementBar />
     <Header
       v-if="navigation.data && settings.data"
       :alternate-languages="alternateLanguages"
       :navigation="navigation"
       :settings="settings"
+      class="hidden md:block"
     />
     <Navigation
       v-if="navigation.data && settings.data"

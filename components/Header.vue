@@ -12,11 +12,7 @@
         "
       >
         <n-link :to="localePath('/')">
-          <PrismicImage
-            v-if="settings.data.logo.url"
-            :field="settings.data.logo"
-            width="180"
-          />
+          <Logo :settings="settings" height="50" />
         </n-link>
       </div>
     </Bounded>
