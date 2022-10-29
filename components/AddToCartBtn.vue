@@ -35,6 +35,9 @@
       <span v-if="variantGroup.name === 'Lug Width'">{{ $t("lugWidth") }}</span>
       <span v-else>{{ variantGroup.name }}</span>
     </span> -->
+    <span class="select-variant-text">{{
+      settings.data.select_option_text
+    }}</span>
     <span class="sold-out-text">{{ settings.data.sold_out_text }}</span>
     <span class="add-to-cart-text">{{ settings.data.add_to_cart_text }}</span>
     <!-- <br />

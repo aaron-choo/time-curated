@@ -15,7 +15,7 @@
         :id="variant.name"
         :value="index"
       >
-        {{ label }} : {{ variant.name }}
+        {{ variant.name }}
       </option>
     </select>
   </div>
@@ -33,7 +33,11 @@ export default {
       variant: null,
     };
   },
-  mounted() {},
+  mounted() {
+    document
+      .getElementById("add-to-cart")
+      .classList.add("inactive", "has-variant");
+  },
   methods: {
     selectOption(variant) {
       // console.log(group);
@@ -43,6 +47,9 @@ export default {
       // console.log(arr);
       // console.log(variant);
       this.$emit("selectOption", variant);
+      document
+        .getElementById("add-to-cart")
+        .classList.remove("inactive", "has-variant");
       // document.querySelectorAll(".variant-button").forEach((el) => {
       //   el.classList.remove("selected");
       // });
