@@ -2,7 +2,7 @@
   <Bounded
     as="nav"
     y-padding="none"
-    class="site-navigation sticky -top-px border-t border-b transition"
+    class="site-navigation sticky top-0 border-t border-b"
     style="background-color: var(--bg); z-index: 2"
   >
     <!-- <div class="col-span-2 self-center"></div> -->
@@ -14,14 +14,14 @@
         justify-start
         items-center
         gap-4
-        font-medium
-        sans-serif
+        font-medium font-sans
         text-xs
       "
     >
       <MobileMenu
         :settings="settings"
         :navigation="navigation"
+        :alternateLanguages="alternateLanguages"
         class="block md:hidden"
       />
       <li
@@ -65,12 +65,11 @@
         flex
         justify-end
         items-center
-        font-medium
-        sans-serif
+        font-medium font-sans
         text-xs
       "
     >
-      <ModeSwitcher class="hidden md:block" />
+      <ModeSwitcher class="mr-2 md:mr-0" />
       <LanguageSwitcher
         :settings="settings"
         :alternateLanguages="alternateLanguages"
@@ -141,6 +140,9 @@ export default {
 </style>
 
 <style scoped>
+.site-navigation {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
 a.nuxt-link-exact-active {
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;

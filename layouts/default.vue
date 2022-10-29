@@ -1,7 +1,7 @@
 <template>
   <div>
     <style id="watch-animate" type="text/css"></style>
-    <AnnouncementBar />
+    <!-- <AnnouncementBar /> -->
     <Header
       v-if="navigation.data && settings.data"
       :alternate-languages="alternateLanguages"

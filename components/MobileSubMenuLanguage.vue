@@ -1,0 +1,194 @@
+<template>
+  <li>
+    <button
+      class="mobile-sub-menu w-full uppercase p-6 block"
+      @click="subMenuOpen = !subMenuOpen"
+    >
+      <span class="flex justify-between"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 14 14"
+          height="14"
+          width="14"
+          class="w-5 h-5 m-[2px]"
+        >
+          <g>
+            <circle
+              cx="7"
+              cy="7"
+              r="6.5"
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></circle>
+            <path
+              d="M1,9.5H2.75A1.75,1.75,0,0,0,4.5,7.75V6.25A1.75,1.75,0,0,1,6.25,4.5,1.75,1.75,0,0,0,8,2.75V.57"
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M13.5,6.9a3.56,3.56,0,0,0-1.62-.4H9.75a1.75,1.75,0,0,0,0,3.5A1.25,1.25,0,0,1,11,11.25v.87"
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 14 14"
+          height="14"
+          width="14"
+        >
+          <path
+            d="M3.85.5,10,6.65a.48.48,0,0,1,0,.7L3.85,13.5"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-5 h-5"
+          ></path>
+        </svg>
+      </span>
+    </button>
+    <div
+      class="
+        mobile-sub-menu-container
+        absolute
+        top-0
+        left-0
+        w-full
+        h-full
+        transition
+        duration-300
+      "
+      :class="{
+        'opacity-0 translate-x-full delay-300': !subMenuOpen,
+        'mobile-sub-menu-open translate-x-0': subMenuOpen,
+      }"
+    >
+      <button
+        class="mobile-sub-menu-trigger absolute -top-[69px] left-0 py-4 px-6"
+        :class="{
+          'opacity-0 translate-x-1/2': !subMenuOpen,
+          'translate-x-0': subMenuOpen,
+        }"
+        @click="toggleSubMenu"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 14 14"
+          height="14"
+          width="14"
+          class="my-2 w-5 h-5"
+        >
+          <path
+            d="M10.15.5,4,6.65a.48.48,0,0,0,0,.7l6.15,6.15"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
+      </button>
+      <ul class="flex flex-col justify-start items-start text-base">
+        <li
+          class="
+            mobile-menu-item
+            uppercase
+            underline
+            decoration-1
+            underline-offset-2
+          "
+        >
+          <a class="switch-lang" :class="settings.lang">
+            <span class="sr-only">{{ settings.lang }}</span>
+          </a>
+        </li>
+        <template v-for="lang in alternateLanguages">
+          <li class="mobile-menu-item uppercase">
+            <PrismicLink
+              class="switch-lang"
+              :field="{ ...lang, link_type: 'Document' }"
+              :class="lang.lang"
+              dropdown-closer
+            >
+              <span class="sr-only">{{ lang.lang }}</span>
+            </PrismicLink>
+          </li>
+        </template>
+      </ul>
+      <div
+        class="
+          mobile-sub-menu-backdrop
+          absolute
+          top-0
+          left-0
+          right-0
+          bottom-0
+          -z-10
+        "
+      ></div>
+    </div>
+  </li>
+</template>
+<script>
+export default {
+  props: ["label", "settings", "alternateLanguages"],
+  watch: {
+    $route(to, from) {
+      this.subMenuOpen = false;
+    },
+  },
+  data() {
+    return {
+      subMenuOpen: false,
+    };
+  },
+  methods: {
+    toggleSubMenu() {
+      this.subMenuOpen = !this.subMenuOpen;
+    },
+    switchLang(lang) {
+      // console.log(lang);
+      this.$snipcart.setLanguage(
+        lang.slice(0, -2) + lang.slice(-2).toUpperCase()
+      );
+    },
+  },
+};
+</script>
+<style scoped>
+.mobile-menu-item {
+  border-bottom: 1px solid var(--border-color);
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+.mobile-menu-item a {
+  display: block;
+  padding: 1.5rem;
+}
+.mobile-sub-menu-backdrop {
+  background-color: var(--bg);
+  transition: background-color 0.3s ease;
+}
+.mobile-sub-menu-trigger {
+  background-color: var(--bg);
+  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+.mobile-sub-menu-open .mobile-sub-menu-trigger {
+  background-color: var(--bg);
+  transition: background-color 0.3s ease, opacity 0.3s ease 0.3s,
+    transform 0.3s ease 0.3s;
+}
+.switch-lang.en-us::before {
+  content: "English";
+}
+.switch-lang.zh-cn::before {
+  content: "简体中文";
+}
+</style>
