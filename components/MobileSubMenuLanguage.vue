@@ -4,8 +4,8 @@
       class="mobile-sub-menu w-full uppercase p-6 block"
       @click="subMenuOpen = !subMenuOpen"
     >
-      <span class="flex justify-between"
-        ><svg
+      <span class="flex justify-between">
+        <!-- <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 14 14"
           height="14"
@@ -52,6 +52,43 @@
             stroke-linejoin="round"
             class="w-5 h-5"
           ></path>
+        </svg> -->
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 14 14"
+          height="14"
+          width="14"
+          class="w-5 h-5 m-[2px]"
+        >
+          <g>
+            <circle
+              cx="7"
+              cy="7"
+              r="6.5"
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></circle>
+            <line
+              x1="0.5"
+              y1="7"
+              x2="13.5"
+              y2="7"
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></line>
+            <path
+              d="M9.5,7A11.22,11.22,0,0,1,7,13.5,11.22,11.22,0,0,1,4.5,7,11.22,11.22,0,0,1,7,.5,11.22,11.22,0,0,1,9.5,7Z"
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
         </svg>
       </span>
     </button>
@@ -110,12 +147,14 @@
           </a>
         </li>
         <template v-for="lang in alternateLanguages">
-          <li class="mobile-menu-item uppercase">
+          <li
+            class="mobile-menu-item uppercase"
+            @mousedown="switchLang(lang.lang)"
+          >
             <PrismicLink
               class="switch-lang"
               :field="{ ...lang, link_type: 'Document' }"
               :class="lang.lang"
-              dropdown-closer
             >
               <span class="sr-only">{{ lang.lang }}</span>
             </PrismicLink>

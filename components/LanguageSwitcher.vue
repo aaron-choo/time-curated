@@ -6,7 +6,7 @@
       @mouseleave="menuOpen = false"
       @click.prevent="menuOpen = true"
     >
-      <svg
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 14 14"
         height="14"
@@ -38,7 +38,45 @@
             stroke-linejoin="round"
           ></path>
         </g>
+      </svg> -->
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 14 14"
+        height="14"
+        width="14"
+        class="w-5 h-5"
+      >
+        <g>
+          <circle
+            cx="7"
+            cy="7"
+            r="6.5"
+            fill="none"
+            stroke="var(--color)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <line
+            x1="0.5"
+            y1="7"
+            x2="13.5"
+            y2="7"
+            fill="none"
+            stroke="var(--color)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M9.5,7A11.22,11.22,0,0,1,7,13.5,11.22,11.22,0,0,1,4.5,7,11.22,11.22,0,0,1,7,.5,11.22,11.22,0,0,1,9.5,7Z"
+            fill="none"
+            stroke="var(--color)"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
       </svg>
+
       <!-- {{ navigation.data.language_text }} -->
     </button>
     <div

@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="uppercase py-4"
+      class="uppercase py-4 px-3"
       @mouseenter="menuOpen = true"
       @mouseleave="menuOpen = false"
       @click.prevent="menuOpen = true"

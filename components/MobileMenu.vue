@@ -6,6 +6,7 @@
       items-center
       justify-center
       overflow-hidden
+      font-normal
     "
   >
     <button class="py-6" @click="toggleMenu">
@@ -152,7 +153,7 @@
 export default {
   props: {
     navigation: {
-      type: Array,
+      type: Object,
       required: true,
     },
     settings: {
@@ -160,7 +161,7 @@ export default {
       required: true,
     },
     alternateLanguages: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },
@@ -172,11 +173,17 @@ export default {
   watch: {
     $route(to, from) {
       this.menuOpen = false;
+      document.querySelector(":root").classList.remove("mobile-menu-open");
     },
   },
   methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
+      if (this.menuOpen === true) {
+        document.querySelector(":root").classList.add("mobile-menu-open");
+      } else {
+        document.querySelector(":root").classList.remove("mobile-menu-open");
+      }
     },
   },
 };

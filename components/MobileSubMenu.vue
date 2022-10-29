@@ -66,6 +66,15 @@
       <ul class="flex flex-col justify-start items-start text-base">
         <template v-for="(link, index) in links">
           <li
+            v-if="index === 0"
+            :key="link.label"
+            class="mobile-menu-item uppercase"
+          >
+            <PrismicLink :field="link.link">
+              {{ label }}
+            </PrismicLink>
+          </li>
+          <li
             v-if="index > 0"
             :key="link.label"
             class="mobile-menu-item uppercase"
