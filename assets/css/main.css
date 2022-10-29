@@ -51,7 +51,9 @@ html:lang(zh-CN) *:lang(en-US) {
     --sans-serif-font-family: 'Inter', 'Noto Sans SC', sans-serif;
     --serif-font-family: 'EB Garamond', 'Noto Serif SC', serif;
     --page-padding: 1.5em;
-    --color-shadow: #0000001a;
+    --shadow-color: #0000001a;
+    --overlay-color: #EEE;
+    --overlay-bg: rgba(17, 17, 17, .5);
 }
 
 .dark-mode {
@@ -214,6 +216,14 @@ button.btn.selected {
     z-index: 50;
 }
 
+.snipcart-cart--opened {
+    overflow: inherit;
+}
+
+.snipcart-cart--opened::-webkit-scrollbar {
+    width: 0;
+}
+
 .snipcart::before {
     content: '';
     display: block;
@@ -222,7 +232,7 @@ button.btn.selected {
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--color);
+    background: var(--overlay-bg);
     opacity: 0;
     transition: opacity .3s ease;
     pointer-events: none;
@@ -230,7 +240,7 @@ button.btn.selected {
 }
 
 html.snipcart-sidecart--opened .snipcart::before {
-    opacity: .5;
+    opacity: 1;
 }
 
 .snipcart,
@@ -305,6 +315,18 @@ h2.snipcart-flash-message__title {
     padding: .5em 1em;
     font-weight: 500;
     border-radius: 3px;
+}
+
+.snipcart-discount-box__button,
+.snipcart-discount-box__button:hover {
+    text-transform: uppercase;
+    padding: .5em 1em;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.snipcart-button-link {
+    flex-shrink: 0;
 }
 
 .snipcart-cart__footer-buttons .snipcart-button-link {
