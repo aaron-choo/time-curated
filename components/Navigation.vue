@@ -3,7 +3,7 @@
     as="nav"
     y-padding="none"
     class="site-navigation sticky top-0 border-t border-b"
-    style="background-color: var(--bg); z-index: 2"
+    style="background-color: var(--bg); z-index: 20"
   >
     <!-- <div class="col-span-2 self-center"></div> -->
     <ul
@@ -13,7 +13,6 @@
         flex flex-wrap
         justify-start
         items-center
-        gap-4
         font-medium font-sans
         text-xs
       "
@@ -27,7 +26,7 @@
       <li
         class="transition-all duration-500 overflow-hidden hidden md:block"
         :class="{
-          '-mr-4 pointer-events-none w-0 opacity-0': !scrollOver,
+          '-mr-3 pointer-events-none w-0 opacity-0': !scrollOver,
           'w-40 opacity-1 delay-500': scrollOver,
         }"
       >
@@ -35,16 +34,18 @@
           <Logo :settings="settings" height="30" class="w-40" />
         </n-link>
       </li>
-      <li
-        v-for="link in navigation.data.links"
-        :key="link.label"
-        class="uppercase hidden md:block"
-      >
-        <PrismicLink :field="link.link">
-          {{ link.label }}
-        </PrismicLink>
-      </li>
-
+      <template v-for="(link, index) in navigation.data.links">
+        <!-- <li v-if="index === 0" class="uppercase hidden md:block">
+          <PrismicLink :field="link.link" class="pr-2">
+            {{ link.label }}
+          </PrismicLink>
+        </li> -->
+        <li class="uppercase hidden md:block">
+          <PrismicLink :field="link.link" class="px-3">
+            {{ link.label }}
+          </PrismicLink>
+        </li>
+      </template>
       <Dropdown
         :label="navigation.data.shop_text"
         :links="navigation.data.shop_links"
@@ -52,7 +53,15 @@
       />
     </ul>
     <div
-      class="mobile-logo col-span-6 md:hidden flex justify-center items-center"
+      class="
+        mobile-logo
+        col-span-6
+        md:hidden
+        flex
+        justify-center
+        items-center
+        z-10
+      "
     >
       <n-link :to="localePath('/')">
         <Logo :settings="settings" height="30" class="w-40" />

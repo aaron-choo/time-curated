@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Bounded as="div" yPadding="xs" secondaryBackground="true">
+    <Bounded as="div" yPadding="xs" :secondaryBackground="true">
       <WatchModule
         :watch="page.data"
         class="watch-module my-4 mx-auto w-full md:max-w-[50vw] xl:max-w-2xl"
@@ -15,7 +15,6 @@
         <PrismicRichText
           v-if="$prismic.asText(page.data.description)"
           :field="page.data.description"
-          :html-serializer="htmlSerializer"
           wrapper="div"
           class="my-8 mb-20"
         />
@@ -40,7 +39,6 @@
             <PrismicRichText
               v-if="$prismic.asText(page.data[specification])"
               :field="page.data[specification]"
-              :html-serializer="htmlSerializer"
             />
           </div>
         </template>
