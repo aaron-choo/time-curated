@@ -22,6 +22,15 @@
           "label": "Logo"
         }
       },
+      "announcement": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Announcement",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
       "newsletterDescription": {
         "type": "StructuredText",
         "config": {
@@ -117,6 +126,13 @@
         "type": "Text",
         "config": {
           "label": "Sold Out Text",
+          "placeholder": ""
+        }
+      },
+      "select_option_text": {
+        "type": "Text",
+        "config": {
+          "label": "Select Option Text",
           "placeholder": ""
         }
       },

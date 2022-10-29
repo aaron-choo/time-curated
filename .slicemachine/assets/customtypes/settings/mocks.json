@@ -14,7 +14,7 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Giving",
+        "text": "Special",
         "spans": []
       }
     ],
@@ -25,75 +25,83 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
+      "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e"
     },
+    "announcement": [
+      {
+        "type": "paragraph",
+        "text": "Duis proident nisi laboris. Anim et adipisicing esse ipsum incididunt sint dolor sit do fugiat culpa velit quis fugiat. Pariatur amet deserunt fugiat velit in ullamco magna ut.",
+        "spans": []
+      }
+    ],
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Reprehenderit amet commodo nostrud cillum enim mollit. Sint id proident consequat irure consectetur esse adipisicing mollit sit ut qui ex. Consequat proident velit aute ad non voluptate veniam cupidatat laborum labore enim amet nulla.",
+        "text": "Ea nostrud consectetur est reprehenderit id quis dolore.",
         "spans": []
       }
     ],
     "newsletterDisclaimer": [
       {
         "type": "paragraph",
-        "text": "Occaecat culpa laborum commodo velit laborum mollit excepteur deserunt nostrud consequat ea Lorem enim culpa. Qui ut Lorem ullamco commodo anim est irure.",
+        "text": "Ut laboris adipisicing cupidatat adipisicing aliquip incididunt ut sint velit in consectetur exercitation cillum.",
         "spans": []
       }
     ],
-    "description_label": "lucky",
-    "specifications_label": "job",
+    "description_label": "man",
+    "specifications_label": "log",
     "free_shipping_text": [
       {
         "type": "paragraph",
-        "text": "Proident veniam eiusmod anim officia proident.",
+        "text": "Officia cillum enim et. Tempor laborum commodo duis adipisicing ullamco enim incididunt minim pariatur.",
         "spans": []
       }
     ],
-    "shipping_information_label": "wise",
+    "shipping_information_label": "occasionally",
     "shipping_information": [
       {
         "type": "paragraph",
-        "text": "Quis cupidatat est irure enim dolor anim officia aliquip sint. Ad id qui sit enim ut laborum eiusmod. Excepteur occaecat veniam aute ea quis qui pariatur tempor excepteur ex fugiat aliquip velit irure minim.",
+        "text": "Sint do id ex sunt adipisicing.",
         "spans": []
       }
     ],
-    "return_policy_label": "can",
+    "return_policy_label": "temperature",
     "return_policy": [
       {
         "type": "paragraph",
-        "text": "Deserunt proident consequat commodo mollit laborum ipsum consequat consectetur minim. Ea consectetur cillum dolore in.",
+        "text": "Non qui sit ipsum qui ullamco pariatur eiusmod nulla labore qui do nulla occaecat consequat. Dolor dolore ex veniam ad nostrud aute sunt incididunt pariatur Lorem anim nostrud.",
         "spans": []
       }
     ],
     "leather_disclaimer": [
       {
         "type": "paragraph",
-        "text": "Consequat dolore aute veniam labore tempor. Lorem reprehenderit esse labore aliquip et officia minim ex veniam enim fugiat ullamco anim. Velit non ipsum ut elit minim anim aliquip aliquip fugiat.",
+        "text": "Aliquip in deserunt est sint ad irure. Voluptate et aliqua tempor laboris consequat deserunt adipisicing proident aliquip ipsum Lorem. In sunt aliquip laboris nisi cillum culpa mollit.",
         "spans": []
       }
     ],
-    "add_to_cart_text": "waste",
-    "sold_out_text": "dawn",
-    "note_text": "orbit",
-    "length_text": "answer",
-    "thickness_text": "zipper",
-    "clasp_width_text": "saved",
-    "lug_width_text": "while",
-    "outer_width_text": "seldom",
-    "inner_width_text": "firm",
-    "you_may_like_text": "rays",
+    "add_to_cart_text": "noted",
+    "sold_out_text": "willing",
+    "select_option_text": "bicycle",
+    "note_text": "condition",
+    "length_text": "agree",
+    "thickness_text": "particularly",
+    "clasp_width_text": "eight",
+    "lug_width_text": "bite",
+    "outer_width_text": "entire",
+    "inner_width_text": "darkness",
+    "you_may_like_text": "lie",
     "slices1": [],
-    "manufacture_text": "mathematics",
-    "year_text": "physical",
-    "reference_text": "title",
-    "model_text": "silly",
-    "case_material_text": "cent",
-    "case_dimensions_text": "name",
-    "crystal_text": "column",
-    "dial_text": "porch",
-    "complications_text": "size",
-    "movement_text": "feel",
-    "production_quantity_text": "rod"
+    "manufacture_text": "action",
+    "year_text": "steady",
+    "reference_text": "diagram",
+    "model_text": "somebody",
+    "case_material_text": "shells",
+    "case_dimensions_text": "may",
+    "crystal_text": "include",
+    "dial_text": "rain",
+    "complications_text": "can",
+    "movement_text": "greatest",
+    "production_quantity_text": "particularly"
   }
 }
