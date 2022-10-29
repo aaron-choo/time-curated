@@ -79,6 +79,7 @@ export default async () => {
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
       '@/styles/global.css',
+      '@fontsource/inter/300.css',
       '@fontsource/inter/400.css',
       '@fontsource/inter/500.css',
       '@fontsource/inter/600.css',
@@ -88,8 +89,15 @@ export default async () => {
       '@fontsource/eb-garamond/700.css',
       '@fontsource/eb-garamond/700-italic.css',
       '@fontsource/im-fell-english',
-      '@fontsource/noto-serif-sc',
-      '@fontsource/noto-sans-sc',
+      '@fontsource/noto-serif-sc/300.css',
+      '@fontsource/noto-serif-sc/400.css',
+      '@fontsource/noto-serif-sc/500.css',
+      '@fontsource/noto-serif-sc/600.css',
+      '@fontsource/noto-serif-sc/700.css',
+      '@fontsource/noto-sans-sc/300.css',
+      '@fontsource/noto-sans-sc/400.css',
+      '@fontsource/noto-sans-sc/500.css',
+      '@fontsource/noto-sans-sc/700.css',
       'flag-icons/css/flag-icons.css',
       '@/assets/css/main.css'
     ],

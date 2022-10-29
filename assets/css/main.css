@@ -44,7 +44,7 @@ html:lang(zh-CN) *:lang(en-US) {
     --bg-secondary: #eee;
     --bg-accent: #34403e;
     --color-accent: #fff;
-    --border-color: #e4e7eb;
+    --border-color: #eee;
     --footer-bg: #000;
     --footer-color: #fff;
     --header-font-family: 'IM Fell English', 'Noto Serif SC', serif;
@@ -87,7 +87,7 @@ body {
     font-family: var(--serif-font-family);
     background-color: var(--bg);
     color: var(--color);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
     font-size: 15px;
 }
 

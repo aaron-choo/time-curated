@@ -34,7 +34,7 @@
       >
         <template v-for="specification in specifications">
           <div v-if="page.data[specification].length > 0" class="text-center">
-            <p class="sans-serif text-xs font-semibold uppercase">
+            <p class="font-sans text-xs font-semibold uppercase">
               {{ settings.data[specification + "_text"] }}
             </p>
             <PrismicRichText

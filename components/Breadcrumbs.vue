@@ -3,7 +3,7 @@
     <ol
       vocab="http://schema.org/"
       typeof="BreadcrumbList"
-      class="sans-serif text-xs font-medium capitalize"
+      class="font-sans text-xs font-medium capitalize"
     >
       <li
         v-if="$store.state.prismic.settings.lang === 'en-us'"
