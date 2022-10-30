@@ -7,16 +7,14 @@
         </div>
       </div>
     </Bounded>
+    <SliceZone :slices="page.data.slices" :components="components" />
     <Bounded as="section">
-      <div>
-        <!-- <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
+      <!-- <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>
     <pre>{{ JSON.stringify(categories, null, 2) }}</pre>
     <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
-        <!-- <category-list :categories="categories"></category-list> -->
-        <product-list :products="products"></product-list>
-        <!-- <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
-        <SliceZone :slices="page.data.slices" :components="components" />
-      </div>
+      <!-- <category-list :categories="categories"></category-list> -->
+      <product-list :products="products"></product-list>
+      <!-- <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
     </Bounded>
   </div>
 </template>

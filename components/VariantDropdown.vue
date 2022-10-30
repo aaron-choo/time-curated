@@ -1,5 +1,5 @@
 <template>
-  <div class="sans-serif">
+  <div class="text-sm sans-serif">
     <select
       :name="label.replace(/\s+/g, '-').toLowerCase()"
       :id="label.replace(/\s+/g, '-').toLowerCase()"

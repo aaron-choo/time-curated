@@ -132,7 +132,7 @@
 <script>
 import { components } from "~/slices";
 export default {
-  async asyncData({ $prismic, store, i18n, params, error }) {
+  async asyncData({ $prismic, store, i18n, params, error, $axios }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("product", params.uid, {
       lang,
@@ -147,6 +147,13 @@ export default {
       }
     );
     await store.dispatch("prismic/load", { lang, page });
+
+    // $axios.setHeader("apikey", "7iLCHkWBOWlxybSVh7uAO4G6mjM2772K");
+    // const currencyRates = await $axios.$get(
+    //   "https://api.apilayer.com/exchangerates_data/latest?base=SGD"
+    // );
+    // console.log(currencyRates);
+
     if (page.data.product_category.uid === params.category) {
       return {
         page: page,
@@ -160,6 +167,7 @@ export default {
       error({ statusCode: 404, message: "Page not found" });
     }
   },
+
   data() {
     return {
       components,
@@ -192,7 +200,9 @@ export default {
         .querySelector("#add-to-cart")
         .setAttribute("data-item-custom1-value", variant.name);
       this.variant = variant;
-      this.variantImage = variant.image;
+      if (variant.image.length > 0) {
+        this.variantImage = variant.image;
+      }
     },
   },
 };
