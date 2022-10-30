@@ -27,7 +27,7 @@ export default async () => {
         },
         { name: 'format-detection', content: 'telephone=no' }
       ],
-      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
+      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     },
 
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -63,8 +63,12 @@ export default async () => {
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
       '@nuxtjs/i18n',
-      /* Load Prismic module after i18n module to prevent extend route concurrency */ '@nuxtjs/prismic'
+      /* Load Prismic module after i18n module to prevent extend route concurrency */ '@nuxtjs/prismic',
+      '@nuxtjs/axios'
     ],
+    axios: {
+      // proxy: true
+    },
 
     build: {
       postcss: {
