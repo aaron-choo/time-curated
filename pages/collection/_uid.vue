@@ -1,6 +1,36 @@
 <template>
   <div>
     <Bounded as="div" yPadding="xs" :secondaryBackground="true">
+      <!-- <n-link
+        class="flex gap-2 opacity-50 text-xs font-medium font-sans uppercase"
+        :to="localePath('/collection')"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 14 14"
+          height="14"
+          width="14"
+          class="w-3 h-3"
+        >
+          <g>
+            <polyline
+              points="3.5 1.5 0.5 4.5 3.5 7.5"
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></polyline>
+            <path
+              d="M.5,4.5h9a4,4,0,0,1,0,8h-5"
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </svg>
+        See all
+      </n-link> -->
       <WatchModule
         :watch="page.data"
         class="watch-module my-4 mx-auto w-full md:max-w-[50vw] xl:max-w-2xl"
