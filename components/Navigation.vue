@@ -2,8 +2,8 @@
   <Bounded
     as="nav"
     y-padding="none"
-    class="site-navigation sticky top-0 border-t border-b"
-    style="background-color: var(--bg); z-index: 20"
+    class="sticky top-0 border-t border-b z-20"
+    :class="{ 'scroll-over': scrollOver }"
   >
     <!-- <div class="col-span-2 self-center"></div> -->
     <ul
@@ -27,11 +27,11 @@
         class="transition-all duration-500 overflow-hidden hidden md:block"
         :class="{
           '-mr-3 pointer-events-none w-0 opacity-0': !scrollOver,
-          'w-40 opacity-1 delay-500': scrollOver,
+          'w-40 opacity-1 delay-500 mr-2': scrollOver,
         }"
       >
         <n-link :to="localePath('/')">
-          <Logo :settings="settings" height="30" class="w-40" />
+          <Logo :settings="settings" height="30" class="w-fit" />
         </n-link>
       </li>
       <template v-for="(link, index) in navigation.data.links">
@@ -140,15 +140,20 @@ export default {
   },
 };
 </script>
-
 <style>
 .site-navigation > div {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 </style>
-
 <style scoped>
+.site-navigation {
+  color: var(--color);
+}
+.site-navigation {
+  background-color: var(--bg);
+}
+
 .site-navigation {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }

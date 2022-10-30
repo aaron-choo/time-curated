@@ -1,9 +1,9 @@
 <template>
-  <div v-if="$config.development" class="announcement-bar">
+  <div>
     <Bounded
       as="p"
       yPadding="xxs"
-      class="text-xs uppercase sans-serif text-center"
+      class="announcement-bar text-xs uppercase sans-serif text-center"
     >
       {{ $prismic.asText(settings.data.announcement) }}
     </Bounded>

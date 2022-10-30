@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex justify-center">
     <svg
       v-if="settings.lang === 'en-us'"
       id="Layer_2"

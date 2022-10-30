@@ -88,6 +88,20 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             ></path>
+            <path
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M11.7,2.5c-1.2,1.2-2.8,2-4.7,2s-3.5-0.8-4.7-2"
+            />
+            <path
+              fill="none"
+              stroke="var(--color)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.3,11.5c1.2-1.2,2.8-2,4.7-2s3.5,0.8,4.7,2"
+            />
           </g>
         </svg>
       </span>

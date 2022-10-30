@@ -51,8 +51,9 @@ export default {
 <style scoped>
 .menu {
   top: calc(100% + 1px);
-  background-color: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-accent);
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--border-accent);
 }
 a.nuxt-link-exact-active {
   text-underline-offset: 2px;

@@ -11,8 +11,25 @@
           leading-none
         "
       >
-        <n-link :to="localePath('/')">
-          <Logo :settings="settings" height="50" />
+        <n-link class="site-logo relative" :to="localePath('/')">
+          <Logo
+            class="logo transition-opacity"
+            :settings="settings"
+            height="50"
+          />
+          <Logomark
+            class="
+              logomark
+              absolute
+              opacity-0
+              top-0
+              left-0
+              right-0
+              bottom-0
+              transition-opacity
+            "
+            height="50"
+          />
         </n-link>
       </div>
     </Bounded>
@@ -37,3 +54,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.site-logo:hover .logo {
+  opacity: 0;
+}
+.site-logo:hover .logomark {
+  opacity: 1;
+}
+</style>

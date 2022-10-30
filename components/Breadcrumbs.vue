@@ -114,6 +114,9 @@ export default {
 </script>
 
 <style scoped>
+.breadcrumbs-container {
+  color: var(--color);
+}
 ol {
   list-style: none;
 }

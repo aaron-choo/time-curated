@@ -7,7 +7,7 @@
         ? 'background-image:url(' + backgroundImage.url + ');'
         : null
     "
-    class="px-6"
+    class="bounded px-6"
     :class="{
       'py-3': yPadding === 'xxs',
       'py-4': yPadding === 'xs',
@@ -51,8 +51,11 @@ export default {
 };
 </script>
 <style scoped>
+.bounded {
+  transition: background-color 0.3s ease;
+}
 .secondary-background {
-  background: var(--bg-secondary);
+  background-color: var(--bg-secondary);
 }
 .background-image {
   color: var(--overlay-color);
