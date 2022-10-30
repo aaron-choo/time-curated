@@ -43,6 +43,7 @@ html:lang(zh-CN) *:lang(en-US) {
     --bg: #fff;
     --bg-secondary: #eee;
     --bg-accent: #34403e;
+    --border-accent: #4c5d5a;
     --color-accent: #fff;
     --border-color: #eee;
     --footer-bg: #000;
@@ -528,6 +529,10 @@ h1.snipcart__font--subtitle {
 
 .snipcart-payment-card-form.snipcart-payment-card-form--loaded {
     filter: brightness(0.5) invert(1) hue-rotate(180deg);
+}
+
+.snipcart__box--slim {
+    padding: 32px 16px 16px;
 }
 
 @media (max-width: 1023px) {

@@ -1,19 +1,20 @@
 <template>
   <div>
     <style id="watch-animate" type="text/css"></style>
-    <AnnouncementBar :settings="settings" />
+    <!-- <AnnouncementBar :settings="settings" /> -->
     <Header
       v-if="navigation.data && settings.data"
       :alternate-languages="alternateLanguages"
       :navigation="navigation"
       :settings="settings"
-      class="hidden md:block md:-mb-px"
+      class="site-header hidden md:block md:-mb-px"
     />
     <Navigation
       v-if="navigation.data && settings.data"
       :alternate-languages="alternateLanguages"
       :navigation="navigation"
       :settings="settings"
+      class="site-navigation"
     />
     <Breadcrumbs v-if="page.uid != 'home'" />
     <main><nuxt /></main>
@@ -96,6 +97,7 @@ export default {
       return this.$store.state.prismic.page;
     },
   },
+  methods: {},
 };
 </script>
 
