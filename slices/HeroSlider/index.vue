@@ -16,7 +16,8 @@
             slide-image
             w-full
             min-h-[400px]
-            h-[calc(100vh-228px)]
+            h-[calc(100vh-119px)]
+            md:h-[calc(100vh-228px)]
             object-cover
             relative
           "

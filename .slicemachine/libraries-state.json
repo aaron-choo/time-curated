@@ -531,6 +531,15 @@
                     "single": "heading1,em,strong"
                   }
                 },
+                "subtitle": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Subtitle",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
                 "text_color": {
                   "type": "Color",
                   "config": {
@@ -591,18 +600,18 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "icon_svg_code": "mile",
+                "icon_svg_code": "birth",
                 "title": [
                   {
                     "type": "paragraph",
-                    "text": "Cillum veniam exercitation elit dolor exercitation amet do. Irure culpa ullamco ad proident sint et pariatur laboris magna.",
+                    "text": "Exercitation magna enim culpa commodo. Tempor mollit sit laborum ea adipisicing nostrud cupidatat laborum dolore nostrud occaecat nostrud.",
                     "spans": []
                   }
                 ],
                 "description": [
                   {
                     "type": "paragraph",
-                    "text": "Aliquip sint ipsum nulla pariatur ex labore voluptate reprehenderit eu consectetur anim voluptate voluptate minim. Reprehenderit nisi proident exercitation. Cillum dolor do et do ut velit sunt.",
+                    "text": "Veniam eu sint aliquip nostrud aute officia sunt sunt.",
                     "spans": []
                   }
                 ]
@@ -612,12 +621,12 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Catch",
+                  "text": "Connected",
                   "spans": []
                 }
               ],
-              "text_color": "#0600df",
-              "background_color": "#86cc44",
+              "text_color": "#05b7aa",
+              "background_color": "#afcd61",
               "background_image": {
                 "dimensions": {
                   "width": 900,
@@ -625,7 +634,7 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+                "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e"
               }
             },
             "slice_type": "icon_grid"
@@ -635,18 +644,18 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "icon_svg_code": "chapter",
+                "icon_svg_code": "told",
                 "title": [
                   {
                     "type": "paragraph",
-                    "text": "Elit nostrud ad dolor cupidatat sit non qui. Labore excepteur duis elit commodo in.",
+                    "text": "Labore laborum aliquip velit exercitation commodo consectetur ut reprehenderit laboris. Est dolore pariatur magna elit Lorem ullamco id esse sunt aliquip ex.",
                     "spans": []
                   }
                 ],
                 "description": [
                   {
                     "type": "paragraph",
-                    "text": "Velit excepteur et veniam dolore id enim nostrud cillum id incididunt ad nostrud amet mollit. Eiusmod non consectetur aute non.",
+                    "text": "Consequat cillum irure incididunt labore aliquip elit labore aliqua adipisicing.",
                     "spans": []
                   }
                 ]
@@ -656,12 +665,19 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Wooden",
+                  "text": "Suggest",
                   "spans": []
                 }
               ],
-              "text_color": "#fb1f69",
-              "background_color": "#78b7ac",
+              "subtitle": [
+                {
+                  "type": "paragraph",
+                  "text": "Esse magna minim consectetur nisi mollit nostrud. Proident ullamco aliquip duis nulla aute excepteur. Elit duis est ex consectetur est ipsum commodo.",
+                  "spans": []
+                }
+              ],
+              "text_color": "#5e5848",
+              "background_color": "#b8467e",
               "background_image": {
                 "dimensions": {
                   "width": 900,
@@ -669,7 +685,7 @@
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
+                "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"
               }
             },
             "slice_type": "icon_grid"

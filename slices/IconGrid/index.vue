@@ -14,8 +14,20 @@
     <PrismicRichText
       v-if="slice.primary.title.length > 0"
       :field="slice.primary.title"
-      class="text-center text-lg leading-none mb-6"
+      class="
+        font-sans font-semibold
+        uppercase
+        text-sm text-center
+        leading-none
+        mb-2
+      "
     />
+    <PrismicRichText
+      v-if="slice.primary.subtitle"
+      :field="slice.primary.subtitle"
+      class="text-center leading-none mb-6"
+    />
+
     <section
       v-if="slice.variation === 'iconGridSlider'"
       ref="iconGridSlider"
@@ -48,12 +60,16 @@
         <div
           class="
             flex flex-col
-            text-center text-sm
+            text-center text-xs
             leading-4
-            lg:text-base lg:leading-5 lg:text-left
+            font-sans
+            lg:text-left
           "
         >
-          <PrismicRichText :field="item.title" class="font-medium italic" />
+          <PrismicRichText
+            :field="item.title"
+            class="font-semibold uppercase"
+          />
           <PrismicRichText :field="item.description" class="opacity-50" />
         </div>
       </div>
