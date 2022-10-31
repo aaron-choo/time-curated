@@ -27,6 +27,7 @@
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
           ></line>
           <line
             x1="13.5"
@@ -37,6 +38,7 @@
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
           ></line>
           <line
             x1="13.5"
@@ -47,6 +49,7 @@
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
           ></line>
         </g>
       </svg>
@@ -87,6 +90,7 @@
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
             ></line>
             <line
               x1="0.5"
@@ -97,6 +101,7 @@
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
             ></line>
           </g>
         </svg>

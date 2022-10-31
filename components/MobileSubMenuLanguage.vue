@@ -21,6 +21,7 @@
               stroke="var(--color)"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
             ></circle>
             <path
               d="M1,9.5H2.75A1.75,1.75,0,0,0,4.5,7.75V6.25A1.75,1.75,0,0,1,6.25,4.5,1.75,1.75,0,0,0,8,2.75V.57"
@@ -28,6 +29,7 @@
               stroke="var(--color)"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
             ></path>
             <path
               d="M13.5,6.9a3.56,3.56,0,0,0-1.62-.4H9.75a1.75,1.75,0,0,0,0,3.5A1.25,1.25,0,0,1,11,11.25v.87"
@@ -35,6 +37,7 @@
               stroke="var(--color)"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
             ></path>
           </g>
         </svg>
@@ -50,6 +53,7 @@
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
             class="w-5 h-5"
           ></path>
         </svg> -->
@@ -70,6 +74,7 @@
               stroke="var(--color)"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
             ></circle>
             <line
               x1="0.5"
@@ -80,6 +85,7 @@
               stroke="var(--color)"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
             ></line>
             <path
               d="M9.5,7A11.22,11.22,0,0,1,7,13.5,11.22,11.22,0,0,1,4.5,7,11.22,11.22,0,0,1,7,.5,11.22,11.22,0,0,1,9.5,7Z"
@@ -87,12 +93,14 @@
               stroke="var(--color)"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
             ></path>
             <path
               fill="none"
               stroke="var(--color)"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
               d="M11.7,2.5c-1.2,1.2-2.8,2-4.7,2s-3.5-0.8-4.7-2"
             />
             <path
@@ -100,9 +108,24 @@
               stroke="var(--color)"
               stroke-linecap="round"
               stroke-linejoin="round"
+              stroke-width=".8px"
               d="M2.3,11.5c1.2-1.2,2.8-2,4.7-2s3.5,0.8,4.7,2"
             />
           </g>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 14 14"
+          class="w-5 h-5"
+        >
+          <path
+            d="M3.85.5,10,6.65a.48.48,0,0,1,0,.7L3.85,13.5"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width=".8px"
+          ></path>
         </svg>
       </span>
     </button>
@@ -143,6 +166,7 @@
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
           ></path>
         </svg>
       </button>

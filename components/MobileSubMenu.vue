@@ -9,8 +9,7 @@
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 14 14"
-          height="14"
-          width="14"
+          class="w-5 h-5"
         >
           <path
             d="M3.85.5,10,6.65a.48.48,0,0,1,0,.7L3.85,13.5"
@@ -18,7 +17,7 @@
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="w-5 h-5"
+            stroke-width=".8px"
           ></path>
         </svg>
       </span>
@@ -60,6 +59,7 @@
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
           ></path>
         </svg>
       </button>

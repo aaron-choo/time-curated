@@ -5,7 +5,6 @@
       snipcart-add-item
       btn
       w-full
-      my-4
       text-sm
       uppercase
       sans-serif

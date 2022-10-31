@@ -46,6 +46,7 @@
                   stroke="var(--color)"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  stroke-width=".8px"
                 ></circle>
                 <line
                   x1="7"
@@ -56,6 +57,7 @@
                   stroke="var(--color)"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  stroke-width=".8px"
                 ></line>
                 <line
                   x1="7"
@@ -66,6 +68,7 @@
                   stroke="var(--color)"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  stroke-width=".8px"
                 ></line>
                 <line
                   x1="13.5"
@@ -76,6 +79,7 @@
                   stroke="var(--color)"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  stroke-width=".8px"
                 ></line>
                 <line
                   x1="1.5"
@@ -86,6 +90,7 @@
                   stroke="var(--color)"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  stroke-width=".8px"
                 ></line>
                 <line
                   x1="11.6"
@@ -96,6 +101,7 @@
                   stroke="var(--color)"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  stroke-width=".8px"
                 ></line>
                 <line
                   x1="3.11"
@@ -106,6 +112,7 @@
                   stroke="var(--color)"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  stroke-width=".8px"
                 ></line>
                 <line
                   x1="11.6"
@@ -116,6 +123,7 @@
                   stroke="var(--color)"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  stroke-width=".8px"
                 ></line>
                 <line
                   x1="3.11"
@@ -126,6 +134,7 @@
                   stroke="var(--color)"
                   stroke-linecap="round"
                   stroke-linejoin="round"
+                  stroke-width=".8px"
                 ></line>
               </g>
             </svg>
@@ -144,6 +153,7 @@
                 stroke="var(--color)"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+                stroke-width=".8px"
               ></path>
             </svg>
           </a>

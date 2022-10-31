@@ -58,10 +58,10 @@ export default {
   background-color: var(--bg-secondary);
 }
 .background-image {
-  color: var(--overlay-color);
+  color: var(--color-overlay);
   background-size: cover;
   background-position: center;
-  background-color: var(--overlay-bg);
+  background-color: var(--bg-overlay);
   background-blend-mode: overlay;
 }
 </style>

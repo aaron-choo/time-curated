@@ -6,40 +6,6 @@
       @mouseleave="menuOpen = false"
       @click.prevent="menuOpen = true"
     >
-      <!-- <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 14 14"
-        height="14"
-        width="14"
-        class="w-5 h-5"
-      >
-        <g>
-          <circle
-            cx="7"
-            cy="7"
-            r="6.5"
-            fill="none"
-            stroke="var(--color)"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></circle>
-          <path
-            d="M1,9.5H2.75A1.75,1.75,0,0,0,4.5,7.75V6.25A1.75,1.75,0,0,1,6.25,4.5,1.75,1.75,0,0,0,8,2.75V.57"
-            fill="none"
-            stroke="var(--color)"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
-          <path
-            d="M13.5,6.9a3.56,3.56,0,0,0-1.62-.4H9.75a1.75,1.75,0,0,0,0,3.5A1.25,1.25,0,0,1,11,11.25v.87"
-            fill="none"
-            stroke="var(--color)"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></path>
-        </g>
-      </svg> -->
-
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 14 14"
@@ -56,6 +22,7 @@
             stroke="var(--color)"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
           />
           <line
             x1="0.5"
@@ -66,6 +33,7 @@
             stroke="var(--color)"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
           />
           <path
             d="M9.5,7A11.22,11.22,0,0,1,7,13.5,11.22,11.22,0,0,1,4.5,7,11.22,11.22,0,0,1,7,.5,11.22,11.22,0,0,1,9.5,7Z"
@@ -73,12 +41,14 @@
             stroke="var(--color)"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
           />
           <path
             fill="none"
             stroke="var(--color)"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
             d="M11.7,2.5c-1.2,1.2-2.8,2-4.7,2s-3.5-0.8-4.7-2"
           />
           <path
@@ -86,6 +56,7 @@
             stroke="var(--color)"
             stroke-linecap="round"
             stroke-linejoin="round"
+            stroke-width=".8px"
             d="M2.3,11.5c1.2-1.2,2.8-2,4.7-2s3.5,0.8,4.7,2"
           />
         </g>
@@ -102,7 +73,7 @@
       @mouseenter="menuOpen = true"
       @mouseleave="menuOpen = false"
     >
-      <Bounded as="div" yPadding="xs">
+      <Bounded as="div" yPadding="sm">
         <ul class="flex justify-center gap-8 uppercase">
           <li class="underline decoration-1 underline-offset-2">
             <span class="switch-lang" :class="settings.lang">
@@ -114,18 +85,17 @@
             :key="lang.lang"
             @mousedown="switchLang(lang.lang)"
           >
-            <PrismicLink
+            <nuxt-link
               class="switch-lang"
-              :field="{ ...lang, link_type: 'Document' }"
+              :to="linkResolver(lang)"
               :class="lang.lang"
-              dropdown-closer
             >
               <span class="sr-only">{{ lang.lang }}</span>
               <!-- <span
               class="fi"
               :class="`fi-${lang.lang.substring(3).toLowerCase()}`"
             /> -->
-            </PrismicLink>
+            </nuxt-link>
           </li>
         </ul>
       </Bounded>
@@ -134,7 +104,7 @@
 </template>
 <script>
 export default {
-  props: ["settings", "alternateLanguages"],
+  props: ["settings", "alternateLanguages", "page"],
   data() {
     return {
       menuOpen: false,
@@ -151,6 +121,25 @@ export default {
       this.$snipcart.setLanguage(
         lang.slice(0, -2) + lang.slice(-2).toUpperCase()
       );
+    },
+    linkResolver(doc) {
+      const prefix = doc.lang === "en-us" ? "" : `/${doc.lang}`;
+      if (doc.isBroken) {
+        return `${prefix}/not-found`;
+      }
+      if (doc.type === "product_category") {
+        return `${prefix}/shop/${doc.uid}`;
+      }
+      if (doc.type === "product") {
+        return `${prefix}/shop/${doc.data.product_category.uid}/${doc.uid}`;
+      }
+      if (doc.type === "collection") {
+        return `${prefix}/collection/${doc.uid}`;
+      }
+      if (doc.type === "page") {
+        return doc.uid === "home" ? prefix || "/" : `${prefix}/${doc.uid}`;
+      }
+      return "/not-found";
     },
   },
 };

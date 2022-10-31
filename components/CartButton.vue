@@ -14,6 +14,7 @@
           stroke="var(--color)"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width=".8px"
         ></path>
         <path
           d="M4.5,4.5V3a2.5,2.5,0,0,1,5,0V4.5"
@@ -21,6 +22,7 @@
           stroke="var(--color)"
           stroke-linecap="round"
           stroke-linejoin="round"
+          stroke-width=".8px"
         ></path>
       </g>
     </svg>

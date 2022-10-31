@@ -9,7 +9,7 @@
     <ul
       class="
         col-span-3
-        md:col-span-6
+        md:col-span-8
         flex flex-wrap
         justify-start
         items-center
@@ -70,7 +70,7 @@
     <div
       class="
         col-span-3
-        md:col-span-6
+        md:col-span-4
         flex
         justify-end
         items-center
@@ -78,10 +78,11 @@
         text-xs
       "
     >
-      <ModeSwitcher class="mr-2 md:mr-0" />
+      <ModeSwitcher class="mr-3 md:mr-0" />
       <LanguageSwitcher
         :settings="settings"
         :alternateLanguages="alternateLanguages"
+        :page="page"
         class="hidden md:block"
       />
       <CartButton />
@@ -102,6 +103,10 @@ export default {
     },
     alternateLanguages: {
       type: Array,
+      default: () => [],
+    },
+    page: {
+      type: Object,
       default: () => [],
     },
   },
@@ -161,5 +166,13 @@ a.nuxt-link-exact-active {
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
   text-decoration-line: underline;
+}
+
+.nav-icon {
+  fill: none;
+  stroke: var(--color);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.8px;
 }
 </style>
