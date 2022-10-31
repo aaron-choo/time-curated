@@ -1,6 +1,85 @@
 {
   "slices": {
     "components": {
+      "banner": {
+        "library": "slices",
+        "id": "banner",
+        "name": "Banner",
+        "description": "Banner",
+        "model": {
+          "id": "banner",
+          "type": "SharedSlice",
+          "name": "Banner",
+          "description": "Banner",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Banner",
+              "primary": {},
+              "items": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "title": "natural",
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f"
+                },
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                }
+              }
+            ],
+            "primary": {},
+            "slice_type": "banner"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
       "hero": {
         "library": "slices",
         "id": "hero",
@@ -155,16 +234,143 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Hero\\default\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Hero/default/preview.png",
             "width": 800,
             "height": 638
           },
           "withButton": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Hero\\withButton\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Hero/withButton/preview.png",
             "width": 800,
             "height": 1122
           }
         }
+      },
+      "hero_slider": {
+        "library": "slices",
+        "id": "hero_slider",
+        "name": "HeroSlider",
+        "description": "HeroSlider",
+        "model": {
+          "id": "hero_slider",
+          "type": "SharedSlice",
+          "name": "HeroSlider",
+          "description": "HeroSlider",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "HeroSlider",
+              "primary": {},
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "heading2"
+                  }
+                },
+                "subtitle": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Subtitle",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "button_text": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Button Text",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "text_color": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Text Color",
+                    "placeholder": ""
+                  }
+                },
+                "overlay_color": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Overlay Color",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                },
+                "title": [
+                  {
+                    "type": "heading2",
+                    "text": "Promised",
+                    "spans": []
+                  }
+                ],
+                "subtitle": [
+                  {
+                    "type": "paragraph",
+                    "text": "Esse excepteur esse occaecat non consequat cupidatat aliqua culpa consequat qui nostrud ad.",
+                    "spans": []
+                  }
+                ],
+                "button_text": "thick",
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                },
+                "text_color": "#6ac771",
+                "overlay_color": "#2cdf23"
+              }
+            ],
+            "primary": {},
+            "slice_type": "hero_slider"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
       },
       "image": {
         "library": "slices",
@@ -279,14 +485,205 @@
         },
         "screenshotPaths": {
           "white": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Image\\white\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Image/white/preview.png",
             "width": 800,
             "height": 674
           },
           "lightSlate": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Image\\lightSlate\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Image/lightSlate/preview.png",
             "width": 800,
             "height": 674
+          }
+        }
+      },
+      "legal": {
+        "library": "slices",
+        "id": "legal",
+        "name": "Legal",
+        "description": "Legal",
+        "model": {
+          "id": "legal",
+          "type": "SharedSlice",
+          "name": "Legal",
+          "description": "Legal",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Legal",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading1"
+                  }
+                },
+                "last_updated": {
+                  "type": "Date",
+                  "config": {
+                    "label": "Last Updated",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
+                  }
+                },
+                "content": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Content",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "title": [
+                  {
+                    "type": "heading2",
+                    "text": "Chance",
+                    "spans": []
+                  }
+                ],
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "text": "Qui cillum consequat voluptate est ea aliquip. Pariatur ipsum laboris dolore nisi ullamco nisi Lorem ad eiusmod elit dolore quis.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Spent",
+                  "spans": []
+                }
+              ],
+              "last_updated": "2015-12-23"
+            },
+            "slice_type": "legal"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Legal/default/preview.png",
+            "width": 800,
+            "height": 337
+          }
+        }
+      },
+      "link_menu": {
+        "library": "slices",
+        "id": "link_menu",
+        "name": "LinkMenu",
+        "description": "LinkMenu",
+        "model": {
+          "id": "link_menu",
+          "type": "SharedSlice",
+          "name": "LinkMenu",
+          "description": "LinkMenu",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "LinkMenu",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                }
+              },
+              "items": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "title": "try",
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                }
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Possibly",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "link_menu"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/LinkMenu/default/preview.png",
+            "width": 800,
+            "height": 97
           }
         }
       },
@@ -410,7 +807,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\TextWithFeatures\\default\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/TextWithFeatures/default/preview.png",
             "width": 800,
             "height": 766
           }
@@ -489,7 +886,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\TextWithImage\\default\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/TextWithImage/default/preview.png",
             "width": 800,
             "height": 409
           }

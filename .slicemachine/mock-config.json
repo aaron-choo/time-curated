@@ -19,12 +19,6 @@
           "blocks": 1
         }
       },
-      "newsletterDisclaimer": {
-        "config": {
-          "patternType": "PARAGRAPH",
-          "blocks": 1
-        }
-      },
       "siteTitle": {
         "config": {
           "patternType": "HEADING",
@@ -167,6 +161,62 @@
       },
       "withButton": {
         "primary": {}
+      }
+    },
+    "LinkMenu": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Legal": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "content": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Banner": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "HeroSlider": {
+      "default": {
+        "primary": {},
+        "items": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "subtitle": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   }

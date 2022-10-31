@@ -11,7 +11,8 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "sail",
+    "title": "exist",
+    "date": "2018-01-17T21:41:22+0000",
     "product_category": {
       "id": "mock_document_id",
       "link_type": "Document",
@@ -22,16 +23,16 @@
       "first_publication_date": "1970-01-01T00:00:01+0000",
       "last_publication_date": "1970-01-01T01:00:00+0000"
     },
-    "category": "straps",
+    "category": "buckles",
     "description": [
       {
         "type": "paragraph",
-        "text": "Fugiat cupidatat et culpa.",
+        "text": "Eu tempor occaecat reprehenderit aliqua commodo ipsum est eiusmod id sit. Sint dolor velit in velit nisi aliquip nulla esse culpa consectetur minim.",
         "spans": []
       }
     ],
-    "price": 2,
-    "sku": "replace",
+    "price": 87,
+    "sku": "naturally",
     "images": [
       {
         "image": {
@@ -41,20 +42,20 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+          "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
         }
       }
     ],
     "slices": [],
-    "length": "luck",
-    "thickness": "college",
-    "clasp_width": "statement",
-    "inner_width": "did",
-    "outer_width": "vertical",
-    "leather_disclaimer": false,
+    "length": "like",
+    "thickness": "into",
+    "clasp_width": "muscle",
+    "inner_width": "unknown",
+    "outer_width": "stopped",
+    "leather_disclaimer": true,
     "lug_width": [
       {
-        "name": "fly",
+        "name": "continued",
         "image": {
           "dimensions": {
             "width": 900,
@@ -62,9 +63,9 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+          "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
         },
-        "price": 4
+        "price": 55
       }
     ]
   }

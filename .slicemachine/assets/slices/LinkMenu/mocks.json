@@ -1,0 +1,25 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {
+        "title": "try",
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      }
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Possibly",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "link_menu"
+  }
+]

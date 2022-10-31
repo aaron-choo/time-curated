@@ -14,7 +14,7 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Entire",
+        "text": "Atomic",
         "spans": []
       }
     ],
@@ -25,83 +25,112 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8"
+      "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9"
     },
     "announcement": [
       {
         "type": "paragraph",
-        "text": "Pariatur excepteur commodo amet proident commodo est irure sit incididunt amet ipsum sunt. Reprehenderit non mollit laborum consectetur sint sit do ad minim.",
+        "text": "Ea amet aliquip fugiat et ea culpa enim commodo nisi labore Lorem. Sit deserunt labore consectetur sint ipsum duis pariatur laboris cupidatat velit ea.",
         "spans": []
       }
     ],
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Cillum consectetur enim dolore nulla non tempor dolor labore laborum consequat consectetur irure. Cillum commodo aliqua sunt commodo sunt qui.",
+        "text": "Aliqua culpa proident tempor labore mollit voluptate. Incididunt nostrud magna elit cillum est enim dolor tempor excepteur ipsum mollit id enim irure.",
         "spans": []
       }
     ],
-    "newsletterDisclaimer": [
+    "footer_information_links": [
       {
-        "type": "paragraph",
-        "text": "Minim excepteur exercitation anim elit voluptate consectetur minim. Reprehenderit est quis id. Duis proident velit elit elit incididunt.",
-        "spans": []
+        "title": "exact",
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
       }
     ],
-    "description_label": "frog",
-    "specifications_label": "us",
+    "footer_help_links": [
+      {
+        "title": "of",
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ],
+    "footer_social_links": [
+      {
+        "title": "play",
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      }
+    ],
+    "footer_legal_links": [
+      {
+        "title": "exciting",
+        "link": {
+          "link_type": "Web",
+          "url": "https://prismic.io"
+        }
+      }
+    ],
+    "description_label": "leaf",
+    "specifications_label": "garden",
     "free_shipping_text": [
       {
         "type": "paragraph",
-        "text": "Duis sint incididunt minim tempor ipsum in qui ullamco velit. Qui occaecat aliqua elit cillum voluptate ullamco non eiusmod tempor pariatur veniam aliqua consequat tempor.",
+        "text": "Non aliquip fugiat dolore consequat aliquip velit id in ut consequat incididunt est. Excepteur officia proident aliqua magna exercitation adipisicing anim qui nulla esse enim dolore ex.",
         "spans": []
       }
     ],
-    "shipping_information_label": "capital",
+    "shipping_information_label": "directly",
     "shipping_information": [
       {
         "type": "paragraph",
-        "text": "In reprehenderit aliqua consectetur ipsum velit aliqua anim sint ad anim eiusmod officia non. Eiusmod Lorem reprehenderit quis adipisicing tempor officia eu ipsum adipisicing magna dolore. Consequat et id pariatur ad eu.",
+        "text": "Proident elit cupidatat sit consectetur do incididunt nisi enim sunt. Ea minim mollit occaecat esse officia nisi adipisicing magna non minim aliquip commodo voluptate eiusmod.",
         "spans": []
       }
     ],
-    "return_policy_label": "increase",
+    "return_policy_label": "handsome",
     "return_policy": [
       {
         "type": "paragraph",
-        "text": "Eiusmod ex proident veniam Lorem. Exercitation laboris et irure est anim dolore aute enim irure fugiat exercitation minim pariatur occaecat.",
+        "text": "Officia proident magna aliqua aute esse nostrud irure et pariatur elit.",
         "spans": []
       }
     ],
     "leather_disclaimer": [
       {
         "type": "paragraph",
-        "text": "Sunt laboris id duis dolore laborum voluptate fugiat voluptate id. Quis ex velit nisi eiusmod consequat. Lorem aute quis pariatur eiusmod consequat ullamco laboris consequat pariatur.",
+        "text": "Cillum minim Lorem enim non ea id cupidatat cupidatat amet enim eiusmod. Magna fugiat exercitation cillum. Enim magna dolor irure reprehenderit labore do incididunt do fugiat cupidatat irure laborum deserunt.",
         "spans": []
       }
     ],
-    "add_to_cart_text": "monkey",
-    "sold_out_text": "indicate",
-    "select_option_text": "time",
-    "note_text": "free",
-    "length_text": "both",
-    "thickness_text": "silly",
-    "clasp_width_text": "refer",
-    "lug_width_text": "independent",
-    "outer_width_text": "town",
-    "inner_width_text": "spend",
-    "you_may_like_text": "tail",
+    "add_to_cart_text": "ability",
+    "sold_out_text": "mail",
+    "select_option_text": "front",
+    "note_text": "log",
+    "length_text": "structure",
+    "thickness_text": "grown",
+    "clasp_width_text": "tried",
+    "lug_width_text": "forth",
+    "outer_width_text": "production",
+    "inner_width_text": "mark",
+    "you_may_like_text": "headed",
     "slices1": [],
-    "manufacture_text": "circle",
-    "year_text": "out",
-    "reference_text": "settlers",
-    "model_text": "nervous",
-    "case_material_text": "maybe",
-    "case_dimensions_text": "poem",
-    "crystal_text": "angle",
-    "dial_text": "trade",
-    "complications_text": "whatever",
-    "movement_text": "somehow",
-    "production_quantity_text": "pass"
+    "manufacture_text": "tool",
+    "year_text": "wrote",
+    "reference_text": "practice",
+    "model_text": "television",
+    "case_material_text": "board",
+    "case_dimensions_text": "appropriate",
+    "crystal_text": "then",
+    "dial_text": "nervous",
+    "complications_text": "rush",
+    "movement_text": "slope",
+    "production_quantity_text": "work"
   }
 }
