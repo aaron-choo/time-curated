@@ -48,14 +48,17 @@ html:lang(zh-CN) *:lang(en-US) {
     --border-color: #eee;
     --footer-bg: #000;
     --footer-color: #fff;
-    --header-font-family: 'IM Fell English', 'Noto Serif SC', serif;
-    --sans-serif-font-family: 'Inter', 'Noto Sans SC', sans-serif;
-    --serif-font-family: 'EB Garamond', 'Noto Serif SC', serif;
+    --font-heading: 'IM Fell English', 'Noto Serif SC', serif;
+    --font-sans: 'Inter', 'Noto Sans SC', sans-serif;
+    --font-serif: 'EB Garamond', 'Noto Serif SC', serif;
     --page-padding: 1.5em;
     --shadow-color: #0000001a;
     --color-overlay: #EEE;
     --bg-overlay: rgba(17, 17, 17, .5);
-    font-size: 15px;
+    font-size: 16px;
+    --swiper-pagination-color: var(--color-accent);
+    --swiper-theme-color: var(--color-accent);
+    --swiper-pagination-bullet-inactive-color: var(--color-accent);
 }
 
 .dark-mode {
@@ -88,26 +91,11 @@ html:lang(zh-CN) *:lang(en-US) {
 }
 
 body {
-    font-family: var(--serif-font-family);
+    font-family: var(--font-serif);
     background-color: var(--bg);
     color: var(--color);
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    
-}
 
-/* Typography */
-
-.sans-serif {
-    font-family: var(--sans-serif-font-family);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--header-font-family);
 }
 
 /* Accessibility */
@@ -129,6 +117,7 @@ button.btn {
     padding: .5em 1em;
     transition: all .3s ease;
     border-radius: 3px;
+    border-color: currentColor;
 }
 
 button.inactive {
@@ -252,7 +241,7 @@ html.snipcart-sidecart--opened .snipcart::before {
 .snipcart__font--subtitle-small,
 .snipcart-modal__close,
 .snipcart-button-link {
-    font-family: var(--sans-serif-font-family);
+    font-family: var(--font-sans);
 }
 
 .snipcart-button-link {
@@ -272,7 +261,7 @@ html.snipcart-sidecart--opened .snipcart::before {
 }
 
 h2.snipcart-item-line__title {
-    font-family: var(--header-font-family);
+    font-family: var(--font-serif);
     width: 100%;
     font-weight: 400;
 }
@@ -517,7 +506,7 @@ h1.snipcart__font--subtitle {
 }
 
 .snipcart-cart-summary-item__name {
-    font-family: var(--header-font-family);
+    font-family: var(--font-serif);
 }
 
 .snipcart-form-radio:checked+label:after {
