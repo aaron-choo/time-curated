@@ -5,59 +5,6 @@
       @click="subMenuOpen = !subMenuOpen"
     >
       <span class="flex justify-between">
-        <!-- <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 14 14"
-          height="14"
-          width="14"
-          class="w-5 h-5 m-[2px]"
-        >
-          <g>
-            <circle
-              cx="7"
-              cy="7"
-              r="6.5"
-              fill="none"
-              stroke="var(--color)"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width=".8px"
-            ></circle>
-            <path
-              d="M1,9.5H2.75A1.75,1.75,0,0,0,4.5,7.75V6.25A1.75,1.75,0,0,1,6.25,4.5,1.75,1.75,0,0,0,8,2.75V.57"
-              fill="none"
-              stroke="var(--color)"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width=".8px"
-            ></path>
-            <path
-              d="M13.5,6.9a3.56,3.56,0,0,0-1.62-.4H9.75a1.75,1.75,0,0,0,0,3.5A1.25,1.25,0,0,1,11,11.25v.87"
-              fill="none"
-              stroke="var(--color)"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width=".8px"
-            ></path>
-          </g>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 14 14"
-          height="14"
-          width="14"
-        >
-          <path
-            d="M3.85.5,10,6.65a.48.48,0,0,1,0,.7L3.85,13.5"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width=".8px"
-            class="w-5 h-5"
-          ></path>
-        </svg> -->
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 14 14"
@@ -189,13 +136,13 @@
             class="mobile-menu-item uppercase"
             @mousedown="switchLang(lang.lang)"
           >
-            <PrismicLink
+            <nuxt-link
               class="switch-lang"
-              :field="{ ...lang, link_type: 'Document' }"
+              :to="linkResolver(lang)"
               :class="lang.lang"
             >
               <span class="sr-only">{{ lang.lang }}</span>
-            </PrismicLink>
+            </nuxt-link>
           </li>
         </template>
       </ul>
@@ -235,6 +182,25 @@ export default {
       this.$snipcart.setLanguage(
         lang.slice(0, -2) + lang.slice(-2).toUpperCase()
       );
+    },
+    linkResolver(doc) {
+      const prefix = doc.lang === "en-us" ? "" : `/${doc.lang}`;
+      if (doc.isBroken) {
+        return `${prefix}/not-found`;
+      }
+      if (doc.type === "product_category") {
+        return `${prefix}/shop/${doc.uid}`;
+      }
+      if (doc.type === "product") {
+        return `${prefix}/shop/${doc.data.product_category.uid}/${doc.uid}`;
+      }
+      if (doc.type === "collection") {
+        return `${prefix}/collection/${doc.uid}`;
+      }
+      if (doc.type === "page") {
+        return doc.uid === "home" ? prefix || "/" : `${prefix}/${doc.uid}`;
+      }
+      return "/not-found";
     },
   },
 };
