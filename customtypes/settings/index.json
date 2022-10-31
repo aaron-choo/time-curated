@@ -40,13 +40,96 @@
           "multi": "heading1,paragraph,strong,em,hyperlink,list-item,o-list-item"
         }
       },
-      "newsletterDisclaimer": {
-        "type": "StructuredText",
+      "footer_information_links": {
+        "type": "Group",
         "config": {
-          "label": "Newsletter Disclaimer",
-          "placeholder": "Small text below sign up form",
-          "allowTargetBlank": true,
-          "multi": "paragraph,em,strong,hyperlink"
+          "label": "Footer Information Links",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "footer_help_links": {
+        "type": "Group",
+        "config": {
+          "label": "Footer Help Links",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "footer_social_links": {
+        "type": "Group",
+        "config": {
+          "label": "Footer Social Links",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "footer_legal_links": {
+        "type": "Group",
+        "config": {
+          "label": "Footer Legal Links",
+          "fields": {
+            "title": {
+              "type": "Text",
+              "config": {
+                "label": "Title",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
         }
       }
     },

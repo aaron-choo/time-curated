@@ -35,6 +35,18 @@
             },
             "text_with_image": {
               "type": "SharedSlice"
+            },
+            "link_menu": {
+              "type": "SharedSlice"
+            },
+            "legal": {
+              "type": "SharedSlice"
+            },
+            "banner": {
+              "type": "SharedSlice"
+            },
+            "hero_slider": {
+              "type": "SharedSlice"
             }
           }
         }

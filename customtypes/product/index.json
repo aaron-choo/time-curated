@@ -19,6 +19,13 @@
           "placeholder": ""
         }
       },
+      "date": {
+        "type": "Timestamp",
+        "config": {
+          "label": "Date",
+          "placeholder": ""
+        }
+      },
       "product_category": {
         "type": "Link",
         "config": {
