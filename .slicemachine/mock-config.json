@@ -197,7 +197,14 @@
     "Banner": {
       "default": {
         "primary": {},
-        "items": {}
+        "items": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 2
+            }
+          }
+        }
       }
     },
     "HeroSlider": {
@@ -213,6 +220,42 @@
           "subtitle": {
             "config": {
               "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Products": {},
+    "IconGrid": {
+      "default": {
+        "primary": {},
+        "items": {
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "title": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      },
+      "iconGridSlider": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
               "blocks": 1
             }
           }

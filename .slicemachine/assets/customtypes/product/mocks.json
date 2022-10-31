@@ -11,8 +11,8 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "exist",
-    "date": "2018-01-17T21:41:22+0000",
+    "title": "smooth",
+    "date": "2021-12-24T03:27:38+0000",
     "product_category": {
       "id": "mock_document_id",
       "link_type": "Document",
@@ -23,16 +23,16 @@
       "first_publication_date": "1970-01-01T00:00:01+0000",
       "last_publication_date": "1970-01-01T01:00:00+0000"
     },
-    "category": "buckles",
     "description": [
       {
         "type": "paragraph",
-        "text": "Eu tempor occaecat reprehenderit aliqua commodo ipsum est eiusmod id sit. Sint dolor velit in velit nisi aliquip nulla esse culpa consectetur minim.",
+        "text": "Esse ut aliquip ipsum et eiusmod in pariatur tempor.",
         "spans": []
       }
     ],
-    "price": 87,
-    "sku": "naturally",
+    "price": 10,
+    "sale_price": 90,
+    "sku": "back",
     "images": [
       {
         "image": {
@@ -42,20 +42,20 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
+          "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a"
         }
       }
     ],
     "slices": [],
-    "length": "like",
-    "thickness": "into",
-    "clasp_width": "muscle",
-    "inner_width": "unknown",
-    "outer_width": "stopped",
+    "length": "noun",
+    "thickness": "fish",
+    "clasp_width": "gain",
+    "inner_width": "rough",
+    "outer_width": "effort",
     "leather_disclaimer": true,
     "lug_width": [
       {
-        "name": "continued",
+        "name": "not",
         "image": {
           "dimensions": {
             "width": 900,
@@ -63,9 +63,9 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055"
+          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
         },
-        "price": 55
+        "price": 83
       }
     ]
   }

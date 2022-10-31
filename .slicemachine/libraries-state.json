@@ -21,10 +21,12 @@
               "primary": {},
               "items": {
                 "title": {
-                  "type": "Text",
+                  "type": "StructuredText",
                   "config": {
                     "label": "Title",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "heading2"
                   }
                 },
                 "image": {
@@ -42,6 +44,27 @@
                     "placeholder": "",
                     "select": null
                   }
+                },
+                "button_text": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Button Text",
+                    "placeholder": ""
+                  }
+                },
+                "text_color": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Text Color",
+                    "placeholder": ""
+                  }
+                },
+                "overlay_color": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Overlay Color",
+                    "placeholder": ""
+                  }
                 }
               },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
@@ -54,7 +77,18 @@
             "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "title": "natural",
+                "title": [
+                  {
+                    "type": "heading2",
+                    "text": "Crack",
+                    "spans": []
+                  },
+                  {
+                    "type": "heading2",
+                    "text": "Pride",
+                    "spans": []
+                  }
+                ],
                 "image": {
                   "dimensions": {
                     "width": 900,
@@ -62,12 +96,15 @@
                   },
                   "alt": null,
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f"
+                  "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b"
                 },
                 "link": {
                   "link_type": "Web",
-                  "url": "https://prismic.io"
-                }
+                  "url": "http://google.com"
+                },
+                "button_text": "pilot",
+                "text_color": "#dff7c1",
+                "overlay_color": "#6259f2"
               }
             ],
             "primary": {},
@@ -78,7 +115,13 @@
           "fileName": "index",
           "extension": "vue"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Banner\\default\\preview.png",
+            "width": 800,
+            "height": 418
+          }
+        }
       },
       "hero": {
         "library": "slices",
@@ -234,12 +277,12 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Hero/default/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Hero\\default\\preview.png",
             "width": 800,
             "height": 638
           },
           "withButton": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Hero/withButton/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Hero\\withButton\\preview.png",
             "width": 800,
             "height": 1122
           }
@@ -272,6 +315,15 @@
                     "thumbnails": []
                   }
                 },
+                "subtitle": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Subtitle",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
                 "title": {
                   "type": "StructuredText",
                   "config": {
@@ -281,10 +333,10 @@
                     "multi": "heading2"
                   }
                 },
-                "subtitle": {
+                "description": {
                   "type": "StructuredText",
                   "config": {
-                    "label": "Subtitle",
+                    "label": "Description",
                     "placeholder": "",
                     "allowTargetBlank": true,
                     "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
@@ -337,33 +389,290 @@
                   },
                   "alt": null,
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                  "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117"
                 },
-                "title": [
-                  {
-                    "type": "heading2",
-                    "text": "Promised",
-                    "spans": []
-                  }
-                ],
                 "subtitle": [
                   {
                     "type": "paragraph",
-                    "text": "Esse excepteur esse occaecat non consequat cupidatat aliqua culpa consequat qui nostrud ad.",
+                    "text": "Ex exercitation voluptate culpa officia cillum mollit laboris laboris incididunt nisi cillum nulla minim. Magna incididunt ipsum officia irure.",
                     "spans": []
                   }
                 ],
-                "button_text": "thick",
+                "title": [
+                  {
+                    "type": "heading2",
+                    "text": "Better",
+                    "spans": []
+                  }
+                ],
+                "description": [
+                  {
+                    "type": "paragraph",
+                    "text": "Reprehenderit aute est qui eu dolore.",
+                    "spans": []
+                  }
+                ],
+                "button_text": "future",
                 "link": {
                   "link_type": "Web",
-                  "url": "https://slicemachine.dev"
+                  "url": "https://prismic.io"
                 },
-                "text_color": "#6ac771",
-                "overlay_color": "#2cdf23"
+                "text_color": "#0fd6e0",
+                "overlay_color": "#b31be9"
               }
             ],
             "primary": {},
             "slice_type": "hero_slider"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\HeroSlider\\default\\preview.png",
+            "width": 800,
+            "height": 400
+          }
+        }
+      },
+      "icon_grid": {
+        "library": "slices",
+        "id": "icon_grid",
+        "name": "IconGrid",
+        "description": "IconGrid",
+        "model": {
+          "id": "icon_grid",
+          "type": "SharedSlice",
+          "name": "IconGrid",
+          "description": "IconGrid",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "IconGrid",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "text_color": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Text Color",
+                    "placeholder": ""
+                  }
+                },
+                "background_color": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Background Color",
+                    "placeholder": ""
+                  }
+                },
+                "background_image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Background Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {
+                "icon_svg_code": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Icon SVG Code",
+                    "placeholder": ""
+                  }
+                },
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Description",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            },
+            {
+              "id": "iconGridSlider",
+              "name": "IconGridSlider",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "IconGrid",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "This is where it all begins...",
+                    "allowTargetBlank": true,
+                    "single": "heading1,em,strong"
+                  }
+                },
+                "text_color": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Text Color",
+                    "placeholder": ""
+                  }
+                },
+                "background_color": {
+                  "type": "Color",
+                  "config": {
+                    "label": "Background Color",
+                    "placeholder": ""
+                  }
+                },
+                "background_image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Background Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {
+                "icon_svg_code": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Icon SVG Code",
+                    "placeholder": ""
+                  }
+                },
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Description",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "icon_svg_code": "mile",
+                "title": [
+                  {
+                    "type": "paragraph",
+                    "text": "Cillum veniam exercitation elit dolor exercitation amet do. Irure culpa ullamco ad proident sint et pariatur laboris magna.",
+                    "spans": []
+                  }
+                ],
+                "description": [
+                  {
+                    "type": "paragraph",
+                    "text": "Aliquip sint ipsum nulla pariatur ex labore voluptate reprehenderit eu consectetur anim voluptate voluptate minim. Reprehenderit nisi proident exercitation. Cillum dolor do et do ut velit sunt.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Catch",
+                  "spans": []
+                }
+              ],
+              "text_color": "#0600df",
+              "background_color": "#86cc44",
+              "background_image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
+              }
+            },
+            "slice_type": "icon_grid"
+          },
+          "iconGridSlider": {
+            "variation": "iconGridSlider",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "icon_svg_code": "chapter",
+                "title": [
+                  {
+                    "type": "paragraph",
+                    "text": "Elit nostrud ad dolor cupidatat sit non qui. Labore excepteur duis elit commodo in.",
+                    "spans": []
+                  }
+                ],
+                "description": [
+                  {
+                    "type": "paragraph",
+                    "text": "Velit excepteur et veniam dolore id enim nostrud cillum id incididunt ad nostrud amet mollit. Eiusmod non consectetur aute non.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Wooden",
+                  "spans": []
+                }
+              ],
+              "text_color": "#fb1f69",
+              "background_color": "#78b7ac",
+              "background_image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
+              }
+            },
+            "slice_type": "icon_grid"
           }
         },
         "meta": {
@@ -404,7 +713,7 @@
                     "label": "With Accent",
                     "placeholder_false": "No",
                     "placeholder_true": "Yes",
-                    "default_value": true
+                    "default_value": false
                   }
                 }
               },
@@ -444,39 +753,43 @@
         "mocks": {
           "white": {
             "variation": "white",
-            "name": "White",
-            "slice_type": "image",
-            "items": [],
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
             "primary": {
               "image": {
                 "dimensions": {
                   "width": 900,
                   "height": 500
                 },
-                "alt": "Placeholder image",
+                "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6"
               },
-              "withAccent": false
-            }
+              "withAccent": true
+            },
+            "slice_type": "image"
           },
           "lightSlate": {
             "variation": "lightSlate",
-            "name": "Light Slate",
-            "slice_type": "image",
-            "items": [],
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
             "primary": {
               "image": {
                 "dimensions": {
                   "width": 900,
                   "height": 500
                 },
-                "alt": "Placeholder image",
+                "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118"
               },
-              "withAccent": false
-            }
+              "withAccent": true
+            },
+            "slice_type": "image"
           }
         },
         "meta": {
@@ -485,12 +798,12 @@
         },
         "screenshotPaths": {
           "white": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Image/white/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Image\\white\\preview.png",
             "width": 800,
             "height": 674
           },
           "lightSlate": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Image/lightSlate/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Image\\lightSlate\\preview.png",
             "width": 800,
             "height": 674
           }
@@ -596,7 +909,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/Legal/default/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Legal\\default\\preview.png",
             "width": 800,
             "height": 337
           }
@@ -681,7 +994,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/LinkMenu/default/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\LinkMenu\\default\\preview.png",
             "width": 800,
             "height": 97
           }
@@ -807,7 +1120,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/TextWithFeatures/default/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\TextWithFeatures\\default\\preview.png",
             "width": 800,
             "height": 766
           }
@@ -886,7 +1199,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "/Users/aaron/Sites/time-curated/.slicemachine/assets/slices/TextWithImage/default/preview.png",
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\TextWithImage\\default\\preview.png",
             "width": 800,
             "height": 409
           }

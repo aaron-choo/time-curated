@@ -18,12 +18,12 @@ export const _White = () => ({
   },
   data() {
     return {
-      mock: {"variation":"white","name":"White","slice_type":"image","items":[],"primary":{"image":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=900&h=500&fit=crop"},"withAccent":false},"id":"_White"}
+      mock: {"variation":"white","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1545239351-1141bd82e8a6"},"withAccent":true},"slice_type":"image","id":"_White"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
 })
-_White.storyName = 'White'
+_White.storyName = ''
 
 export const _LightSlate = () => ({
   components: {
@@ -37,9 +37,9 @@ export const _LightSlate = () => ({
   },
   data() {
     return {
-      mock: {"variation":"lightSlate","name":"Light Slate","slice_type":"image","items":[],"primary":{"image":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1587840171670-8b850147754e?w=900&h=500&fit=crop"},"withAccent":false},"id":"_LightSlate"}
+      mock: {"variation":"lightSlate","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1560457079-9a6532ccb118"},"withAccent":true},"slice_type":"image","id":"_LightSlate"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
 })
-_LightSlate.storyName = 'Light Slate'
+_LightSlate.storyName = ''
