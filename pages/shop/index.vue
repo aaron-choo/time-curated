@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Bounded as="section" yPadding="base" :secondaryBackground="true">
+    <!-- <Bounded as="section" yPadding="base" :secondaryBackground="true">
       <div class="grid md:grid-cols-2">
         <div>
           <Heading as="h1">{{ page.data.title }}</Heading>
         </div>
       </div>
-    </Bounded>
+    </Bounded> -->
     <SliceZone :slices="page.data.slices" :components="components" />
     <Bounded as="section">
       <!-- <pre>{{ JSON.stringify(merchant, null, 2) }}</pre>

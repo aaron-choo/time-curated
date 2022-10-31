@@ -7,21 +7,30 @@
         </div>
         <div class="md:col-span-5">
           <div class="product-summary mb-4">
-            <Heading as="h1" size="2xl" class="product-title">
+            <Heading as="h1" size="2xl" class="product-title my-0">
               {{ product.title }}
             </Heading>
-            <Heading as="p" size="lg" class="product-price">
+            <Heading as="p" size="lg" class="product-price my-0">
               <span v-if="variant">
                 SGD {{ (product.price + variant.price).toFixed(2) }}
               </span>
               <span v-else> SGD {{ product.price.toFixed(2) }} </span>
             </Heading>
           </div>
-          <div class="add-to-cart-section">
+          <div
+            class="
+              add-to-cart-section
+              py-4
+              px-6
+              md:p-0 md:my-4 md:gap-2
+              grid
+              gap-4
+            "
+          >
             <VariantDropdown
               v-if="product.lug_width.length > 0"
               id="lug-width-variants"
-              class="variant-buttons mt-4"
+              class="variant-buttons"
               :product="product"
               :label="settings.data.lug_width_text"
               :variation="product.lug_width"
@@ -225,10 +234,7 @@ input[type="number"]::-webkit-outer-spin-button {
     bottom: 0;
     left: 0;
     right: 0;
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    padding: 0.5em 1.5em;
     border-top: 1px solid var(--border-color);
   }
 }
