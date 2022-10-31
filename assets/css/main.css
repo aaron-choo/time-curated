@@ -53,8 +53,9 @@ html:lang(zh-CN) *:lang(en-US) {
     --serif-font-family: 'EB Garamond', 'Noto Serif SC', serif;
     --page-padding: 1.5em;
     --shadow-color: #0000001a;
-    --overlay-color: #EEE;
-    --overlay-bg: rgba(17, 17, 17, .5);
+    --color-overlay: #EEE;
+    --bg-overlay: rgba(17, 17, 17, .5);
+    font-size: 15px;
 }
 
 .dark-mode {
@@ -91,7 +92,7 @@ body {
     background-color: var(--bg);
     color: var(--color);
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    font-size: 15px;
+    
 }
 
 /* Typography */
@@ -233,7 +234,7 @@ button.btn.selected {
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--overlay-bg);
+    background: var(--bg-overlay);
     opacity: 0;
     transition: opacity .3s ease;
     pointer-events: none;
