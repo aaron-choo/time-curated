@@ -13,10 +13,12 @@
       "primary": {},
       "items": {
         "title": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Title",
-            "placeholder": ""
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
           }
         },
         "image": {
@@ -33,6 +35,27 @@
             "label": "Link",
             "placeholder": "",
             "select": null
+          }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
+        },
+        "text_color": {
+          "type": "Color",
+          "config": {
+            "label": "Text Color",
+            "placeholder": ""
+          }
+        },
+        "overlay_color": {
+          "type": "Color",
+          "config": {
+            "label": "Overlay Color",
+            "placeholder": ""
           }
         }
       },

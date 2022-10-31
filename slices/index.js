@@ -3,6 +3,7 @@
 import Banner from './Banner';
 import Hero from './Hero';
 import HeroSlider from './HeroSlider';
+import IconGrid from './IconGrid';
 import Image from './Image';
 import Legal from './Legal';
 import LinkMenu from './LinkMenu';
@@ -13,6 +14,7 @@ export {
 	Banner,
 	Hero,
 	HeroSlider,
+	IconGrid,
 	Image,
 	Legal,
 	LinkMenu,
@@ -24,6 +26,7 @@ export const components = {
 	banner: Banner,
 	hero: Hero,
 	hero_slider: HeroSlider,
+	icon_grid: IconGrid,
 	image: Image,
 	legal: Legal,
 	link_menu: LinkMenu,

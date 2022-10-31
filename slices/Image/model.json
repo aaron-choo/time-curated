@@ -25,7 +25,7 @@
             "label": "With Accent",
             "placeholder_false": "No",
             "placeholder_true": "Yes",
-            "default_value": true
+            "default_value": false
           }
         }
       },
