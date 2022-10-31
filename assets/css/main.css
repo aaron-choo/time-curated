@@ -59,6 +59,8 @@ html:lang(zh-CN) *:lang(en-US) {
     --swiper-pagination-color: var(--color-accent);
     --swiper-theme-color: var(--color-accent);
     --swiper-pagination-bullet-inactive-color: var(--color-accent);
+    --swiper-pagination-bullet-width: 6px;
+    --swiper-pagination-bullet-size: 6px;
 }
 
 .dark-mode {
