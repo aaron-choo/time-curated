@@ -13,6 +13,9 @@
     <pre>{{ JSON.stringify(categories, null, 2) }}</pre>
     <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
       <!-- <category-list :categories="categories"></category-list> -->
+      <!-- <h2 class="slide-title text-2xl md:text-3xl leading-none mb-6">
+        Lastest Products
+      </h2> -->
       <product-list :products="products"></product-list>
       <!-- <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
     </Bounded>

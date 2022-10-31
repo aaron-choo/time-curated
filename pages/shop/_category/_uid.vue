@@ -10,11 +10,73 @@
             <Heading as="h1" size="2xl" class="product-title my-0">
               {{ product.title }}
             </Heading>
-            <Heading as="p" size="lg" class="product-price my-0">
-              <span v-if="variant">
-                SGD {{ (product.price + variant.price).toFixed(2) }}
-              </span>
-              <span v-else> SGD {{ product.price.toFixed(2) }} </span>
+            <Heading as="p" size="lg" class="product-price my-2">
+              <template v-if="product.sale_price">
+                <span v-if="variant" class="flex gap-2 items-center">
+                  <span
+                    class="original-price opacity-50 line-through decoration-1"
+                    >SGD {{ (product.price + variant.price).toFixed(2) }}</span
+                  >
+                  <span class="sale-price"
+                    >SGD
+                    {{ (product.sale_price + variant.price).toFixed(2) }}</span
+                  >
+                  <span
+                    class="
+                      sale-percentage
+                      h-fit
+                      font-sans
+                      text-xs
+                      leading-none
+                      py-1
+                      px-2
+                      rounded-[3px]
+                    "
+                  >
+                    {{
+                      Math.round(
+                        (1 -
+                          (product.sale_price + variant.price) /
+                            (product.price + variant.price)) *
+                          100
+                      )
+                    }}% Off</span
+                  >
+                </span>
+                <span v-else class="flex gap-2 items-center">
+                  <span
+                    class="original-price opacity-50 line-through decoration-1"
+                    >SGD {{ product.price.toFixed(2) }}</span
+                  >
+                  <span class="sale-price"
+                    >SGD {{ product.sale_price.toFixed(2) }}</span
+                  >
+                  <span
+                    class="
+                      sale-percentage
+                      h-fit
+                      font-sans
+                      text-xs
+                      leading-none
+                      py-1
+                      px-2
+                      rounded-[3px]
+                    "
+                  >
+                    {{
+                      Math.round(
+                        (1 - product.sale_price / product.price) * 100
+                      )
+                    }}% Off</span
+                  >
+                </span>
+              </template>
+              <template v-else>
+                <span v-if="variant">
+                  SGD {{ (product.price + variant.price).toFixed(2) }}
+                </span>
+                <span v-else> SGD {{ product.price.toFixed(2) }} </span>
+              </template>
             </Heading>
           </div>
           <div
@@ -49,7 +111,7 @@
             class="
               free-shipping-text
               opacity-50
-              sans-serif
+              font-sans
               text-xs
               tracking-wide
             "
@@ -90,7 +152,7 @@
                 <Heading
                   as="h2"
                   size="xs"
-                  class="tracking-wider sans-serif uppercase font-semibold"
+                  class="tracking-wider font-sans uppercase font-semibold"
                 >
                   {{ settings.data.note_text }}
                 </Heading>
@@ -103,7 +165,7 @@
             <Heading
               as="h2"
               size="xs"
-              class="product-sku tracking-wider sans-serif uppercase opacity-50"
+              class="product-sku tracking-wider font-sans uppercase opacity-50"
               v-if="product.sku"
             >
               {{ product.sku }}
@@ -237,5 +299,10 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-template-columns: 1fr 1fr;
     border-top: 1px solid var(--border-color);
   }
+}
+
+.sale-percentage {
+  background: var(--border-accent);
+  color: var(--color-accent);
 }
 </style>
