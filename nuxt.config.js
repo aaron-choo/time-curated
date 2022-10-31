@@ -37,7 +37,6 @@ export default async () => {
       '@nuxtjs/snipcart',
       '@nuxtjs/color-mode',
       '@nuxtjs/device',
-      '@nuxtjs/moment'
     ],
     colorMode: {
       preference: 'light'
@@ -93,6 +92,8 @@ export default async () => {
       '@fontsource/inter/700.css',
       '@fontsource/eb-garamond/400.css',
       '@fontsource/eb-garamond/400-italic.css',
+      '@fontsource/eb-garamond/500.css',
+      '@fontsource/eb-garamond/500-italic.css',
       '@fontsource/eb-garamond/700.css',
       '@fontsource/eb-garamond/700-italic.css',
       '@fontsource/im-fell-english',
