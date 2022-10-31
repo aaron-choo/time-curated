@@ -7,7 +7,7 @@ export default function (doc) {
         return `${prefix}/shop/${doc.uid}`;
     }
     if (doc.type === 'product') {
-        return `${prefix}/shop/${doc.data.product_category.uid}/${doc.uid}`;
+        return (`${prefix}/shop/${doc.data.product_category.uid}/${doc.uid}`);
     }
     if (doc.type === 'collection') {
         return `${prefix}/collection/${doc.uid}`;

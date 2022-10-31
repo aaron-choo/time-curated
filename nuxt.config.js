@@ -1,5 +1,4 @@
 import Prismic from '@prismicio/client'
-
 import sm from './sm.json'
 
 export default async () => {
@@ -37,7 +36,8 @@ export default async () => {
       '@nuxtjs/fontawesome',
       '@nuxtjs/snipcart',
       '@nuxtjs/color-mode',
-      '@nuxtjs/device'
+      '@nuxtjs/device',
+      '@nuxtjs/moment'
     ],
     colorMode: {
       preference: 'light'
@@ -63,7 +63,10 @@ export default async () => {
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
       '@nuxtjs/i18n',
-      /* Load Prismic module after i18n module to prevent extend route concurrency */ '@nuxtjs/prismic',
+      /* Load Prismic module after i18n module to prevent extend route concurrency */
+      ["@nuxtjs/prismic", {
+        endpoint: sm.apiEndpoint || ""
+      }],
       '@nuxtjs/axios'
     ],
     axios: {
@@ -128,7 +131,30 @@ export default async () => {
     prismic: {
       endpoint: sm.apiEndpoint,
       modern: true,
-      linkResolver: '@/plugins/link-resolver',
+      // linkResolver: '@/plugins/link-resolver',
+      apiOptions: {
+        routes: [
+          {
+            type: 'page',
+            path: '/:lang?/:uid'
+          },
+          {
+            type: 'product_category',
+            path: '/:lang?/shop/:uid'
+          },
+          {
+            type: 'product',
+            resolvers: {
+              category: 'product_category',
+            },
+            path: '/:lang?/shop/:category/:uid'
+          },
+          {
+            type: 'collection',
+            path: '/:lang?/collection/:uid'
+          },
+        ]
+      },
 
       htmlSerializer(type, element, content, children) {
         switch (type) {
@@ -156,15 +182,7 @@ export default async () => {
             return /* html */ `<strong class="font-semibold">${children.join('')}</strong>`
 
           case 'hyperlink':
-            if (element.data.type === 'product') {
-              if (element.data.lang === 'en-us') {
-                return /* html */ `<a href="/shop/${element.data.tags[0]}/${element.data.uid}" class="underline decoration-1 underline-offset-2" data-nuxt-link>${children.join('')}</a>`
-              }
-              else {
-                return /* html */ `<a href="/${element.data.lang}/shop/${element.data.tags[0]}/${element.data.uid}" class="underline decoration-1 underline-offset-2">${children.join('')}</a>`
-              }
-            }
-            else { return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-2">${children.join('')}</a>` }
+            return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-2" data-nuxt-link>${children.join('')}</a>`
 
           default:
             return null
