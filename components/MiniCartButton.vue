@@ -16,7 +16,7 @@
           </g>
         </svg>
         <span
-          class="absolute bottom-0 left-0 right-0 sans-serif text-xs"
+          class="absolute bottom-0 left-0 right-0 font-sans text-xs"
           v-if="cartCount > 0"
         >
           {{ cartCount }}
@@ -49,7 +49,7 @@
         </g>
       </svg>
       <span
-        class="absolute bottom-0 left-0 right-0 sans-serif text-xs"
+        class="absolute bottom-0 left-0 right-0 font-sans text-xs"
         v-if="cartCount > 0"
       >
         {{ cartCount }}

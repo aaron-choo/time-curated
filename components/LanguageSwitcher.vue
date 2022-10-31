@@ -73,7 +73,7 @@
       @mouseenter="menuOpen = true"
       @mouseleave="menuOpen = false"
     >
-      <Bounded as="div" yPadding="sm">
+      <Bounded as="div" yPadding="xs">
         <ul class="flex justify-center gap-8 uppercase">
           <li class="underline decoration-1 underline-offset-2">
             <span class="switch-lang" :class="settings.lang">

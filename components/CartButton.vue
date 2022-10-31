@@ -33,7 +33,7 @@
         -bottom-px
         left-0
         right-0
-        sans-serif
+        font-sans
         text-xs
       "
     ></span>

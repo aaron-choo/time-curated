@@ -9,7 +9,7 @@
       <heading
         as="h2"
         size="sm"
-        class="my-0 tracking-wider sans-serif uppercase font-medium"
+        class="my-0 tracking-wider font-sans uppercase font-medium"
         >My Bag</heading
       >
       <CloseCartButton />
@@ -25,7 +25,7 @@
           <span>${{ cartSubtotal }}</span>
         </div>
         <nuxt-link :to="localePath('/bag')">
-          <button id="go-to-bag" class="btn w-full uppercase sans-serif">
+          <button id="go-to-bag" class="btn w-full uppercase font-sans">
             {{ $t("goToBag") }}
           </button>
         </nuxt-link>

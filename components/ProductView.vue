@@ -1,5 +1,5 @@
 <template>
-  <div class="product-view">
+  <div class="product-view relative">
     <nuxt-img
       v-if="product.data.images.length > 0"
       format="webp"
@@ -11,10 +11,43 @@
       loading="lazy"
     />
     <div class="product-meta text-center mt-4 flex flex-col gap-1">
-      <h3 class="product-title leading-tight sm:text-base">
+      <h3 class="product-title leading-tight text-lg">
         {{ product.data.title }}
       </h3>
-      <p class="product-price">SGD {{ product.data.price.toFixed(2) }}</p>
+      <Heading as="p" size="md" class="product-price my-0">
+        <template v-if="product.data.sale_price">
+          <span class="flex flex-wrap gap-x-2 justify-center items-center">
+            <span class="original-price opacity-50 line-through decoration-1"
+              >SGD {{ product.data.price.toFixed(2) }}</span
+            >
+            <span class="sale-price"
+              >SGD {{ product.data.sale_price.toFixed(2) }}</span
+            >
+          </span>
+          <span
+            class="
+              sale-percentage
+              h-fit
+              font-sans
+              text-xs
+              leading-none
+              py-1
+              px-2
+              rounded-[3px]
+              absolute
+              top-4
+              left-4
+            "
+          >
+            {{
+              Math.round(
+                (1 - product.data.sale_price / product.data.price) * 100
+              )
+            }}% Off</span
+          >
+        </template>
+        <template v-else> SGD {{ product.data.price.toFixed(2) }} </template>
+      </Heading>
     </div>
 
     <!-- <pre>{{ product }}</pre> -->
@@ -28,3 +61,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.sale-percentage {
+  background: var(--border-accent);
+  color: var(--color-accent);
+}
+</style>

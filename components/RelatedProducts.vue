@@ -1,6 +1,6 @@
 <template>
   <div class="related-products">
-    <h2 class="mb-4 font-medium sans-serif uppercase">
+    <h2 class="mb-4 font-medium font-sans uppercase">
       {{ settings.data.you_may_like_text }}
     </h2>
 

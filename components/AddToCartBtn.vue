@@ -7,7 +7,7 @@
       w-full
       text-sm
       uppercase
-      sans-serif
+      font-sans
       hover:opacity-80
       font-medium
     "

@@ -20,7 +20,7 @@
           my-2
           leading-tight
           tracking-wider
-          sans-serif
+          font-sans
           uppercase
           font-semibold
           text-xs

@@ -147,7 +147,7 @@
         </div>
       </div>
       <!-- <pre>{{ item.selected_options[0].group_name }}</pre> -->
-      <div class="sans-serif text-xs uppercase my-2">
+      <div class="font-sans text-xs uppercase my-2">
         <div v-if="item.selected_options">
           <div v-for="option in item.selected_options" class="grid grid-cols-2">
             <span v-if="option.group_name === 'Lug Width'">

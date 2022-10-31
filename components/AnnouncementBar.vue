@@ -3,7 +3,7 @@
     <Bounded
       as="p"
       yPadding="xxs"
-      class="announcement-bar text-xs uppercase sans-serif text-center"
+      class="announcement-bar text-xs uppercase font-sans text-center"
     >
       {{ $prismic.asText(settings.data.announcement) }}
     </Bounded>

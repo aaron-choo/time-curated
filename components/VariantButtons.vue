@@ -1,5 +1,5 @@
 <template>
-  <div class="sans-serif text-xs">
+  <div class="font-sans text-xs">
     <p class="uppercase mb-2 font-semibold">
       {{ label }}
     </p>
