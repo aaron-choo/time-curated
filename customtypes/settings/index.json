@@ -291,6 +291,18 @@
             },
             "text_with_image": {
               "type": "SharedSlice"
+            },
+            "hero_slider": {
+              "type": "SharedSlice"
+            },
+            "legal": {
+              "type": "SharedSlice"
+            },
+            "icon_grid": {
+              "type": "SharedSlice"
+            },
+            "link_menu": {
+              "type": "SharedSlice"
             }
           }
         }

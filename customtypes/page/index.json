@@ -33,9 +33,6 @@
             "text_with_features": {
               "type": "SharedSlice"
             },
-            "text_with_image": {
-              "type": "SharedSlice"
-            },
             "link_menu": {
               "type": "SharedSlice"
             },
@@ -46,6 +43,12 @@
               "type": "SharedSlice"
             },
             "hero_slider": {
+              "type": "SharedSlice"
+            },
+            "text_with_image": {
+              "type": "SharedSlice"
+            },
+            "icon_grid": {
               "type": "SharedSlice"
             }
           }

@@ -36,18 +36,6 @@
           ]
         }
       },
-      "category": {
-        "type": "Select",
-        "config": {
-          "label": "Category",
-          "placeholder": "",
-          "options": [
-            "bracelets",
-            "straps",
-            "buckles"
-          ]
-        }
-      },
       "description": {
         "type": "StructuredText",
         "config": {
@@ -61,6 +49,13 @@
         "type": "Number",
         "config": {
           "label": "Price (SGD)",
+          "placeholder": ""
+        }
+      },
+      "sale_price": {
+        "type": "Number",
+        "config": {
+          "label": "Sale Price",
           "placeholder": ""
         }
       },
@@ -102,6 +97,21 @@
               "type": "SharedSlice"
             },
             "text_with_features": {
+              "type": "SharedSlice"
+            },
+            "banner": {
+              "type": "SharedSlice"
+            },
+            "hero_slider": {
+              "type": "SharedSlice"
+            },
+            "legal": {
+              "type": "SharedSlice"
+            },
+            "icon_grid": {
+              "type": "SharedSlice"
+            },
+            "link_menu": {
               "type": "SharedSlice"
             }
           }
