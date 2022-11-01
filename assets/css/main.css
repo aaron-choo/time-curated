@@ -43,6 +43,7 @@ html:lang(zh-CN) *:lang(en-US) {
     --bg: #fff;
     --bg-secondary: #eee;
     --bg-accent: #34403e;
+    --bg-accent-fade-50: #34403e80;
     --border-accent: #4c5d5a;
     --color-accent: #fff;
     --border-color: #eee;
@@ -74,7 +75,7 @@ html:lang(zh-CN) *:lang(en-US) {
     --color-fade-5: #EEEEEE0d !important;
     --bg: #1d2423 !important;
     --bg-secondary: #131717 !important;
-    --border-color: #444 !important;
+    --border-color: #34403e !important;
     --nextcolor: #DDD !important;
     --nextbg: #111 !important;
     --prevcolor: #DDD !important;
@@ -545,4 +546,21 @@ h1.snipcart__font--subtitle {
         width: calc(50% - 1rem);
     }
 
+}
+
+/* device */
+
+.desktop .mobile-only,
+.desktop .tablet-only,
+.mobile .desktop-only,
+.mobile .tablet-only,
+.tablet .mobile-only,
+.tablet .desktop-only {
+    display: none;
+}
+
+.mobile .mobile-only,
+.tablet .tablet-only,
+.desktop .desktop-only {
+    display: initial;
 }

@@ -116,7 +116,8 @@ export default async () => {
     components: true,
 
     plugins: [
-      { src: '~/plugins/prismicLinks', ssr: false }
+      { src: '~/plugins/prismicLinks', ssr: false },
+      '~/plugins/vue-panzoom'
     ],
 
     publicRuntimeConfig: {

@@ -1,6 +1,11 @@
 <template>
   <div>
-    <Bounded as="div" yPadding="xs" :secondaryBackground="true">
+    <Bounded
+      as="div"
+      yPadding="xs"
+      :secondaryBackground="true"
+      class="block relative overflow-hidden"
+    >
       <!-- <n-link
         class="flex gap-2 opacity-50 text-xs font-medium font-sans uppercase"
         :to="localePath('/collection')"
@@ -31,18 +36,85 @@
         </svg>
         See all
       </n-link> -->
-      <WatchModule
-        :watch="page.data"
-        class="watch-module my-4 mx-auto w-full md:max-w-[50vw] xl:max-w-2xl"
-      />
-      <div class="watch-meta mx-auto w-full max-w-2xl">
-        <Heading as="h1" size="5xl" class="text-center">
+      <panZoom
+        class="relative"
+        selector=".watch-wrapper"
+        :options="{
+          minZoom: 0.3,
+          maxZoom: 2,
+          initialZoom: 1,
+          zoomSpeed: 0.04,
+          bounds: true,
+          boundsPadding: 0,
+          transformOrigin: { x: 0.5, y: 0.5 },
+          beforeMouseDown: function (e) {
+            // allow mouse-down panning only if altKey is down. Otherwise - ignore
+            var shouldIgnore = !e.altKey;
+            return shouldIgnore;
+          },
+          beforeWheel: function (e) {
+            // allow wheel-zoom only if altKey is down. Otherwise - ignore
+            var shouldIgnore = !e.altKey;
+            return shouldIgnore;
+          },
+        }"
+      >
+        <WatchModule
+          :watch="page.data"
+          class="watch-module my-4 mx-auto w-full md:max-w-[50vw] xl:max-w-2xl"
+        />
+
+        <div
+          class="
+            absolute
+            bottom-4
+            left-1/2
+            transform
+            -translate-x-1/2
+            w-fit
+            flex flex-col
+            gap-2
+            font-sans
+            text-xs
+            uppercase
+            font-semibold
+          "
+        >
+          <div
+            class="zoom-hint desktop-only px-2 py-1 rounded-[3px] text-center"
+          >
+            Alt+scroll to zoom
+          </div>
+          <div
+            class="
+              zoom-hint
+              mobile-only
+              tablet-only
+              px-2
+              py-1
+              rounded-[3px]
+              text-center
+            "
+          >
+            Pinch to zoom
+          </div>
+          <button
+            @click="revealCard"
+            class="scale-hint px-2 py-1 uppercase rounded-[3px] text-center"
+          >
+            Scale card
+          </button>
+        </div>
+      </panZoom>
+
+      <div class="watch-meta mx-auto w-full max-w-2xl -z-10">
+        <Heading as="h1" size="5xl" class="watch-title text-center">
           {{ $prismic.asText(brand.data.title) }}
           <span class="italic">{{
             page.data.title.substring(brand.data.title[0].text.length)
           }}</span>
         </Heading>
-        <Heading as="h3" size="3xl" class="text-center opacity-50">
+        <Heading as="h3" size="3xl" class="watch-year text-center">
           {{ $prismic.asText(page.data.year) }}
         </Heading>
         <PrismicRichText
@@ -121,6 +193,7 @@ export default {
   },
   data() {
     return {
+      scaleCard: false,
       components,
       specifications: [
         "manufacture",
@@ -150,8 +223,30 @@ export default {
       return this.$store.state.prismic.settings;
     },
   },
-  methods: {},
+  methods: {
+    revealCard() {
+      if (this.scaleCard === false) {
+        document.querySelector(".scale-card").style.opacity = 0.2;
+        this.scaleCard = true;
+      } else {
+        document.querySelector(".scale-card").style.opacity = 0;
+        this.scaleCard = false;
+      }
+    },
+  },
 };
 </script>
 <style scoped>
+.watch-year {
+  color: var(--color-fade-50);
+}
+.zoom-hint {
+  background-color: var(--bg-accent-fade-50);
+  color: var(--color-accent);
+}
+
+.scale-hint {
+  background-color: var(--bg-accent);
+  color: var(--color-accent);
+}
 </style>
