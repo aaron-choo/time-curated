@@ -7,6 +7,25 @@
         class="swiper-slide"
       >
         <nuxt-img
+          v-if="context.uid === 'home'"
+          format="webp"
+          :src="item.image.url"
+          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          :width="item.image.dimensions.width"
+          :height="item.image.dimensions.height"
+          class="
+            slide-image
+            w-full
+            min-h-[400px]
+            h-[calc(100vh-71px)]
+            md:h-[calc(100vh-180px)]
+            object-cover
+            relative
+          "
+          loading="lazy"
+        />
+        <nuxt-img
+          v-else
           format="webp"
           :src="item.image.url"
           sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
@@ -49,14 +68,17 @@
           <div class="slide-meta-container grid grid-cols-12 gap-8 mb-4">
             <div class="slide-meta col-span-10 md:col-span-6">
               <PrismicRichText
+                v-if="item.subtitle.length > 0"
                 :field="item.subtitle"
                 class="slide-subtitle text-2xl md:text-3xl italic"
               />
               <PrismicRichText
+                v-if="item.title.length > 0"
                 :field="item.title"
                 class="slide-title text-2xl md:text-3xl leading-none mb-2"
               />
               <PrismicRichText
+                v-if="item.description.length > 0"
                 :field="item.description"
                 class="slide-description font-sans text-xs md:text-sm"
               />
@@ -65,9 +87,9 @@
 
           <div class="slide-cta flex justify-between items-end">
             <div class="swiper-pagination"></div>
-            <nuxt-link
+            <PrismicLink
               v-if="item.link.url && item.button_text"
-              :to="item.link.url"
+              :field="item.link"
             >
               <button
                 class="
@@ -83,7 +105,7 @@
               >
                 <span>{{ item.button_text }}</span>
               </button>
-            </nuxt-link>
+            </PrismicLink>
           </div>
         </Bounded>
       </div>
@@ -102,27 +124,32 @@ export default {
   props: getSliceComponentProps(["slice", "index", "slices", "context"]),
   async mounted() {
     await this.$nextTick();
-    new Swiper(this.$refs.heroSlider, {
-      effect: "fade",
-      loop: true,
-      autoplay: {
-        delay: 8000,
-        disableOnInteraction: false,
-      },
-      keyboard: {
-        enabled: true,
-        onlyInViewport: true,
-      },
-      mousewheel: {
-        releaseOnEdges: true,
-        forceToAxis: true,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-    });
+    console.log(this.slice.items.length);
+    if (this.slice.items.length === 1) {
+      new Swiper(this.$refs.heroSlider, {
+        effect: "fade",
+        allowSlideNext: false,
+        allowSlidePrev: false,
+      });
+    } else {
+      new Swiper(this.$refs.heroSlider, {
+        effect: "fade",
+        loop: true,
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+        },
+        mousewheel: {
+          releaseOnEdges: true,
+          forceToAxis: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+      });
+    }
   },
 };
 </script>

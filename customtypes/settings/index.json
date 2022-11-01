@@ -40,6 +40,15 @@
           "multi": "heading1,paragraph,strong,em,hyperlink,list-item,o-list-item"
         }
       },
+      "footer_information_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Footer Information Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading3"
+        }
+      },
       "footer_information_links": {
         "type": "Group",
         "config": {
@@ -63,6 +72,15 @@
           }
         }
       },
+      "footer_help_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Footer Help Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading3"
+        }
+      },
       "footer_help_links": {
         "type": "Group",
         "config": {
@@ -84,6 +102,15 @@
               }
             }
           }
+        }
+      },
+      "footer_social_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Footer Social Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading3"
         }
       },
       "footer_social_links": {
@@ -384,6 +411,41 @@
         "config": {
           "label": "Production Quantity Text",
           "placeholder": ""
+        }
+      },
+      "slices2": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "banner": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "hero_slider": {
+              "type": "SharedSlice"
+            },
+            "legal": {
+              "type": "SharedSlice"
+            },
+            "image": {
+              "type": "SharedSlice"
+            },
+            "icon_grid": {
+              "type": "SharedSlice"
+            },
+            "link_menu": {
+              "type": "SharedSlice"
+            },
+            "text_with_features": {
+              "type": "SharedSlice"
+            },
+            "text_with_image": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     }

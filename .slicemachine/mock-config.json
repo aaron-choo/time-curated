@@ -42,6 +42,24 @@
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
+      },
+      "footer_information_title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "footer_social_title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "footer_help_title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
       }
     },
     "products": {
@@ -68,8 +86,29 @@
       },
       "lug_width": {}
     },
-    "product_category": {},
+    "product_category": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
     "collection": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
+    "brand": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
       "description": {
         "config": {
           "patternType": "PARAGRAPH",
@@ -259,7 +298,8 @@
               "blocks": 1
             }
           }
-        }
+        },
+        "items": {}
       }
     }
   }

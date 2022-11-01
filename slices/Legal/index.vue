@@ -1,5 +1,5 @@
 <template>
-  <Bounded as="section" class="max-w-4xl mx-auto">
+  <Bounded as="section" class="max-w-4xl mx-auto text-sm">
     <div class="mb-12">
       <h1 class="legal-title font-sans font-semibold">
         {{ $prismic.asText(slice.primary.title) }}

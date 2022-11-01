@@ -14,7 +14,7 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Crack",
+        "text": "Frame",
         "spans": []
       }
     ],
@@ -25,43 +25,64 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
+      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
     },
     "announcement": [
       {
         "type": "paragraph",
-        "text": "Minim ut laborum incididunt dolore exercitation aliquip labore excepteur fugiat. Officia sunt eu excepteur ullamco ullamco adipisicing qui ullamco eiusmod velit. Occaecat ex non nulla culpa mollit laborum occaecat amet minim nostrud.",
+        "text": "Ad laborum officia nostrud pariatur veniam nostrud eu deserunt exercitation mollit ea ea deserunt. Esse cillum magna do ex anim dolore tempor cupidatat voluptate amet esse elit adipisicing.",
         "spans": []
       }
     ],
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Consectetur dolor sunt et est. Elit cillum culpa est ex adipisicing.",
+        "text": "Eiusmod fugiat occaecat Lorem qui incididunt pariatur eu fugiat nostrud officia in. Non sunt non ipsum commodo sunt.",
+        "spans": []
+      }
+    ],
+    "footer_information_title": [
+      {
+        "type": "heading3",
+        "text": "Halfway",
         "spans": []
       }
     ],
     "footer_information_links": [
       {
-        "title": "able",
+        "title": "news",
         "link": {
           "link_type": "Web",
           "url": "https://slicemachine.dev"
         }
       }
     ],
+    "footer_help_title": [
+      {
+        "type": "heading3",
+        "text": "Control",
+        "spans": []
+      }
+    ],
     "footer_help_links": [
       {
-        "title": "quarter",
+        "title": "football",
         "link": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "https://prismic.io"
         }
+      }
+    ],
+    "footer_social_title": [
+      {
+        "type": "heading3",
+        "text": "Stretch",
+        "spans": []
       }
     ],
     "footer_social_links": [
       {
-        "title": "hungry",
+        "title": "death",
         "link": {
           "link_type": "Web",
           "url": "https://prismic.io"
@@ -70,67 +91,68 @@
     ],
     "footer_legal_links": [
       {
-        "title": "pain",
+        "title": "bus",
         "link": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "https://slicemachine.dev"
         }
       }
     ],
-    "description_label": "north",
-    "specifications_label": "mix",
+    "description_label": "somebody",
+    "specifications_label": "steady",
     "free_shipping_text": [
       {
         "type": "paragraph",
-        "text": "Exercitation do mollit sint. Exercitation est ea magna deserunt aute. Sint voluptate ipsum amet consectetur proident aliqua cillum in Lorem.",
+        "text": "Eiusmod officia deserunt amet adipisicing dolore sint officia laboris. Non aliqua sint ex ex. Est sit dolor cillum laborum non excepteur id mollit dolor ipsum nisi labore.",
         "spans": []
       }
     ],
-    "shipping_information_label": "station",
+    "shipping_information_label": "beside",
     "shipping_information": [
       {
         "type": "paragraph",
-        "text": "Duis excepteur do sit occaecat esse ea nostrud excepteur.",
+        "text": "Commodo sit aute magna ad veniam dolore voluptate esse sit esse incididunt consectetur adipisicing. Culpa non irure magna proident.",
         "spans": []
       }
     ],
-    "return_policy_label": "mad",
+    "return_policy_label": "eat",
     "return_policy": [
       {
         "type": "paragraph",
-        "text": "Elit consequat quis ex ex adipisicing qui eiusmod sit.",
+        "text": "Minim Lorem aliqua amet commodo non officia mollit nisi ut excepteur mollit qui officia Lorem. Aliqua consequat labore anim incididunt eu eu adipisicing. Deserunt irure aliquip nulla veniam ad veniam quis ut pariatur nulla.",
         "spans": []
       }
     ],
     "leather_disclaimer": [
       {
         "type": "paragraph",
-        "text": "Aliquip non qui ipsum eiusmod ea ex mollit id amet. Tempor in fugiat pariatur culpa dolor aute quis sunt exercitation dolore et ut quis tempor. Nostrud deserunt culpa officia qui consequat voluptate non.",
+        "text": "Cupidatat labore fugiat labore est aute dolore aute cupidatat tempor aliqua id pariatur aliqua voluptate cupidatat. Do laboris Lorem ex enim consequat eu.",
         "spans": []
       }
     ],
-    "add_to_cart_text": "obtain",
-    "sold_out_text": "my",
-    "select_option_text": "spider",
-    "note_text": "pencil",
-    "length_text": "account",
-    "thickness_text": "volume",
-    "clasp_width_text": "title",
-    "lug_width_text": "chicken",
-    "outer_width_text": "slave",
-    "inner_width_text": "sets",
-    "you_may_like_text": "white",
+    "add_to_cart_text": "settle",
+    "sold_out_text": "hand",
+    "select_option_text": "atomic",
+    "note_text": "together",
+    "length_text": "drive",
+    "thickness_text": "teacher",
+    "clasp_width_text": "pupil",
+    "lug_width_text": "escape",
+    "outer_width_text": "somehow",
+    "inner_width_text": "plain",
+    "you_may_like_text": "pitch",
     "slices1": [],
-    "manufacture_text": "connected",
-    "year_text": "lamp",
-    "reference_text": "army",
-    "model_text": "occasionally",
-    "case_material_text": "vapor",
-    "case_dimensions_text": "sharp",
-    "crystal_text": "climate",
-    "dial_text": "wild",
-    "complications_text": "chemical",
-    "movement_text": "principal",
-    "production_quantity_text": "aloud"
+    "manufacture_text": "better",
+    "year_text": "characteristic",
+    "reference_text": "cotton",
+    "model_text": "nearby",
+    "case_material_text": "very",
+    "case_dimensions_text": "detail",
+    "crystal_text": "smell",
+    "dial_text": "thee",
+    "complications_text": "wide",
+    "movement_text": "monkey",
+    "production_quantity_text": "recognize",
+    "slices2": []
   }
 }

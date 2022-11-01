@@ -19,6 +19,16 @@
           "placeholder": ""
         }
       },
+      "brand": {
+        "type": "Link",
+        "config": {
+          "label": "Brand",
+          "select": "document",
+          "customtypes": [
+            "brand"
+          ]
+        }
+      },
       "description": {
         "type": "StructuredText",
         "config": {

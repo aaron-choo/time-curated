@@ -1,7 +1,7 @@
 <template>
   <Bounded
     as="section"
-    class="bg-cover bg-blend-overlay"
+    class="bg-cover bg-blend-overlay bg-center"
     :style="
       'background-color:' +
       slice.primary.background_color +
@@ -40,23 +40,46 @@
           class="swiper-slide"
         >
           <div
-            v-html="$t(item.icon_svg_code)"
-            class="h-12 flex justify-center"
-          />
+            class="w-full mx-auto"
+            :style="
+              'height:' +
+              slice.primary.icon_height +
+              'px; width:' +
+              slice.primary.icon_width +
+              'px ;background-color:currentColor;-webkit-mask:url(' +
+              item.image.url +
+              ')no-repeat center;mask:url(' +
+              item.image.url +
+              ')no-repeat center;'
+            "
+          ></div>
         </div>
       </div>
       <div class="swiper-pagination"></div>
     </section>
     <section
       v-else
-      class="icon-grid grid grid-cols-2 gap-6"
+      class="icon-grid grid grid-cols-2 gap-6 items-start"
       :class="'md:grid-cols-' + slice.items.length"
     >
       <div
         v-for="item in slice.items"
         class="icon-container flex gap-y-2 gap-x-4 justify-center items-center"
       >
-        <div v-html="$t(item.icon_svg_code)" />
+        <div
+          class="w-full"
+          :style="
+            'height:' +
+            slice.primary.icon_height +
+            'px; width:' +
+            slice.primary.icon_width +
+            'px ;background-color:currentColor;-webkit-mask:url(' +
+            item.image.url +
+            ')no-repeat center;mask:url(' +
+            item.image.url +
+            ')no-repeat center;'
+          "
+        ></div>
         <div
           class="
             flex flex-col
