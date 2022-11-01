@@ -1,5 +1,9 @@
 <template>
-  <SliceZone :slices="page.data.slices" :components="components" />
+  <SliceZone
+    :slices="page.data.slices"
+    :components="components"
+    :context="page"
+  />
 </template>
 
 <script>

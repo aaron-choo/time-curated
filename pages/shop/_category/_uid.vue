@@ -185,7 +185,11 @@
       </ContentTabs>
     </Bounded>
 
-    <SliceZone :slices="page.data.slices" :components="components" />
+    <SliceZone
+      :slices="page.data.slices"
+      :components="components"
+      :context="page"
+    />
 
     <Bounded as="section" yPadding="sm">
       <RelatedProducts
@@ -195,7 +199,11 @@
       />
     </Bounded>
 
-    <SliceZone :slices="settings.data.slices1" :components="components" />
+    <SliceZone
+      :slices="settings.data.slices1"
+      :components="components"
+      :context="page"
+    />
     <!-- <pre>{{ page }}</pre> -->
   </div>
 </template>

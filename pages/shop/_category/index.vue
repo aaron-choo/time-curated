@@ -5,11 +5,27 @@
       yPadding="md"
       :secondaryBackground="true"
       :backgroundImage="page.data.banner"
+      class="
+        min-h-[400px]
+        h-[calc(100vh-119px)]
+        md:h-[calc(100vh-228px)]
+        flex
+        items-center
+      "
     >
       <div class="grid md:grid-cols-2">
         <div>
-          <Heading as="h1">{{ page.data.title }}</Heading>
-          <prismic-rich-text :field="page.data.description"></prismic-rich-text>
+          <PrismicRichText
+            :field="page.data.subtitle"
+            class="slide-subtitle text-2xl md:text-3xl italic"
+          />
+          <h1 class="slide-title text-2xl md:text-3xl leading-none mb-2">
+            {{ page.data.title }}
+          </h1>
+          <PrismicRichText
+            :field="page.data.description"
+            class="slide-description font-sans text-xs md:text-sm"
+          />
         </div>
       </div>
     </Bounded>

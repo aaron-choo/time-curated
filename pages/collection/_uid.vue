@@ -35,11 +35,14 @@
         :watch="page.data"
         class="watch-module my-4 mx-auto w-full md:max-w-[50vw] xl:max-w-2xl"
       />
-      <div class="watch-meta mx-auto w-full">
-        <Heading as="h1" size="6xl" class="text-center">
-          {{ page.data.title }}
+      <div class="watch-meta mx-auto w-full max-w-2xl">
+        <Heading as="h1" size="5xl" class="text-center">
+          {{ $prismic.asText(brand.data.title) }}
+          <span class="italic">{{
+            page.data.title.substring(brand.data.title[0].text.length)
+          }}</span>
         </Heading>
-        <Heading as="h3" size="4xl" class="text-center opacity-50">
+        <Heading as="h3" size="3xl" class="text-center opacity-50">
           {{ $prismic.asText(page.data.year) }}
         </Heading>
         <PrismicRichText
@@ -74,7 +77,16 @@
         </template>
       </div>
     </Bounded>
-    <SliceZone :slices="settings.data.slices1" :components="components" />
+    <SliceZone
+      :slices="page.data.slices"
+      :components="components"
+      :context="page"
+    />
+    <SliceZone
+      :slices="settings.data.slices2"
+      :components="components"
+      :context="page"
+    />
     <!-- <pre>{{ page }}</pre> -->
   </div>
 </template>
@@ -87,7 +99,10 @@ export default {
     const page = await $prismic.api.getByUID("collection", params.uid, {
       lang,
     });
-    const relatedProducts = await $prismic.api.query(
+    const brand = await $prismic.api.getByUID("brand", page.data.brand.uid, {
+      lang,
+    });
+    const relatedWatches = await $prismic.api.query(
       $prismic.predicates.at("document.type", "collection"),
       {
         lang: lang,
@@ -99,8 +114,9 @@ export default {
     await store.dispatch("prismic/load", { lang, page });
     return {
       page: page,
-      relatedProducts: relatedProducts.results,
+      relatedWatches: relatedWatches.results,
       params: params,
+      brand: brand,
     };
   },
   data() {
