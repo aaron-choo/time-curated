@@ -79,7 +79,7 @@ export default {
                   ...match,
                 });
                 break;
-              case "straps":
+              case "watch straps":
                 crumbs.push({
                   title: lang === "zh-cn" ? "皮革表带" : param,
                   ...match,
@@ -93,7 +93,7 @@ export default {
                 break;
               case "buckles":
                 crumbs.push({
-                  title: lang === "zh-cn" ? "表扣" : param,
+                  title: lang === "zh-cn" ? "不锈钢表扣" : param,
                   ...match,
                 });
                 break;

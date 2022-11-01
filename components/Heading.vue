@@ -5,6 +5,7 @@
     :class="{
       'text-5xl md:text-[5rem]': size === '8xl',
       'text-4xl md:text-6xl': size === '6xl',
+      'text-3xl md:text-5xl': size === '5xl',
       'text-2xl md:text-4xl': size === '4xl',
       'text-2xl md:text-3xl': size === '3xl',
       'text-2xl': size === '2xl',

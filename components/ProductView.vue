@@ -35,8 +35,8 @@
               px-2
               rounded-[3px]
               absolute
-              top-4
-              left-4
+              top-2
+              left-2
             "
           >
             {{

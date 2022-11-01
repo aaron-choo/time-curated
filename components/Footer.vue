@@ -6,7 +6,10 @@
           <SignUpForm :settings="settings" class="lg:max-w-sm" />
         </div>
         <div class="lg:col-span-2 font-sans text-sm">
-          <h3 class="font-sans font-semibold mb-2">Need Help?</h3>
+          <PrismicRichText
+            :field="settings.data.footer_help_title"
+            class="font-sans font-semibold mb-2"
+          />
           <ul class="grid gap-1">
             <li
               v-for="link in settings.data.footer_help_links"
@@ -19,7 +22,10 @@
           </ul>
         </div>
         <div class="lg:col-span-2 font-sans text-sm">
-          <h3 class="font-sans font-semibold mb-2">Information</h3>
+          <PrismicRichText
+            :field="settings.data.footer_information_title"
+            class="font-sans font-semibold mb-2"
+          />
           <ul class="grid gap-1">
             <li
               v-for="link in settings.data.footer_information_links"
@@ -32,7 +38,10 @@
           </ul>
         </div>
         <div class="lg:col-span-2 font-sans text-sm">
-          <h3 class="font-sans font-semibold mb-2">Follow Us</h3>
+          <PrismicRichText
+            :field="settings.data.footer_social_title"
+            class="font-sans font-semibold mb-2"
+          />
           <ul class="grid gap-1">
             <li
               v-for="link in settings.data.footer_social_links"

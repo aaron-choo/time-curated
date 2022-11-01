@@ -10,7 +10,7 @@
         :field="settings.data.newsletterDescription"
         :html-serializer="htmlSerializer"
         wrapper="div"
-        class="font-heading text-xl"
+        class="text-xl"
       />
       <div class="grid grid-cols-1 gap-2">
         <div class="relative">
