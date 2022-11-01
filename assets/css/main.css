@@ -53,12 +53,12 @@ html:lang(zh-CN) *:lang(en-US) {
     --font-serif: 'EB Garamond', 'Noto Serif SC', serif;
     --page-padding: 1.5em;
     --shadow-color: #0000001a;
-    --color-overlay: #EEE;
+    --color-overlay: #FFF;
     --bg-overlay: rgba(17, 17, 17, .5);
     font-size: 16px;
-    --swiper-pagination-color: var(--color-accent);
-    --swiper-theme-color: var(--color-accent);
-    --swiper-pagination-bullet-inactive-color: var(--color-accent);
+    --swiper-pagination-color: currentColor;
+    --swiper-theme-color: currentColor;
+    --swiper-pagination-bullet-inactive-color: currentColor;
     --swiper-pagination-bullet-width: 6px;
     --swiper-pagination-bullet-size: 6px;
 }

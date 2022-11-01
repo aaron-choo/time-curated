@@ -94,6 +94,8 @@ export default async () => {
       '@fontsource/eb-garamond/400-italic.css',
       '@fontsource/eb-garamond/500.css',
       '@fontsource/eb-garamond/500-italic.css',
+      '@fontsource/eb-garamond/600.css',
+      '@fontsource/eb-garamond/600-italic.css',
       '@fontsource/eb-garamond/700.css',
       '@fontsource/eb-garamond/700-italic.css',
       '@fontsource/im-fell-english',
