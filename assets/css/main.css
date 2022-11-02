@@ -547,20 +547,3 @@ h1.snipcart__font--subtitle {
     }
 
 }
-
-/* device */
-
-.desktop .mobile-only,
-.desktop .tablet-only,
-.mobile .desktop-only,
-.mobile .tablet-only,
-.tablet .mobile-only,
-.tablet .desktop-only {
-    display: none;
-}
-
-.mobile .mobile-only,
-.tablet .tablet-only,
-.desktop .desktop-only {
-    display: initial;
-}

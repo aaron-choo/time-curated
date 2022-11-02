@@ -1,6 +1,16 @@
 <template>
   <div>
-    <div class="watch-wrapper relative w-full h-full m-auto">
+    <div
+      class="
+        watch-wrapper
+        relative
+        w-full
+        h-full
+        max-h-screen max-w-[60vh]
+        mx-auto
+        prevent-select
+      "
+    >
       <div class="watch-base w-full h-full absolute top-0 overflow-hidden">
         <nuxt-img
           v-if="watch.watch_strap.url"
@@ -294,7 +304,7 @@ export default {
 </script>
 <style scoped>
 .watch-wrapper {
-  padding-top: 166.66%;
+  aspect-ratio: 0.6;
 }
 .watch-base {
   z-index: 1;
