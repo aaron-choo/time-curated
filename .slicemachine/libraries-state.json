@@ -80,12 +80,12 @@
                 "title": [
                   {
                     "type": "heading2",
-                    "text": "Crack",
+                    "text": "Disappear",
                     "spans": []
                   },
                   {
                     "type": "heading2",
-                    "text": "Pride",
+                    "text": "Close",
                     "spans": []
                   }
                 ],
@@ -96,15 +96,15 @@
                   },
                   "alt": null,
                   "copyright": null,
-                  "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b"
+                  "url": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"
                 },
                 "link": {
                   "link_type": "Web",
-                  "url": "http://google.com"
+                  "url": "https://slicemachine.dev"
                 },
-                "button_text": "pilot",
-                "text_color": "#dff7c1",
-                "overlay_color": "#6259f2"
+                "button_text": "dish",
+                "text_color": "#283294",
+                "overlay_color": "#8a465a"
               }
             ],
             "primary": {},
@@ -117,9 +117,9 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Banner\\default\\preview.png",
-            "width": 800,
-            "height": 418
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\Banner\\default\\preview.jpeg",
+            "width": 1638,
+            "height": 551
           }
         }
       },
@@ -431,9 +431,9 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\HeroSlider\\default\\preview.png",
-            "width": 800,
-            "height": 400
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\HeroSlider\\default\\preview.jpeg",
+            "width": 1892,
+            "height": 661
           }
         }
       },
@@ -761,7 +761,18 @@
           "fileName": "index",
           "extension": "vue"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\IconGrid\\default\\preview.jpeg",
+            "width": 1890,
+            "height": 135
+          },
+          "iconGridSlider": {
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\IconGrid\\iconGridSlider\\preview.jpeg",
+            "width": 1893,
+            "height": 218
+          }
+        }
       },
       "image": {
         "library": "slices",

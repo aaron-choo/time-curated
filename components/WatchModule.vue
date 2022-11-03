@@ -9,6 +9,7 @@
         max-h-screen max-w-[60vh]
         mx-auto
         prevent-select
+        aspect-[0.6]
       "
     >
       <div class="watch-base w-full h-full absolute top-0 overflow-hidden">
@@ -304,9 +305,10 @@ export default {
 };
 </script>
 <style scoped>
-.watch-wrapper {
-  aspect-ratio: 0.6;
-}
+/* .strap-finder .watch-wrapper {
+  max-height: 80vh;
+  max-width: 48vh;
+} */
 .watch-base {
   z-index: 1;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
@@ -318,5 +320,9 @@ export default {
   height: 100%;
   transition: 0.5s;
   pointer-events: none;
+}
+
+.hide-strap .watch-strap {
+  display: none;
 }
 </style>

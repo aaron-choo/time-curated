@@ -4,12 +4,7 @@
     :class="{ 'has-scroll-over opacity-0 pointer-events-none': scrollOver }"
   >
     <ul class="flex">
-      <li
-        v-for="color of colors"
-        :key="color.name"
-        :class="color.name"
-        @click="$colorMode.preference = color.name"
-      >
+      <li v-for="color of colors" :key="color.name" :class="color.name" w>
         <a
           class="
             relative

@@ -2,7 +2,7 @@
   <li>
     <button
       class="mobile-sub-menu w-full uppercase p-6 block"
-      @click="subMenuOpen = !subMenuOpen"
+      @click="openSubMenu()"
     >
       <span class="flex justify-between">
         <svg
@@ -86,10 +86,11 @@
         h-full
         transition
         duration-300
+        z-10
       "
       :class="{
-        'opacity-0 translate-x-full delay-300': !subMenuOpen,
-        'mobile-sub-menu-open translate-x-0': subMenuOpen,
+        'delay-300 opacity-0 translate-x-full': !subMenuOpen,
+        'mobile-sub-menu-open opacity-100 translate-x-0': subMenuOpen,
       }"
     >
       <button
@@ -98,7 +99,10 @@
           'opacity-0 translate-x-1/2': !subMenuOpen,
           'translate-x-0': subMenuOpen,
         }"
-        @click="toggleSubMenu"
+        @click="closeSubMenu()"
+        @keyup.esc="closeSubMenu()"
+        ref="submenu"
+        tabindex="-1"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -174,8 +178,14 @@ export default {
     };
   },
   methods: {
-    toggleSubMenu() {
-      this.subMenuOpen = !this.subMenuOpen;
+    openSubMenu() {
+      this.subMenuOpen = true;
+      this.$refs.submenu.focus({
+        preventScroll: true,
+      });
+    },
+    closeSubMenu() {
+      this.subMenuOpen = false;
     },
     switchLang(lang) {
       // console.log(lang);

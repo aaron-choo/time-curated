@@ -1,15 +1,8 @@
 <template>
   <div
-    class="
-      mobile-menu-component
-      flex
-      items-center
-      justify-center
-      overflow-hidden
-      font-normal
-    "
+    class="mobile-menu-component flex items-center justify-center font-normal"
   >
-    <button class="py-6" @click="toggleMenu">
+    <button class="py-6" @click="openMenu()" aria-label="Open menu">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 14 14"
@@ -68,10 +61,14 @@
         'opacity-0 pointer-events-none': !menuOpen,
         'opacity-1': menuOpen,
       }"
+      @keyup.esc="closeMenu()"
+      ref="menu"
+      tabindex="-1"
     >
       <button
         class="mobile-menu-trigger absolute top-0 left-0 py-4 px-6"
-        @click="toggleMenu"
+        @click="closeMenu()"
+        aria-label="Close menu"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -115,6 +112,7 @@
             text-base
             w-full
             h-full
+            overflow-hidden
           "
         >
           <li
@@ -182,13 +180,16 @@ export default {
     },
   },
   methods: {
-    toggleMenu() {
-      this.menuOpen = !this.menuOpen;
-      if (this.menuOpen === true) {
-        document.querySelector(":root").classList.add("mobile-menu-open");
-      } else {
-        document.querySelector(":root").classList.remove("mobile-menu-open");
-      }
+    closeMenu() {
+      document.body.classList.remove("overflow-hidden");
+      this.menuOpen = false;
+    },
+    openMenu() {
+      document.body.classList.add("overflow-hidden");
+      this.menuOpen = true;
+      this.$refs.menu.focus({
+        preventScroll: true,
+      });
     },
   },
 };

@@ -195,6 +195,24 @@
           }
         }
       }
+    },
+    "Strap Finder": {
+      "top_image": {
+        "type": "Image",
+        "config": {
+          "label": "Top Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "bottom_image": {
+        "type": "Image",
+        "config": {
+          "label": "Bottom Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
     }
   }
 }

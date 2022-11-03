@@ -18,7 +18,7 @@ export const _Default = () => ({
   },
   data() {
     return {
-      mock: {"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"title":[{"type":"heading2","text":"Crack","spans":[]},{"type":"heading2","text":"Pride","spans":[]}],"image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1471897488648-5eae4ac6686b"},"link":{"link_type":"Web","url":"http://google.com"},"button_text":"pilot","text_color":"#dff7c1","overlay_color":"#6259f2"}],"primary":{},"slice_type":"banner","id":"_Default"}
+      mock: {"variation":"default","version":"sktwi1xtmkfgx8626","items":[{"title":[{"type":"heading2","text":"Disappear","spans":[]},{"type":"heading2","text":"Close","spans":[]}],"image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"},"link":{"link_type":"Web","url":"https://slicemachine.dev"},"button_text":"dish","text_color":"#283294","overlay_color":"#8a465a"}],"primary":{},"slice_type":"banner","id":"_Default"}
     }
   },
   template: '<SliceZone :slices="[mock]" :resolver="resolve" />'

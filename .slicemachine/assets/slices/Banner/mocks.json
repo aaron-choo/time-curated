@@ -7,12 +7,12 @@
         "title": [
           {
             "type": "heading2",
-            "text": "Crack",
+            "text": "Disappear",
             "spans": []
           },
           {
             "type": "heading2",
-            "text": "Pride",
+            "text": "Close",
             "spans": []
           }
         ],
@@ -23,15 +23,15 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b"
+          "url": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"
         },
         "link": {
           "link_type": "Web",
-          "url": "http://google.com"
+          "url": "https://slicemachine.dev"
         },
-        "button_text": "pilot",
-        "text_color": "#dff7c1",
-        "overlay_color": "#6259f2"
+        "button_text": "dish",
+        "text_color": "#283294",
+        "overlay_color": "#8a465a"
       }
     ],
     "primary": {},
