@@ -79,21 +79,21 @@ export default {
                   ...match,
                 });
                 break;
-              case "watch straps":
+              case "straps":
                 crumbs.push({
-                  title: lang === "zh-cn" ? "皮革表带" : param,
+                  title: lang === "zh-cn" ? "皮革表带" : "watch " + param,
                   ...match,
                 });
                 break;
               case "bracelets":
                 crumbs.push({
-                  title: lang === "zh-cn" ? "不锈钢表带" : param,
+                  title: lang === "zh-cn" ? "不锈钢表带" : "watch " + param,
                   ...match,
                 });
                 break;
               case "buckles":
                 crumbs.push({
-                  title: lang === "zh-cn" ? "不锈钢表扣" : param,
+                  title: lang === "zh-cn" ? "不锈钢表扣" : "watch " + param,
                   ...match,
                 });
                 break;
