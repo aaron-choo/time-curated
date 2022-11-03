@@ -58,12 +58,12 @@
             top-0
             left-0
             w-full
-            px-6
+            px-2
             flex
             justify-between
           "
         >
-          <button @click="toggleZoom" class="py-4">
+          <button @click="toggleZoom" aria-label="Close popup" class="p-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 14 14"
@@ -100,14 +100,18 @@
               </g>
             </svg>
           </button>
-          <button @click="toggleCard" class="py-4 relative">
+          <button
+            @click="toggleCard"
+            aria-label="Toggle card for scale"
+            class="p-4 relative"
+          >
             <svg
               v-if="scaleCard"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 14 14"
               height="14"
               width="14"
-              class="my-2 w-5 h-5 absolute top-4 left-0"
+              class="my-2 w-5 h-5 absolute top-4 left-4"
               data-v-26973788=""
             >
               <g data-v-26973788="">
@@ -180,7 +184,7 @@
           </button>
         </div>
         <panZoom
-          class="watch-pan-zoom relative"
+          class="watch-pan-zoom relative cursor-move"
           selector=".watch-module-zoom"
           :options="{
             minZoom: 0.3,
@@ -198,20 +202,25 @@
           />
         </panZoom>
       </div>
-      <WatchModule :watch="page.data" class="watch-module my-4 w-full" />
-      <div class="zoom-controls relative w-full">
-        <button
-          @click="toggleZoom"
-          class="
-            absolute
-            bottom-6
-            p-2
-            rounded-full
-            left-1/2
-            transform
-            -translate-x-1/2
-          "
-        >
+      <a
+        @click="toggleZoom"
+        aria-label="Open zoom popup"
+        class="cursor-zoom-in"
+      >
+        <WatchModule :watch="page.data" class="watch-module w-full" />
+      </a>
+      <div
+        class="
+          zoom-controls
+          relative
+          w-full
+          z-10
+          flex
+          justify-center
+          hide-desktop
+        "
+      >
+        <button @click="toggleZoom" aria-label="Open zoom popup" class="p-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 14 14"
@@ -426,7 +435,7 @@ export default {
   color: var(--color-fade-50);
 }
 .zoom-module {
-  background-color: var(--bg-accent-fade-50);
+  background-color: var(--bg-accent);
   color: var(--color-accent);
   z-index: 90;
   backdrop-filter: blur(10px);
@@ -440,6 +449,7 @@ export default {
 }
 
 .zoom-controls button {
-  background-color: var(--bg);
+  background-color: var(--bg-secondary-fade-80);
+  color: var(--color);
 }
 </style>
