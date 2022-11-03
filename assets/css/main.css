@@ -41,8 +41,11 @@ html:lang(zh-CN) *:lang(en-US) {
     --color-warning: #926c39;
     --bg-warning: #fdf8e3;
     --bg: #fff;
-    --bg-secondary: #eee;
+    --bg-fade-80: #FFFFFFCC;
+    --bg-secondary: #EEE;
+    --bg-secondary-fade-80: #EEEEEECC;
     --bg-accent: #34403e;
+    --bg-accent-fade-80: #34403ecc;
     --bg-accent-fade-50: #34403e80;
     --border-accent: #4c5d5a;
     --color-accent: #fff;
@@ -74,7 +77,9 @@ html:lang(zh-CN) *:lang(en-US) {
     --color-fade-10: #EEEEEE1a !important;
     --color-fade-5: #EEEEEE0d !important;
     --bg: #1d2423 !important;
+    --bg-fade-80: #1d2423CC;
     --bg-secondary: #131717 !important;
+    --bg-secondary-fade-80: #131717CC;
     --border-color: #34403e !important;
     --nextcolor: #DDD !important;
     --nextbg: #111 !important;
@@ -546,4 +551,18 @@ h1.snipcart__font--subtitle {
         width: calc(50% - 1rem);
     }
 
+}
+
+/* Devices */
+
+.mobile .hide-mobile {
+    display: none;
+}
+
+.tablet .hide-tablet {
+    display: none;
+}
+
+.desktop .hide-desktop {
+    display: none;
 }
