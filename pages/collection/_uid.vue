@@ -36,246 +36,266 @@
         </svg>
         See all
       </n-link> -->
-      <div
-        class="
-          zoom-module
-          fixed
-          top-0
-          left-0
-          right-0
-          bottom-0
-          pointer-events-none
-          opacity-0
-          transition-opacity
-        "
-        :class="{ active: zoomState, inactive: !zoomState }"
-      >
-        <div
-          class="
-            zoom-module-header
-            z-10
-            fixed
-            top-0
-            left-0
-            w-full
-            px-2
-            flex
-            justify-between
-          "
-        >
-          <button @click="toggleZoom" aria-label="Close popup" class="p-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 14 14"
-              height="14"
-              width="14"
-              class="my-2 w-5 h-5"
-              data-v-26973788=""
-            >
-              <g data-v-26973788="">
-                <line
-                  x1="13.5"
-                  y1="0.5"
-                  x2="0.5"
-                  y2="13.5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width=".8px"
-                  data-v-26973788=""
-                ></line>
-                <line
-                  x1="0.5"
-                  y1="0.5"
-                  x2="13.5"
-                  y2="13.5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width=".8px"
-                  data-v-26973788=""
-                ></line>
-              </g>
-            </svg>
-          </button>
-          <button
-            @click="toggleCard"
-            aria-label="Toggle card for scale"
-            class="p-4 relative"
-          >
-            <svg
-              v-if="scaleCard"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 14 14"
-              height="14"
-              width="14"
-              class="my-2 w-5 h-5 absolute top-4 left-4"
-              data-v-26973788=""
-            >
-              <g data-v-26973788="">
-                <line
-                  x1="0.5"
-                  y1="0.5"
-                  x2="13.5"
-                  y2="13.5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width=".8px"
-                  data-v-26973788=""
-                ></line>
-              </g>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0.09999999999999998 0.09999999999999998 13.8 13.8"
-              height="30"
-              width="30"
-              stroke-width="0.8"
-              class="my-2 w-5 h-5"
-            >
-              <g>
-                <rect
-                  x="0.64"
-                  y="4.17"
-                  width="12.73"
-                  height="5.66"
-                  transform="translate(-2.9 7) rotate(-45)"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></rect>
-                <line
-                  x1="7.5"
-                  y1="2.5"
-                  x2="9"
-                  y2="4"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></line>
-                <line
-                  x1="5"
-                  y1="5"
-                  x2="6.5"
-                  y2="6.5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></line>
-                <line
-                  x1="2.5"
-                  y1="7.5"
-                  x2="4"
-                  y2="9"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></line>
-              </g>
-            </svg>
-          </button>
-        </div>
-        <panZoom
-          class="watch-pan-zoom relative cursor-move"
-          selector=".watch-module-zoom"
-          :options="{
-            minZoom: 0.3,
-            maxZoom: 2,
-            initialZoom: 1,
-            zoomSpeed: 0.04,
-            bounds: true,
-            boundsPadding: 0,
-            transformOrigin: { x: 0.5, y: 0.5 },
-          }"
-        >
-          <WatchModule
-            :watch="page.data"
-            class="watch-module-zoom mx-auto w-full"
-          />
-        </panZoom>
-      </div>
       <a
         @click="toggleZoom"
-        aria-label="Open zoom popup"
+        aria-label="Open zoom modal"
         class="cursor-zoom-in"
       >
         <WatchModule :watch="page.data" class="watch-module w-full" />
       </a>
-      <div
-        class="
-          zoom-controls
-          relative
-          w-full
-          z-10
-          flex
-          justify-center
-          hide-desktop
-        "
-      >
-        <button @click="toggleZoom" aria-label="Open zoom popup" class="p-2">
+      <div class="zoom-controls w-full z-10 flex justify-center">
+        <button
+          @click="toggleZoom"
+          aria-label="Open zoom modal"
+          class="open-zoom-modal hide-desktop p-2"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 14 14"
-            height="30"
-            width="30"
-            stroke-width="1"
+            viewBox="0.09999999999999998 0.09999999999999998 13.8 13.8"
+            height="14"
+            width="14"
+            stroke-width="0.8"
             class="w-5 h-5"
           >
             <g>
-              <g>
-                <circle
-                  cx="5.92"
-                  cy="5.92"
-                  r="5.42"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></circle>
-                <line
-                  x1="13.5"
-                  y1="13.5"
-                  x2="9.75"
-                  y2="9.75"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></line>
-              </g>
-              <g>
-                <line
-                  x1="6"
-                  y1="3.5"
-                  x2="6"
-                  y2="8.5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></line>
-                <line
-                  x1="3.5"
-                  y1="6"
-                  x2="8.5"
-                  y2="6"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></line>
-              </g>
+              <line
+                x1="5.5"
+                y1="5.5"
+                x2="0.5"
+                y2="0.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></line>
+              <polyline
+                points="4.5 0.5 0.5 0.5 0.5 4.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></polyline>
+              <line
+                x1="8.5"
+                y1="8.5"
+                x2="13.5"
+                y2="13.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></line>
+              <polyline
+                points="9.5 13.5 13.5 13.5 13.5 9.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></polyline>
             </g>
           </svg>
         </button>
+        <div
+          class="zoom-modal fixed top-0 left-0 right-0 bottom-0"
+          :class="{
+            'active pointer-events-auto opacity-100': zoomState,
+            'inactive pointer-events-none opacity-0': !zoomState,
+          }"
+          ref="modal"
+          @keyup.esc="closeZoom()"
+          tabindex="-1"
+        >
+          <div
+            class="
+              zoom-modal-header
+              z-10
+              fixed
+              top-0
+              left-0
+              w-full
+              px-2
+              flex
+              justify-between
+            "
+          >
+            <button
+              @click="toggleZoom"
+              aria-label="Close zoom modal"
+              class="p-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 14 14"
+                height="14"
+                width="14"
+                class="my-2 w-5 h-5"
+                data-v-26973788=""
+              >
+                <g data-v-26973788="">
+                  <line
+                    x1="13.5"
+                    y1="0.5"
+                    x2="0.5"
+                    y2="13.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width=".8px"
+                    data-v-26973788=""
+                  ></line>
+                  <line
+                    x1="0.5"
+                    y1="0.5"
+                    x2="13.5"
+                    y2="13.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width=".8px"
+                    data-v-26973788=""
+                  ></line>
+                </g>
+              </svg>
+            </button>
+            <button
+              @click="toggleCard"
+              aria-label="Toggle card for scale"
+              class="p-4 relative"
+            >
+              <svg
+                v-if="scaleCard"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 14 14"
+                height="14"
+                width="14"
+                class="my-2 w-5 h-5 absolute top-4 left-4"
+                data-v-26973788=""
+              >
+                <g data-v-26973788="">
+                  <line
+                    x1="0.5"
+                    y1="0.5"
+                    x2="13.5"
+                    y2="13.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width=".8px"
+                    data-v-26973788=""
+                  ></line>
+                </g>
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0.09999999999999998 0.09999999999999998 13.8 13.8"
+                height="30"
+                width="30"
+                stroke-width="0.8"
+                class="my-2 w-5 h-5"
+              >
+                <g>
+                  <rect
+                    x="0.64"
+                    y="4.17"
+                    width="12.73"
+                    height="5.66"
+                    transform="translate(-2.9 7) rotate(-45)"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></rect>
+                  <line
+                    x1="7.5"
+                    y1="2.5"
+                    x2="9"
+                    y2="4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></line>
+                  <line
+                    x1="5"
+                    y1="5"
+                    x2="6.5"
+                    y2="6.5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></line>
+                  <line
+                    x1="2.5"
+                    y1="7.5"
+                    x2="4"
+                    y2="9"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></line>
+                </g>
+              </svg>
+            </button>
+          </div>
+          <panZoom
+            class="watch-pan-zoom relative cursor-move"
+            :class="{ 'scale-card-visible': scaleCard }"
+            selector=".watch-module-zoom"
+            :options="watchZoomOptions"
+          >
+            <WatchModule
+              :watch="page.data"
+              class="watch-module-zoom mx-auto w-full"
+            />
+          </panZoom>
+          <div
+            class="
+              zoom-modal-footer
+              z-10
+              fixed
+              bottom-0
+              left-0
+              w-full
+              px-2
+              flex
+              justify-between
+            "
+          >
+            <button @click="resetZoom()" aria-label="Reset zoom" class="p-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0.09999999999999998 0.09999999999999998 13.8 13.8"
+                height="14"
+                width="14"
+                stroke-width="0.8"
+                class="my-2 w-5 h-5"
+              >
+                <g>
+                  <path
+                    d="M.5,7A6.5,6.5,0,1,0,7,.5a7.23,7.23,0,0,0-5,2"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <polyline
+                    points="2.5 0.5 2 2.5 4 3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></polyline>
+                </g>
+              </svg>
+            </button>
+            <ModeSwitcher class="top-6 right-4" />
+          </div>
+        </div>
       </div>
 
       <div class="watch-meta mx-auto w-full max-w-2xl -z-10">
@@ -368,6 +388,16 @@ export default {
       scaleCard: false,
       zoomState: false,
       components,
+      watchZoomOptions: {
+        minZoom: 0.3,
+        maxZoom: 2,
+        initialZoom: 1,
+        zoomSpeed: 0.05,
+        bounds: true,
+        boundsPadding: 0.5,
+        transformOrigin: { x: 0.5, y: 0.5 },
+        smoothScroll: false,
+      },
       specifications: [
         "manufacture",
         "year",
@@ -396,36 +426,39 @@ export default {
       return this.$store.state.prismic.settings;
     },
   },
+  mounted() {
+    this.$panZoom(
+      document.querySelector(".watch-module-zoom"),
+      this.watchZoomOptions
+    );
+  },
   methods: {
     toggleCard() {
-      if (this.scaleCard === false) {
-        document.querySelector(".scale-card").style.opacity = 0.5;
-        this.scaleCard = true;
-      } else {
-        document.querySelector(".scale-card").style.opacity = 0;
-        this.scaleCard = false;
-      }
+      this.scaleCard = !this.scaleCard;
     },
     toggleZoom() {
-      if (this.zoomState === false) {
-        document.querySelector(".zoom-module").style.pointerEvents = "initial";
-        document.querySelector(".zoom-module").style.opacity = 1;
-        document.body.classList.add("overflow-hidden");
-        this.zoomState = true;
+      if (this.zoomState) {
+        this.closeZoom();
       } else {
-        document.querySelector(".zoom-module").style.pointerEvents = "none";
-        document.querySelector(".zoom-module").style.opacity = 0;
-        document.body.classList.remove("overflow-hidden");
-        this.zoomState = false;
-        this.$panZoom(document.querySelector(".watch-module-zoom")).zoomAbs(
-          0,
-          0,
-          1
-        );
-        if (this.scaleCard) {
-          this.toggleCard();
-        }
+        this.openZoom();
       }
+    },
+    closeZoom() {
+      document.body.classList.remove("overflow-hidden");
+      this.resetZoom();
+      this.zoomState = false;
+      this.scaleCard = false;
+    },
+    openZoom() {
+      document.body.classList.add("overflow-hidden");
+      this.zoomState = true;
+      this.$refs.modal.focus();
+    },
+    resetZoom() {
+      this.$panZoom(
+        document.querySelector(".watch-module-zoom"),
+        this.watchZoomOptions
+      ).zoomAbs(0, 0, 1);
     },
   },
 };
@@ -434,22 +467,23 @@ export default {
 .watch-year {
   color: var(--color-fade-50);
 }
-.zoom-module {
-  background-color: var(--bg-accent);
-  color: var(--color-accent);
+.zoom-modal {
+  background-color: var(--bg-secondary);
+  color: var(--color-secondary);
   z-index: 90;
-  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 .watch-module-zoom {
   transition: transform 0.1s ease;
 }
 
-.zoom-module.inactive .watch-module-zoom {
+.zoom-modal.inactive .watch-module-zoom {
   transition: transform 0.1s ease 0.3s;
 }
+</style>
 
-.zoom-controls button {
-  background-color: var(--bg-secondary-fade-80);
-  color: var(--color);
+<style>
+.scale-card-visible .scale-card {
+  opacity: 0.5;
 }
 </style>
