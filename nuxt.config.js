@@ -37,7 +37,47 @@ export default async () => {
       '@nuxtjs/snipcart',
       '@nuxtjs/color-mode',
       '@nuxtjs/device',
+      'nuxt-gsap-module',
     ],
+    gsap: {
+      extraPlugins: {
+        scrollTo: true,
+        scrollTrigger: true
+      },
+      extraEases: {
+        expoScaleEase: true
+      }
+    },
+    // Add global page transition
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in',
+      css: false,
+
+      beforeEnter(el) {
+        this.$gsap.set(el, {
+          opacity: 0
+        })
+      },
+
+      enter(el, done) {
+        this.$gsap.to(el, {
+          opacity: 1,
+          duration: 0.5,
+          ease: 'power2.inOut',
+          onComplete: done
+        })
+      },
+
+      leave(el, done) {
+        this.$gsap.to(el, {
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power2.inOut',
+          onComplete: done
+        })
+      }
+    },
     colorMode: {
       preference: 'light'
     },
