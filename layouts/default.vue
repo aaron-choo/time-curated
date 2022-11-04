@@ -106,14 +106,4 @@ export default {
 body {
   @apply overflow-x-hidden antialiased;
 }
-
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.5s;
-}
-
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
 </style>
