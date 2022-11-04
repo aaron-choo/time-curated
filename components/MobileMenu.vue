@@ -175,8 +175,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-      this.menuOpen = false;
-      document.querySelector(":root").classList.remove("mobile-menu-open");
+      this.closeMenu();
     },
   },
   methods: {
