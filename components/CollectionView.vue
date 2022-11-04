@@ -21,3 +21,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.hide-meta .collection-watch-meta {
+  display: none;
+}
+</style>
