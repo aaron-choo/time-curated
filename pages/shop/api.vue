@@ -1,6 +1,11 @@
 <template>
   <bounded as="div">
-    <pre>{{ products }}</pre>
+    <!-- <pre>{{ products }}</pre> -->
+    <div class="flex opacity-0">
+      <template v-for="product in products">
+        <AddToCartBtn :product="product" :settings="settings" />
+      </template>
+    </div>
   </bounded>
 </template>
 
@@ -25,6 +30,11 @@ export default {
     return {
       title: `API`,
     };
+  },
+  computed: {
+    settings() {
+      return this.$store.state.prismic.settings;
+    },
   },
 };
 </script>
