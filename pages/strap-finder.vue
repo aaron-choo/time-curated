@@ -100,6 +100,7 @@
         </div>
       </Bounded>
       <Bounded as="div">
+        <ProductSummary :product="currentStrap.data" :variant="null" />
         <div class="grid lg:grid-cols-2 gap-2">
           <ul
             class="
@@ -118,7 +119,14 @@
               <button
                 :key="index"
                 @click="changeWatch(watch)"
-                class="option-button relative w-full h-full rounded-[3px]"
+                class="
+                  watch-option-button
+                  option-button
+                  relative
+                  w-full
+                  h-full
+                  rounded-[3px]
+                "
                 :class="watch.uid"
               >
                 <div>
@@ -130,7 +138,59 @@
               </button>
             </li>
           </ul>
-          <div class="w-full">
+          <ul
+            class="
+              grid grid-cols-5
+              md:grid-cols-6
+              lg:grid-cols-5
+              xl:grid-cols-6
+              items-start
+              gap-2
+            "
+          >
+            <template v-for="(strap, index) in straps">
+              <li
+                v-if="strap.data.top_image.url && strap.data.bottom_image.url"
+                class="aspect-1 overflow-hidden"
+              >
+                <a :href="'#' + strap.uid">
+                  <button
+                    @click="changeStrap(strap)"
+                    :key="index"
+                    class="
+                      strap-option-button
+                      option-button
+                      relative
+                      w-full
+                      h-full
+                      rounded-[3px]
+                    "
+                    :class="strap.uid"
+                  >
+                    <div class="absolute w-full h-full top-0 pt-2">
+                      <nuxt-img
+                        v-if="strap.data.bottom_image.url"
+                        format="webp"
+                        :src="strap.data.bottom_image.url"
+                        sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+                        :width="strap.data.bottom_image.dimensions.width"
+                        :height="strap.data.bottom_image.dimensions.height"
+                        class="
+                          watch-strap-bottom
+                          w-full
+                          h-auto
+                          transform
+                          mx-auto
+                        "
+                        loading="lazy"
+                      />
+                    </div>
+                  </button>
+                </a>
+              </li>
+            </template>
+          </ul>
+          <!-- <div class="w-full">
             <div
               class="swiper watch-strap-thumbnails"
               ref="watchStrapsThumbnails"
@@ -155,26 +215,6 @@
                         rounded-[3px]
                       "
                     >
-                      <!-- <div class="absolute w-full h-full">
-                    <nuxt-img
-                      v-if="strap.data.top_image.url"
-                      format="webp"
-                      :src="strap.data.top_image.url"
-                      sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
-                      :width="strap.data.top_image.dimensions.width"
-                      :height="strap.data.top_image.dimensions.height"
-                      class="
-                        watch-strap-top
-                        w-full
-                        h-auto
-                        transform
-                        w-[63%]
-                        mx-auto
-                        -translate-y-[77%]
-                      "
-                      loading="lazy"
-                    />
-                  </div> -->
                       <div class="absolute w-full h-full top-0 pt-2">
                         <nuxt-img
                           v-if="strap.data.bottom_image.url"
@@ -199,7 +239,7 @@
               </ul>
               <div class="swiper-scrollbar"></div>
             </div>
-          </div>
+          </div> -->
         </div>
       </Bounded>
     </div>
@@ -216,41 +256,51 @@ import { components } from "~/slices";
 import Swiper from "swiper/swiper-bundle.min";
 import "swiper/swiper-bundle.min.css";
 export default {
-  async asyncData({ $prismic, store, i18n, query }) {
-    const lang = i18n.locale;
-    const page = await $prismic.api.getByUID("page", "strap-finder", { lang });
-    const watches = await $prismic.api.query(
-      $prismic.predicates.at("document.type", "collection"),
-      {
-        lang: lang,
-        orderings: "[document.last_publication_date desc]",
-        pageSize: 24,
-      }
-    );
-    const straps = await $prismic.api.query(
-      $prismic.predicates.at("document.type", "product"),
-      {
-        lang: lang,
-        orderings: "[document.last_publication_date desc]",
-        pageSize: 24,
-      }
-    );
-    if (query.watch) {
-      var currentWatch = await $prismic.api.getByUID(
-        "collection",
-        query.watch,
-        { lang }
+  async asyncData({ $prismic, store, i18n, query, error }) {
+    try {
+      const lang = i18n.locale;
+      const page = await $prismic.api.getByUID("page", "strap-finder", {
+        lang,
+      });
+      const watches = await $prismic.api.query(
+        $prismic.predicates.at("document.type", "collection"),
+        {
+          lang: lang,
+          orderings: "[document.last_publication_date desc]",
+          pageSize: 24,
+        }
       );
-    } else {
-      var currentWatch = watches.results[0];
+      const straps = await $prismic.api.query(
+        [
+          $prismic.predicates.at("document.type", "product"),
+          $prismic.predicates.at("my.product.strap_finder", true),
+        ],
+        {
+          lang: lang,
+          orderings: "[document.last_publication_date desc]",
+          pageSize: 24,
+        }
+      );
+      if (query.watch) {
+        var currentWatch = await $prismic.api.getByUID(
+          "collection",
+          query.watch,
+          { lang }
+        );
+      } else {
+        var currentWatch = watches.results[0];
+      }
+      await store.dispatch("prismic/load", { lang, page });
+      return {
+        page,
+        watches: watches.results,
+        currentWatch,
+        straps: straps.results,
+        currentStrap: straps.results[0],
+      };
+    } catch (e) {
+      error({ statusCode: 404, message: "Page not found" });
     }
-    await store.dispatch("prismic/load", { lang, page });
-    return {
-      page,
-      watches: watches.results,
-      currentWatch,
-      straps: straps.results,
-    };
   },
   data() {
     return { components };
@@ -264,35 +314,11 @@ export default {
   },
   async mounted() {
     await this.$nextTick();
-    let thumb = new Swiper(this.$refs.watchStrapsThumbnails, {
-      watchSlidesProgress: true,
-      mousewheel: {
-        releaseOnEdges: true,
-        forceToAxis: true,
-      },
-      slidesPerView: 5,
-      slidesPerGroup: 2,
-      spaceBetween: 8,
-      breakpoints: {
-        768: {
-          slidesPerView: 6,
-        },
-        1024: {
-          slidesPerView: 5,
-        },
-        1280: {
-          slidesPerView: 6,
-        },
-      },
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        draggable: true,
-        hide: true,
-      },
-    });
-    new Swiper(this.$refs.watchStraps, {
+    const strapSwiper = new Swiper(this.$refs.watchStraps, {
       effect: "slide",
-      hashNavigation: true,
+      hashNavigation: {
+        watchState: true,
+      },
       loop: true,
       slidesPerView: 1,
       spaceBetween: 0,
@@ -319,33 +345,52 @@ export default {
         releaseOnEdges: true,
         forceToAxis: true,
       },
-      navigation: {
-        nextEl: ".image.swiper-button-next",
-        prevEl: ".image.swiper-button-prev",
-      },
-      thumbs: {
-        swiper: thumb,
-        autoScrollOffset: 1,
-      },
     });
     document
-      .querySelector(".option-button." + this.currentWatch.uid)
+      .getElementsByClassName("watch-option-button " + this.currentWatch.uid)[0]
       .classList.add("active");
+    // document.getElementsByClassName(
+    //   "strap-option-button " + this.currentStrap.uid
+    // )[0].className += " active";
+    window.addEventListener("hashchange", this.setStrap);
+    this.setStrap();
+  },
+  destroyed() {
+    window.removeEventListener("hashchange", this.setStrap);
   },
   methods: {
     changeWatch(watch) {
       document
-        .querySelector(".option-button.active")
+        .querySelector(".watch-option-button.active")
         .classList.remove("active");
       this.currentWatch = watch;
       document
-        .querySelector(".option-button." + watch.uid)
+        .querySelector(".watch-option-button." + watch.uid)
         .classList.add("active");
       this.$router.push({
         path: this.$route.path,
         query: { watch: watch.uid },
         hash: this.$route.hash,
       });
+    },
+    setStrap() {
+      if (this.$route.hash) {
+        this.currentStrap = this.straps.filter(
+          (strap) => strap.uid == this.$route.hash.substring(1)
+        )[0];
+      }
+      this.changeStrap(this.currentStrap);
+    },
+    changeStrap(strap) {
+      if (document.querySelector(".strap-option-button.active")) {
+        document
+          .querySelector(".strap-option-button.active")
+          .classList.remove("active");
+      }
+      this.currentStrap = strap;
+      document
+        .querySelector(".strap-option-button." + strap.uid)
+        .classList.add("active");
     },
   },
 };

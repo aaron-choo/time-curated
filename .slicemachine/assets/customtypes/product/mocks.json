@@ -11,8 +11,8 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "thread",
-    "date": "2016-01-08T19:59:40+0000",
+    "title": "hungry",
+    "date": "2016-05-23T19:15:28+0000",
     "product_category": {
       "id": "mock_document_id",
       "link_type": "Document",
@@ -26,13 +26,13 @@
     "description": [
       {
         "type": "paragraph",
-        "text": "Sunt est laborum labore. Nisi pariatur nulla excepteur anim ut adipisicing minim consectetur id fugiat ullamco.",
+        "text": "Labore duis Lorem ut dolor incididunt. Tempor tempor excepteur dolor culpa consectetur duis. Aute ipsum minim fugiat est quis anim laboris pariatur sit.",
         "spans": []
       }
     ],
-    "price": 10,
-    "sale_price": 68,
-    "sku": "weigh",
+    "price": 50,
+    "sale_price": 82,
+    "sku": "next",
     "images": [
       {
         "image": {
@@ -42,20 +42,20 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118"
+          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8"
         }
       }
     ],
     "slices": [],
-    "length": "truck",
-    "thickness": "doubt",
-    "clasp_width": "enough",
-    "inner_width": "twice",
-    "outer_width": "atom",
-    "leather_disclaimer": false,
+    "length": "available",
+    "thickness": "off",
+    "clasp_width": "frame",
+    "inner_width": "took",
+    "outer_width": "studying",
+    "leather_disclaimer": true,
     "lug_width": [
       {
-        "name": "round",
+        "name": "like",
         "image": {
           "dimensions": {
             "width": 900,
@@ -63,11 +63,12 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a"
+          "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"
         },
-        "price": 86
+        "price": 47
       }
     ],
+    "strap_finder": false,
     "top_image": {
       "dimensions": {
         "width": 900,
@@ -75,7 +76,7 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb"
+      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
     },
     "bottom_image": {
       "dimensions": {
@@ -84,7 +85,7 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482"
+      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
     }
   }
 }

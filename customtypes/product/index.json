@@ -197,6 +197,15 @@
       }
     },
     "Strap Finder": {
+      "strap_finder": {
+        "type": "Boolean",
+        "config": {
+          "label": "Strap Finder",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
       "top_image": {
         "type": "Image",
         "config": {
