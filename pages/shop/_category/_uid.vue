@@ -172,8 +172,6 @@ export default {
     const productInfo = await $axios.$get(
       `https://app.snipcart.com/api/products/${params.uid}/`
     );
-    console.log(productInfo);
-
     if (page.data.product_category.uid === params.category) {
       return {
         page: page,
@@ -182,6 +180,7 @@ export default {
         params: params,
         variantImage: null,
         variant: null,
+        productInfo: productInfo,
       };
     } else {
       error({ statusCode: 404, message: "Page not found" });
