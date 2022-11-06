@@ -13,6 +13,7 @@
     "
     :data-item-id="product.uid"
     :data-item-price="product.data.price"
+    :data-item-categories="product.data.product_category.uid"
     :data-item-description="product.data.description.text"
     :data-item-image="
       variantImage ? variantImage.url : product.data.images[0].image.url

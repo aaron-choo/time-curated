@@ -23,7 +23,10 @@
         <ul class="flex flex-col gap-2 uppercase">
           <template v-for="(link, index) in links">
             <li v-if="index > 0" :key="link.label">
-              <PrismicLink :field="link.link">
+              <PrismicLink
+                :field="link.link"
+                :class="link.label.replace(/\s+/g, '-').toLowerCase()"
+              >
                 {{ link.label }}
               </PrismicLink>
             </li>
@@ -55,7 +58,8 @@ export default {
   color: var(--color-accent);
   border-bottom: 1px solid var(--border-accent);
 }
-a.nuxt-link-exact-active {
+a.nuxt-link-exact-active,
+a.strap-finder.nuxt-link-active {
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
   text-decoration-line: underline;

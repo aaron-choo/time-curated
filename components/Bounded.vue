@@ -9,8 +9,8 @@
     "
     class="bounded px-6"
     :class="{
-      'py-3': yPadding === 'xxs',
-      'py-4': yPadding === 'xs',
+      'py-4': yPadding === 'xxs',
+      'py-6': yPadding === 'xs',
       'py-8 md:py-10': yPadding === 'sm',
       'py-12 md:py-20': yPadding === 'base',
       'py-20 md:py-32': yPadding === 'md',
