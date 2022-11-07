@@ -101,6 +101,15 @@
             },
             "link_menu": {
               "type": "SharedSlice"
+            },
+            "block_quote": {
+              "type": "SharedSlice"
+            },
+            "text": {
+              "type": "SharedSlice"
+            },
+            "image_grid": {
+              "type": "SharedSlice"
             }
           }
         }

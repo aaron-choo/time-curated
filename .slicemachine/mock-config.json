@@ -292,6 +292,37 @@
         },
         "items": {}
       }
+    },
+    "BlockQuote": {
+      "default": {
+        "primary": {
+          "source": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "quote": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "ImageGrid": {
+      "default": {
+        "primary": {},
+        "items": {
+          "caption": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   }
 }

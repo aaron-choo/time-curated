@@ -1,9 +1,26 @@
 import MyComponent from '../../../../slices/Text';
+import SliceZone from 'vue-slicezone'
 
 export default {
   title: 'slices/Text'
 }
 
 
-export const _Default = () => <MyComponent slice={{"variation":"default","name":"Default","slice_type":"text","items":[],"primary":{"text":[{"type":"paragraph","text":"Ut aliqua mollit deserunt qui aute cillum do sint aliqua.","spans":[]}]},"id":"_Default"}} />
-_Default.storyName = 'Default'
+export const _Default = () => ({
+  components: {
+    MyComponent,
+    SliceZone
+  },
+  methods: {
+    resolve() {
+      return MyComponent
+    }
+  },
+  data() {
+    return {
+      mock: {"variation":"default","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"text":[{"type":"paragraph","text":"Nulla amet qui sunt cillum Lorem enim laboris.","spans":[]}],"dropcap":false},"slice_type":"text","id":"_Default"}
+    }
+  },
+  template: '<SliceZone :slices="[mock]" :resolver="resolve" />'
+})
+_Default.storyName = ''

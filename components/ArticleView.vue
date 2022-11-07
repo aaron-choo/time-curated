@@ -13,7 +13,7 @@
     <div class="article-meta text-center mt-4 flex flex-col gap-1">
       <h3
         class="article-title leading-tight text-lg"
-        v-if="article.data.article_category.uid === 'people-watching'"
+        v-if="article.data.title.slice(0, 20) === 'Collectors Dialogue:'"
       >
         <em>Collectors Dialogue</em><br />{{ article.data.title.slice(20) }}
       </h3>
