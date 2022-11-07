@@ -34,6 +34,11 @@
           <Logo :settings="settings" height="30" class="w-fit" />
         </n-link>
       </li>
+      <Dropdown
+        :label="navigation.data.articles_text"
+        :links="navigation.data.articles_links"
+        class="hidden md:block"
+      />
       <template v-for="(link, index) in navigation.data.links">
         <!-- <li v-if="index === 0" class="uppercase hidden md:block">
           <PrismicLink :field="link.link" class="pr-2">

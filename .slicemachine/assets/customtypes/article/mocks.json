@@ -11,12 +11,45 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": [
+    "date": "2015-11-24",
+    "title": "settlers",
+    "article_category": {
+      "id": "mock_document_id",
+      "link_type": "Document",
+      "type": "article_category",
+      "tags": [],
+      "lang": "en-us",
+      "slug": null,
+      "first_publication_date": "1970-01-01T00:00:01+0000",
+      "last_publication_date": "1970-01-01T01:00:00+0000"
+    },
+    "images": [
       {
-        "type": "heading1",
-        "text": "Beginning",
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8"
+        },
+        "caption": [
+          {
+            "type": "paragraph",
+            "text": "Incididunt Lorem occaecat quis. Mollit officia irure eiusmod tempor laborum deserunt mollit. In ut fugiat est et cillum eiusmod voluptate qui mollit.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "city": [
+      {
+        "type": "paragraph",
+        "text": "Fugiat magna ut eiusmod proident aute qui adipisicing est voluptate irure occaecat exercitation aute consequat.",
         "spans": []
       }
-    ]
+    ],
+    "slices": []
   }
 }

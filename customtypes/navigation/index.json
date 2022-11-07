@@ -5,6 +5,29 @@
   "status": true,
   "json": {
     "Main": {
+      "articles_links": {
+        "type": "Group",
+        "config": {
+          "label": "Articles Links",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
       "links": {
         "type": "Group",
         "config": {
@@ -71,6 +94,13 @@
         "type": "Text",
         "config": {
           "label": "Collection Text",
+          "placeholder": ""
+        }
+      },
+      "articles_text": {
+        "type": "Text",
+        "config": {
+          "label": "Articles Text",
           "placeholder": ""
         }
       }

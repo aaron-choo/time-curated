@@ -11,26 +11,36 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "links": [
+    "articles_links": [
       {
-        "label": "twice",
+        "label": "dinner",
         "link": {
           "link_type": "Web",
           "url": "http://google.com"
+        }
+      }
+    ],
+    "links": [
+      {
+        "label": "country",
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
         }
       }
     ],
     "shop_links": [
       {
-        "label": "block",
+        "label": "charge",
         "link": {
           "link_type": "Web",
-          "url": "http://google.com"
+          "url": "https://slicemachine.dev"
         }
       }
     ],
-    "language_text": "please",
-    "shop_text": "immediately",
-    "collection_text": "radio"
+    "language_text": "pair",
+    "shop_text": "keep",
+    "collection_text": "play",
+    "articles_text": "sun"
   }
 }

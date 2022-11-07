@@ -13,7 +13,9 @@
       :context="page"
     />
     <Bounded as="section">
-      <div></div>
+      <div>
+        <article-list :articles="articles"></article-list>
+      </div>
     </Bounded>
   </div>
 </template>

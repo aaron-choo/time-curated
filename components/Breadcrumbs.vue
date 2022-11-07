@@ -97,9 +97,27 @@ export default {
                   ...match,
                 });
                 break;
+              case "strap finder":
+                crumbs.push({
+                  title: lang === "zh-cn" ? "表带配色" : "watch " + param,
+                  ...match,
+                });
+                break;
               case "collection":
                 crumbs.push({
                   title: lang === "zh-cn" ? "收藏参考" : param,
+                  ...match,
+                });
+                break;
+              case "articles":
+                crumbs.push({
+                  title: lang === "zh-cn" ? "资讯" : param,
+                  ...match,
+                });
+                break;
+              case "people-watching":
+                crumbs.push({
+                  title: lang === "zh-cn" ? "资讯" : param.replace(/-/g, " "),
                   ...match,
                 });
                 break;

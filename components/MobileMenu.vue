@@ -115,6 +115,11 @@
             overflow-hidden
           "
         >
+          <MobileSubMenu
+            :label="navigation.data.articles_text"
+            :links="navigation.data.articles_links"
+            class="mobile-menu-item"
+          />
           <li
             v-for="link in navigation.data.links"
             :key="link.label"

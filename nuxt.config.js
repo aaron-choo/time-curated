@@ -197,6 +197,17 @@ export default async () => {
             type: 'collection',
             path: '/:lang?/collection/:uid'
           },
+          {
+            type: 'article_category',
+            path: '/:lang?/articles/:uid'
+          },
+          {
+            type: 'article',
+            resolvers: {
+              category: 'article_category',
+            },
+            path: '/:lang?/articles/:category/:uid'
+          },
         ]
       },
 

@@ -133,6 +133,12 @@ export default {
       if (doc.type === "product") {
         return `${prefix}/shop/${doc.data.product_category.uid}/${doc.uid}`;
       }
+      if (doc.type === "article_category") {
+        return `${prefix}/articles/${doc.uid}`;
+      }
+      if (doc.type === "article") {
+        return `${prefix}/articles/${doc.data.article_category.uid}/${doc.uid}`;
+      }
       if (doc.type === "collection") {
         return `${prefix}/collection/${doc.uid}`;
       }

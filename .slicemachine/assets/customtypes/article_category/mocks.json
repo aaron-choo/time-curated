@@ -1,0 +1,32 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "article_category",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title": "done",
+    "description": [
+      {
+        "type": "paragraph",
+        "text": "Eu sunt ex excepteur cillum irure consequat exercitation non aute elit anim aliqua aliquip ut et.",
+        "spans": []
+      }
+    ],
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e"
+    }
+  }
+}

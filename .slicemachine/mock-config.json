@@ -4,14 +4,7 @@
       "links": {}
     },
     "page": {},
-    "article": {
-      "title": {
-        "config": {
-          "patternType": "HEADING",
-          "blocks": 1
-        }
-      }
-    },
+    "article": {},
     "settings": {
       "newsletterDescription": {
         "config": {
@@ -103,19 +96,14 @@
       }
     },
     "brand": {
-      "title": {
-        "config": {
-          "patternType": "HEADING",
-          "blocks": 1
-        }
-      },
       "description": {
         "config": {
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
       }
-    }
+    },
+    "article_category": {}
   },
   "slices": {
     "Text": {
