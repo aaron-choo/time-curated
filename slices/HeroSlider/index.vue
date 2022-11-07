@@ -135,6 +135,10 @@ export default {
       new Swiper(this.$refs.heroSlider, {
         effect: "fade",
         loop: true,
+        autoplay: {
+          delay: 8000,
+          disableOnInteraction: false,
+        },
         keyboard: {
           enabled: true,
           onlyInViewport: true,
