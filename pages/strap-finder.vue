@@ -7,11 +7,11 @@
         yPadding="none"
         class="relative overflow-hidden"
       >
-        <div class="relative">
+        <div class="strap-finder-module relative">
           <div class="watch-case-container">
             <WatchModule
               :watch="currentWatch.data"
-              class="strap-finder hide-strap lg:w-1/3 lg:mx-auto"
+              class="strap-finder hide-strap lg:w-1/3 lg:mx-auto no-shadow"
             />
             <!-- <div class="swiper watch-case" ref="watchCases">
               <div class="swiper-wrapper">
@@ -99,97 +99,191 @@
           </div>
         </div>
       </Bounded>
-      <Bounded as="div">
-        <ProductSummary :product="currentStrap.data" :variant="null" />
-        <div class="grid lg:grid-cols-2 gap-2">
-          <ul
-            class="
-              grid grid-cols-5
-              md:grid-cols-6
-              lg:grid-cols-5
-              xl:grid-cols-6
-              items-start
-              gap-2
-            "
-          >
-            <li
-              v-for="(watch, index) in watches"
-              class="aspect-1 overflow-hidden"
+      <Bounded as="div" yPadding="xs">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <div>
+            <ProductSummary :product="currentStrap.data" />
+            <div class="grid grid-cols-2 gap-2 mb-4">
+              <PrismicLink :field="currentStrap">
+                <button
+                  id="shop-now"
+                  class="
+                    btn
+                    w-full
+                    text-sm
+                    uppercase
+                    font-sans
+                    hover:opacity-80
+                    font-medium
+                    border border-px
+                  "
+                >
+                  Shop Now
+                </button>
+              </PrismicLink>
+              <PrismicLink :field="currentStrap" class="pointer-events-none">
+                <button
+                  id="strap-sizing"
+                  class="
+                    btn
+                    w-full
+                    text-sm
+                    uppercase
+                    font-sans
+                    hover:opacity-80
+                    font-medium
+                    border border-px
+                    inactive
+                  "
+                >
+                  Strap sizing
+                </button>
+              </PrismicLink>
+            </div>
+            <ul
+              class="
+                grid grid-cols-5
+                md:grid-cols-6
+                lg:grid-cols-5
+                xl:grid-cols-6
+                items-start
+                gap-2
+              "
             >
-              <button
-                :key="index"
-                @click="changeWatch(watch)"
+              <template v-for="(strap, index) in straps">
+                <li
+                  v-if="strap.data.top_image.url && strap.data.bottom_image.url"
+                  class="aspect-1 overflow-hidden"
+                >
+                  <a :href="'#' + strap.uid">
+                    <button
+                      @click="changeStrap(strap)"
+                      :key="index"
+                      class="
+                        strap-option-button
+                        option-button
+                        relative
+                        w-full
+                        h-full
+                        rounded-[3px]
+                      "
+                      :class="strap.uid"
+                    >
+                      <div class="absolute w-full h-full top-0 pt-2">
+                        <nuxt-img
+                          v-if="strap.data.bottom_image.url"
+                          format="webp"
+                          :src="strap.data.bottom_image.url"
+                          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+                          :width="strap.data.bottom_image.dimensions.width"
+                          :height="strap.data.bottom_image.dimensions.height"
+                          class="
+                            watch-strap-bottom
+                            w-full
+                            h-auto
+                            transform
+                            mx-auto
+                          "
+                          loading="lazy"
+                        />
+                      </div>
+                    </button>
+                  </a>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <div>
+            <div class="watch-summary mb-4">
+              <h2
                 class="
-                  watch-option-button
-                  option-button
-                  relative
-                  w-full
-                  h-full
-                  rounded-[3px]
+                  my-2
+                  leading-tight
+                  watch-title
+                  my-0
+                  text-2xl
+                  lg:text-right
                 "
-                :class="watch.uid"
               >
-                <div>
-                  <WatchModule
-                    :watch="watch.data"
-                    class="strap-finder hide-strap transform -translate-y-[20%]"
-                  />
-                </div>
-              </button>
-            </li>
-          </ul>
-          <ul
-            class="
-              grid grid-cols-5
-              md:grid-cols-6
-              lg:grid-cols-5
-              xl:grid-cols-6
-              items-start
-              gap-2
-            "
-          >
-            <template v-for="(strap, index) in straps">
+                {{ currentWatch.data.title }}
+              </h2>
+              <p
+                class="
+                  my-2
+                  leading-tight
+                  product-price
+                  my-2
+                  text-lg
+                  lg:text-right
+                "
+              >
+                {{ settings.data.lug_width_text }}:
+                {{ $prismic.asText(currentWatch.data.lug_width) }}
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mb-4">
+              <div class="hidden lg:block"></div>
+              <PrismicLink :field="currentWatch">
+                <button
+                  id="shop-now"
+                  class="
+                    btn
+                    w-full
+                    text-sm
+                    uppercase
+                    font-sans
+                    hover:opacity-80
+                    font-medium
+                    border border-px
+                  "
+                >
+                  Learn more
+                </button>
+              </PrismicLink>
+            </div>
+            <ul
+              class="
+                grid grid-cols-5
+                md:grid-cols-6
+                lg:grid-cols-5
+                xl:grid-cols-6
+                items-start
+                gap-2
+              "
+            >
               <li
-                v-if="strap.data.top_image.url && strap.data.bottom_image.url"
+                v-for="(watch, index) in watches"
                 class="aspect-1 overflow-hidden"
               >
-                <a :href="'#' + strap.uid">
-                  <button
-                    @click="changeStrap(strap)"
-                    :key="index"
-                    class="
-                      strap-option-button
-                      option-button
-                      relative
-                      w-full
-                      h-full
-                      rounded-[3px]
-                    "
-                    :class="strap.uid"
-                  >
-                    <div class="absolute w-full h-full top-0 pt-2">
-                      <nuxt-img
-                        v-if="strap.data.bottom_image.url"
-                        format="webp"
-                        :src="strap.data.bottom_image.url"
-                        sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
-                        :width="strap.data.bottom_image.dimensions.width"
-                        :height="strap.data.bottom_image.dimensions.height"
-                        class="
-                          watch-strap-bottom
-                          w-full
-                          h-auto
-                          transform
-                          mx-auto
-                        "
-                        loading="lazy"
-                      />
-                    </div>
-                  </button>
-                </a>
+                <button
+                  :key="index"
+                  @click="changeWatch(watch)"
+                  class="
+                    watch-option-button
+                    option-button
+                    relative
+                    w-full
+                    h-full
+                    rounded-[3px]
+                  "
+                  :class="watch.uid"
+                >
+                  <div>
+                    <WatchModule
+                      :watch="watch.data"
+                      class="
+                        strap-finder
+                        hide-strap
+                        transform
+                        -translate-y-[20%]
+                      "
+                    />
+                  </div>
+                </button>
               </li>
-            </template>
-          </ul>
+            </ul>
+          </div>
+
           <!-- <div class="w-full">
             <div
               class="swiper watch-strap-thumbnails"
@@ -277,7 +371,7 @@ export default {
         ],
         {
           lang: lang,
-          orderings: "[document.last_publication_date desc]",
+          orderings: "[my.product.title]",
           pageSize: 24,
         }
       );
@@ -358,6 +452,11 @@ export default {
   destroyed() {
     window.removeEventListener("hashchange", this.setStrap);
   },
+  computed: {
+    settings() {
+      return this.$store.state.prismic.settings;
+    },
+  },
   methods: {
     changeWatch(watch) {
       document
@@ -396,8 +495,16 @@ export default {
 };
 </script>
 <style scoped>
+.strap-finder-module {
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+}
 .option-button {
   background: var(--bg-secondary);
+}
+#shop-now {
+  background: var(--color);
+  color: var(--bg);
+  border-color: var(--color);
 }
 </style>
 <style>

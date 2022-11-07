@@ -300,9 +300,9 @@
 
       <div class="watch-meta mx-auto w-full max-w-2xl -z-10">
         <Heading as="h1" size="5xl" class="watch-title text-center">
-          {{ $prismic.asText(brand.data.title) }}
+          {{ brand.data.title }}
           <span class="italic">{{
-            page.data.title.substring(brand.data.title[0].text.length)
+            page.data.title.substring(brand.data.title.length)
           }}</span>
         </Heading>
         <Heading as="h3" size="3xl" class="watch-year text-center">
