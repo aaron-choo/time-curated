@@ -197,6 +197,74 @@
         },
         "screenshotPaths": {}
       },
+      "text": {
+        "library": "slices",
+        "id": "text",
+        "name": "BlockText",
+        "description": "Text",
+        "model": {
+          "id": "text",
+          "type": "SharedSlice",
+          "name": "BlockText",
+          "description": "Text",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Text",
+              "primary": {
+                "text": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Text",
+                    "placeholder": "A nice description of your product",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "dropcap": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Dropcap",
+                    "default_value": false,
+                    "placeholder_true": "true",
+                    "placeholder_false": "false"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "text": [
+                {
+                  "type": "paragraph",
+                  "text": "Nulla amet qui sunt cillum Lorem enim laboris.",
+                  "spans": []
+                }
+              ],
+              "dropcap": false
+            },
+            "slice_type": "text"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "vue"
+        },
+        "screenshotPaths": {}
+      },
       "hero": {
         "library": "slices",
         "id": "hero",
@@ -1241,74 +1309,6 @@
             "height": 97
           }
         }
-      },
-      "text": {
-        "library": "slices",
-        "id": "text",
-        "name": "Text",
-        "description": "Text",
-        "model": {
-          "id": "text",
-          "type": "SharedSlice",
-          "name": "Text",
-          "description": "Text",
-          "variations": [
-            {
-              "id": "default",
-              "name": "Default",
-              "docURL": "...",
-              "version": "sktwi1xtmkfgx8626",
-              "description": "Text",
-              "primary": {
-                "text": {
-                  "type": "StructuredText",
-                  "config": {
-                    "label": "Text",
-                    "placeholder": "A nice description of your product",
-                    "allowTargetBlank": true,
-                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-                  }
-                },
-                "dropcap": {
-                  "type": "Boolean",
-                  "config": {
-                    "label": "Dropcap",
-                    "default_value": false,
-                    "placeholder_true": "true",
-                    "placeholder_false": "false"
-                  }
-                }
-              },
-              "items": {},
-              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
-            }
-          ]
-        },
-        "mocks": {
-          "default": {
-            "variation": "default",
-            "version": "sktwi1xtmkfgx8626",
-            "items": [
-              {}
-            ],
-            "primary": {
-              "text": [
-                {
-                  "type": "paragraph",
-                  "text": "Nulla amet qui sunt cillum Lorem enim laboris.",
-                  "spans": []
-                }
-              ],
-              "dropcap": false
-            },
-            "slice_type": "text"
-          }
-        },
-        "meta": {
-          "fileName": "index",
-          "extension": "vue"
-        },
-        "screenshotPaths": {}
       },
       "text_with_features": {
         "library": "slices",

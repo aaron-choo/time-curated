@@ -1,7 +1,7 @@
 {
   "id": "text",
   "type": "SharedSlice",
-  "name": "Text",
+  "name": "BlockText",
   "description": "Text",
   "variations": [
     {

@@ -66,7 +66,6 @@
       :components="components"
       :context="page"
     />
-    <!-- <pre>{{ page }}</pre> -->
   </div>
 </template>
   <script>

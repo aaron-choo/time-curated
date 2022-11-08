@@ -2,6 +2,7 @@
 
 import Banner from './Banner';
 import BlockQuote from './BlockQuote';
+import BlockText from './BlockText';
 import Hero from './Hero';
 import HeroSlider from './HeroSlider';
 import IconGrid from './IconGrid';
@@ -9,13 +10,13 @@ import Image from './Image';
 import ImageGrid from './ImageGrid';
 import Legal from './Legal';
 import LinkMenu from './LinkMenu';
-import Text from './Text';
 import TextWithFeatures from './TextWithFeatures';
 import TextWithImage from './TextWithImage';
 
 export {
 	Banner,
 	BlockQuote,
+	BlockText,
 	Hero,
 	HeroSlider,
 	IconGrid,
@@ -23,7 +24,6 @@ export {
 	ImageGrid,
 	Legal,
 	LinkMenu,
-	Text,
 	TextWithFeatures,
 	TextWithImage,
 };
@@ -31,6 +31,7 @@ export {
 export const components = {
 	banner: Banner,
 	block_quote: BlockQuote,
+	text: BlockText,
 	hero: Hero,
 	hero_slider: HeroSlider,
 	icon_grid: IconGrid,
@@ -38,7 +39,6 @@ export const components = {
 	image_grid: ImageGrid,
 	legal: Legal,
 	link_menu: LinkMenu,
-	text: Text,
 	text_with_features: TextWithFeatures,
 	text_with_image: TextWithImage,
 };
