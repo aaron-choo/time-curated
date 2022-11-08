@@ -265,7 +265,14 @@
     "Products": {},
     "IconGrid": {
       "default": {
-        "primary": {},
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        },
         "items": {
           "description": {
             "config": {
@@ -318,6 +325,18 @@
           "caption": {
             "config": {
               "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "BlockHeading": {
+      "default": {
+        "primary": {
+          "text": {
+            "config": {
+              "patternType": "HEADING",
               "blocks": 1
             }
           }

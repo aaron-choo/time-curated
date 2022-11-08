@@ -237,7 +237,11 @@ export default async () => {
             return /* html */ `<strong class="font-semibold">${children.join('')}</strong>`
 
           case 'hyperlink':
-            return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-2" data-nuxt-link>${children.join('')}</a>`
+            if (element.data.link_type === 'document') {
+              return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-2" data-nuxt-link>${children.join('')}</a>`
+            } else {
+              return /* html */ `<a href="${element.data.url}" target="_blank" class="underline decoration-1 underline-offset-2">${children.join('')}</a>`
+            }
 
           default:
             return null

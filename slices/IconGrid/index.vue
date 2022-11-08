@@ -53,6 +53,13 @@
               ')no-repeat center;'
             "
           ></div>
+          <div class="flex flex-col text-center text-xs leading-4 font-sans">
+            <PrismicRichText
+              :field="item.title"
+              class="font-semibold uppercase"
+            />
+            <PrismicRichText :field="item.description" class="opacity-50" />
+          </div>
         </div>
       </div>
       <div class="swiper-pagination"></div>
@@ -123,7 +130,15 @@ export default {
           spaceBetween: 10,
         },
         640: {
-          slidesPerView: 3,
+          slidesPerView: this.slice.primary.slides_per_view
+            ? this.slice.primary.slides_per_view - 1
+            : 3,
+          spaceBetween: 10,
+        },
+        768: {
+          slidesPerView: this.slice.primary.slides_per_view
+            ? this.slice.primary.slides_per_view
+            : 4,
           spaceBetween: 10,
         },
       },

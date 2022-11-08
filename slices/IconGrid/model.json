@@ -14,9 +14,10 @@
         "title": {
           "type": "StructuredText",
           "config": {
-            "single": "heading1",
             "label": "Title",
-            "placeholder": "This is where it all begins..."
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "multi": "heading1,heading2,heading4,heading3,heading5,heading6"
           }
         },
         "text_color": {
@@ -151,6 +152,13 @@
           "type": "Number",
           "config": {
             "label": "Icon Width",
+            "placeholder": ""
+          }
+        },
+        "slides_per_view": {
+          "type": "Number",
+          "config": {
+            "label": "Slides Per View",
             "placeholder": ""
           }
         }

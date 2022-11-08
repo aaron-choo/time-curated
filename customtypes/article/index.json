@@ -110,6 +110,9 @@
             },
             "image_grid": {
               "type": "SharedSlice"
+            },
+            "block_heading": {
+              "type": "SharedSlice"
             }
           }
         }
