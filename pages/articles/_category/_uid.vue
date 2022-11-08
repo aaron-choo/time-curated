@@ -16,11 +16,10 @@
       "
     >
       <div>
-        <prismicLink
-          :field="page.data.article_category"
+        <prismicRichText
+          :field="page.data.city"
           class="article-category font-sans uppercase text-xs font-medium"
-          >{{ page.data.article_category.uid.replace(/-/g, " ") }}</prismicLink
-        >
+        ></prismicRichText>
       </div>
       <Heading
         v-if="page.data.title.slice(0, 20) === 'Collectors Dialogue:'"

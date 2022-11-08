@@ -1,5 +1,5 @@
 <template>
-  <Bounded as="section" class="text">
+  <Bounded as="section" class="block-text">
     <div class="mx-auto max-w-3xl">
       <PrismicRichText
         :field="slice.primary.text"
