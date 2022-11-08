@@ -117,7 +117,14 @@ export default {
                 break;
               case "people-watching":
                 crumbs.push({
-                  title: lang === "zh-cn" ? "资讯" : param.replace(/-/g, " "),
+                  title:
+                    lang === "zh-cn" ? "出人意表" : param.replace(/-/g, " "),
+                  ...match,
+                });
+              case "deep-dive":
+                crumbs.push({
+                  title:
+                    lang === "zh-cn" ? "深入研究" : param.replace(/-/g, " "),
                   ...match,
                 });
                 break;

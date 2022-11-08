@@ -31,7 +31,7 @@ export default {
       $prismic.predicates.at("document.type", "article"),
       {
         lang: lang,
-        orderings: "[document.last_publication_date desc]",
+        orderings: "[my.article.date desc]",
         pageSize: 24,
       }
     );

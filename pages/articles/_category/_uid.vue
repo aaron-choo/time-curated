@@ -4,6 +4,7 @@
       as="div"
       yPadding="xs"
       class="
+        relative
         min-h-[400px]
         h-[calc(100vh-133px)]
         md:h-[calc(100vh-243px)]
@@ -13,6 +14,9 @@
         justify-center
         text-center
         pb-24
+        mx-auto
+        max-w-sm
+        md:max-w-2xl
       "
     >
       <div>
@@ -21,16 +25,18 @@
           class="article-category font-sans uppercase text-xs font-medium"
         ></prismicRichText>
       </div>
-      <Heading
-        v-if="page.data.title.slice(0, 20) === 'Collectors Dialogue:'"
-        as="h1"
-        size="6xl"
-        class="title text-center"
-      >
-        <em>Collectors Dialogue</em><br />{{ page.data.title.slice(20) }}
-      </Heading>
-      <Heading as="h1" size="6xl" class="title text-center" v-else>
-        {{ page.data.title }}
+      <Heading as="h1" size="6xl" class="title text-center">
+        <span
+          v-if="page.data.title.slice(0, 20) != 'Collectors Dialogue:'"
+          class="capitalize italic block"
+          >{{ page.data.article_category.uid.replace(/-/g, " ") }}</span
+        >
+        <span v-if="page.data.title.slice(0, 20) === 'Collectors Dialogue:'"
+          ><em>Collectors Dialogue</em><br />{{
+            page.data.title.slice(20)
+          }}</span
+        >
+        <span v-else>{{ page.data.title }}</span>
       </Heading>
       <div>
         <p class="article-date mt-5 font-sans uppercase text-xs font-medium">
@@ -42,6 +48,42 @@
             }).format($prismic.asDate(page.data.date))
           }}
         </p>
+      </div>
+      <div class="absolute bottom-8 left-0 right-0">
+        <button id="scroll-to-content" @click="this.scrollToContent">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0.09999999999999998 0.09999999999999998 13.8 13.8"
+            height="14"
+            width="14"
+            stroke-width="0.8"
+            class="w-5 h-5"
+          >
+            <g>
+              <rect
+                x="2.5"
+                y="0.5"
+                width="9"
+                height="13"
+                rx="4.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></rect>
+              <line
+                x1="7"
+                y1="3.5"
+                x2="7"
+                y2="5"
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></line>
+            </g>
+          </svg>
+        </button>
       </div>
     </Bounded>
     <nuxt-img
@@ -59,12 +101,7 @@
       :slices="page.data.slices"
       :components="components"
       :context="page"
-    />
-    <SliceZone
-      v-if="page.data.slices2"
-      :slices="settings.data.slices2"
-      :components="components"
-      :context="page"
+      class="article-content mb-16"
     />
   </div>
 </template>
@@ -109,7 +146,37 @@ export default {
       return this.$store.state.prismic.settings;
     },
   },
+  methods: {
+    scrollToContent() {
+      document
+        .querySelector(".article-content")
+        .scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+  },
 };
 </script>
 <style scoped>
+.article-content {
+  scroll-margin-top: 50vh;
+}
+#scroll-to-content {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
 </style>

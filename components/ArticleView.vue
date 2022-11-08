@@ -7,7 +7,7 @@
       sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
       :width="article.data.images[0].image.width"
       :height="article.data.images[0].image.height"
-      class="article-thumbnail w-full rounded-[3px]"
+      class="article-thumbnail w-full rounded-[3px] aspect-1 object-cover"
       loading="lazy"
     />
     <div class="article-meta text-center mt-4 flex flex-col gap-1">
@@ -23,7 +23,7 @@
       <Heading
         as="p"
         size="md"
-        class="font-sans text-xs font-medium uppercase opacity-50 my-0"
+        class="font-sans text-xs font-medium uppercase my-0"
         v-if="article.data.city"
       >
         {{ $prismic.asText(article.data.city) }}
@@ -42,8 +42,4 @@ export default {
 };
 </script>
 <style scoped>
-.sale-percentage {
-  background: var(--border-accent);
-  color: var(--color-accent);
-}
 </style>
