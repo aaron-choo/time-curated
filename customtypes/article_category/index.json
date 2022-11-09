@@ -35,6 +35,13 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "keywords": {
+        "type": "Text",
+        "config": {
+          "label": "Keywords",
+          "placeholder": ""
+        }
       }
     }
   }

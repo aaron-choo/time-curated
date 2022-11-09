@@ -11,8 +11,8 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "hungry",
-    "date": "2016-05-23T19:15:28+0000",
+    "title": "instance",
+    "date": "2017-04-17T17:43:35+0000",
     "product_category": {
       "id": "mock_document_id",
       "link_type": "Document",
@@ -26,13 +26,13 @@
     "description": [
       {
         "type": "paragraph",
-        "text": "Labore duis Lorem ut dolor incididunt. Tempor tempor excepteur dolor culpa consectetur duis. Aute ipsum minim fugiat est quis anim laboris pariatur sit.",
+        "text": "Qui nostrud irure ex in pariatur. Eiusmod deserunt excepteur laborum excepteur minim reprehenderit qui id deserunt voluptate officia veniam nostrud aliquip. Exercitation non non tempor consequat nulla dolore deserunt fugiat fugiat sit reprehenderit reprehenderit commodo dolore.",
         "spans": []
       }
     ],
-    "price": 50,
-    "sale_price": 82,
-    "sku": "next",
+    "price": 31,
+    "sale_price": 88,
+    "sku": "noted",
     "images": [
       {
         "image": {
@@ -42,20 +42,21 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8"
+          "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
         }
       }
     ],
+    "keywords": "quiet",
     "slices": [],
-    "length": "available",
-    "thickness": "off",
-    "clasp_width": "frame",
-    "inner_width": "took",
-    "outer_width": "studying",
+    "length": "total",
+    "thickness": "silent",
+    "clasp_width": "graph",
+    "inner_width": "corn",
+    "outer_width": "essential",
     "leather_disclaimer": true,
     "lug_width": [
       {
-        "name": "like",
+        "name": "managed",
         "image": {
           "dimensions": {
             "width": 900,
@@ -63,12 +64,12 @@
           },
           "alt": null,
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"
+          "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
         },
-        "price": 47
+        "price": 79
       }
     ],
-    "strap_finder": false,
+    "strap_finder": true,
     "top_image": {
       "dimensions": {
         "width": 900,
@@ -76,7 +77,7 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
+      "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e"
     },
     "bottom_image": {
       "dimensions": {
@@ -85,7 +86,7 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
+      "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e"
     }
   }
 }
