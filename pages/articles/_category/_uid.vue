@@ -52,6 +52,7 @@
       <div class="absolute bottom-8 left-0 right-0">
         <button id="scroll-to-content" @click="this.scrollToContent">
           <svg
+            v-if="$device.isDesktop"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0.09999999999999998 0.09999999999999998 13.8 13.8"
             height="14"
@@ -82,6 +83,23 @@
                 stroke-linejoin="round"
               ></line>
             </g>
+          </svg>
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0.09999999999999998 0.09999999999999998 13.8 13.8"
+            height="14"
+            width="14"
+            stroke-width="0.8"
+            class="w-5 h-5"
+          >
+            <path
+              d="M10.5,6.13a2,2,0,0,1,1.59,2.24l-.61,4.27a1,1,0,0,1-1,.86H4a1,1,0,0,1-.93-.63L2,10.21A2,2,0,0,1,3,7.68L4.35,7V2a1.5,1.5,0,0,1,3,0V5.5Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
           </svg>
         </button>
       </div>
@@ -161,6 +179,26 @@ export default {
 }
 #scroll-to-content {
   animation: bounce 2s infinite;
+}
+.mobile #scroll-to-content {
+  animation: bounce-2 2s infinite;
+}
+@keyframes bounce-2 {
+  0% {
+    transform: translateY(0) rotate(-90deg);
+  }
+
+  30% {
+    transform: translateY(-20px) rotate(-45deg);
+  }
+
+  50% {
+    transform: translateY(0) rotate(-90deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-90deg);
+  }
 }
 @keyframes bounce {
   0% {

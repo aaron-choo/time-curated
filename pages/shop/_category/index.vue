@@ -5,13 +5,7 @@
       yPadding="md"
       :secondaryBackground="true"
       :backgroundImage="page.data.banner"
-      class="
-        min-h-[400px]
-        h-[calc(100vh-119px)]
-        md:h-[calc(100vh-228px)]
-        flex
-        items-center
-      "
+      class="flex items-center"
     >
       <div class="grid md:grid-cols-2">
         <div>
