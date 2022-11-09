@@ -49,6 +49,18 @@ export default {
       title: `${this.page.data.title} - ${this.$prismic.asText(
         this.$store.state.prismic.settings.data.siteTitle
       )}`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.$prismic.asText(this.page.data.description),
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content: this.page.data.keywords,
+        },
+      ],
     };
   },
 };

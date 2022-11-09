@@ -20,11 +20,15 @@ export default async () => {
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
-          hid: 'description',
-          name: 'description',
-          content: 'Time Curated'
+          hid: "description",
+          name: "description",
+          content: "Time Curated is a vintage watch magazine based in Singapore that features news articles and stories on mechanical timepieces and other collectibles.",
         },
-        { name: 'format-detection', content: 'telephone=no' }
+        { name: 'format-detection', content: 'telephone=no' },
+        { hid: 'og-type', property: 'og:type', content: 'website' },
+        { hid: 'og-title', property: 'og:title', content: 'Time Curated' },
+        { hid: 'og-desc', property: 'og:description', content: 'Time Curated is a vintage watch magazine based in Singapore that features news articles and stories on mechanical timepieces and other collectibles.' },
+        { hid: 'og-url', property: 'og:url', content: 'https://time-curated.com/' },
       ],
       link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     },
@@ -106,7 +110,7 @@ export default async () => {
       ["@nuxtjs/prismic", {
         endpoint: sm.apiEndpoint || ""
       }],
-      '@nuxtjs/axios'
+      '@nuxtjs/axios',
     ],
     axios: {
       // proxy: true
