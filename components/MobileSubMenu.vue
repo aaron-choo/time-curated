@@ -22,6 +22,34 @@
         </svg>
       </span>
     </button>
+    <button
+      class="mobile-sub-menu-trigger absolute -top-[69px] left-0 py-4 px-6"
+      :class="{
+        'opacity-0 translate-x-1/2 pointer-events-none': !subMenuOpen,
+        'translate-x-0': subMenuOpen,
+      }"
+      @click="closeSubMenu()"
+      @keyup.esc="closeSubMenu()"
+      ref="submenu"
+      tabindex="-1"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 14 14"
+        height="14"
+        width="14"
+        class="my-2 w-5 h-5"
+      >
+        <path
+          d="M10.15.5,4,6.65a.48.48,0,0,0,0,.7l6.15,6.15"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width=".8px"
+        ></path>
+      </svg>
+    </button>
     <div
       class="
         mobile-sub-menu-container
@@ -32,40 +60,13 @@
         transition
         duration-300
         z-10
+        overflow-y-scroll
       "
       :class="{
         'delay-300 opacity-0 translate-x-full': !subMenuOpen,
         'mobile-sub-menu-open opacity-100 translate-x-0': subMenuOpen,
       }"
     >
-      <button
-        class="mobile-sub-menu-trigger absolute -top-[69px] left-0 py-4 px-6"
-        :class="{
-          'opacity-0 translate-x-1/2': !subMenuOpen,
-          'translate-x-0': subMenuOpen,
-        }"
-        @click="closeSubMenu()"
-        @keyup.esc="closeSubMenu()"
-        ref="submenu"
-        tabindex="-1"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 14 14"
-          height="14"
-          width="14"
-          class="my-2 w-5 h-5"
-        >
-          <path
-            d="M10.15.5,4,6.65a.48.48,0,0,0,0,.7l6.15,6.15"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width=".8px"
-          ></path>
-        </svg>
-      </button>
       <ul class="flex flex-col justify-start items-start text-base">
         <template v-for="(link, index) in links">
           <li

@@ -112,7 +112,7 @@
             text-base
             w-full
             h-full
-            overflow-hidden
+            overflow-y-scroll
           "
         >
           <MobileSubMenu
