@@ -30,6 +30,7 @@
             <AddToCartBtn
               :product="page"
               :settings="settings"
+              :variant="variant"
               :variantImage="variantImage"
               :class="{ 'col-span-2': product.lug_width.length === 0 }"
             />
@@ -251,6 +252,9 @@ export default {
       if (variant.image.length > 0) {
         this.variantImage = variant.image;
       }
+      this.variant.stock = this.productInfo.variants.find(
+        (item) => item.variation[0].option === variant.name
+      ).stock;
     },
   },
 };

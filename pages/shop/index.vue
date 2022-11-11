@@ -27,10 +27,11 @@
 </template>
 
 <script>
+import { METHODS } from "http";
 import { components } from "~/slices";
 
 export default {
-  async asyncData({ $prismic, store, i18n }) {
+  async asyncData({ $prismic, store, i18n, $axios }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("page", "shop", { lang });
     const products = await $prismic.api.query(
@@ -40,6 +41,17 @@ export default {
         orderings: "[my.product.date desc]",
         pageSize: 240,
       }
+    );
+    $axios.setHeader(
+      "Authorization",
+      "Basic " +
+        Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
+          "base64"
+        )
+    );
+    $axios.setHeader("Accept", "application/json");
+    const productsInfo = await $axios.$get(
+      `https://app.snipcart.com/api/products/`
     );
 
     await store.dispatch("prismic/load", { lang, page });
@@ -53,6 +65,7 @@ export default {
       // merchant,
       // categories,
       products: products.results,
+      productsInfo: productsInfo,
     };
   },
   data() {
@@ -93,6 +106,21 @@ export default {
         },
       ],
     };
+  },
+  beforeMount() {
+    this.checkStock();
+  },
+  methods: {
+    checkStock() {
+      console.log(this.productsInfo.items);
+      console.log(this.products[2]);
+      for (let i = 0; i < this.products.length; i++) {
+        this.products[i].test = "test";
+        this.products[i].stock = this.productsInfo.items.find(
+          (item) => item.userDefinedId === this.products[i].uid
+        ).totalStock;
+      }
+    },
   },
 };
 </script>

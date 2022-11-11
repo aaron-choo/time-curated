@@ -33,10 +33,8 @@
 
 <script>
 export default {
-  async asyncData({ $prismic, store, i18n, params }) {
+  async asyncData({ $prismic, store, i18n, params, $axios }) {
     const lang = i18n.locale;
-    // console.log(lang);
-    // console.log(params);
     const page = await $prismic.api.getByUID(
       "product_category",
       params.category,
@@ -53,10 +51,22 @@ export default {
         pageSize: 24,
       }
     );
+    $axios.setHeader(
+      "Authorization",
+      "Basic " +
+        Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
+          "base64"
+        )
+    );
+    $axios.setHeader("Accept", "application/json");
+    const productsInfo = await $axios.$get(
+      `https://app.snipcart.com/api/products/`
+    );
     await store.dispatch("prismic/load", { lang, page });
     return {
       page: page,
       products: products.results,
+      productsInfo: productsInfo.items,
     };
   },
   head() {

@@ -15,6 +15,24 @@
         {{ product.data.title }}
       </h3>
       <Heading as="p" size="md" class="product-price my-0">
+        <span
+          v-if="product.stock === 0"
+          class="
+            sold-out
+            h-fit
+            font-sans
+            text-xs
+            leading-none
+            py-1
+            px-2
+            rounded-[3px]
+            absolute
+            top-2
+            left-2
+          "
+        >
+          Sold out</span
+        >
         <template v-if="product.data.sale_price">
           <span class="flex flex-wrap gap-x-2 justify-center items-center">
             <span class="original-price opacity-50 line-through decoration-1"
@@ -63,7 +81,11 @@ export default {
 </script>
 <style scoped>
 .sale-percentage {
-  background: var(--border-accent);
+  background-color: var(--border-accent);
   color: var(--color-accent);
+}
+.sold-out {
+  background-color: var(--color-error);
+  color: var(--bg-error);
 }
 </style>

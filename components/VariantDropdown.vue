@@ -34,9 +34,7 @@ export default {
     };
   },
   mounted() {
-    document
-      .getElementById("add-to-cart")
-      .classList.add("inactive", "has-variant");
+    document.getElementById("add-to-cart").classList.add("choose-variant");
   },
   methods: {
     selectOption(variant) {
@@ -47,9 +45,7 @@ export default {
       // console.log(arr);
       // console.log(variant);
       this.$emit("selectOption", variant);
-      document
-        .getElementById("add-to-cart")
-        .classList.remove("inactive", "has-variant");
+      document.getElementById("add-to-cart").classList.remove("choose-variant");
       // document.querySelectorAll(".variant-button").forEach((el) => {
       //   el.classList.remove("selected");
       // });
@@ -76,5 +72,11 @@ select {
 }
 .dark-mode select {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+</style>
+<style>
+button.choose-variant {
+  opacity: 0.35;
+  pointer-events: none;
 }
 </style>

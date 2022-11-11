@@ -11,6 +11,7 @@
       hover:opacity-80
       font-medium
     "
+    :class="{ 'sold-out inactive': variant && variant.stock < 1 }"
     :data-item-id="product.uid"
     :data-item-price="product.data.price"
     :data-item-categories="product.data.product_category.uid"
@@ -47,7 +48,7 @@
 </template>
 <script>
 export default {
-  props: ["product", "settings", "variantImage"],
+  props: ["product", "settings", "variantImage", "variant"],
   methods: {
     getLugWidthVariants() {
       const variants = this.product.data.lug_width;
@@ -67,16 +68,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #add-to-cart {
   background: var(--color);
   color: var(--bg);
 }
 
-#add-to-cart.inactive.has-variant .add-to-cart-text,
-#add-to-cart:not(.has-variant) .select-variant-text,
-#add-to-cart.has-variant:not(.inactive) .select-variant-text,
+#add-to-cart:not(.choose-variant) .select-variant-text,
 #add-to-cart:not(.sold-out) .sold-out-text,
+#add-to-cart.choose-variant .add-to-cart-text,
 #add-to-cart.sold-out .add-to-cart-text,
 #add-to-cart.sold-out .select-variant-text {
   display: none;
