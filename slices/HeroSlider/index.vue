@@ -208,10 +208,14 @@ export default {
   }
 }
 
+.swiper.hero-slider .swiper-slide .slide-meta {
+  transform: translateY(1rem);
+}
+
 .swiper.hero-slider .swiper-slide .slide-meta,
 .swiper.hero-slider .swiper-slide .slide-cta button {
   opacity: 0;
-  transition: 1s ease-out 0.3s;
+  transition: all 0.8s ease-out 0.3s;
 }
 .swiper.hero-slider .swiper-slide-visible.swiper-slide-active .slide-meta,
 .swiper.hero-slider
@@ -219,5 +223,6 @@ export default {
   .slide-cta
   button {
   opacity: 1;
+  transform: translateY(0);
 }
 </style>
