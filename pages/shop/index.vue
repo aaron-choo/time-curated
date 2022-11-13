@@ -112,10 +112,7 @@ export default {
   },
   methods: {
     checkStock() {
-      console.log(this.productsInfo.items);
-      console.log(this.products[2]);
       for (let i = 0; i < this.products.length; i++) {
-        this.products[i].test = "test";
         this.products[i].stock = this.productsInfo.items.find(
           (item) => item.userDefinedId === this.products[i].uid
         ).totalStock;

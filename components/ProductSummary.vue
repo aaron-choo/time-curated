@@ -72,3 +72,9 @@ export default {
   props: ["product", "variant"],
 };
 </script>
+<style scoped>
+.sale-percentage {
+  background: var(--border-accent);
+  color: var(--color-accent);
+}
+</style>

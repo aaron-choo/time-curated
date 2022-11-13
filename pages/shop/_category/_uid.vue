@@ -150,8 +150,8 @@ export default {
       {
         lang: lang,
         orderings: "[document.last_publication_date desc]",
-        pageSize: 5,
-        page: Math.floor(Math.random() * 1),
+        pageSize: 100,
+        page: 1,
       }
     );
     await store.dispatch("prismic/load", { lang, page });
@@ -173,6 +173,10 @@ export default {
     const productInfo = await $axios.$get(
       `https://app.snipcart.com/api/products/${params.uid}/`
     );
+
+    const productsInfo = await $axios.$get(
+      `https://app.snipcart.com/api/products/`
+    );
     if (page.data.product_category.uid === params.category) {
       return {
         page: page,
@@ -182,6 +186,7 @@ export default {
         variantImage: null,
         variant: null,
         productInfo: productInfo,
+        productsInfo: productsInfo,
       };
     } else {
       error({ statusCode: 404, message: "Page not found" });
@@ -237,6 +242,9 @@ export default {
       ],
     };
   },
+  beforeMount() {
+    this.checkStock();
+  },
   computed: {
     settings() {
       return this.$store.state.prismic.settings;
@@ -255,6 +263,13 @@ export default {
       this.variant.stock = this.productInfo.variants.find(
         (item) => item.variation[0].option === variant.name
       ).stock;
+    },
+    checkStock() {
+      for (let i = 0; i < this.relatedProducts.length; i++) {
+        this.relatedProducts[i].stock = this.productsInfo.items.find(
+          (item) => item.userDefinedId === this.relatedProducts[i].uid
+        ).totalStock;
+      }
     },
   },
 };

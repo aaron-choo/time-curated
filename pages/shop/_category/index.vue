@@ -66,7 +66,7 @@ export default {
     return {
       page: page,
       products: products.results,
-      productsInfo: productsInfo.items,
+      productsInfo: productsInfo,
     };
   },
   head() {
@@ -104,6 +104,18 @@ export default {
         },
       ],
     };
+  },
+  beforeMount() {
+    this.checkStock();
+  },
+  methods: {
+    checkStock() {
+      for (let i = 0; i < this.products.length; i++) {
+        this.products[i].stock = this.productsInfo.items.find(
+          (item) => item.userDefinedId === this.products[i].uid
+        ).totalStock;
+      }
+    },
   },
 };
 </script>
