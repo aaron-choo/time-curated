@@ -1,5 +1,5 @@
 <template>
-  <Bounded as="section" class="border-t">
+  <Bounded as="section" yPadding="xs" class="link-menu">
     <ul class="flex justify-center font-sans uppercase text-xs gap-4">
       <li class="font-semibold">{{ $prismic.asText(slice.primary.title) }}</li>
       <li v-for="item in slice.items" :key="item.title" class="link">
@@ -24,5 +24,9 @@ a.nuxt-link-exact-active {
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
   text-decoration-line: underline;
+}
+.link-menu {
+  background-color: var(--bg-secondary);
+  color: var(--color-secondary);
 }
 </style>
