@@ -7,8 +7,8 @@
     <div class="slider-container prevent-select">
       <div class="swiper product-image mb-2" ref="relatedProductLinks">
         <div class="swiper-wrapper">
-          <template v-for="product in relatedProducts">
-            <div class="swiper-slide" v-if="product.uid != currentProduct.uid">
+          <template v-for="(product, index) in relatedProducts">
+            <div class="swiper-slide" v-if="index <= 3">
               <nuxt-link :to="LinkGetter(product)">
                 <product-view :product="product" />
               </nuxt-link>
@@ -29,6 +29,9 @@ export default {
     settings: { type: Object, required: true, defaultValue: {} },
     relatedProducts: { type: Array, required: true, defaultValue: {} },
     currentProduct: { type: Object, required: true, defaultValue: {} },
+  },
+  beforeMount() {
+    this.shuffle(this.relatedProducts);
   },
   async mounted() {
     await this.$nextTick();
@@ -56,6 +59,23 @@ export default {
   methods: {
     LinkGetter(product) {
       return LinkResolver(product);
+    },
+    shuffle(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      for (var i = array.length - 1; i >= 0; --i) {
+        if (array[i].stock == 0 || array[i].uid === this.currentProduct.uid) {
+          array.splice(i, 1);
+        }
+      }
+      // array.splice(
+      //   array.findIndex(({ uid }) => uid == this.currentProduct.uid),
+      //   1
+      // );
     },
   },
 };
