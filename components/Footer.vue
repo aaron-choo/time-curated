@@ -1,11 +1,11 @@
 <template>
   <Bounded as="footer" class="py-12 lg:py-12">
     <div class="grid gap-12">
-      <div class="grid lg:grid-cols-10 gap-12">
-        <div class="lg:col-span-4">
+      <div class="grid grid-cols-2 lg:grid-cols-10 gap-12">
+        <div class="col-span-2 lg:col-span-4">
           <SignUpForm :settings="settings" class="lg:max-w-sm" />
         </div>
-        <div class="lg:col-span-2 font-sans text-sm">
+        <div class="col-span-2 font-sans text-sm">
           <PrismicRichText
             :field="settings.data.footer_help_title"
             class="font-sans font-semibold mb-2"
