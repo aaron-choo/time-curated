@@ -104,16 +104,62 @@
         </button>
       </div>
     </Bounded>
-    <nuxt-img
-      v-if="page.data.images.length > 0"
-      format="webp"
-      :src="page.data.images[0].image.url"
-      sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
-      :width="page.data.images[0].image.width"
-      :height="page.data.images[0].image.height"
-      class="article-banner w-full"
-      loading="lazy"
-    />
+    <template v-if="page.data.images.length == 1">
+      <nuxt-img
+        format="webp"
+        :src="page.data.images[0].image.url"
+        sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+        :width="page.data.images[0].image.width"
+        :height="page.data.images[0].image.height"
+        class="article-banner w-full"
+        loading="lazy"
+      />
+    </template>
+    <template v-if="page.data.images.length > 1">
+      <div ref="bannerSlider" class="swiper banner-slider mb-2">
+        <div class="swiper-wrapper">
+          <div
+            v-for="(item, index) in page.data.images"
+            :key="index"
+            class="swiper-slide"
+          >
+            <nuxt-img
+              format="webp"
+              :src="item.image.url"
+              sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+              :width="item.image.dimensions.width"
+              :height="item.image.dimensions.height"
+              class="slide-image relative w-auto rounded-[3px]"
+              loading="lazy"
+            />
+            <PrismicRichText
+              v-if="item.caption.length > 0"
+              :field="item.caption"
+              class="
+                slide-caption
+                absolute
+                bottom-0
+                left-0
+                p-1
+                rounded-[3px]
+                text-xs
+                font-sans font-medium
+              "
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 
+      <nuxt-img
+        format="webp"
+        :src="page.data.images[0].image.url"
+        sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+        :width="page.data.images[0].image.width"
+        :height="page.data.images[0].image.height"
+        class="article-banner w-full"
+        loading="lazy"
+      /> -->
+    </template>
     <SliceZone
       v-if="page.data.slices"
       :slices="page.data.slices"
@@ -125,6 +171,8 @@
 </template>
   <script>
 import { components } from "~/slices";
+import Swiper from "swiper/swiper-bundle.min";
+import "swiper/swiper-bundle.min.css";
 export default {
   async asyncData({ $prismic, store, i18n, params, error }) {
     const lang = i18n.locale;
@@ -151,6 +199,33 @@ export default {
     return {
       components,
     };
+  },
+  async mounted() {
+    await this.$nextTick();
+    new Swiper(this.$refs.bannerSlider, {
+      effect: "slide",
+      slidesPerView: "auto",
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: false,
+      autoplay: {
+        delay: 8000,
+        disableOnInteraction: false,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      mousewheel: {
+        releaseOnEdges: true,
+        forceToAxis: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "bullets",
+        clickable: true,
+      },
+    });
   },
   head() {
     return {
@@ -245,5 +320,18 @@ export default {
   100% {
     transform: translateY(0);
   }
+}
+.banner-slider .swiper-slide {
+  width: auto;
+}
+
+.banner-slider .slide-image {
+  height: 55vw;
+  max-width: 95vw;
+  object-fit: cover;
+}
+.slide-caption {
+  background-color: var(--bg-accent);
+  color: var(--color-accent);
 }
 </style>
