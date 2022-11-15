@@ -100,7 +100,11 @@ export default async () => {
     },
     image: {
       provider: "prismic",
-      prismic: {}
+      prismic: {
+        modifiers: {
+          quality: 'auto:best',
+        }
+      }
     },
 
     // Modules: https://go.nuxtjs.dev/config-modules

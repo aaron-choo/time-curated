@@ -17,89 +17,97 @@
           v-if="watch.watch_strap.url"
           format="webp"
           :src="watch.watch_strap.url"
-          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          sizes="sm:100vw md:100vw lg:100vw xl:1200 2xl:1200"
           :width="watch.watch_strap.dimensions.width"
           :height="watch.watch_strap.dimensions.height"
           :style="watch.watch_strap_position"
           class="watch-strap"
           loading="lazy"
+          placeholder
         />
         <nuxt-img
           v-if="watch.watch_case.url"
           format="webp"
           :src="watch.watch_case.url"
-          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          sizes="sm:100vw md:100vw lg:100vw xl:1200 2xl:1200"
           :width="watch.watch_case.dimensions.width"
           :height="watch.watch_case.dimensions.height"
           :style="watch.watch_case_position"
           class="watch-case"
           loading="lazy"
+          placeholder
         />
         <nuxt-img
           v-if="watch.watch_chrono_hour.url"
           format="webp"
           :src="watch.watch_chrono_hour.url"
-          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          sizes="sm:100vw md:100vw lg:100vw xl:1200 2xl:1200"
           :width="watch.watch_chrono_hour.dimensions.width"
           :height="watch.watch_chrono_hour.dimensions.height"
           :style="watch.watch_chrono_hour_position"
           class="watch-chrono-hour"
           loading="lazy"
+          placeholder
         />
         <nuxt-img
           v-if="watch.watch_chrono_minute.url"
           format="webp"
           :src="watch.watch_chrono_minute.url"
-          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          sizes="sm:100vw md:100vw lg:100vw xl:1200 2xl:1200"
           :width="watch.watch_chrono_minute.dimensions.width"
           :height="watch.watch_chrono_minute.dimensions.height"
           :style="watch.watch_chrono_minute_position"
           class="watch-chrono-minute"
           loading="lazy"
+          placeholder
         />
         <nuxt-img
           v-if="watch.watch_hour.url"
           format="webp"
           :src="watch.watch_hour.url"
-          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          sizes="sm:100vw md:100vw lg:100vw xl:1200 2xl:1200"
           :width="watch.watch_hour.dimensions.width"
           :height="watch.watch_hour.dimensions.height"
           :style="watch.watch_hour_position"
           class="watch-hour"
           loading="lazy"
+          placeholder
         />
         <nuxt-img
           v-if="watch.watch_minute.url"
           format="webp"
           :src="watch.watch_minute.url"
-          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          sizes="sm:100vw md:100vw lg:100vw xl:1200 2xl:1200"
           :width="watch.watch_minute.dimensions.width"
           :height="watch.watch_minute.dimensions.height"
           :style="watch.watch_minute_position"
           class="watch-minute"
           loading="lazy"
+          placeholder
         />
         <nuxt-img
           v-if="watch.watch_second.url"
           format="webp"
           :src="watch.watch_second.url"
-          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          sizes="sm:100vw md:100vw lg:100vw xl:1200 2xl:1200"
           :width="watch.watch_second.dimensions.width"
           :height="watch.watch_second.dimensions.height"
           :style="watch.watch_second_position"
           class="watch-second"
           loading="lazy"
+          placeholder
         />
         <nuxt-img
           v-if="watch.watch_chrono_second.url"
           format="webp"
           :src="watch.watch_chrono_second.url"
-          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+          sizes="sm:100vw md:100vw lg:100vw xl:1200 2xl:1200"
           :width="watch.watch_chrono_second.dimensions.width"
           :height="watch.watch_chrono_second.dimensions.height"
           :style="watch.watch_chrono_second_position"
           class="watch-chrono-second"
           loading="lazy"
+          placeholder
         />
       </div>
 

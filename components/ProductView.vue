@@ -4,11 +4,12 @@
       v-if="product.data.images.length > 0"
       format="webp"
       :src="product.data.images[0].image.url"
-      sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+      sizes="sm:50vw md:33vw lg:25vw xl:25vw 2xl:25vw"
       :width="product.data.images[0].image.width"
       :height="product.data.images[0].image.height"
       class="product-thumbnail w-full rounded-[3px]"
       loading="lazy"
+      placeholder
     />
     <div class="product-meta text-center mt-4 flex flex-col gap-1">
       <h3 class="product-title leading-tight text-lg">

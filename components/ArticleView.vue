@@ -4,11 +4,12 @@
       v-if="article.data.images.length > 0"
       format="webp"
       :src="article.data.images[0].image.url"
-      sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+      sizes="sm:50vw md:33vw lg:25vw xl:25vw 2xl:25vw"
       :width="article.data.images[0].image.width"
       :height="article.data.images[0].image.height"
       class="article-thumbnail w-full rounded-[3px] aspect-1 object-cover"
       loading="lazy"
+      placeholder
     />
     <div class="article-meta text-center mt-4 flex flex-col gap-1">
       <h3
