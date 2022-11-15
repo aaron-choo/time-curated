@@ -179,7 +179,13 @@
           "fileName": "index",
           "extension": "vue"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\BlockHeading\\default\\preview.jpeg",
+            "width": 1015,
+            "height": 216
+          }
+        }
       },
       "block_quote": {
         "library": "slices",
