@@ -140,10 +140,12 @@
                 absolute
                 bottom-0
                 left-0
+                right-0
                 p-1
+                pt-4
                 rounded-[3px]
                 text-xs
-                font-sans font-medium
+                font-sans
               "
             />
           </div>
@@ -327,11 +329,14 @@ export default {
 
 .banner-slider .slide-image {
   height: 55vw;
-  max-width: 95vw;
+  max-width: calc(100vw - 32px);
   object-fit: cover;
 }
 .slide-caption {
-  background-color: var(--bg-accent);
   color: var(--color-accent);
+  text-shadow: -1px -1px 0 var(--bg-accent), 0 -1px 0 var(--bg-accent),
+    1px -1px 0 var(--bg-accent), 1px 0 0 var(--bg-accent),
+    1px 1px 0 var(--bg-accent), 0 1px 0 var(--bg-accent),
+    -1px 1px 0 var(--bg-accent), -1px 0 0 var(--bg-accent);
 }
 </style>
