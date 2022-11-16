@@ -97,9 +97,16 @@ export default {
                   ...match,
                 });
                 break;
-              case "strap finder":
+              case "strap-finder":
                 crumbs.push({
-                  title: lang === "zh-cn" ? "表带配色" : "watch " + param,
+                  title:
+                    lang === "zh-cn" ? "表带配色" : param.replace(/-/g, " "),
+                  ...match,
+                });
+                break;
+              case "contact":
+                crumbs.push({
+                  title: lang === "zh-cn" ? "联络" : param,
                   ...match,
                 });
                 break;

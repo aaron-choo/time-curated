@@ -11,15 +11,24 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "directly",
+    "title": "knowledge",
     "description": [
       {
         "type": "paragraph",
-        "text": "Ea pariatur aute occaecat cupidatat cillum ex id cillum occaecat excepteur ex duis qui.",
+        "text": "Est elit incididunt non. Consectetur elit veniam sunt tempor aute excepteur adipisicing sunt do cillum eu. Aute in mollit culpa quis ex qui mollit commodo qui culpa aliquip proident magna enim.",
         "spans": []
       }
     ],
-    "keywords": "pleasant",
+    "keywords": "tax",
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2"
+    },
     "slices": []
   }
 }
