@@ -8,7 +8,7 @@
         target="_blank"
         class="grid grid-cols-2 gap-2 mb-8"
       >
-        <div class="col-span-2">
+        <div class="col-span-2 select relative">
           <label for="enquiry-nature" hidden>Nature of Enquiry</label>
           <select id="enquiry-nature" name="enquiry-nature" required="">
             <option value="" disabled selected>Nature of Enquiry</option>
@@ -18,6 +18,7 @@
             <option value="press-releases">Press Releases</option>
           </select>
         </div>
+
         <div class="col-span-2">
           <label for="name" hidden>Name</label>
           <input
@@ -57,13 +58,13 @@
           name="message"
           placeholder="Message"
           required=""
-          class="col-span-2"
-          rows="4"
+          class="col-span-2 rounded-[3px]"
+          rows="8"
         ></textarea>
         <button
           id="button"
           type="submit"
-          class="col-span-2 btn text-xs uppercase"
+          class="col-span-2 btn text-xs uppercase mt-4"
         >
           Submit
         </button>
@@ -102,7 +103,7 @@
         target="_blank"
         class="grid grid-cols-2 gap-2 mb-8"
       >
-        <div class="col-span-2">
+        <div class="col-span-2 select relative">
           <label for="enquiry-nature" hidden>关于</label>
           <select id="enquiry-nature" name="enquiry-nature" required="">
             <option value="" disabled selected>关于</option>
@@ -151,13 +152,13 @@
           name="message"
           placeholder="信息"
           required=""
-          class="col-span-2"
-          rows="4"
+          class="col-span-2 rounded-[3px]"
+          rows="8"
         ></textarea>
         <button
           id="button"
           type="submit"
-          class="col-span-2 btn text-xs uppercase"
+          class="col-span-2 btn text-xs uppercase mt-4"
         >
           发送
         </button>
@@ -259,8 +260,19 @@ export default {
 input,
 textarea,
 select {
+  -webkit-appearance: none;
   background: var(--bg-secondary);
   padding: 0.5em;
   width: 100%;
+}
+.select:after {
+  content: "";
+  position: absolute;
+  bottom: 1em;
+  right: 0.5em;
+  width: 0.6em;
+  height: 0.3em;
+  background-color: var(--color);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 }
 </style>
