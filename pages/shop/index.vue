@@ -54,7 +54,7 @@ export default {
     );
     $axios.setHeader("Accept", "application/json");
     const productsInfo = await $axios.$get(
-      `https://app.snipcart.com/api/products/`
+      `https://app.snipcart.com/api/products?limit=0`
     );
 
     await store.dispatch("prismic/load", { lang, page });

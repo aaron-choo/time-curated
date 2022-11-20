@@ -175,7 +175,7 @@ export default {
     );
 
     const productsInfo = await $axios.$get(
-      `https://app.snipcart.com/api/products/`
+      `https://app.snipcart.com/api/products?limit=0`
     );
     if (page.data.product_category.uid === params.category) {
       return {

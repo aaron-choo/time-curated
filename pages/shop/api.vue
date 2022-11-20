@@ -16,7 +16,7 @@ export default {
     const page = await $prismic.api.getByUID("page", "shop", { lang });
     const products = await $prismic.api.query(
       $prismic.predicates.at("document.type", "product"),
-      { lang: lang, orderings: "[my.product.date desc]", pageSize: 24 }
+      { lang: lang, orderings: "[my.product.date desc]", pageSize: 60 }
     );
 
     await store.dispatch("prismic/load", { lang, page });
