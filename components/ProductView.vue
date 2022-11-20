@@ -32,7 +32,7 @@
             left-2
           "
         >
-          Sold out</span
+          {{ settings.data.sold_out_text }}</span
         >
         <template v-if="product.data.sale_price">
           <span class="flex flex-wrap gap-x-2 justify-center items-center">
@@ -75,9 +75,7 @@
 
 <script>
 export default {
-  props: {
-    product: { type: Object, defaultValue: {}, required: true },
-  },
+  props: ["product", "settings"],
 };
 </script>
 <style scoped>

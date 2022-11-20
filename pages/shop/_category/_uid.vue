@@ -268,7 +268,11 @@ export default {
       for (let i = 0; i < this.relatedProducts.length; i++) {
         this.relatedProducts[i].stock = this.productsInfo.items.find(
           (item) => item.userDefinedId === this.relatedProducts[i].uid
-        ).totalStock;
+        )
+          ? this.productsInfo.items.find(
+              (item) => item.userDefinedId === this.relatedProducts[i].uid
+            ).totalStock
+          : 0;
       }
     },
   },

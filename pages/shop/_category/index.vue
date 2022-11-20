@@ -25,7 +25,10 @@
     </Bounded>
     <Bounded as="section">
       <div>
-        <product-list :products="products"></product-list>
+        <product-list
+          :products="products"
+          :settings="this.$store.state.prismic.settings"
+        ></product-list>
       </div>
     </Bounded>
   </div>
@@ -113,7 +116,11 @@ export default {
       for (let i = 0; i < this.products.length; i++) {
         this.products[i].stock = this.productsInfo.items.find(
           (item) => item.userDefinedId === this.products[i].uid
-        ).totalStock;
+        )
+          ? this.productsInfo.items.find(
+              (item) => item.userDefinedId === this.products[i].uid
+            ).totalStock
+          : 0;
       }
     },
   },

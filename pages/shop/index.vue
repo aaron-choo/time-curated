@@ -20,7 +20,10 @@
       <!-- <h2 class="slide-title text-2xl md:text-3xl leading-none mb-6">
         Lastest Products
       </h2> -->
-      <product-list :products="products"></product-list>
+      <product-list
+        :products="products"
+        :settings="this.$store.state.prismic.settings"
+      ></product-list>
       <!-- <pre>{{ JSON.stringify(products, null, 2) }}</pre> -->
     </Bounded>
   </div>
@@ -115,7 +118,11 @@ export default {
       for (let i = 0; i < this.products.length; i++) {
         this.products[i].stock = this.productsInfo.items.find(
           (item) => item.userDefinedId === this.products[i].uid
-        ).totalStock;
+        )
+          ? this.productsInfo.items.find(
+              (item) => item.userDefinedId === this.products[i].uid
+            ).totalStock
+          : 0;
       }
     },
   },

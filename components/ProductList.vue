@@ -2,7 +2,7 @@
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
     <div v-for="product in products" :key="product.uid">
       <nuxt-link :to="product.url">
-        <product-view :product="product"></product-view
+        <product-view :product="product" :settings="settings"></product-view
       ></nuxt-link>
     </div>
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  props: ["products"],
+  props: ["products", "settings"],
   methods: {},
 };
 </script>
