@@ -128,10 +128,18 @@ export default {
                     lang === "zh-cn" ? "出人意表" : param.replace(/-/g, " "),
                   ...match,
                 });
+                break;
               case "deep-dive":
                 crumbs.push({
                   title:
                     lang === "zh-cn" ? "深入研究" : param.replace(/-/g, " "),
+                  ...match,
+                });
+                break;
+              case "vintage-timepieces":
+                crumbs.push({
+                  title:
+                    lang === "zh-cn" ? "复古钟表" : param.replace(/-/g, " "),
                   ...match,
                 });
                 break;
