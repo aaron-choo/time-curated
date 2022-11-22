@@ -1,12 +1,13 @@
 <template>
   <div>
-    <!-- <Bounded as="section" yPadding="base" :secondaryBackground="true">
+    <Bounded as="section" yPadding="base" :secondaryBackground="true">
       <div class="grid md:grid-cols-2">
         <div>
           <Heading as="h1">{{ page.data.title }}</Heading>
+          <pre>{{ productsInfo }}</pre>
         </div>
       </div>
-    </Bounded> -->
+    </Bounded>
     <SliceZone
       :slices="page.data.slices"
       :components="components"
@@ -30,11 +31,9 @@
 </template>
 
 <script>
-import { METHODS } from "http";
 import { components } from "~/slices";
-
 export default {
-  async asyncData({ $prismic, store, i18n, $axios }) {
+  async asyncData({ $prismic, store, i18n }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("page", "shop", { lang });
     const products = await $prismic.api.query(
@@ -45,34 +44,28 @@ export default {
         pageSize: 240,
       }
     );
-    $axios.setHeader(
+    await store.dispatch("prismic/load", { lang, page });
+    return {
+      page,
+      products: products.results,
+    };
+  },
+  async fetch() {
+    this.$axios.setHeader(
       "Authorization",
       "Basic " +
         Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
           "base64"
         )
     );
-    $axios.setHeader("Accept", "application/json");
-    const productsInfo = await $axios.$get(
+    this.$axios.setHeader("Accept", "application/json");
+    const productsInfo = await this.$axios.$get(
       `https://app.snipcart.com/api/products?limit=0`
     );
-
-    await store.dispatch("prismic/load", { lang, page });
-
-    // const merchant = await $commerce.merchants.about();
-    // const { data: categories } = await $commerce.categories.list();
-    // const { data: products } = await $commerce.products.list();
-
-    return {
-      page,
-      // merchant,
-      // categories,
-      products: products.results,
-      productsInfo: productsInfo,
-    };
+    this.productsInfo = productsInfo;
   },
   data() {
-    return { components };
+    return { components, productsInfo: [] };
   },
   head() {
     return {
@@ -111,7 +104,7 @@ export default {
     };
   },
   beforeMount() {
-    this.checkStock();
+    // this.checkStock();
   },
   methods: {
     checkStock() {
