@@ -124,7 +124,6 @@ export default {
   props: getSliceComponentProps(["slice", "index", "slices", "context"]),
   async mounted() {
     await this.$nextTick();
-    console.log(this.slice.items.length);
     if (this.slice.items.length === 1) {
       new Swiper(this.$refs.heroSlider, {
         effect: "fade",
