@@ -1,12 +1,13 @@
 <template>
   <div>
-    <!-- <Bounded as="section" yPadding="base" :secondaryBackground="true">
+    <Bounded as="section" yPadding="base" :secondaryBackground="true">
       <div class="grid md:grid-cols-2">
         <div>
           <Heading as="h1">{{ page.data.title }}</Heading>
+          <pre>{{ productsInfo }}</pre>
         </div>
       </div>
-    </Bounded> -->
+    </Bounded>
     <SliceZone
       :slices="page.data.slices"
       :components="components"
@@ -50,7 +51,7 @@ export default {
     };
   },
   data() {
-    return { components, productsInfo: [] };
+    return { components };
   },
   head() {
     return {
@@ -88,19 +89,7 @@ export default {
       ],
     };
   },
-  async beforeMount() {
-    // this.$axios.setHeader(
-    //   "Authorization",
-    //   "Basic " +
-    //     Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
-    //       "base64"
-    //     )
-    // );
-    // this.$axios.setHeader("Accept", "application/json");
-    // const productsInfo = await this.$axios.$get(
-    //   `https://app.snipcart.com/api/products?limit=0`
-    // );
-    // this.productsInfo = productsInfo;
+  beforeMount() {
     this.checkStock();
   },
   methods: {
