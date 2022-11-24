@@ -30,11 +30,9 @@
 </template>
 
 <script>
-import { METHODS } from "http";
 import { components } from "~/slices";
-
 export default {
-  async asyncData({ $prismic, store, i18n, $axios }) {
+  async asyncData({ $prismic, store, i18n }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("page", "shop", { lang });
     const products = await $prismic.api.query(
@@ -45,34 +43,14 @@ export default {
         pageSize: 240,
       }
     );
-    $axios.setHeader(
-      "Authorization",
-      "Basic " +
-        Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
-          "base64"
-        )
-    );
-    $axios.setHeader("Accept", "application/json");
-    const productsInfo = await $axios.$get(
-      `https://app.snipcart.com/api/products?limit=0`
-    );
-
     await store.dispatch("prismic/load", { lang, page });
-
-    // const merchant = await $commerce.merchants.about();
-    // const { data: categories } = await $commerce.categories.list();
-    // const { data: products } = await $commerce.products.list();
-
     return {
       page,
-      // merchant,
-      // categories,
       products: products.results,
-      productsInfo: productsInfo,
     };
   },
   data() {
-    return { components };
+    return { components, productsInfo: [] };
   },
   head() {
     return {
@@ -110,19 +88,36 @@ export default {
       ],
     };
   },
-  beforeMount() {
+  async beforeMount() {
+    // this.$axios.setHeader(
+    //   "Authorization",
+    //   "Basic " +
+    //     Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
+    //       "base64"
+    //     )
+    // );
+    // this.$axios.setHeader("Accept", "application/json");
+    // const productsInfo = await this.$axios.$get(
+    //   `https://app.snipcart.com/api/products?limit=0`
+    // );
+    // this.productsInfo = productsInfo;
     this.checkStock();
   },
   methods: {
-    checkStock() {
+    async checkStock() {
+      this.$axios.setHeader(
+        "Authorization",
+        "Basic " +
+          Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
+            "base64"
+          )
+      );
+      this.$axios.setHeader("Accept", "application/json");
       for (let i = 0; i < this.products.length; i++) {
-        this.products[i].stock = this.productsInfo.items.find(
-          (item) => item.userDefinedId === this.products[i].uid
-        )
-          ? this.productsInfo.items.find(
-              (item) => item.userDefinedId === this.products[i].uid
-            ).totalStock
-          : 0;
+        this.products[i].stock = await this.$axios.$get(
+          `https://app.snipcart.com/api/products/${this.products[i].uid}/stock`
+        );
+        console.log(this.products[i].stock);
       }
     },
   },
