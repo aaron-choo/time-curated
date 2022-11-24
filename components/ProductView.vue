@@ -13,8 +13,7 @@
     />
     <div class="product-meta text-center mt-4 flex flex-col gap-1">
       <h3 class="product-title leading-tight text-lg">
-        {{ product.data.title }}<br />
-        {{ product.stock }}
+        {{ product.data.title }}
       </h3>
       <Heading as="p" size="md" class="product-price my-0">
         <span

@@ -1,13 +1,12 @@
 <template>
   <div>
-    <Bounded as="section" yPadding="base" :secondaryBackground="true">
+    <!-- <Bounded as="section" yPadding="base" :secondaryBackground="true">
       <div class="grid md:grid-cols-2">
         <div>
           <Heading as="h1">{{ page.data.title }}</Heading>
-          <pre>{{ productsInfo }}</pre>
         </div>
       </div>
-    </Bounded>
+    </Bounded> -->
     <SliceZone
       :slices="page.data.slices"
       :components="components"
@@ -45,6 +44,7 @@ export default {
       }
     );
     await store.dispatch("prismic/load", { lang, page });
+    products.results.forEach((el) => (el.stock = null));
     return {
       page,
       products: products.results,
@@ -90,23 +90,29 @@ export default {
     };
   },
   beforeMount() {
+    this.$axios.setHeader(
+      "Authorization",
+      "Basic " +
+        Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
+          "base64"
+        )
+    );
+    this.$axios.setHeader("Accept", "application/json");
     this.checkStock();
   },
   methods: {
     async checkStock() {
-      this.$axios.setHeader(
-        "Authorization",
-        "Basic " +
-          Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
-            "base64"
-          )
+      const productsInfo = await this.$axios.$get(
+        `https://app.snipcart.com/api/products?limit=60`
       );
-      this.$axios.setHeader("Accept", "application/json");
       for (let i = 0; i < this.products.length; i++) {
-        this.products[i].stock = await this.$axios.$get(
-          `https://app.snipcart.com/api/products/${this.products[i].uid}/stock`
-        );
-        console.log(this.products[i].stock);
+        this.products[i].stock = productsInfo.items.find(
+          (item) => item.userDefinedId === this.products[i].uid
+        )
+          ? productsInfo.items.find(
+              (item) => item.userDefinedId === this.products[i].uid
+            ).totalStock
+          : 0;
       }
     },
   },

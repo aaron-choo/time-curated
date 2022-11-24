@@ -11,7 +11,11 @@
       hover:opacity-80
       font-medium
     "
-    :class="{ 'sold-out inactive': variant && variant.stock < 1 }"
+    :class="{
+      'sold-out inactive': variant && variant.stock < 1,
+      'choose-variant inactive': variant == null,
+      'loading inactive': loading,
+    }"
     :data-item-id="product.uid"
     :data-item-price="product.data.price"
     :data-item-categories="product.data.product_category.uid"
@@ -37,18 +41,25 @@
       <span v-if="variantGroup.name === 'Lug Width'">{{ $t("lugWidth") }}</span>
       <span v-else>{{ variantGroup.name }}</span>
     </span> -->
-    <span class="select-variant-text">{{
-      settings.data.select_option_text
-    }}</span>
-    <span class="sold-out-text">{{ settings.data.sold_out_text }}</span>
-    <span class="add-to-cart-text">{{ settings.data.add_to_cart_text }}</span>
+    <span v-if="loading">Loading</span>
+    <span v-else>
+      <span class="select-variant-text" v-if="variant == null">{{
+        settings.data.select_option_text
+      }}</span>
+      <span class="sold-out-text" v-if="variant && variant.stock == 0">{{
+        settings.data.sold_out_text
+      }}</span>
+      <span class="add-to-cart-text" v-if="variant && variant.stock >= 1">{{
+        settings.data.add_to_cart_text
+      }}</span>
+    </span>
     <!-- <br />
     <pre>{{ getLugWidthVariants() }}</pre> -->
   </button>
 </template>
 <script>
 export default {
-  props: ["product", "settings", "variantImage", "variant"],
+  props: ["product", "settings", "variantImage", "variant", "loading"],
   methods: {
     getLugWidthVariants() {
       const variants = this.product.data.lug_width;
@@ -72,13 +83,5 @@ export default {
 #add-to-cart {
   background: var(--color);
   color: var(--bg);
-}
-
-#add-to-cart:not(.choose-variant) .select-variant-text,
-#add-to-cart:not(.sold-out) .sold-out-text,
-#add-to-cart.choose-variant .add-to-cart-text,
-#add-to-cart.sold-out .add-to-cart-text,
-#add-to-cart.sold-out .select-variant-text {
-  display: none;
 }
 </style>

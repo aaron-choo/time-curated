@@ -34,7 +34,7 @@ export default {
     };
   },
   mounted() {
-    document.getElementById("add-to-cart").classList.add("choose-variant");
+    // document.getElementById("add-to-cart").classList.add("choose-variant");
   },
   methods: {
     selectOption(variant) {

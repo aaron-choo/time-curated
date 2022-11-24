@@ -29,6 +29,7 @@
             />
             <AddToCartBtn
               :product="page"
+              :loading="loading"
               :settings="settings"
               :variant="variant"
               :variantImage="variantImage"
@@ -140,7 +141,7 @@
 <script>
 import { components } from "~/slices";
 export default {
-  async asyncData({ $prismic, store, i18n, params, error, $axios }) {
+  async asyncData({ $prismic, store, i18n, params, error }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("product", params.uid, {
       lang,
@@ -155,28 +156,6 @@ export default {
       }
     );
     await store.dispatch("prismic/load", { lang, page });
-
-    // $axios.setHeader("apikey", "7iLCHkWBOWlxybSVh7uAO4G6mjM2772K");
-    // const currencyRates = await $axios.$get(
-    //   "https://api.apilayer.com/exchangerates_data/latest?base=SGD"
-    // );
-    // console.log(currencyRates);
-
-    $axios.setHeader(
-      "Authorization",
-      "Basic " +
-        Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
-          "base64"
-        )
-    );
-    $axios.setHeader("Accept", "application/json");
-    const productInfo = await $axios.$get(
-      `https://app.snipcart.com/api/products/${params.uid}/`
-    );
-
-    const productsInfo = await $axios.$get(
-      `https://app.snipcart.com/api/products?limit=0`
-    );
     if (page.data.product_category.uid === params.category) {
       return {
         page: page,
@@ -185,8 +164,7 @@ export default {
         params: params,
         variantImage: null,
         variant: null,
-        productInfo: productInfo,
-        productsInfo: productsInfo,
+        loading: false,
       };
     } else {
       error({ statusCode: 404, message: "Page not found" });
@@ -243,6 +221,14 @@ export default {
     };
   },
   beforeMount() {
+    this.$axios.setHeader(
+      "Authorization",
+      "Basic " +
+        Buffer.from(process.env.NUXT_ENV_SNIPCART_SECRET_API_KEY).toString(
+          "base64"
+        )
+    );
+    this.$axios.setHeader("Accept", "application/json");
     this.checkStock();
   },
   computed: {
@@ -251,8 +237,16 @@ export default {
     },
   },
   methods: {
-    selectOption(variant) {
-      // console.log(variant[1]);
+    async selectOption(variant) {
+      // $axios.setHeader("apikey", "7iLCHkWBOWlxybSVh7uAO4G6mjM2772K");
+      // const currencyRates = await $axios.$get(
+      //   "https://api.apilayer.com/exchangerates_data/latest?base=SGD"
+      // );
+      // console.log(currencyRates);
+      this.loading = true;
+      const productInfo = await this.$axios.$get(
+        `https://app.snipcart.com/api/products/${this.page.uid}/`
+      );
       document
         .querySelector("#add-to-cart")
         .setAttribute("data-item-custom1-value", variant.name);
@@ -260,16 +254,20 @@ export default {
       if (variant.image.length > 0) {
         this.variantImage = variant.image;
       }
-      this.variant.stock = this.productInfo.variants.find(
+      this.variant.stock = productInfo.variants.find(
         (item) => item.variation[0].option === variant.name
       ).stock;
+      this.loading = false;
     },
-    checkStock() {
+    async checkStock() {
+      const productsInfo = await this.$axios.$get(
+        `https://app.snipcart.com/api/products?limit=60`
+      );
       for (let i = 0; i < this.relatedProducts.length; i++) {
-        this.relatedProducts[i].stock = this.productsInfo.items.find(
+        this.relatedProducts[i].stock = productsInfo.items.find(
           (item) => item.userDefinedId === this.relatedProducts[i].uid
         )
-          ? this.productsInfo.items.find(
+          ? productsInfo.items.find(
               (item) => item.userDefinedId === this.relatedProducts[i].uid
             ).totalStock
           : 0;
