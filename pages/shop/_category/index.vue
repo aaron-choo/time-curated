@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  async asyncData({ $prismic, store, i18n, params, $axios }) {
+  async asyncData({ $prismic, store, i18n, params }) {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID(
       "product_category",

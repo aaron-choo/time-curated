@@ -1,57 +1,60 @@
 <template>
   <div>
-    <!-- <Bounded as="section" yPadding="base" :secondaryBackground="true">
+    <Bounded
+      as="section"
+      yPadding="md"
+      :secondaryBackground="true"
+      :backgroundImage="page.data.banner"
+      class="flex items-center"
+    >
       <div class="grid md:grid-cols-2">
         <div>
-          <Heading as="h1">{{ page.data.title }}</Heading>
+          <PrismicRichText
+            :field="page.data.subtitle"
+            class="slide-subtitle text-2xl md:text-3xl italic"
+          />
+          <h1 class="slide-title text-2xl md:text-3xl leading-none mb-2">
+            {{ page.data.title }}
+          </h1>
+          <PrismicRichText
+            :field="page.data.description"
+            class="slide-description font-sans text-xs md:text-sm"
+          />
         </div>
       </div>
-    </Bounded> -->
-    <SliceZone
-      :slices="page.data.slices"
-      :components="components"
-      :context="page"
-    />
-    <Bounded as="section">
-      <h2 class="slide-title text-2xl md:text-3xl leading-none mb-6">
-        Lastest Products
-      </h2>
-      <product-list
-        :products="products"
-        :settings="this.$store.state.prismic.settings"
-      ></product-list>
     </Bounded>
-    <SliceZone
-      :slices="settings.data.slices1"
-      :components="components"
-      :context="page"
-    />
+    <Bounded as="section">
+      <div>
+        <product-list
+          :products="products"
+          :settings="this.$store.state.prismic.settings"
+        ></product-list>
+      </div>
+    </Bounded>
   </div>
 </template>
 
 <script>
-import { components } from "~/slices";
 export default {
   async asyncData({ $prismic, store, i18n }) {
     const lang = i18n.locale;
-    const page = await $prismic.api.getByUID("page", "shop", { lang });
+    const page = await $prismic.api.getByUID("product_category", "all", {
+      lang,
+    });
     const products = await $prismic.api.query(
       $prismic.predicates.at("document.type", "product"),
       {
         lang: lang,
         orderings: "[my.product.date desc]",
-        pageSize: 12,
+        pageSize: 24,
       }
     );
-    await store.dispatch("prismic/load", { lang, page });
     products.results.forEach((el) => (el.stock = null));
+    await store.dispatch("prismic/load", { lang, page });
     return {
-      page,
+      page: page,
       products: products.results,
     };
-  },
-  data() {
-    return { components };
   },
   head() {
     return {
@@ -110,20 +113,15 @@ export default {
       const productsInfo = await this.$axios.$get(
         `https://app.snipcart.com/api/products?limit=60`
       );
-      this.products.forEach(
-        (el) =>
-          (el.stock = productsInfo.items.find(
-            (item) => item.userDefinedId === el.uid
-          ).totalStock)
-      );
-      // for (let i = 0; i < this.products.length; i++) {
-      //   this.products[i].stock = productsInfo.items.find(
-      //     (item) => item.userDefinedId === this.products[i].uid
-      //   )
-      //     ? productsInfo.items.find(
-      //         (item) => item.userDefinedId === this.products[i].uid
-      //       ).totalStock
-      //     : 0;
+      for (let i = 0; i < this.products.length; i++) {
+        this.products[i].stock = productsInfo.items.find(
+          (item) => item.userDefinedId === this.products[i].uid
+        )
+          ? productsInfo.items.find(
+              (item) => item.userDefinedId === this.products[i].uid
+            ).totalStock
+          : 0;
+      }
     },
   },
 };
