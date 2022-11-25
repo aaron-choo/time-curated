@@ -13,8 +13,8 @@
     <div
       class="menu absolute left-0 w-full transition duration-500 shadow"
       :class="{
-        'opacity-0 pointer-events-none': !menuOpen,
-        ' ': menuOpen,
+        'opacity-0 pointer-events-none delay-300': !menuOpen,
+        '': menuOpen,
       }"
       @mouseenter="menuOpen = true"
       @mouseleave="menuOpen = false"

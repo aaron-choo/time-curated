@@ -39,27 +39,29 @@
           :key="index"
           class="swiper-slide"
         >
-          <div
-            class="w-full mx-auto"
-            :style="
-              'height:' +
-              slice.primary.icon_height +
-              'px; width:' +
-              slice.primary.icon_width +
-              'px ;background-color:currentColor;-webkit-mask:url(' +
-              item.image.url +
-              ')no-repeat center;mask:url(' +
-              item.image.url +
-              ')no-repeat center;'
-            "
-          ></div>
-          <div class="flex flex-col text-center text-xs leading-4 font-sans">
-            <PrismicRichText
-              :field="item.title"
-              class="font-semibold uppercase"
-            />
-            <PrismicRichText :field="item.description" class="opacity-50" />
-          </div>
+          <PrismicLink :field="item.link" target="_blank">
+            <div
+              class="w-full mx-auto"
+              :style="
+                'height:' +
+                slice.primary.icon_height +
+                'px; width:' +
+                slice.primary.icon_width +
+                'px ;background-color:currentColor;-webkit-mask:url(' +
+                item.image.url +
+                ')no-repeat center;mask:url(' +
+                item.image.url +
+                ')no-repeat center;'
+              "
+            ></div>
+            <div class="flex flex-col text-center text-xs leading-4 font-sans">
+              <PrismicRichText
+                :field="item.title"
+                class="font-semibold uppercase"
+              />
+              <PrismicRichText :field="item.description" class="opacity-50" />
+            </div>
+          </PrismicLink>
         </div>
       </div>
       <div class="swiper-pagination"></div>

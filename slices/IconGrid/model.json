@@ -58,13 +58,6 @@
         }
       },
       "items": {
-        "icon_svg_code": {
-          "type": "Text",
-          "config": {
-            "label": "Icon SVG Code",
-            "placeholder": ""
-          }
-        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -89,6 +82,14 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
           }
         }
       },
@@ -164,13 +165,6 @@
         }
       },
       "items": {
-        "icon_svg_code": {
-          "type": "Text",
-          "config": {
-            "label": "Icon SVG Code",
-            "placeholder": ""
-          }
-        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -195,6 +189,14 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
           }
         }
       },
