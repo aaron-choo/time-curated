@@ -57,31 +57,50 @@ export default async () => {
       name: 'page',
       mode: 'out-in',
       css: false,
-      beforeLeave() {
-        this.$gsap.set(document.querySelector('#page-transition'), {
-          y: '0vh',
-        })
-        this.$gsap.set(document.querySelector('body'), {
-          opacity: 1,
-        })
-      },
       leave(el, done) {
-        this.$gsap.to(document.querySelector('#page-transition'), {
-          y: '-800vh',
-          duration: 0.6,
-          ease:'steps(8)',
-        })
-        this.$gsap.to(document.querySelector('body'), {
-          opacity: 0,
-          delay: 0.5,
-          duration: 0.5,
-        })
         this.$gsap.to(el, {
           opacity: 0,
           duration: 0.5,
           onComplete: done
         })
       },
+      beforeEnter(el) {
+        this.$gsap.set(el, {
+          opacity: 0
+        })
+      },
+      enter(el, done) {
+        this.$gsap.to(el, {
+          opacity: 1,
+          duration: 0.5,
+          onComplete: done
+        })
+      },
+      // beforeLeave() {
+      //   this.$gsap.set(document.querySelector('#page-transition'), {
+      //     y: '0vh',
+      //   })
+      //   this.$gsap.set(document.querySelector('body'), {
+      //     opacity: 1,
+      //   })
+      // },
+      // leave(el, done) {
+      //   this.$gsap.to(document.querySelector('#page-transition'), {
+      //     y: '-800vh',
+      //     duration: 0.6,
+      //     ease:'steps(8)',
+      //   })
+      //   this.$gsap.to(document.querySelector('body'), {
+      //     opacity: 0,
+      //     delay: 0.5,
+      //     duration: 0.5,
+      //   })
+      //   this.$gsap.to(el, {
+      //     opacity: 0,
+      //     duration: 0.5,
+      //     onComplete: done
+      //   })
+      // },
       // afterLeave() {
       //   console.log('after leave')
       //   this.$gsap.set(document.querySelector('#page-transition'), {
@@ -91,33 +110,33 @@ export default async () => {
       //     opacity: 0
       //   })
       // },
-      beforeEnter(el) {
-        this.$gsap.set(el, {
-          opacity: 0
-        })
-        this.$gsap.set(document.querySelector('body'), {
-          opacity: 0
-        })
-        this.$gsap.set(document.querySelector('#page-transition'), {
-          y: '-800vh',
-        })
-      },
-      enter(el, done) {
-        this.$gsap.to(document.querySelector('#page-transition'), {
-          y: '0vh',
-          duration: 0.6,
-          ease:'steps(8)',
-        })
-        this.$gsap.to(el, {
-          opacity: 1,
-          duration: 0.5,
-          onComplete: done
-        })
-        this.$gsap.to(document.querySelector('body'), {
-          opacity: 1,
-          duration: 0.5,
-        })
-      },
+      // beforeEnter(el) {
+      //   this.$gsap.set(el, {
+      //     opacity: 0
+      //   })
+      //   this.$gsap.set(document.querySelector('body'), {
+      //     opacity: 0
+      //   })
+      //   this.$gsap.set(document.querySelector('#page-transition'), {
+      //     y: '-800vh',
+      //   })
+      // },
+      // enter(el, done) {
+      //   this.$gsap.to(document.querySelector('#page-transition'), {
+      //     y: '0vh',
+      //     duration: 0.6,
+      //     ease:'steps(8)',
+      //   })
+      //   this.$gsap.to(el, {
+      //     opacity: 1,
+      //     duration: 0.5,
+      //     onComplete: done
+      //   })
+      //   this.$gsap.to(document.querySelector('body'), {
+      //     opacity: 1,
+      //     duration: 0.5,
+      //   })
+      // },
     },
     colorMode: {
       preference: 'light'

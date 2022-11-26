@@ -1,7 +1,6 @@
 <template>
   <div>
     <style id="watch-animate" type="text/css"></style>
-    <PageTransition />
     <!-- <AnnouncementBar :settings="settings" /> -->
     <Header
       v-if="navigation.data && settings.data"
