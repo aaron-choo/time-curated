@@ -1,6 +1,7 @@
 <template>
   <div>
     <style id="watch-animate" type="text/css"></style>
+    <PageTransition />
     <!-- <AnnouncementBar :settings="settings" /> -->
     <Header
       v-if="navigation.data && settings.data"
@@ -33,6 +34,20 @@ export default {
           this.$i18n.locale.slice(-2).toUpperCase(),
       },
     };
+  },
+  computed: {
+    alternateLanguages() {
+      return this.$store.state.prismic.alternateLanguages;
+    },
+    navigation() {
+      return this.$store.state.prismic.navigation;
+    },
+    settings() {
+      return this.$store.state.prismic.settings;
+    },
+    page() {
+      return this.$store.state.prismic.page;
+    },
   },
   mounted() {
     // console.log(`
@@ -83,25 +98,8 @@ export default {
       document.documentElement.classList.add("windows");
     }
   },
-
-  computed: {
-    alternateLanguages() {
-      return this.$store.state.prismic.alternateLanguages;
-    },
-    navigation() {
-      return this.$store.state.prismic.navigation;
-    },
-    settings() {
-      return this.$store.state.prismic.settings;
-    },
-    page() {
-      return this.$store.state.prismic.page;
-    },
-  },
-  methods: {},
 };
 </script>
-
 <style>
 body {
   @apply overflow-x-hidden antialiased;
