@@ -15,7 +15,12 @@
               md:p-0 md:my-4 md:gap-2
               grid
               gap-4
+              transition
+              duration-300
             "
+            :class="{
+              'related-products-visible': relatedProductsVisible,
+            }"
           >
             <VariantDropdown
               v-if="product.lug_width.length > 0"
@@ -121,7 +126,7 @@
       :context="page"
     />
 
-    <Bounded as="section" yPadding="sm">
+    <Bounded as="section" yPadding="sm" class="related-products-container">
       <RelatedProducts
         :relatedProducts="relatedProducts"
         :currentProduct="page"
@@ -165,6 +170,7 @@ export default {
         variantImage: null,
         variant: null,
         loading: false,
+        relatedProductsVisible: false,
       };
     } else {
       error({ statusCode: 404, message: "Page not found" });
@@ -236,7 +242,25 @@ export default {
       return this.$store.state.prismic.settings;
     },
   },
+  mounted() {
+    window.addEventListener("scroll", this.checkRelatedProductsVisible);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.checkRelatedProductsVisible);
+  },
   methods: {
+    checkRelatedProductsVisible() {
+      if (
+        document
+          .querySelector(".related-products-container")
+          .getBoundingClientRect().top <= window.innerHeight &&
+        window.scrollY > 280
+      ) {
+        this.relatedProductsVisible = true;
+      } else {
+        this.relatedProductsVisible = false;
+      }
+    },
     async selectOption(variant) {
       // $axios.setHeader("apikey", "7iLCHkWBOWlxybSVh7uAO4G6mjM2772K");
       // const currencyRates = await $axios.$get(
@@ -296,6 +320,9 @@ input[type="number"]::-webkit-outer-spin-button {
     right: 0;
     grid-template-columns: 1fr 1fr;
     border-top: 1px solid var(--border-color);
+  }
+  .add-to-cart-section.related-products-visible {
+    transform: translateY(100%);
   }
 }
 

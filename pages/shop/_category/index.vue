@@ -45,15 +45,25 @@ export default {
         lang,
       }
     );
-    const products = await $prismic.api.query(
-      $prismic.predicates.at("my.product.product_category", page.id),
+    const products =
+      params.category === "all"
+        ? await $prismic.api.query(
+            $prismic.predicates.at("document.type", "product"),
+            {
+              lang: lang,
+              orderings: "[my.product.date desc]",
+              pageSize: 24,
+            }
+          )
+        : await $prismic.api.query(
+            $prismic.predicates.at("my.product.product_category", page.id),
+            {
+              lang: lang,
+              orderings: "[my.product.date desc]",
+              pageSize: 24,
+            }
+          );
 
-      {
-        lang: lang,
-        orderings: "[document.last_publication_date desc]",
-        pageSize: 24,
-      }
-    );
     products.results.forEach((el) => (el.stock = null));
     await store.dispatch("prismic/load", { lang, page });
     return {
