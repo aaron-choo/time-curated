@@ -135,6 +135,7 @@ export default {};
 <style scoped>
 svg {
   height: 100%;
-  width: 100%;
+  width: 180vh;
+  min-width: 100vw;
 }
 </style>
