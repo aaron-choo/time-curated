@@ -10,7 +10,12 @@
       >
         <div class="col-span-2 select relative">
           <label for="enquiry-nature" hidden>Nature of Enquiry</label>
-          <select id="enquiry-nature" name="enquiry-nature" required="">
+          <select
+            id="enquiry-nature"
+            name="enquiry-nature"
+            required=""
+            class="rounded-[3px]"
+          >
             <option value="" disabled selected>Nature of Enquiry</option>
             <option value="feedback">Feedback</option>
             <option value="shop-enquiry">Shop Enquiry</option>
@@ -105,7 +110,12 @@
       >
         <div class="col-span-2 select relative">
           <label for="enquiry-nature" hidden>关于</label>
-          <select id="enquiry-nature" name="enquiry-nature" required="">
+          <select
+            id="enquiry-nature"
+            name="enquiry-nature"
+            required=""
+            class="rounded-[3px]"
+          >
             <option value="" disabled selected>关于</option>
             <option value="feedback">反馈</option>
             <option value="shop-enquiry">商店咨询</option>
