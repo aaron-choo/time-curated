@@ -159,11 +159,13 @@ export default async () => {
       // proxy: true
     },
     sitemap: {
+      hostname: process.env.MAIN_BASE_URL,
+      gzip: true,
       exclude: [
         '/preview',
         '/shop/api',
         '/**/shop/api'
-      ],
+      ]
     },
 
     build: {
