@@ -177,6 +177,9 @@ export default async () => {
       },
       transpile: ['@prismicio/vue']
     },
+    generate: {
+      fallback: true
+    },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
