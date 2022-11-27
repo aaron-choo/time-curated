@@ -22,7 +22,8 @@
             object-cover
             relative
           "
-          loading="lazy"
+          :loading="index < 0 ? 'lazy' : null"
+          placeholder
         />
         <nuxt-img
           v-else
@@ -40,8 +41,29 @@
             object-cover
             relative
           "
-          loading="lazy"
+          placeholder
         />
+        <!-- <nuxt-img
+          v-if="index == 0"
+          format="webp"
+          :src="item.image.url + '&blur=10'"
+          sizes="sm:10px"
+          :width="item.image.dimensions.width"
+          :height="item.image.dimensions.height"
+          class="
+            slide-image
+            w-full
+            h-full
+            top-0
+            left-0
+            object-cover
+            absolute
+            -z-10
+          "
+          :loading="index < 0 ? 'lazy' : null"
+          quality="10"
+          placeholder
+        /> -->
 
         <Bounded
           as="div"
