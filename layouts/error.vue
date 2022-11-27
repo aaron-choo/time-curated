@@ -36,12 +36,8 @@ export default {
     return {
       title:
         this.$store.state.prismic.settings.lang == "zh-cn"
-          ? `错误 - ${this.$prismic.asText(
-              this.$store.state.prismic.settings.data.siteTitle
-            )}`
-          : `Error - ${this.$prismic.asText(
-              this.$store.state.prismic.settings.data.siteTitle
-            )}`,
+          ? "错误 - 时代相传"
+          : "Error - Time Curated",
     };
   },
 };
