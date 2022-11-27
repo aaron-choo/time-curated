@@ -12,6 +12,7 @@
             :height="item.image.height"
             class="product-thumbnail w-full rounded-[3px]"
             loading="lazy"
+            placeholder
           />
           <nuxt-img
             v-if="slice.items.length === 2"
@@ -22,6 +23,7 @@
             :height="item.image.height"
             class="product-thumbnail w-full rounded-[3px]"
             loading="lazy"
+            placeholder
           />
         </figure>
         <figcaption class="font-sans font-medium text-xs">
