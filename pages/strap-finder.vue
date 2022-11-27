@@ -58,7 +58,7 @@
                           v-if="strap.data.top_image.url"
                           format="webp"
                           :src="strap.data.top_image.url"
-                          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+                          sizes="sm:100vw md:100vw lg:33vw xl:572px 2xl:572px"
                           :width="strap.data.top_image.dimensions.width"
                           :height="strap.data.top_image.dimensions.height"
                           class="
@@ -70,6 +70,7 @@
                             -translate-y-[78%]
                           "
                           loading="lazy"
+                          placeholder
                         />
                       </div>
                       <div class="absolute w-full h-full">
@@ -77,7 +78,7 @@
                           v-if="strap.data.bottom_image.url"
                           format="webp"
                           :src="strap.data.bottom_image.url"
-                          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+                          sizes="sm:100vw md:100vw lg:33vw xl:572px 2xl:572px"
                           :width="strap.data.bottom_image.dimensions.width"
                           :height="strap.data.bottom_image.dimensions.height"
                           class="
@@ -89,6 +90,7 @@
                             translate-y-[49%]
                           "
                           loading="lazy"
+                          placeholder
                         />
                       </div>
                     </div>
@@ -174,17 +176,13 @@
                           v-if="strap.data.bottom_image.url"
                           format="webp"
                           :src="strap.data.bottom_image.url"
-                          sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+                          sizes="sm:20vw md:16vw lg:10vw xl:10vw 2xl:192px"
                           :width="strap.data.bottom_image.dimensions.width"
                           :height="strap.data.bottom_image.dimensions.height"
-                          class="
-                            watch-strap-bottom
-                            w-full
-                            h-auto
-                            transform
-                            mx-auto
-                          "
+                          class="w-full h-auto transform mx-auto"
                           loading="lazy"
+                          placeholder
+                          quality="10"
                         />
                       </div>
                     </button>
