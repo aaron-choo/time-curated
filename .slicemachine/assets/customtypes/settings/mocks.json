@@ -14,7 +14,7 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Frame",
+        "text": "Slave",
         "spans": []
       }
     ],
@@ -25,134 +25,135 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
+      "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
     },
     "announcement": [
       {
         "type": "paragraph",
-        "text": "Ad laborum officia nostrud pariatur veniam nostrud eu deserunt exercitation mollit ea ea deserunt. Esse cillum magna do ex anim dolore tempor cupidatat voluptate amet esse elit adipisicing.",
+        "text": "Sit cillum dolore in ullamco laborum deserunt anim.",
         "spans": []
       }
     ],
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Eiusmod fugiat occaecat Lorem qui incididunt pariatur eu fugiat nostrud officia in. Non sunt non ipsum commodo sunt.",
+        "text": "Aliquip id ad excepteur sint commodo laboris minim non eu. Deserunt elit Lorem ex sit labore.",
         "spans": []
       }
     ],
     "footer_information_title": [
       {
         "type": "heading3",
-        "text": "Halfway",
+        "text": "Sweet",
         "spans": []
       }
     ],
     "footer_information_links": [
       {
-        "title": "news",
+        "title": "temperature",
         "link": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "http://twitter.com"
         }
       }
     ],
     "footer_help_title": [
       {
         "type": "heading3",
-        "text": "Control",
+        "text": "Again",
         "spans": []
       }
     ],
     "footer_help_links": [
       {
-        "title": "football",
+        "title": "inch",
         "link": {
           "link_type": "Web",
-          "url": "https://prismic.io"
+          "url": "http://twitter.com"
         }
       }
     ],
     "footer_social_title": [
       {
         "type": "heading3",
-        "text": "Stretch",
+        "text": "Policeman",
         "spans": []
       }
     ],
     "footer_social_links": [
       {
-        "title": "death",
+        "title": "shoot",
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        }
+      }
+    ],
+    "footer_legal_links": [
+      {
+        "title": "finest",
         "link": {
           "link_type": "Web",
           "url": "https://prismic.io"
         }
       }
     ],
-    "footer_legal_links": [
-      {
-        "title": "bus",
-        "link": {
-          "link_type": "Web",
-          "url": "https://slicemachine.dev"
-        }
-      }
-    ],
-    "description_label": "somebody",
-    "specifications_label": "steady",
+    "description_label": "chosen",
+    "specifications_label": "tent",
     "free_shipping_text": [
       {
         "type": "paragraph",
-        "text": "Eiusmod officia deserunt amet adipisicing dolore sint officia laboris. Non aliqua sint ex ex. Est sit dolor cillum laborum non excepteur id mollit dolor ipsum nisi labore.",
+        "text": "Ad proident ad est pariatur consequat qui labore ad et ea esse minim.",
         "spans": []
       }
     ],
-    "shipping_information_label": "beside",
+    "shipping_information_label": "mighty",
     "shipping_information": [
       {
         "type": "paragraph",
-        "text": "Commodo sit aute magna ad veniam dolore voluptate esse sit esse incididunt consectetur adipisicing. Culpa non irure magna proident.",
+        "text": "Fugiat id fugiat velit sint incididunt ullamco. Voluptate velit qui deserunt quis eu voluptate exercitation sit.",
         "spans": []
       }
     ],
-    "return_policy_label": "eat",
+    "return_policy_label": "remember",
     "return_policy": [
       {
         "type": "paragraph",
-        "text": "Minim Lorem aliqua amet commodo non officia mollit nisi ut excepteur mollit qui officia Lorem. Aliqua consequat labore anim incididunt eu eu adipisicing. Deserunt irure aliquip nulla veniam ad veniam quis ut pariatur nulla.",
+        "text": "Incididunt dolore veniam proident sint incididunt adipisicing anim sint ex laborum aliqua. Eu Lorem aliquip nostrud do aliqua consectetur esse ut.",
         "spans": []
       }
     ],
     "leather_disclaimer": [
       {
         "type": "paragraph",
-        "text": "Cupidatat labore fugiat labore est aute dolore aute cupidatat tempor aliqua id pariatur aliqua voluptate cupidatat. Do laboris Lorem ex enim consequat eu.",
+        "text": "Officia est exercitation nisi excepteur occaecat reprehenderit. Et fugiat eu excepteur mollit. Et esse reprehenderit nulla enim aliquip excepteur anim ut velit qui esse officia proident ea.",
         "spans": []
       }
     ],
-    "add_to_cart_text": "settle",
-    "sold_out_text": "hand",
-    "select_option_text": "atomic",
-    "note_text": "together",
-    "length_text": "drive",
-    "thickness_text": "teacher",
-    "clasp_width_text": "pupil",
-    "lug_width_text": "escape",
-    "outer_width_text": "somehow",
-    "inner_width_text": "plain",
-    "you_may_like_text": "pitch",
+    "add_to_cart_text": "suggest",
+    "sold_out_text": "taken",
+    "select_option_text": "hardly",
+    "note_text": "nation",
+    "length_text": "announced",
+    "thickness_text": "desert",
+    "clasp_width_text": "strong",
+    "lug_width_text": "conversation",
+    "outer_width_text": "office",
+    "inner_width_text": "laugh",
+    "you_may_like_text": "shine",
+    "loading_text": "sharp",
     "slices1": [],
-    "manufacture_text": "better",
-    "year_text": "characteristic",
-    "reference_text": "cotton",
-    "model_text": "nearby",
-    "case_material_text": "very",
-    "case_dimensions_text": "detail",
-    "crystal_text": "smell",
-    "dial_text": "thee",
-    "complications_text": "wide",
-    "movement_text": "monkey",
-    "production_quantity_text": "recognize",
+    "manufacture_text": "women",
+    "year_text": "find",
+    "reference_text": "lips",
+    "model_text": "field",
+    "case_material_text": "told",
+    "case_dimensions_text": "series",
+    "crystal_text": "mostly",
+    "dial_text": "whom",
+    "complications_text": "among",
+    "movement_text": "deer",
+    "production_quantity_text": "service",
     "slices2": []
   }
 }

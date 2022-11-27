@@ -11,17 +11,18 @@
             <nuxt-img
               format="webp"
               :src="item.image.url"
-              sizes="sm:100vw md:50vw lg:50vw xl:50vw 2xl:50vw"
+              sizes="sm:100vw md:60vw lg:60vw xl:60vw 2xl:60vw"
               :width="item.image.dimensions.width"
               :height="item.image.dimensions.height"
               class="product-image w-full rounded-[3px] relative"
-              loading="lazy"
+              :loading="index > 0 ? 'lazy' : null"
+              placeholder
             />
             <nuxt-img
               v-if="index === 0 && variant && variant.image.url"
               format="webp"
               :src="variant.image.url"
-              sizes="sm:100vw md:50vw lg:50vw xl:50vw 2xl:50vw"
+              sizes="sm:100vw md:60vw lg:60vw xl:60vw 2xl:60vw"
               :width="variant.image.dimensions.width"
               :height="variant.image.dimensions.height"
               class="
@@ -36,6 +37,7 @@
                 bottom-0
               "
               loading="lazy"
+              placeholder
             />
           </div>
         </div>
@@ -50,7 +52,7 @@
             <nuxt-img
               format="webp"
               :src="item.image.url"
-              sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+              sizes="sm:23vw md:23vw lg:11vw xl:9vw 2xl:8vw"
               :width="item.image.dimensions.width"
               :height="item.image.dimensions.height"
               class="
@@ -62,12 +64,13 @@
                 relative
               "
               loading="lazy"
+              placeholder
             />
             <nuxt-img
               v-if="index === 0 && variant && variant.image.url"
               format="webp"
               :src="variant.image.url"
-              sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+              sizes="sm:23vw md:23vw lg:11vw xl:9vw 2xl:8vw"
               :width="variant.image.dimensions.width"
               :height="variant.image.dimensions.height"
               class="
@@ -82,6 +85,7 @@
                 bottom-0
               "
               loading="lazy"
+              placeholder
             />
           </li>
         </ul>

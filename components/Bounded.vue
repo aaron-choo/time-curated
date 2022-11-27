@@ -2,7 +2,7 @@
   <Component
     :is="as"
     :data-collapsible="collapsible || null"
-    class="bounded px-6 relative"
+    class="bounded px-6"
     :class="{
       'py-4': yPadding === 'xxs',
       'py-6': yPadding === 'xs',
@@ -10,7 +10,7 @@
       'py-12 md:py-20': yPadding === 'base',
       'py-20 md:py-32': yPadding === 'md',
       'secondary-background': secondaryBackground,
-      'has-background-image': backgroundImage,
+      'has-background-image relative': backgroundImage,
     }"
   >
     <nuxt-img
@@ -30,9 +30,28 @@
         object-cover
         -z-40
       "
-      loading="lazy"
       placeholder
     />
+    <!-- <nuxt-img
+      v-if="backgroundImage"
+      format="webp"
+      :src="backgroundImage.url + '&blur=10'"
+      sizes="sm:10px"
+      :width="backgroundImage.width"
+      :height="backgroundImage.height"
+      class="
+        background-image
+        absolute
+        top-0
+        left-0
+        h-full
+        w-full
+        object-cover
+        -z-50
+      "
+      quality="1"
+      placeholder
+    /> -->
     <div class="mx-auto w-full max-w-7xl">
       <slot />
     </div>
@@ -67,7 +86,7 @@ export default {
 </script>
 <style scoped>
 .bounded {
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 .secondary-background {
   background-color: var(--bg-secondary);

@@ -302,6 +302,13 @@
           "placeholder": ""
         }
       },
+      "loading_text": {
+        "type": "Text",
+        "config": {
+          "label": "Loading Text",
+          "placeholder": ""
+        }
+      },
       "slices1": {
         "type": "Slices",
         "fieldset": "Slice Zone",

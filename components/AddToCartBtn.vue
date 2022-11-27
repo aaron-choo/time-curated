@@ -13,7 +13,8 @@
     "
     :class="{
       'sold-out inactive': variant && variant.stock < 1,
-      'choose-variant inactive': variant == null,
+      'choose-variant inactive':
+        variant == null && product.data.lug_width.length > 0,
       'loading inactive': loading,
     }"
     :data-item-id="product.uid"
@@ -21,7 +22,9 @@
     :data-item-categories="product.data.product_category.uid"
     :data-item-description="product.data.description.text"
     :data-item-image="
-      variantImage ? variantImage.url : product.data.images[0].image.url
+      variantImage
+        ? variantImage.url + '&q=10&w=160&h=160&fm=webp'
+        : product.data.images[0].image.url + '&q=10&w=160&h=160&fm=webp'
     "
     :data-item-name="product.data.title"
     :data-item-custom1-name="
@@ -41,17 +44,23 @@
       <span v-if="variantGroup.name === 'Lug Width'">{{ $t("lugWidth") }}</span>
       <span v-else>{{ variantGroup.name }}</span>
     </span> -->
-    <span v-if="loading">Loading</span>
+    <span v-if="loading">{{ settings.data.loading_text }}</span>
     <span v-else>
-      <span class="select-variant-text" v-if="variant == null">{{
-        settings.data.select_option_text
-      }}</span>
+      <span
+        class="select-variant-text"
+        v-if="product.data.lug_width.length > 0 && variant == null"
+        >{{ settings.data.select_option_text }}</span
+      >
       <span class="sold-out-text" v-if="variant && variant.stock == 0">{{
         settings.data.sold_out_text
       }}</span>
-      <span class="add-to-cart-text" v-if="variant && variant.stock >= 1">{{
-        settings.data.add_to_cart_text
-      }}</span>
+      <span
+        class="add-to-cart-text"
+        v-if="
+          product.data.lug_width.length < 1 || (variant && variant.stock >= 1)
+        "
+        >{{ settings.data.add_to_cart_text }}</span
+      >
     </span>
     <!-- <br />
     <pre>{{ getLugWidthVariants() }}</pre> -->
