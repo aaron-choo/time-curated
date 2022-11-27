@@ -139,6 +139,17 @@ button.btn.selected {
     border-color: var(--color);
 }
 
+/* transitions */
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
 /* snipcart */
 :root {
     --bgColor-modal: var(--bg);
