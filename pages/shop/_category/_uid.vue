@@ -161,7 +161,7 @@ export default {
       }
     );
     await store.dispatch("prismic/load", { lang, page });
-    if (page.data.product_category.uid === params.category) {
+    if (page && page.data.product_category.uid === params.category) {
       return {
         page: page,
         product: page.data,

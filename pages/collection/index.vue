@@ -36,10 +36,14 @@ export default {
       }
     );
     await store.dispatch("prismic/load", { lang, page });
-    return {
-      page,
-      collection: collection.results,
-    };
+    if (page) {
+      return {
+        page,
+        collection: collection.results,
+      };
+    } else {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   },
   data() {
     return { components };

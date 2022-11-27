@@ -45,10 +45,14 @@ export default {
     );
     await store.dispatch("prismic/load", { lang, page });
     products.results.forEach((el) => (el.stock = null));
-    return {
-      page,
-      products: products.results,
-    };
+    if (page) {
+      return {
+        page: page,
+        products: products.results,
+      };
+    } else {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   },
   data() {
     return { components };

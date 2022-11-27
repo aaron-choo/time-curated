@@ -28,17 +28,17 @@
 import { components } from "~/slices";
 export default {
   async asyncData({ $prismic, store, i18n, error }) {
-    try {
-      const lang = i18n.locale;
-      const page = await $prismic.api.getByUID("page", "contact", {
-        lang,
-      });
-      await store.dispatch("prismic/load", { lang, page });
+    const lang = i18n.locale;
+    const page = await $prismic.api.getByUID("page", "contact", {
+      lang,
+    });
+    await store.dispatch("prismic/load", { lang, page });
+    if (page) {
       return {
         page,
         lang,
       };
-    } catch (e) {
+    } else {
       error({ statusCode: 404, message: "Page not found" });
     }
   },

@@ -120,7 +120,10 @@
                     border border-px
                   "
                 >
-                  Shop Now
+                  <span
+                    v-if="this.$store.state.prismic.settings.lang == 'zh-cn'"
+                    >立即选购</span
+                  ><span v-else>Shop Now</span>
                 </button>
               </PrismicLink>
               <PrismicLink :field="currentStrap" class="pointer-events-none">
@@ -138,7 +141,10 @@
                     inactive
                   "
                 >
-                  Strap sizing
+                  <span
+                    v-if="this.$store.state.prismic.settings.lang == 'zh-cn'"
+                    >表带尺码</span
+                  ><span v-else>Strap sizing</span>
                 </button>
               </PrismicLink>
             </div>
@@ -235,7 +241,10 @@
                     border border-px
                   "
                 >
-                  Learn more
+                  <span
+                    v-if="this.$store.state.prismic.settings.lang == 'zh-cn'"
+                    >立即探索</span
+                  ><span v-else>Learn more</span>
                 </button>
               </PrismicLink>
             </div>
@@ -349,40 +358,40 @@ import Swiper from "swiper/swiper-bundle.min";
 import "swiper/swiper-bundle.min.css";
 export default {
   async asyncData({ $prismic, store, i18n, query, error }) {
-    try {
-      const lang = i18n.locale;
-      const page = await $prismic.api.getByUID("page", "strap-finder", {
-        lang,
-      });
-      const watches = await $prismic.api.query(
-        $prismic.predicates.at("document.type", "collection"),
-        {
-          lang: lang,
-          orderings: "[document.last_publication_date desc]",
-          pageSize: 24,
-        }
-      );
-      const straps = await $prismic.api.query(
-        [
-          $prismic.predicates.at("document.type", "product"),
-          $prismic.predicates.at("my.product.strap_finder", true),
-        ],
-        {
-          lang: lang,
-          orderings: "[my.product.title]",
-          pageSize: 24,
-        }
-      );
-      if (query.watch) {
-        var currentWatch = await $prismic.api.getByUID(
-          "collection",
-          query.watch,
-          { lang }
-        );
-      } else {
-        var currentWatch = watches.results[0];
+    const lang = i18n.locale;
+    const page = await $prismic.api.getByUID("page", "strap-finder", {
+      lang,
+    });
+    const watches = await $prismic.api.query(
+      $prismic.predicates.at("document.type", "collection"),
+      {
+        lang: lang,
+        orderings: "[document.last_publication_date desc]",
+        pageSize: 24,
       }
-      await store.dispatch("prismic/load", { lang, page });
+    );
+    const straps = await $prismic.api.query(
+      [
+        $prismic.predicates.at("document.type", "product"),
+        $prismic.predicates.at("my.product.strap_finder", true),
+      ],
+      {
+        lang: lang,
+        orderings: "[my.product.title]",
+        pageSize: 24,
+      }
+    );
+    if (query.watch) {
+      var currentWatch = await $prismic.api.getByUID(
+        "collection",
+        query.watch,
+        { lang }
+      );
+    } else {
+      var currentWatch = watches.results[0];
+    }
+    await store.dispatch("prismic/load", { lang, page });
+    if (page) {
       return {
         page,
         watches: watches.results,
@@ -390,7 +399,7 @@ export default {
         straps: straps.results,
         currentStrap: straps.results[0],
       };
-    } catch (e) {
+    } else {
       error({ statusCode: 404, message: "Page not found" });
     }
   },

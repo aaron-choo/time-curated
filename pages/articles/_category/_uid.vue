@@ -191,11 +191,15 @@ export default {
       }
     );
     await store.dispatch("prismic/load", { lang, page });
-    return {
-      page: page,
-      relatedArticles: relatedArticles.results,
-      params: params,
-    };
+    if (page) {
+      return {
+        page: page,
+        relatedArticles: relatedArticles.results,
+        params: params,
+      };
+    } else {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   },
   data() {
     return {

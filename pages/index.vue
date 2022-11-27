@@ -14,9 +14,13 @@ export default {
     const lang = i18n.locale;
     const page = await $prismic.api.getByUID("page", "home", { lang });
     await store.dispatch("prismic/load", { lang, page });
-    return {
-      page,
-    };
+    if (page) {
+      return {
+        page,
+      };
+    } else {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   },
   data() {
     return { components };

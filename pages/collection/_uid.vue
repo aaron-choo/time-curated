@@ -376,12 +376,16 @@ export default {
       }
     );
     await store.dispatch("prismic/load", { lang, page });
-    return {
-      page: page,
-      relatedWatches: relatedWatches.results,
-      params: params,
-      brand: brand,
-    };
+    if (page) {
+      return {
+        page: page,
+        relatedWatches: relatedWatches.results,
+        params: params,
+        brand: brand,
+      };
+    } else {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   },
   data() {
     return {

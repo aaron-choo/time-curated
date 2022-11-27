@@ -66,10 +66,14 @@ export default {
 
     products.results.forEach((el) => (el.stock = null));
     await store.dispatch("prismic/load", { lang, page });
-    return {
-      page: page,
-      products: products.results,
-    };
+    if (page) {
+      return {
+        page: page,
+        products: products.results,
+      };
+    } else {
+      error({ statusCode: 404, message: "Page not found" });
+    }
   },
   head() {
     return {
