@@ -57,89 +57,68 @@ export default async () => {
     //   name: 'page',
     //   mode: 'out-in',
     //   css: false,
-    //   leave(el, done) {
-    //     this.$gsap.to(el, {
-    //       opacity: 0,
-    //       duration: 0.5,
-    //       onComplete: done
-    //     })
-    //   },
-    //   beforeEnter(el) {
-    //     this.$gsap.set(el, {
-    //       opacity: 0
-    //     })
-    //   },
-    //   enter(el, done) {
-    //     this.$gsap.to(el, {
-    //       opacity: 1,
-    //       duration: 0.5,
-    //       onComplete: done
-    //     })
-    //   },
 
-
-
-    //   // beforeLeave() {
-    //   //   this.$gsap.set(document.querySelector('#page-transition'), {
-    //   //     y: '0vh',
-    //   //   })
-    //   //   this.$gsap.set(document.querySelector('body'), {
-    //   //     opacity: 1,
-    //   //   })
-    //   // },
-    //   // leave(el, done) {
-    //   //   this.$gsap.to(document.querySelector('#page-transition'), {
-    //   //     y: '-800vh',
-    //   //     duration: 0.6,
-    //   //     ease:'steps(8)',
-    //   //   })
-    //   //   this.$gsap.to(document.querySelector('body'), {
-    //   //     opacity: 0,
-    //   //     delay: 0.5,
-    //   //     duration: 0.5,
-    //   //   })
-    //   //   this.$gsap.to(el, {
-    //   //     opacity: 0,
-    //   //     duration: 0.5,
-    //   //     onComplete: done
-    //   //   })
-    //   // },
-    //   // afterLeave() {
-    //   //   console.log('after leave')
-    //   //   this.$gsap.set(document.querySelector('#page-transition'), {
-    //   //     y: '-800vh',
-    //   //   })
-    //   //   this.$gsap.set(document.querySelector('body'), {
-    //   //     opacity: 0
-    //   //   })
-    //   // },
-    //   // beforeEnter(el) {
-    //   //   this.$gsap.set(el, {
-    //   //     opacity: 0
-    //   //   })
-    //   //   this.$gsap.set(document.querySelector('body'), {
-    //   //     opacity: 0
-    //   //   })
-    //   //   this.$gsap.set(document.querySelector('#page-transition'), {
-    //   //     y: '-800vh',
-    //   //   })
-    //   // },
-    //   // enter(el, done) {
-    //   //   this.$gsap.to(document.querySelector('#page-transition'), {
-    //   //     y: '0vh',
-    //   //     duration: 0.6,
-    //   //     ease:'steps(8)',
-    //   //   })
-    //   //   this.$gsap.to(el, {
-    //   //     opacity: 1,
-    //   //     duration: 0.5,
-    //   //     onComplete: done
-    //   //   })
-    //   //   this.$gsap.to(document.querySelector('body'), {
-    //   //     opacity: 1,
-    //   //     duration: 0.5,
-    //   //   })
-    //   // },
+    // beforeLeave() {
+    //   this.$gsap.set(document.querySelector('#page-transition'), {
+    //     y: '0vh',
+    //   })
+    //   this.$gsap.set(document.querySelector('body'), {
+    //     opacity: 1,
+    //   })
+    // },
+    // leave(el, done) {
+    //   this.$gsap.to(document.querySelector('#page-transition'), {
+    //     y: '-800vh',
+    //     duration: 0.6,
+    //     ease:'steps(8)',
+    //   })
+    //   this.$gsap.to(document.querySelector('body'), {
+    //     opacity: 0,
+    //     delay: 0.5,
+    //     duration: 0.5,
+    //   })
+    //   this.$gsap.to(el, {
+    //     opacity: 0,
+    //     duration: 0.5,
+    //     onComplete: done
+    //   })
+    // },
+    // afterLeave() {
+    //   console.log('after leave')
+    //   this.$gsap.set(document.querySelector('#page-transition'), {
+    //     y: '-800vh',
+    //   })
+    //   this.$gsap.set(document.querySelector('body'), {
+    //     opacity: 0
+    //   })
+    // },
+    // beforeEnter(el) {
+    //   this.$gsap.set(el, {
+    //     opacity: 0
+    //   })
+    //   this.$gsap.set(document.querySelector('body'), {
+    //     opacity: 0
+    //   })
+    //   this.$gsap.set(document.querySelector('#page-transition'), {
+    //     y: '-800vh',
+    //   })
+    // },
+    // enter(el, done) {
+    //   this.$gsap.to(document.querySelector('#page-transition'), {
+    //     y: '0vh',
+    //     duration: 0.6,
+    //     ease:'steps(8)',
+    //   })
+    //   this.$gsap.to(el, {
+    //     opacity: 1,
+    //     duration: 0.5,
+    //     onComplete: done
+    //   })
+    //   this.$gsap.to(document.querySelector('body'), {
+    //     opacity: 1,
+    //     duration: 0.5,
+    //   })
+    // },
     // },
     colorMode: {
       preference: 'light'
@@ -174,9 +153,17 @@ export default async () => {
         endpoint: sm.apiEndpoint || ""
       }],
       '@nuxtjs/axios',
+      '@nuxtjs/sitemap'
     ],
     axios: {
       // proxy: true
+    },
+    sitemap: {
+      exclude: [
+        '/preview',
+        '/shop/api',
+        '/**/shop/api'
+      ],
     },
 
     build: {
@@ -304,7 +291,7 @@ export default async () => {
             return /* html */ `<strong class="font-semibold">${children.join('')}</strong>`
 
           case 'hyperlink':
-            if (element.data.link_type === 'document') {
+            if (element.data.link_type === 'Document') {
               return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-2" data-nuxt-link>${children.join('')}</a>`
             } else {
               return /* html */ `<a href="${element.data.url}" target="_blank" class="underline decoration-1 underline-offset-2">${children.join('')}</a>`
