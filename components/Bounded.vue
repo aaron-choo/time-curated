@@ -2,12 +2,7 @@
   <Component
     :is="as"
     :data-collapsible="collapsible || null"
-    :style="
-      backgroundImage
-        ? 'background-image:url(' + backgroundImage.url + ');'
-        : null
-    "
-    class="bounded px-6"
+    class="bounded px-6 relative"
     :class="{
       'py-4': yPadding === 'xxs',
       'py-6': yPadding === 'xs',
@@ -15,9 +10,29 @@
       'py-12 md:py-20': yPadding === 'base',
       'py-20 md:py-32': yPadding === 'md',
       'secondary-background': secondaryBackground,
-      'background-image': backgroundImage,
+      'has-background-image': backgroundImage,
     }"
   >
+    <nuxt-img
+      v-if="backgroundImage"
+      format="webp"
+      :src="backgroundImage.url"
+      sizes="sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"
+      :width="backgroundImage.width"
+      :height="backgroundImage.height"
+      class="
+        background-image
+        absolute
+        top-0
+        left-0
+        h-full
+        w-full
+        object-cover
+        -z-40
+      "
+      loading="lazy"
+      placeholder
+    />
     <div class="mx-auto w-full max-w-7xl">
       <slot />
     </div>
@@ -57,11 +72,19 @@ export default {
 .secondary-background {
   background-color: var(--bg-secondary);
 }
-.background-image {
+.has-background-image {
   color: var(--color-overlay);
-  background-size: cover;
-  background-position: center;
+  background-color: transparent;
+}
+.has-background-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: var(--bg-overlay);
-  background-blend-mode: overlay;
+  mix-blend-mode: multiply;
+  z-index: -10;
 }
 </style>
