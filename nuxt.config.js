@@ -41,7 +41,7 @@ export default async () => {
       '@nuxtjs/snipcart',
       '@nuxtjs/color-mode',
       '@nuxtjs/device',
-      'nuxt-gsap-module',
+      'nuxt-gsap-module'
     ],
     gsap: {
       extraPlugins: {
@@ -158,15 +158,6 @@ export default async () => {
     axios: {
       // proxy: true
     },
-    sitemap: {
-      hostname: process.env.MAIN_BASE_URL,
-      gzip: true,
-      exclude: [
-        '/preview',
-        '/shop/api',
-        '/**/shop/api'
-      ]
-    },
 
     build: {
       postcss: {
@@ -230,6 +221,35 @@ export default async () => {
     },
     loading: {
       color: 'var(--color)'
+    },
+    sitemap: {
+      hostname: process.env.MAIN_BASE_URL,
+      gzip: true,
+      i18n: true,
+      i18n: {
+        locales,
+        routesNameSeparator: '___'
+      },
+      exclude: [
+        '/slice-simulator',
+        '/**/slice-simulator',
+        '/preview',
+        '/shop/api',
+        '/**/shop/api'
+      ],
+      defaults: {
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date()
+      }
+    },
+    hooks: {
+      generate: {
+        async done(context) {
+        const allRoutes = await Array.from(context.generatedRoutes);
+        context.options.sitemap.routes = await [...allRoutes];
+        },
+      },
     },
     prismic: {
       endpoint: sm.apiEndpoint,

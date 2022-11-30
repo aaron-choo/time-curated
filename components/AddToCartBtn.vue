@@ -20,11 +20,11 @@
     :data-item-id="product.uid"
     :data-item-price="product.data.price"
     :data-item-categories="product.data.product_category.uid"
-    :data-item-description="product.data.description.text"
+    :data-item-description="product.data.description[0].text"
     :data-item-image="
       variantImage
-        ? variantImage.url + '&q=10&w=160&h=160&fm=webp'
-        : product.data.images[0].image.url + '&q=10&w=160&h=160&fm=webp'
+        ? variantImage.url + '&w=160&h=160&fm=webp'
+        : product.data.images[0].image.url + '&w=160&h=160&fm=webp'
     "
     :data-item-name="product.data.title"
     :data-item-custom1-name="

@@ -466,8 +466,12 @@ h2.snipcart-flash-message__title {
     border-top: 1px solid var(--color-fade-5);
 }
 
-.snipcart-cart-header__options {
+button.snipcart-cart-header__option.snipcart-cart-header__count {
     display: none;
+}
+
+.snipcart-cart-header__option:not(:last-child) {
+    margin-right:0;
 }
 
 .snipcart-cart-header {
