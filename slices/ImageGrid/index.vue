@@ -18,7 +18,18 @@
             v-if="slice.items.length === 2"
             format="webp"
             :src="item.image.url"
-            sizes="sm:100vw md:50vw lg:50vw xl:50vw 2xl:50vw"
+            sizes="sm:100vw md:100vw lg:50vw xl:50vw 2xl:50vw"
+            :width="item.image.width"
+            :height="item.image.height"
+            class="product-thumbnail w-full rounded-[3px]"
+            loading="lazy"
+            placeholder
+          />
+          <nuxt-img
+            v-if="slice.items.length === 3"
+            format="webp"
+            :src="item.image.url"
+            sizes="sm:100vw md:100vw lg:33vw xl:33vw 2xl:33vw"
             :width="item.image.width"
             :height="item.image.height"
             class="product-thumbnail w-full rounded-[3px]"
