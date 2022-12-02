@@ -377,7 +377,7 @@ export default {
       ],
       {
         lang: lang,
-        orderings: "[my.product.title]",
+        orderings: "[my.product.uid]",
         pageSize: 24,
       }
     );
