@@ -10,6 +10,7 @@
         mx-auto
         prevent-select
         aspect-[0.6]
+        overflow-x-hidden
       "
     >
       <div class="watch-base w-full h-full absolute top-0 overflow-hidden">
