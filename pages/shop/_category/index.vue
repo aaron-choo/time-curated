@@ -52,7 +52,7 @@ export default {
             {
               lang: lang,
               orderings: "[my.product.date desc]",
-              pageSize: 24,
+              pageSize: 48,
             }
           )
         : await $prismic.api.query(
@@ -60,7 +60,7 @@ export default {
             {
               lang: lang,
               orderings: "[my.product.date desc]",
-              pageSize: 24,
+              pageSize: 48,
             }
           );
 

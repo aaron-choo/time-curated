@@ -59,7 +59,6 @@ html:lang(zh-CN) *:lang(en-US) {
     --shadow-color: #0000001a;
     --color-overlay: #FFF;
     --bg-overlay: rgba(17, 17, 17, .5);
-    font-size: 16px;
     --swiper-pagination-color: currentColor;
     --swiper-theme-color: currentColor;
     --swiper-pagination-bullet-inactive-color: currentColor;
@@ -224,6 +223,11 @@ button.btn.selected {
 #snipcart {
     position: relative;
     z-index: 50;
+}
+
+.snipcart-layout__content {
+    width: 100%;
+    max-width: 80rem;
 }
 
 .snipcart-cart--opened {
@@ -470,7 +474,8 @@ button.snipcart-cart-header__option.snipcart-cart-header__count {
     display: none;
 }
 
-.snipcart-cart-header__option:not(:last-child) {
+.snipcart-cart-header__option:not(:last-child),
+.snipcart-cart-header__customer-account {
     margin-right:0;
 }
 
@@ -544,8 +549,21 @@ h1.snipcart__font--subtitle {
     filter: brightness(0.5) invert(1) hue-rotate(180deg);
 }
 
-.snipcart__box--slim {
-    padding: 32px 16px 16px;
+
+
+@media (min-width: 768px) {
+    .snipcart-cart-header,
+    .snipcart-layout__header {
+        width: 100%;
+        max-width: 80rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .snipcart-checkout-step__col {
+        width: calc(50% - 1rem);
+    }
+
 }
 
 @media (max-width: 1023px) {
@@ -561,12 +579,7 @@ h1.snipcart__font--subtitle {
     }
 }
 
-@media (min-width: 1024px) {
-    .snipcart-checkout-step__col {
-        width: calc(50% - 1rem);
-    }
 
-}
 
 /* Devices */
 
