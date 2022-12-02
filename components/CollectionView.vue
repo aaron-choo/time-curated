@@ -1,6 +1,6 @@
 <template>
   <div class="collection-view">
-    <WatchModule :watch="watch.data" />
+    <WatchModule :watch="watch.data" class="overflow-x-hidden" />
     <div class="collection-watch-meta text-center mt-4 flex flex-col gap-1">
       <h3 class="collection-watch-title leading-tight text-lg">
         {{ watch.data.title }}
