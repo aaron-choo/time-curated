@@ -1,12 +1,28 @@
 <template>
   <div>
-    <!-- <Bounded as="section" yPadding="base" :secondaryBackground="true">
+    <Bounded
+      as="section"
+      yPadding="md"
+      :secondaryBackground="true"
+      :backgroundImage="page.data.banner"
+      class="flex items-center"
+    >
       <div class="grid md:grid-cols-2">
         <div>
-          <Heading as="h1">{{ page.data.title }}</Heading>
+          <PrismicRichText
+            :field="page.data.subtitle"
+            class="slide-subtitle text-2xl md:text-3xl italic"
+          />
+          <h1 class="slide-title text-2xl md:text-3xl leading-none mb-2">
+            {{ page.data.title }}
+          </h1>
+          <PrismicRichText
+            :field="page.data.description"
+            class="slide-description font-sans text-xs md:text-sm"
+          />
         </div>
       </div>
-    </Bounded> -->
+    </Bounded>
     <SliceZone
       :slices="page.data.slices"
       :components="components"
