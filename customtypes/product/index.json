@@ -169,6 +169,15 @@
           "placeholder_true": "true",
           "placeholder_false": "false"
         }
+      },
+      "vintage_disclaimer": {
+        "type": "Boolean",
+        "config": {
+          "label": "Vintage Disclaimer",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": false
+        }
       }
     },
     "Variations": {

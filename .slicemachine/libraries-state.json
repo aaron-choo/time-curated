@@ -117,7 +117,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\Banner\\default\\preview.jpeg",
+            "path": "/Users/aaron/Sites/time-curated-1/slices/Banner/default/preview.jpeg",
             "width": 1638,
             "height": 551
           }
@@ -181,7 +181,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\BlockHeading\\default\\preview.jpeg",
+            "path": "/Users/aaron/Sites/time-curated-1/slices/BlockHeading/default/preview.jpeg",
             "width": 1015,
             "height": 216
           }
@@ -261,7 +261,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\BlockQuote\\default\\preview.jpeg",
+            "path": "/Users/aaron/Sites/time-curated-1/slices/BlockQuote/default/preview.jpeg",
             "width": 922,
             "height": 203
           }
@@ -335,7 +335,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\BlockText\\default\\preview.jpeg",
+            "path": "/Users/aaron/Sites/time-curated-1/slices/BlockText/default/preview.jpeg",
             "width": 983,
             "height": 135
           }
@@ -495,12 +495,12 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Hero\\default\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated-1/.slicemachine/assets/slices/Hero/default/preview.png",
             "width": 800,
             "height": 638
           },
           "withButton": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Hero\\withButton\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated-1/.slicemachine/assets/slices/Hero/withButton/preview.png",
             "width": 800,
             "height": 1122
           }
@@ -649,7 +649,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\HeroSlider\\default\\preview.jpeg",
+            "path": "/Users/aaron/Sites/time-curated-1/slices/HeroSlider/default/preview.jpeg",
             "width": 1892,
             "height": 661
           }
@@ -998,12 +998,12 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\IconGrid\\default\\preview.jpeg",
+            "path": "/Users/aaron/Sites/time-curated-1/slices/IconGrid/default/preview.jpeg",
             "width": 1890,
             "height": 135
           },
           "iconGridSlider": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\IconGrid\\iconGridSlider\\preview.jpeg",
+            "path": "/Users/aaron/Sites/time-curated-1/slices/IconGrid/iconGridSlider/preview.jpeg",
             "width": 1893,
             "height": 218
           }
@@ -1126,12 +1126,12 @@
         },
         "screenshotPaths": {
           "white": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Image\\white\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated-1/.slicemachine/assets/slices/Image/white/preview.png",
             "width": 800,
             "height": 674
           },
           "lightSlate": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Image\\lightSlate\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated-1/.slicemachine/assets/slices/Image/lightSlate/preview.png",
             "width": 800,
             "height": 674
           }
@@ -1212,7 +1212,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\slices\\ImageGrid\\default\\preview.jpeg",
+            "path": "/Users/aaron/Sites/time-curated-1/slices/ImageGrid/default/preview.jpeg",
             "width": 1662,
             "height": 1065
           }
@@ -1318,7 +1318,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\Legal\\default\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated-1/.slicemachine/assets/slices/Legal/default/preview.png",
             "width": 800,
             "height": 337
           }
@@ -1403,7 +1403,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\LinkMenu\\default\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated-1/.slicemachine/assets/slices/LinkMenu/default/preview.png",
             "width": 800,
             "height": 97
           }
@@ -1529,7 +1529,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\TextWithFeatures\\default\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated-1/.slicemachine/assets/slices/TextWithFeatures/default/preview.png",
             "width": 800,
             "height": 766
           }
@@ -1608,7 +1608,7 @@
         },
         "screenshotPaths": {
           "default": {
-            "path": "C:\\Users\\Aaron Choo\\Sites\\time-curated\\.slicemachine\\assets\\slices\\TextWithImage\\default\\preview.png",
+            "path": "/Users/aaron/Sites/time-curated-1/.slicemachine/assets/slices/TextWithImage/default/preview.png",
             "width": 800,
             "height": 409
           }

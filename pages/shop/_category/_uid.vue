@@ -97,6 +97,21 @@
                 />
               </div>
             </div>
+            <div v-if="product.vintage_disclaimer">
+              <div>
+                <Heading
+                  as="h2"
+                  size="xs"
+                  class="tracking-wider font-sans uppercase font-semibold"
+                >
+                  {{ settings.data.note_text }}
+                </Heading>
+                <prismic-rich-text
+                  :field="settings.data.vintage_disclaimer"
+                  class="product-description-text"
+                />
+              </div>
+            </div>
             <Heading
               as="h2"
               size="xs"

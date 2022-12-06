@@ -14,7 +14,7 @@
     "siteTitle": [
       {
         "type": "heading1",
-        "text": "Slave",
+        "text": "Scale",
         "spans": []
       }
     ],
@@ -25,135 +25,142 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
+      "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5"
     },
     "announcement": [
       {
         "type": "paragraph",
-        "text": "Sit cillum dolore in ullamco laborum deserunt anim.",
+        "text": "In laboris cillum exercitation do enim ut voluptate tempor sint commodo fugiat. Ut irure sit culpa id anim nisi aliqua.",
         "spans": []
       }
     ],
     "newsletterDescription": [
       {
         "type": "paragraph",
-        "text": "Aliquip id ad excepteur sint commodo laboris minim non eu. Deserunt elit Lorem ex sit labore.",
+        "text": "Deserunt excepteur nulla laborum. Ad commodo sunt duis mollit reprehenderit consequat qui occaecat dolore exercitation irure. Est cillum ex minim incididunt labore aute nostrud elit id cillum elit ex.",
         "spans": []
       }
     ],
     "footer_information_title": [
       {
         "type": "heading3",
-        "text": "Sweet",
+        "text": "Principal",
         "spans": []
       }
     ],
     "footer_information_links": [
       {
-        "title": "temperature",
-        "link": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        }
-      }
-    ],
-    "footer_help_title": [
-      {
-        "type": "heading3",
-        "text": "Again",
-        "spans": []
-      }
-    ],
-    "footer_help_links": [
-      {
-        "title": "inch",
-        "link": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        }
-      }
-    ],
-    "footer_social_title": [
-      {
-        "type": "heading3",
-        "text": "Policeman",
-        "spans": []
-      }
-    ],
-    "footer_social_links": [
-      {
-        "title": "shoot",
-        "link": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        }
-      }
-    ],
-    "footer_legal_links": [
-      {
-        "title": "finest",
+        "title": "meal",
         "link": {
           "link_type": "Web",
           "url": "https://prismic.io"
         }
       }
     ],
-    "description_label": "chosen",
-    "specifications_label": "tent",
+    "footer_help_title": [
+      {
+        "type": "heading3",
+        "text": "Frame",
+        "spans": []
+      }
+    ],
+    "footer_help_links": [
+      {
+        "title": "believed",
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      }
+    ],
+    "footer_social_title": [
+      {
+        "type": "heading3",
+        "text": "Compare",
+        "spans": []
+      }
+    ],
+    "footer_social_links": [
+      {
+        "title": "nearest",
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      }
+    ],
+    "footer_legal_links": [
+      {
+        "title": "moving",
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ],
+    "description_label": "ago",
+    "specifications_label": "toward",
     "free_shipping_text": [
       {
         "type": "paragraph",
-        "text": "Ad proident ad est pariatur consequat qui labore ad et ea esse minim.",
+        "text": "Culpa ad id ullamco laborum ullamco veniam est nisi commodo adipisicing voluptate amet exercitation incididunt.",
         "spans": []
       }
     ],
-    "shipping_information_label": "mighty",
+    "shipping_information_label": "egg",
     "shipping_information": [
       {
         "type": "paragraph",
-        "text": "Fugiat id fugiat velit sint incididunt ullamco. Voluptate velit qui deserunt quis eu voluptate exercitation sit.",
+        "text": "Nisi aliqua laborum amet ullamco ex sit dolore consectetur duis sint proident tempor consequat nisi. Minim non in excepteur quis nulla non labore anim enim ex. Proident pariatur deserunt veniam ea enim adipisicing excepteur.",
         "spans": []
       }
     ],
-    "return_policy_label": "remember",
+    "return_policy_label": "carefully",
     "return_policy": [
       {
         "type": "paragraph",
-        "text": "Incididunt dolore veniam proident sint incididunt adipisicing anim sint ex laborum aliqua. Eu Lorem aliquip nostrud do aliqua consectetur esse ut.",
+        "text": "Veniam voluptate cupidatat in esse proident ipsum quis id labore irure velit. Labore consequat irure dolor id eiusmod ad laborum. Et minim eu id incididunt sit aliqua minim id labore laborum amet magna consequat mollit laborum.",
         "spans": []
       }
     ],
     "leather_disclaimer": [
       {
         "type": "paragraph",
-        "text": "Officia est exercitation nisi excepteur occaecat reprehenderit. Et fugiat eu excepteur mollit. Et esse reprehenderit nulla enim aliquip excepteur anim ut velit qui esse officia proident ea.",
+        "text": "Culpa aliqua elit ullamco consequat ex esse qui ea. Aute nulla nisi quis est ex eu anim enim culpa qui pariatur est id aliquip adipisicing.",
         "spans": []
       }
     ],
-    "add_to_cart_text": "suggest",
-    "sold_out_text": "taken",
-    "select_option_text": "hardly",
-    "note_text": "nation",
-    "length_text": "announced",
-    "thickness_text": "desert",
-    "clasp_width_text": "strong",
-    "lug_width_text": "conversation",
-    "outer_width_text": "office",
-    "inner_width_text": "laugh",
-    "you_may_like_text": "shine",
-    "loading_text": "sharp",
+    "vintage_disclaimer": [
+      {
+        "type": "paragraph",
+        "text": "Enim irure incididunt elit do.",
+        "spans": []
+      }
+    ],
+    "add_to_cart_text": "transportation",
+    "sold_out_text": "full",
+    "select_option_text": "poor",
+    "note_text": "mark",
+    "length_text": "chair",
+    "thickness_text": "engine",
+    "clasp_width_text": "per",
+    "lug_width_text": "soap",
+    "outer_width_text": "young",
+    "inner_width_text": "surrounded",
+    "you_may_like_text": "activity",
+    "loading_text": "driving",
     "slices1": [],
-    "manufacture_text": "women",
-    "year_text": "find",
-    "reference_text": "lips",
-    "model_text": "field",
-    "case_material_text": "told",
-    "case_dimensions_text": "series",
-    "crystal_text": "mostly",
-    "dial_text": "whom",
-    "complications_text": "among",
-    "movement_text": "deer",
-    "production_quantity_text": "service",
+    "manufacture_text": "upward",
+    "year_text": "tight",
+    "reference_text": "look",
+    "model_text": "stepped",
+    "case_material_text": "handsome",
+    "case_dimensions_text": "basic",
+    "crystal_text": "rather",
+    "dial_text": "every",
+    "complications_text": "had",
+    "movement_text": "voyage",
+    "production_quantity_text": "sign",
     "slices2": []
   }
 }
